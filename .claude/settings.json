@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(cp *)",
+      "Bash(mkdir *)",
+      "Bash(date *)",
+      "WebSearch(*)",
+      "Write(docs/*)",
+      "Edit(docs/*)"
+    ],
+    "defaultMode": "bypassPermissions"
+  }
+}
