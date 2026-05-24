@@ -219,7 +219,6 @@
     <span class="archive-nav-label">Archive:</span>
     <a class="archive-link current" href="/ai-news-reader/index.html">2026-05-24</a>
     <!-- ARCHIVE-LINKS:START -->
-    <a class="archive-link" href="/ai-news-reader/archive/2026-05-23.html">2026-05-23</a>
     <!-- ARCHIVE-LINKS:END -->
   </div>
 </nav>
@@ -229,68 +228,83 @@
   <div class="cards">
     <!-- CARDS:START -->
 
+    <!-- Card 1 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-05-24</span>
+      </div>
+      <h2 class="card-title">Google AlphaEvolve、1年後のインパクト — 行列乗算を56年ぶりに更新し、データセンター全土に展開</h2>
+      <p class="card-summary">
+        DeepMindが2025年5月に公開したAlphaEvolveは、Geminiモデルと進化的アルゴリズムを組み合わせたコーディングエージェント。2026年5月時点でGoogleのTPU設計・データセンター電力管理・AI学習パイプラインに実装済み。特筆点は、Strassenのアルゴリズム以来56年ぶりに4×4複素行列の乗算を48スカラー積で達成（従来比改善）。また量子回路最適化でGoogleのWillowプロセッサ上のエラーを従来比1/10に削減。LLMをオラクルとして使いながら自動評価器でフィードバックループを回す「LLM+進化的探索」のアーキテクチャは、アルゴリズム設計自動化の実用的な先行事例となった。
+      </p>
+      <div class="card-footer">
+        <span class="card-source">Google DeepMind Blog</span>
+        <a class="card-link" href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-05-24</span>
+      </div>
+      <h2 class="card-title">中国4ラボが18日間でフロンティア級コーディングモデルを一斉投入 — コストはClaudeの1/3以下</h2>
+      <p class="card-summary">
+        2026年4〜5月にかけてZ.ai（GLM-5.1）、MiniMax（M2.7）、Moonshot（Kimi K2.6）、DeepSeek（V4/V4 Pro）が立て続けにオープンウェイトモデルをリリース。Kimi K2.6は1Tパラメータ・アクティブ32B・コンテキスト256Kで、Artificial Analysis Intelligence Index v4.0でオープンウェイト1位（スコア54）。DeepSeek V4 Proは1.6T総パラメータ・49Bアクティブ・1Mトークンコンテキスト。GLM-5.1はMITライセンス・744B/40B active・200Kコンテキストで長期タスクに強い。いずれも推論コストはWesternフロンティアモデルの1/3以下で、SWE-bench Proで競合するパフォーマンスを達成している。
+      </p>
+      <div class="card-footer">
+        <span class="card-source">codersera.com / DEV Community</span>
+        <a class="card-link" href="https://codersera.com/blog/kimi-k2-6-vs-deepseek-v4-vs-glm-5-1-2026/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-05-24</span>
+      </div>
+      <h2 class="card-title">Google、Gemini 3.5 Flash と Gemini Spark を発表 — フロンティア性能を1/2〜1/3のコストで提供</h2>
+      <p class="card-summary">
+        Google I/O 2026でGemini 3.5 Flashが発表された。同社は「フロンティアモデルに匹敵する能力を、他社の比較可能なモデルの半額〜3分の1のコストで提供」と明言。同時に発表されたGemini Sparkは、GmailやGoogleドキュメントなど接続アプリをまたいで情報を推論できる汎用AIエージェント。マルチアプリ横断型の推論能力と長期タスク実行を特徴とし、企業ユーザー向けにGoogle Workspaceとの統合を提供。軽量モデルでここまで能力が上がってきた背景にはアーキテクチャ効率化と蒸留技術の進化がある。
+      </p>
+      <div class="card-footer">
+        <span class="card-source">CNBC</span>
+        <a class="card-link" href="https://www.cnbc.com/2026/05/19/google-ai-ultra-gemini-spark-omni.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Architecture</span>
+        <span class="card-date">2026-05-24</span>
+      </div>
+      <h2 class="card-title">SubQ、商用初の非Transformer LLMを$29Mシードで発売 — 12Mトークンコンテキスト、長文推論コストを1/5に</h2>
+      <p class="card-summary">
+        2026年5月5日、スタートアップのSubQが「SubQuadratic」アーキテクチャを採用した初の商用非TransformerモデルをリリースしてSeed $29Mを調達。Attentionのコストが入力長に対して二乗で増加するTransformerと異なり、SubQはサブ二次の計算複雑性でスケールする設計。コンテキスト長は12Mトークンとリポジトリ全体やロングドキュメント分析を想定し、長文ワークロードでの推論コストは主要フロンティアモデルの約1/5と主張している。Transformerの代替アーキテクチャが実際に製品として出荷された初の事例として業界の注目を集めている。
+      </p>
+      <div class="card-footer">
+        <span class="card-source">WhatLLM.org / llm-stats.com</span>
+        <a class="card-link" href="https://whatllm.org/blog/new-ai-models-may-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">Agentic AI</span>
         <span class="card-date">2026-05-24</span>
       </div>
-      <h2 class="card-title">Google、Gemini Spark発表 — 24時間365日稼働のパーソナルAIエージェントがGmailやWorkspaceを自律操作</h2>
-      <p class="card-summary">GoogleはGoogle I/O 2026でGemini Sparkを発表した。Gemini 3.5ベースのクラウド型パーソナルAIエージェントで、ラップトップを閉じた状態でも自律的にタスクを実行し続ける。Gmail・Docs・Slidesなどのワークスペースアプリに深く統合され、Canva・OpenTable・Instacartなどサードパーティアプリとも接続可能。月次のクレジットカード明細チェックなど定期タスクの自動実行に対応し、Google AI Ultraサブスクライバー向けに翌週から提供予定と発表された。</p>
+      <h2 class="card-title">エンタープライズ自律エージェント本格化 — NVIDIA×ServiceNow「Project Arc」、Gartnerが2026年末に40%普及予測</h2>
+      <p class="card-summary">
+        NVIDIA と ServiceNow が共同で「Project Arc」を発表。長期稼働・自己進化型のデスクトップエージェントで、ServiceNow Action Fabricを通じてガバナンス・監査・ワークフロー制御を提供する設計。Gartnerは2026年末までにエンタープライズアプリの40%にタスク特化型AIエージェントが組み込まれると予測（2025年初時点は5%未満）。同時に、エージェントによる予測不能なトークン消費がランニングコストを爆増させる問題が浮上し、Portal26などがエージェントコスト制御ツールを投入。長期実行ループの設計、セキュリティ（機密データへのアクセス制御）、コスト管理の3点がエンタープライズエージェント実装の主要課題として定着しつつある。
+      </p>
       <div class="card-footer">
-        <span class="card-source">TechCrunch</span>
-        <a class="card-link" href="https://techcrunch.com/2026/05/19/google-introduces-gemini-spark-a-24-7-agentic-assistant-with-gmail-integration/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">Infrastructure</span>
-        <span class="card-date">2026-05-24</span>
-      </div>
-      <h2 class="card-title">Anthropic、$900B評価額で$300億調達へ — 第2四半期売上$109億・初の黒字四半期が視野に</h2>
-      <p class="card-summary">AnthropicがOpenAI（評価額$852B）を超え世界最高評価額のプライベートAIスタートアップとなる$900B（約90兆円）評価額での$300億超の資金調達ラウンドが5月26日週にもクローズする見通しだ。Sequoia Capital・Dragoneer・Altimeter・Greenoaksが各$20億を共同主導し、Founders Fundなど既存投資家も参加予定。第2四半期の売上は$109億に達すると見込まれ、初の四半期黒字も実現に近い。2026年10月のIPOが有力視されている。</p>
-      <div class="card-footer">
-        <span class="card-source">CNBC</span>
-        <a class="card-link" href="https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">Policy</span>
-        <span class="card-date">2026-05-24</span>
-      </div>
-      <h2 class="card-title">「Mini Shai-Hulud」npmワームがOpenAI・Mistral AIを直撃 — 160超パッケージに自己伝播、SLSAプロベナンス初悪用</h2>
-      <p class="card-summary">5月11日にTeamPCPがTanStackのnpmリリースパイプラインを侵害し、@tanstackネームスペースの42パッケージ計84個の悪意あるアーティファクトを公開した。「Mini Shai-Hulud」と名付けられたこのワームはMistral AI・UiPath・160超のnpm/PyPIパッケージに自己伝播し、OpenAI社員2名のデバイスも感染した。SLSAプロベナンス付きの悪意あるパッケージが確認された初の事例であり、信頼済みCIパイプライン経由の供給連鎖攻撃の深刻さを改めて示した。OpenAIはユーザーデータや本番環境への影響はなかったと声明を出した。</p>
-      <div class="card-footer">
-        <span class="card-source">The Hacker News</span>
-        <a class="card-link" href="https://thehackernews.com/2026/05/mini-shai-hulud-worm-compromises.html" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">Infrastructure</span>
-        <span class="card-date">2026-05-24</span>
-      </div>
-      <h2 class="card-title">AnthropicがSDKスタートアップStainlessを$300M超で買収 — OpenAI・GoogleのSDK生成ツールを傘下に収める</h2>
-      <p class="card-summary">Anthropicは5月18日、APIのSDK自動生成スタートアップStainlessを$300M超で買収したと発表した。Sequoia・a16z支援の2022年創業で、OpenAI・Google・CloudflareなどのSDKを自動生成・維持するツールを提供していた。買収後、Stainlessのホスト型SDK生成サービスは終了するが、既存顧客は生成済みSDKの所有権と変更権を保持する。Bun・Vercept・Coefficient Bioに続く直近6ヶ月で4件目の買収であり、Anthropicが開発者向けツールチェーンの垂直統合を積極推進していることを示している。</p>
-      <div class="card-footer">
-        <span class="card-source">TechCrunch</span>
-        <a class="card-link" href="https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">Policy</span>
-        <span class="card-date">2026-05-24</span>
-      </div>
-      <h2 class="card-title">日本政府が高性能AIモデルへの安全対策強化 — 総務省会議開催、企業の3社に1社がAIロボット導入を検討</h2>
-      <p class="card-summary">日本の総務省は5月21日、高性能AIモデル「Claude Mythos」のシステム脆弱性検出能力に対するリスクへの対応強化を目的として、地方自治体・民間企業との協力体制について会議を開催した。三菱UFJ・住友三井・みずほの大手3銀行に5月末にもMythosへのアクセスが付与される可能性が報じられている。同日発表されたロイターの調査では、日本企業の約3社に1社がすでにAIロボットを導入または検討中であり、製造・運輸業が先行することが示された。慢性的な労働力不足に対応するため、政府はAIロボット活用を国家戦略として推進している。</p>
-      <div class="card-footer">
-        <span class="card-source">Nippon.com</span>
-        <a class="card-link" href="https://www.nippon.com/en/news/yjj2026052101092/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">NVIDIA Blog / Yahoo Finance</span>
+        <a class="card-link" href="https://blogs.nvidia.com/blog/servicenow-autonomous-ai-agents-enterprises/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
