@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-05-25</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-05-25</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="/ai-news-reader/index.html">2026-05-25</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-05-24.html">2026-05-24</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-05-23.html">2026-05-23</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-05-25</span>
+      </div>
+      <h2 class="card-title">Google AI Ultra、月額$100に値下げ — Gemini 3.5 Flashがフロンティアモデル比4倍速を達成</h2>
+      <p class="card-summary">GoogleはI/O 2026で発表したGemini 3.5 Flashを正式提供しており、5月25日時点でのサブスクリプションプランの詳細が明確化された。Gemini 3.5 Flashは同等のフロンティアモデルと比べてトークン出力速度が4倍速く、コーディング・エージェント・マルチモーダルの各ベンチマークで前世代のGemini 3.1 Proを上回る性能を示している。Google AI Ultraサブスクリプションの価格は月額$250から$100へと大幅に引き下げられ、AI Proの5倍の利用枠が付与される。新機能として「デイリーブリーフ」や個人AIエージェント「Gemini Spark」も追加され、競合するChatGPT・Claudeへの対抗姿勢を鮮明にした。</p>
+      <div class="card-footer">
+        <span class="card-source">9to5Google</span>
+        <a class="card-link" href="https://9to5google.com/2026/05/25/google-ai-plus-pro-ultra-gemini-features/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-05-25</span>
+      </div>
+      <h2 class="card-title">Anthropic、Q2売上$109億ペースで初の四半期黒字へ — 評価額$9,000億でIPOも視野に</h2>
+      <p class="card-summary">AnthropicはQ2（4〜6月期）の売上高が$109億ペースに達し、初の四半期単位の営業黒字を達成する見込みであるとCNBCが報じた。2025年末時点で年換算約$90億だった売上は急拡大し、直近の年換算収益は$300億を超えた。LLM市場ではQ1 2026のシェアが31.4%でOpenAIの29%を上回り、収益・シェアともに業界トップクラスの地位を確立している。また同社はIPOに向けた準備を本格化させており、現在$9,000億の評価額で投資家との追加資本調達交渉を進め、早ければ2026年10月の上場を目指している。</p>
+      <div class="card-footer">
+        <span class="card-source">CNBC</span>
+        <a class="card-link" href="https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-05-25</span>
+      </div>
+      <h2 class="card-title">OpenAI・Anthropic・SpaceX、2026年同年IPOという異例事態 — テック史上最大規模のIPOラッシュ到来</h2>
+      <p class="card-summary">2026年はOpenAI、Anthropic、SpaceXという3つのメガユニコーンが同一年内にIPOを予定するという前例のない状況となっている。OpenAIはSECへのS-1機密書類提出でQ4上場を目指し、AnthropicはできるだけQ4早期（10月）の上場を計画し、SpaceXはすでにIPO手続きを進めている。3社合計の時価総額は$2兆〜$3兆規模に達する見込みで、投資家からの旺盛な需要が予想される。AI産業全体の成熟を象徴するこの動きは、公開市場においてもAI銘柄が主役の時代の到来を示している。</p>
+      <div class="card-footer">
+        <span class="card-source">Marketplace.org</span>
+        <a class="card-link" href="https://www.marketplace.org/story/2026/05/21/spacex-open-ai-and-anthropic-are-expected-to-ipo-in-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-05-25</span>
+      </div>
+      <h2 class="card-title">日本の総務省、高性能AIモデルへの懸念を表明 — 民間・自治体と連携した安全対策を強化</h2>
+      <p class="card-summary">日本の総務省は5月21日、Anthropicの高性能AIモデルなどを念頭に、自治体・民間企業との連携強化を通じたAIリスク対策の推進を再確認した。対象モデルはシステム脆弱性を検出する高度な能力を持つとされており、悪用されるリスクへの対応が急務と位置づけられている。総務省はAIの急速な普及に伴うセキュリティリスクを「新たな社会課題」として捉え、業界横断的なガイドラインの整備を進める方針だ。日本政府全体でのAIガバナンス強化の動きは加速しており、国際的な規制動向とも連携した体制づくりが求められている。</p>
+      <div class="card-footer">
+        <span class="card-source">Nippon.com</span>
+        <a class="card-link" href="https://www.nippon.com/en/news/yjj2026052101092/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-05-25</span>
+      </div>
+      <h2 class="card-title">光と電子の融合粒子でAI計算を革新 — ペン大チームが新型半導体素子を開発、エネルギー消費を劇的削減へ</h2>
+      <p class="card-summary">ペンシルバニア大学の研究チームは、フォトンと電子が強く結合した「エキシトン・ポラリトン」と呼ばれる準粒子を開発し、光によるAI計算の実現に向けた大きな前進を発表した。この素子は原子レベルの薄さを持つ半導体材料の中で光と電子を強く結合させることで、光が信号スイッチングに必要な計算を行えるようにする仕組みだ。従来のシリコンチップと比べてAIワークロードのエネルギー消費を大幅に削減できる可能性があり、AI計算インフラの電力問題への解決策として業界から注目を集めている。次世代AI計算基盤としての応用が期待され、量子コンピューティングとの融合研究も視野に入っている。</p>
+      <div class="card-footer">
+        <span class="card-source">ScienceDaily</span>
+        <a class="card-link" href="https://www.sciencedaily.com/releases/2026/05/260518041341.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
