@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-05-26</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-05-26</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="/ai-news-reader/index.html">2026-05-26</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-05-25.html">2026-05-25</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-05-24.html">2026-05-24</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-05-23.html">2026-05-23</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-05-26</span>
+      </div>
+      <h2 class="card-title">教皇レオ14世、AI倫理回勅「マニフィカ・ウマニタス」を発表 — Anthropic共同創業者と並んでバチカンで登壇</h2>
+      <p class="card-summary">教皇レオ14世は5月25日、人工知能時代における人間の尊厳を論じた初の回勅「マニフィカ・ウマニタス（崇高なる人間性）」を発表した。全42,300語に及ぶこの文書は、AIによる雇用への影響・デジタル監視・自律型兵器などの倫理課題を取り上げ、技術開発における人間の尊厳と公共善の優先を訴えている。注目すべきは、Anthropicの共同創業者クリストファー・オラーがバチカンの発表式典に登壇し、教皇と並んで登場した点だ。カトリック教会の社会訓話の伝統を受け継ぐこの文書は、AI時代における国際的な倫理議論に新たな視点をもたらすと期待されている。</p>
+      <div class="card-footer">
+        <span class="card-source">Time</span>
+        <a class="card-link" href="https://time.com/article/2026/05/25/pope-leo-encyclical-ai-magnifica-humanitas/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-05-26</span>
+      </div>
+      <h2 class="card-title">富士倉、週間で約4,000億円の時価総額消失 — AIインフラ株バブルの脆弱性が露呈</h2>
+      <p class="card-summary">光ファイバーケーブル大手の富士倉（Fujikura）が、AI需要見通しへの過熱期待の反動で週間約40億ドル（約4,000億円）の時価総額を失い、株価がほぼ半値に急落した。同社の2026年度業績見通しが市場予想を下回ったことが引き金となり、AI関連インフラ株全般への警戒感が一気に高まった。グローバルなAI熱に乗って急騰していた光ファイバー・データセンター関連銘柄は、実需との乖離が顕著になりつつある。この暴落は、AIインフラへの投資需要が依然旺盛な一方で、個別銘柄の過剰評価リスクが蓄積していることを改めて示す出来事となった。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/business/2026/05/26/companies/japan-ai-stocks-fragility/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-05-26</span>
+      </div>
+      <h2 class="card-title">Google、「検索エージェント時代」を宣言 — Gemini 3.5 FlashがAIモードの全世界デフォルトに</h2>
+      <p class="card-summary">GoogleはI/O 2026において、Gemini 3.5 Flashを全世界のAI Modeのデフォルトモデルに昇格させ、検索をQ&amp;Aツールからアクティブなエージェント基盤へと再定義した。ユーザーはバックグラウンドで24時間365日動作する複数の個人AIエージェントを作成・カスタマイズ・管理できるようになり、競合情報の常時監視や関連ニュースの自動収集といった活用が可能になる。個人AIアシスタント「Gemini Spark」も発表され、情報収集・整理・行動の一連のワークフローを自動化する機能を備えている。OpenAI・Anthropicとのエージェント覇権争いは一段と激化しており、AIが「道具」から「自律的なパートナー」へと移行する時代が本格的に幕を開けた。</p>
+      <div class="card-footer">
+        <span class="card-source">Google Blog</span>
+        <a class="card-link" href="https://blog.google/products-and-platforms/products/search/search-io-2026/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-05-24</span>
+      </div>
+      <h2 class="card-title">「AIラガード」日本の逆説的優位性 — Bloomberg、出遅れが戦略的強みになりうると分析</h2>
+      <p class="card-summary">Bloomberg Opinionのキャサリン・ソーベック記者は5月24日付の論考で、AI導入で先進国に出遅れた日本が「逆説的な優位性」を持つ可能性を指摘した。AI普及の初期段階で米国や中国が直面した過剰な炎上・高コストの実験・大規模障害を回避し、成熟した技術のみを選別して導入できるためだという。日本固有の文化的慎重さや「品質優先」の姿勢が、AI導入における秩序ある段階的アプローチと親和性が高く、長期的な競争力につながると分析している。一方でAI人材不足や英語圏との技術格差は依然大きく、優位性を活かすには教育と規制整備の両輪で取り組む必要があるとも警告している。</p>
+      <div class="card-footer">
+        <span class="card-source">Bloomberg</span>
+        <a class="card-link" href="https://www.bloomberg.com/opinion/articles/2026-05-24/japan-s-an-ai-laggard-that-could-be-its-edge" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-05-26</span>
+      </div>
+      <h2 class="card-title">金融機関のClaude依存が深まる一方でコスト急膨張 — Bloomberg、AI活用の「重い代償」を報告</h2>
+      <p class="card-summary">Bloombergの5月26日付レポートによると、世界の大手金融機関でAnthropicのClaude AIを業務導入する動きが急加速しているが、月額のAPI費用が当初想定を大幅に上回り数千万ドル規模に達するケースが相次いでいる。業務効率や顧客対応品質の改善効果は実証されつつあるものの、ROI（投資対効果）の算出が複雑化し、コスト管理体制の整備が急務となっている。「Claudeなしでは業務が回らない」段階にまで依存度が高まった金融機関も存在するとされ、AIベンダーへの交渉力低下を懸念する声も上がっている。AnthropicがAPIビジネスで金融セクターを急速に取り込んでいる実態が浮き彫りになり、同社のQ2黒字化見通しとも符合する動向として注目されている。</p>
+      <div class="card-footer">
+        <span class="card-source">Bloomberg</span>
+        <a class="card-link" href="https://www.bloomberg.com/opinion/articles/2026-05-26/ai-boom-bankers-love-of-claude-carries-a-heavy-price" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
