@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-06</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-06</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="/ai-news-reader/index.html">2026-06-06</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-05.html">2026-06-05</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-04.html">2026-06-04</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-03.html">2026-06-03</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-02.html">2026-06-02</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-01.html">2026-06-01</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-05-31.html">2026-05-31</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-05-30.html">2026-05-30</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-06</span>
+      </div>
+      <h2 class="card-title">日本デジタル相「AIコロニー」化を警告——個人データ保護法改正で開発加速を主導</h2>
+      <p class="card-summary">日本のデジタル大臣・松本剛明氏は6月5日、AI開発で後れを取れば日本が「AIコロニー」になりかねないと強く警告した。同氏は医療・犯罪歴などの個人情報をAI学習に活用できるよう個人情報保護法改正を認める政府提出法案を積極的に擁護し、「AIの発展ペースに追いつかなければ依存度が深まる」と危機感を示した。法案は衆議院を通過して参院審議中だが、野党は情報漏洩リスクへの懸念を表明している。日本は主要先進国と比較してAI開発で後れを取っているとの政府自身の評価もあり、データ主権と開発促進のバランスを巡る議論が続いている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/06/05/japan/digital-minister-ai-development/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-06-06</span>
+      </div>
+      <h2 class="card-title">東大松尾研・Anthropic・PKSHA、「Japan AI Index」を今秋公開へ——日本初のAI活用実態可視化フレームワーク</h2>
+      <p class="card-summary">東京大学松尾・岩澤研究室、米Anthropic、PKSHA Technologyは6月4日、生成AIが日本社会に与える影響を定量化する「Japan AI Index」の共同構築を発表した。AnthropicのClaudeに関する匿名化利用データと日本の公式統計を組み合わせ、雇用・産業・経済・教育への影響を継続的に分析する仕組みを構築する。初回レポートと可視化ダッシュボードは2026年10〜11月に公開予定で、Anthropicにとって日本の学術機関との本格的な初の連携となる。AIが日本各産業に与える影響をエビデンスに基づいて測定する国内初のインフラとして注目される。</p>
+      <div class="card-footer">
+        <span class="card-source">Nikkei Asia</span>
+        <a class="card-link" href="https://asia.nikkei.com/business/technology/artificial-intelligence/anthropic-and-university-of-tokyo-partner-to-gauge-generative-ai-use" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-06</span>
+      </div>
+      <h2 class="card-title">Anthropic、機密S-1をSECに提出——評価額9,650億ドルで世界最高の非上場AI企業に</h2>
+      <p class="card-summary">Anthropicは6月1日、米証券取引委員会（SEC）に機密扱いのS-1ドラフト登録申告書を提出し、IPOへの第一歩を踏み出した。同社は5月28日に65億ドルのシリーズH資金調達を完了しており、ポストマネー評価額9,650億ドルはOpenAIの8,520億ドルを超え、世界最高の非上場AI企業の地位を獲得した。IPOでは1.75〜1.8兆ドルの評価額と最大750億ドルの調達を目指しており、実現すれば史上最大規模のIPOとなる可能性がある。株価・ティッカー・公開日程は未確定で、2026年10月頃の上場が有力視されている。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-06</span>
+      </div>
+      <h2 class="card-title">トランプ大統領、AI安全保障大統領令に署名——フロンティアモデルの事前政府レビュー制度を創設</h2>
+      <p class="card-summary">トランプ大統領は6月2日、「先進的人工知能の革新とセキュリティの推進」と題する大統領令に署名した。AI企業に対し、最先端モデルの一般公開前に最大30日間、政府による任意レビューを受けるよう求める内容で、従来の不干渉姿勢から大きく転換した。同令はAIのサイバー能力評価指標の策定、脆弱性情報を共有する「AIサイバーセキュリティ・クリアリングハウス」の設置、政府防衛体制の強化も命じている。義務的なライセンスや事前承認制度は明示的に禁じられており、あくまで任意協力を前提とした枠組みとなっている。</p>
+      <div class="card-footer">
+        <span class="card-source">CNBC</span>
+        <a class="card-link" href="https://www.cnbc.com/2026/06/02/trump-executive-order-ai.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-06-06</span>
+      </div>
+      <h2 class="card-title">OpenAI、Codexに6業務特化プラグインを追加——62アプリ・110スキルをホワイトカラー向けに統合</h2>
+      <p class="card-summary">OpenAIは6月2日、エージェントAIプラットフォームCodexにデータ分析・クリエイティブ制作・営業・プロダクトデザイン・公開株式投資・投資銀行業務の6プラグインを追加した。各プラグインはSnowflake・Figma・Salesforceなど62の業務アプリと110の自動化スキルをすぐに利用できる形で提供し、ノーコードで専門業務を自動化できる。Codexの週間ユーザー500万人のうち約20%がすでに非開発者で、エンジニア以外のビジネスパーソンへの浸透が加速している。並行してCodex Sitesも発表され、分析・計画・アイデアをインタラクティブなWebアプリとして即時共有できる機能も提供開始された。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
