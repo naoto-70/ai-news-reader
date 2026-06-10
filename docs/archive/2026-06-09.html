@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-09</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-09</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="/ai-news-reader/index.html">2026-06-09</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-08.html">2026-06-08</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-07.html">2026-06-07</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-06.html">2026-06-06</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-05.html">2026-06-05</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-04.html">2026-06-04</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-03.html">2026-06-03</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-02.html">2026-06-02</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-09</span>
+      </div>
+      <h2 class="card-title">MicrosoftのオープンソースツールがAI開発者狙いの攻撃に悪用——GitHubリポジトリ70件以上に不正コードを注入</h2>
+      <p class="card-summary">MicrosoftはGitHub上でホストするオープンソースプロジェクト70件以上にパスワード窃取マルウェアが注入されたと確認し、該当リポジトリへのアクセスを一時的に遮断した。被害を受けたプロジェクトの多くはAzure関連ツールや、Claude Code・Gemini CLI・VS Codeなど開発者向けAIコーディングツールと連携するものだった。セキュリティ企業Cloudsmithの分析によると、マルウェアはAIコーディングアプリでツールを開いた際にパスワードや認証情報を窃取する仕組みで、5月のDurable Taskプロジェクト侵害に続く「再侵害」とみられる。Microsoftは「調査の一環として一部リポジトリを一時削除した」とコメントしており、順次復旧作業を進めている。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-06-09</span>
+      </div>
+      <h2 class="card-title">SalesforceがAgentforceにGemini 3.5 Flashをネイティブ統合——6月15日のSummer &apos;26リリースで提供開始</h2>
+      <p class="card-summary">Salesforceは6月15日公開予定の「Summer &apos;26」リリースで、AgentforceプラットフォームにGoogle Gemini 3.5 Flashをネイティブ統合すると発表した。Atlas Reasoning Engineを経由したこの統合により、Slack・Google Workspaceをまたいだマルチエージェントオーケストレーションとリアルタイムデータ活用が可能になる。Gemini 3.5 Flashは同規模モデルの4倍の速度で処理できるエージェント特化モデルで、大量のモデル呼び出しが発生するエンタープライズ用途での採用が進んでいる。SalesforceとGoogle Cloudの提携強化により、AgentforceはCRM・コラボレーションを横断した自律型ビジネスエージェントの基盤として進化する見通しだ。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/318085/20260609/salesforce-puts-google-gemini-35-flash-inside-agentforce-june-15-release.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-06-09</span>
+      </div>
+      <h2 class="card-title">Google Gemini 3.5 Pro、6月GA間近——200万トークンの超大型コンテキストとDeep Think推論を搭載</h2>
+      <p class="card-summary">GoogleはGemini 3.5 Proの一般提供（GA）を2026年6月中に予定しており、200万トークンの超大型コンテキストウィンドウと独自の「Deep Think」推論モードを特徴とする。コンテキスト200万トークンは約600万語相当で、大規模コードベース全体や長大なドキュメントをワーキングメモリに丸ごと保持して処理できる。価格はFlashの約10倍水準（入力$15/100万トークン、出力$60/100万トークン）と予想されており、$250/月のUltraプラン加入者はDeep Think機能への優先アクセスが付与される予定だ。5月のGoogle I/O 2026でCEO Sundar Pichai自らが「もう1ヶ月待ってほしい」と告げた待望モデルがいよいよ登場する。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/317919/20260606/google-gemini-35-pro-nears-june-launch-2-million-token-context-deep-think-reasoning.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-09</span>
+      </div>
+      <h2 class="card-title">日米、AI活用の科学技術協力で5か年・総額10億ドルの共同計画を発表——量子・核融合・バイオが対象</h2>
+      <p class="card-summary">日本政府と米国政府は、人工知能を活用した科学技術開発に向けた5か年計画として両国合計10億ドルを拠出する枠組みを発表した。量子技術・核融合・バイオテクノロジーなど先端科学分野での共同研究深化を目指しており、AIと先端科学の組み合わせで技術革新のペースを加速する狙いだ。日本は2026年に「AI基本計画」を閣議決定するなど国家戦略としてのAI推進を強化しており、この対米連携はその柱の一つとなる。中国との技術覇権争いが激化する中、日米の科学・AI分野での協力体制構築は安全保障面でも重要な意味を持つ。</p>
+      <div class="card-footer">
+        <span class="card-source">The Hill</span>
+        <a class="card-link" href="https://thehill.com/policy/energy-environment/5911027-us-announces-science-and-ai-partnership-with-japan/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-09</span>
+      </div>
+      <h2 class="card-title">AIトークンコストの急騰に企業が悲鳴——キャッシング・モデルルーティングで対策も根本解決は遠く</h2>
+      <p class="card-summary">エージェントAIの普及でトークン消費量が指数関数的に増大し、企業のAI推論コストが当初予算の数倍に達するケースが相次いでいるとTechCrunchが詳報した。特に複数のサブエージェントを並列実行する長時間タスクではトークン消費が膨らみやすく、月間請求額が予測困難になるという課題がある。企業はレスポンスキャッシング・モデルルーティング・プロンプト圧縮などのコスト最適化技術を組み合わせて対応しているが、根本的な解決には至っていない。GitHub Copilotのトークンベース課金移行が招いた反発も同問題の延長線上にあり、AIコスト管理の可視化と最適化は2026年下半期の主要課題となっている。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
