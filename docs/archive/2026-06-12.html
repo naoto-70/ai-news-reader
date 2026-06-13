@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-12</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-12</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-06-12</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-11.html">2026-06-11</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-10.html">2026-06-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-09.html">2026-06-09</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-08.html">2026-06-08</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-07.html">2026-06-07</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-06.html">2026-06-06</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-05.html">2026-06-05</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-06-12</span>
+      </div>
+      <h2 class="card-title">Moonshot AI、1兆パラメータのオープンウェイトコーディングモデル「Kimi K2.7 Code」をHugging Faceで公開</h2>
+      <p class="card-summary">中国のMoonshot AIは6月12日、1兆パラメータのMixture-of-Experts（MoE）コーディングモデル「Kimi K2.7 Code」をHugging Faceおよびオープンソースで公開した。同モデルは32Bのアクティブパラメータと384のエキスパートで構成され、256Kトークンのコンテキストウィンドウを持ち、Modified MITライセンスのもとで提供される。前世代のKimi K2.6と比較して「思考トークン」を約30%削減しながらコーディングベンチマーク性能を向上させており、長期的・エージェント的ソフトウェアエンジニアリングタスクに特化して設計されている。API料金は入力100万トークンあたり$0.95、出力100万トークンあたり$4.00で、Moonshot AIにとって1年未満で5回目のメジャーリリースとなる。</p>
+      <div class="card-footer">
+        <span class="card-source">CryptoBriefing</span>
+        <a class="card-link" href="https://cryptobriefing.com/kimi-k2-7-code-open-source-release/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-11</span>
+      </div>
+      <h2 class="card-title">Anthropic CEO Amodei氏、フロンティアAIへのFAA型義務的安全審査を政府に要求——$3.5億の安全研究投資も表明</h2>
+      <p class="card-summary">AnthropicのCEO Dario Amodei氏は6月10日公開の政策エッセイ「Policy on the AI Exponential」で、フロンティアAIモデルに対してサイバーセキュリティ・生物兵器・AI制御喪失・自動化R&amp;Dの4カテゴリで義務的な第三者安全審査を実施する権限を米国政府が持つべきだと主張した。航空機のFAA認証に相当する仕組みを想定し、基準を満たさないモデルのリリースを当局が阻止・取り消しできる制度の構築を提唱している。Claudeの最新バージョンが実際のサイバーセキュリティリスクを示したことが提言の背景にあるとAmodei氏は説明した。Anthropicはこれと並行して安全研究への$3億5,000万の追加投資も表明した。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/318217/20260611/ai-regulation-push-amodei-demands-power-blocking-unsafe-models-anthropic-pledges-350-million.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-06-10</span>
+      </div>
+      <h2 class="card-title">日本、外科医不足危機に対応するAI手術支援ツール開発を加速——スタートアップDireavaが政府支援のもと85〜90%精度を達成</h2>
+      <p class="card-summary">日本では2043年までに65歳以下の消化器外科医が現在の約1万6,000人から半減すると見込まれるなか、AI技術で外科医の負担軽減を図る取り組みが加速している。東京拠点のスタートアップDireavaは政府支援のもと、臓器・血管の画像を生成AIで解析し、術中の注意点を含む段階的な手術指示書をテキスト生成するシステムを開発中だ。医療専門家による評価試験では同AIが85〜90%の精度を達成したが、この種のAIに対応した安全評価基準が日本にはまだ存在しないため、広範な臨床導入には規制整備が必要とされている。がん患者数が2040年前後にピークを迎えると予測される日本にとって、外科医AI支援の実用化は喫緊の課題となっている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/06/10/japan/science-health/surgeons-ai-tool-development/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-12</span>
+      </div>
+      <h2 class="card-title">「日本のAI問題は技術ではなく信頼」——Japan Timesが指摘するAI普及の本質的課題</h2>
+      <p class="card-summary">The Japan Timesは6月12日付のコラムで、日本におけるAI導入が欧米諸国と比べて遅れている根本的な原因を「信頼の欠如」にあると論じた。技術的な能力よりも、AIが提供する情報や意思決定の信頼性に対する疑問が利用者の間に根強くあり、特に医療・法律・金融など専門性の高い分野での導入を妨げているという。政府が推進する「Sovereign AI」戦略や企業のAI投資は拡大しているものの、利用者との信頼関係構築なしには本格普及に至らないとし、透明性の確保とAIリテラシー教育の強化を求めている。日本固有の慎重な意思決定文化と技術導入速度のギャップを埋めることが、AI社会実装の鍵と位置づけている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/commentary/2026/06/12/japan/japans-real-ai-problem/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-09</span>
+      </div>
+      <h2 class="card-title">Google、AI Plusプランを月額$4.99に値下げしストレージを400GBに倍増——AIサブスク価格競争が米国市場で本格化</h2>
+      <p class="card-summary">Googleは6月8〜9日、月額$7.99だったAI Plusプランを$4.99に値下げすると同時に、ストレージを200GBから400GBに倍増させると発表した。同プランにはGemini 3.1 Pro、Omni Flashビデオ生成、Google Flowクリエイティブスタジオ、NotebookLM AIリサーチアシスタントが含まれ、フリーアカウントの2倍のGemini利用枠も付与される。AppleのWWDC 2026でのAI発表への対抗策とも見られており、OpenAIのIPO申請観測を前にした戦略的な価格設定とTechCrunchは分析した。値下げは次の請求サイクルから適用され、ストレージ増加は数日以内に段階的にロールアウトされる予定だ。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
