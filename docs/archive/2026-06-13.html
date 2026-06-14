@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-13</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-13</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-06-13</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-12.html">2026-06-12</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-11.html">2026-06-11</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-10.html">2026-06-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-09.html">2026-06-09</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-08.html">2026-06-08</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-07.html">2026-06-07</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-06.html">2026-06-06</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-06-09</span>
+      </div>
+      <h2 class="card-title">AnthropicがClaude Fable 5とMythos 5を公開——SWE-bench Pro 80.3%達成、一般向け初のMythos-classモデル</h2>
+      <p class="card-summary">Anthropicは6月9日、同社史上最高性能の一般向けモデル「Claude Fable 5」と、安全制限を解除した研究者向けの「Claude Mythos 5」を同時公開した。Fable 5はSWE-bench Proで80.3%、SWE-bench Verifiedで95%を達成し、Hexの分析ベンチマークで初めて90%超えを記録したモデルとなった。高リスクなサイバーセキュリティ・生物・化学・モデル蒸留関連クエリを自動的にClaude Opus 4.8へリルーティングする独自の安全機構を実装しており、幅広いユーザーへの展開を実現している。APIは入力100万トークンあたり$10、出力100万トークンあたり$50で提供されている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Decoder</span>
+        <a class="card-link" href="https://the-decoder.com/anthropic-releases-claude-fable-5-and-mythos-5-with-major-gains-in-coding-and-science/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-06-10</span>
+      </div>
+      <h2 class="card-title">GoogleのTurboQuantがLLMのKVキャッシュを6倍圧縮——3ビット量子化でH100推論を最大8倍高速化</h2>
+      <p class="card-summary">Google ResearchはICLR 2026で採択されたKVキャッシュ圧縮アルゴリズム「TurboQuant」の詳細を公式ブログで公開した。PolarQuant（ベクトル回転＋Lloyd-Max量子化）とQJL（1ビット残差補正）を組み合わせた2段階手法により、FP16比6倍のメモリ削減を精度損失ゼロで実現する。Qwen2.5-3Bを8,000トークン処理した際のKVキャッシュが289MBから約58MBに縮小し、4ビットモードではH100 GPUのアテンション計算が最大8倍高速化される実績を示した。キャリブレーションデータや追加学習が不要なトレーニングフリーの手法であり、既存のトランスフォーマーアーキテクチャへ即時適用できる点が特徴だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Google Research Blog</span>
+        <a class="card-link" href="https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-06-13</span>
+      </div>
+      <h2 class="card-title">OpenAIの次世代モデル「GPT-5.6 kindle-alpha」がCodexログから流出——150万トークン対応と大幅なビジョン強化が報告</h2>
+      <p class="card-summary">OpenAIの内部モデルチェックポイント「GPT-5.6 kindle-alpha」（コードネーム: iris-alpha）がCodexテストパス経由で開発者チャンネルに流出し、業界の注目を集めている。流出情報によると同モデルは150万トークンのコンテキストウィンドウを備え、SVG出力などのビジョン性能がGeminiを上回るレベルに改善されているという。Polymarketでは6月末までのリリース確率が80〜89%と高く評価されており、推論・コーディング・フロントエンドUI生成での性能向上も多数報告されている。ただし未公式のリークであり、ベンチマーク・料金・安全方針の最終仕様はリリース時まで変更される可能性がある。</p>
+      <div class="card-footer">
+        <span class="card-source">WaveSpeed Blog</span>
+        <a class="card-link" href="https://wavespeed.ai/blog/posts/gpt-5-6-canary-leak-what-we-know/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-06-02</span>
+      </div>
+      <h2 class="card-title">MicrosoftがBuild 2026で7つのMAIモデルを発表——推論・コーディング・画像生成・音声を自社開発AIシリーズで網羅</h2>
+      <p class="card-summary">Microsoftは6月2日のBuild 2026開発者会議で、推論・コーディング・画像生成・音声処理をカバーする7種のMAIモデルシリーズを発表した。旗艦モデル「MAI-Thinking-1」はOpenAIのデータを使用せず商用ライセンスデータのみで学習させたスパースMoEモデルで、35Bのアクティブパラメータと256Kトークンコンテキストを持ち、AIME 2025で97.0%、AIME 2026で94.5%を達成した。他の6モデルはMAI-Code-1-Flash（コーディング）、MAI-Image-2.5シリーズ（画像生成）、MAI Transcribe-1.5（音声認識）、MAI-Voice-2シリーズ（音声生成）で構成され、GitHub CopilotやVisual Studio Codeとの統合も予定されている。全モデルはMicrosoft Foundryで段階的に提供される見込みだ。</p>
+      <div class="card-footer">
+        <span class="card-source">Microsoft AI</span>
+        <a class="card-link" href="https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-13</span>
+      </div>
+      <h2 class="card-title">日本政府が初の「AI基本計画」を策定——Sovereign AI戦略と国内人材育成を柱に産業競争力強化へ</h2>
+      <p class="card-summary">日本政府は国内のAI開発・利用の指針となる初の「AI基本計画」を策定し、Sovereign AI（主権AI）の確保と国内エンジニア育成を2本柱として産業競争力の強化を目指す方針を打ち出した。センシティブな政府・企業データを国内に保管しつつMicrosoftやSoftBankなどの国際パートナーシップを活用するハイブリッドアプローチを採用し、医療・金融・製造を重点産業としてAIシステムの国産化を優先する。2030年までにエンジニア100万人以上のリスキリングと、国家安全保障・経済成長の両面でのAI活用を明示した点が特徴だ。欧米主要国に比べてAI導入が遅れているとされる日本が、政府主導で追い上げを図る戦略的な転換点として注目されている。</p>
+      <div class="card-footer">
+        <span class="card-source">CDO Magazine</span>
+        <a class="card-link" href="https://www.cdomagazine.tech/aiml/japan-adopts-first-national-basic-plan-for-ai-development-and-use" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
