@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-14</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-14</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-06-14</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-13.html">2026-06-13</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-12.html">2026-06-12</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-11.html">2026-06-11</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-10.html">2026-06-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-09.html">2026-06-09</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-08.html">2026-06-08</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-07.html">2026-06-07</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-06-12</span>
+      </div>
+      <h2 class="card-title">MoonshotのKimi K2.7 Codeが公開——推論トークン30%削減・1兆パラメータの長時間コーディング特化モデル</h2>
+      <p class="card-summary">中国のAIスタートアップMoonshot AIは6月12日、1兆パラメータのMixture-of-ExpertsモデルKimi K2.7 Codeをオープンソースで公開した。32Bのアクティブパラメータを持ち、Hugging FaceにModified MITライセンスで公開されており商用利用も可能だ。前バージョン（K2.6）比で推論トークン数を約30%削減しながら、Kimi Code Bench v2で+21.8%、MLS Bench Liteで+31.5%の性能向上を達成している。256Kトークンのコンテキストウィンドウを備え、多ファイルのリファクタリングや長時間のデバッグといったエンドツーエンドのソフトウェアエンジニアリングタスクを主な用途としており、APIは入力$0.95・出力$4.00/100万トークンで提供される。</p>
+      <div class="card-footer">
+        <span class="card-source">VentureBeat</span>
+        <a class="card-link" href="https://venturebeat.com/technology/kimi-k2-7-code-cuts-thinking-tokens-30-practitioners-say-benchmarks-dont-check-out" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-12</span>
+      </div>
+      <h2 class="card-title">「日本のAI問題は技術ではなく信頼の欠如」——ジャパン・タイムズが指摘するAI普及の本質的障壁</h2>
+      <p class="card-summary">ジャパン・タイムズは6月12日付のコメンタリーで、日本におけるAI最大の課題は技術力ではなく社会的信頼の欠如であると論じた。記事は5月末に報じられた事件——10代の少女が家庭内暴力についてAIチャットボットに相談し、適切な助言を受けて支援機関への連絡につながった事例——を出発点に、AIへの過度な依存と人間関係の希薄化が招くリスクを考察する。日本では政府がAI基本計画を策定して技術活用を推進する一方、プライバシーや精神的安全への不安が依然根強い。著者は、技術的ソリューションよりも人々が安心してAIを活用できる社会的・制度的基盤の整備こそが急務だと訴えている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/commentary/2026/06/12/japan/japans-real-ai-problem/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-13</span>
+      </div>
+      <h2 class="card-title">Ramp AIインデックス2026年6月版——AnthropicのClaudeが米国企業の41%に採用されOpenAIを初めて上回る</h2>
+      <p class="card-summary">法人決済プラットフォームのRampは2026年6月のAIインデックスを公開し、AnthropicのClaudeが米国企業の41%で採用される最多利用AIモデルとなり、OpenAIを初めて抜いてトップに立ったと発表した。2023年6月時点でわずか0.03%だったAnthropicの法人採用率は2年間で41%まで急成長しており、Claudeを初めてのAIツールとして導入する「AI未経験企業」の割合も増加している。このデータは消費者アンケートではなく、5万社以上の実際のクレジットカード・請求データに基づいており高い信頼性を持つ。OpenAIの採用率は横ばいで推移しており、Anthropicの急成長との対比が鮮明になっている。</p>
+      <div class="card-footer">
+        <span class="card-source">Ramp</span>
+        <a class="card-link" href="https://ramp.com/leading-indicators/ai-index-june-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-06-10</span>
+      </div>
+      <h2 class="card-title">最先端AIがストループ心理テストで大失敗——複雑化で正答率が90%超から「ほぼゼロ」に急落</h2>
+      <p class="card-summary">研究者らが最先端のAIモデルを対象に心理学の定番テスト「ストループ課題」を実施したところ、注意制御に重大な欠陥があることが判明した。短いリストでは90%以上の正答率を示したモデルが、リストが長くなるにつれてほぼ完全な失敗状態に陥った。ストループ課題とは「赤」という文字が青色で表示された際にインクの色を答えるような相反する情報を処理するテストで、AIはリストが長くなると「文字を読む」というデフォルト動作に戻ってしまう傾向が確認された。この結果はトランスフォーマーのアテンションメカニズムの根本的な制約を示しており、長期タスクで人間のような注意制御を維持することの難しさを浮き彫りにしている。</p>
+      <div class="card-footer">
+        <span class="card-source">heise online</span>
+        <a class="card-link" href="https://www.heise.de/en/news/Stroop-effect-AI-models-fail-classic-attention-test-11317231.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-06-13</span>
+      </div>
+      <h2 class="card-title">VentureBeat分析：Anthropicのエンタープライズ首位を脅かす「3つのリスク」——コスト高騰・競合激化・課金モデルの限界</h2>
+      <p class="card-summary">VentureBeatは6月13日、AnthropicがRampデータでOpenAIを法人AI採用率で上回ったことを受け、そのリードを侵食しうる3つのリスクを指摘する分析記事を掲載した。第一に推論コストの高騰で、Claude利用が増えるほど収益モデルへの圧力が増す点が挙げられる。第二はOpenAI・Google・Microsoftによる反撃で、MAI ThinkingやGemini 3.5 Proの投入が競争を一段と激化させる見通しだ。第三はトークン課金モデルの持続性で、AI活用が深化するにつれ企業の支払い額が急増し、より安価な代替モデルへの移行動機が生まれるリスクがある。同記事は、現在の優位性が技術的ブレークスルーというより積極的な価格戦略と安全性訴求によるものである可能性を示唆している。</p>
+      <div class="card-footer">
+        <span class="card-source">VentureBeat</span>
+        <a class="card-link" href="https://venturebeat.com/ai/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
