@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-16</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-16</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-06-16</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-15.html">2026-06-15</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-14.html">2026-06-14</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-13.html">2026-06-13</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-12.html">2026-06-12</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-11.html">2026-06-11</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-10.html">2026-06-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-09.html">2026-06-09</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-15</span>
+      </div>
+      <h2 class="card-title">Fable 5 &amp; Mythos 5 停止3日目——ジェイルブレーク詳細が公開、Anthropicと政府交渉は継続中</h2>
+      <p class="card-summary">米商務省の輸出規制命令を受けて6月12日から停止しているAnthropicの「Fable 5」と「Mythos 5」は、6月15日時点で依然として全世界でオフライン状態が続いている。同日、AnthropicとGoogleのトランプ政権当局者との協議が行われたが、モデルのリスク評価をめぐる見解の相違から合意には至らなかった。停止の引き金となったジェイルブレークの技術詳細が公開され、約12万文字のシステムプロンプトがGitHubに掲載されたことで、企業のAIセキュリティ見直しが急務となっている。この事態を機に、クラウド依存から脱却してAIインフラを自社所有する「ハードウェア主権」の必要性を訴える声がAI業界全体で急速に高まっている。</p>
+      <div class="card-footer">
+        <span class="card-source">Build Fast with AI</span>
+        <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-15-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-06-15</span>
+      </div>
+      <h2 class="card-title">Kimi K2.7-Code に HighSpeed Mode 追加——独立ベンチマーク提出は見送り、最大6倍高速化</h2>
+      <p class="card-summary">Moonshot AIは6月15日、6月12日にリリースしたばかりの「Kimi K2.7-Code」に新たな「HighSpeed Mode」を追加した。このモードにより推論速度が通常版の最大6倍となり、中程度の長さのコーディングタスクで毎秒約180トークン、短いコンテキストでは毎秒260トークンに達する。1兆パラメータのMoEアーキテクチャ（アクティブ32B・384エキスパート）と256Kトークンのコンテキストウィンドウを維持しながらの高速化は注目に値する。一方、同社は独立機関によるベンチマーク評価の提出を見送っており、公開性能指標は自社開発の「Kimi Code Bench v2」のみに基づいている点が業界から指摘されている。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/318414/20260615/kimi-k27-code-adds-highspeed-mode-skips-independent-benchmark-submission.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-06-15</span>
+      </div>
+      <h2 class="card-title">Qwen3 Coder Next と MiniMax M2.7 Highspeed が同日リリース——中国勢オープンウェイト攻勢が加速</h2>
+      <p class="card-summary">6月15日、中国の大手AI企業2社から異なるオープンウェイトモデルが同日リリースされた。Alibabaは長時間エージェント作業に特化したコーディングモデル「Qwen3 Coder Next」を公開し、前バージョンからの大幅な性能向上を訴求している。MiniMaxは230Bパラメータ（アクティブ10B）のMoEモデル「M2.7」の高速推論バリアント「M2.7 Highspeed」をリリースし、SWE-Proベンチマーク56.22%の精度を維持しながらレイテンシを大幅に改善した。両モデルともHugging Faceで一般公開されており、オープンウェイトのコーディングAI競争がさらに激化している。</p>
+      <div class="card-footer">
+        <span class="card-source">LLM Stats</span>
+        <a class="card-link" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-12</span>
+      </div>
+      <h2 class="card-title">日本のAI問題の本質は「信頼の欠如」——技術ではなくガバナンスが普及の壁</h2>
+      <p class="card-summary">The Japan Timesは6月12日、日本の本質的なAI課題は技術力の不足ではなく「信頼の欠如」にあるとする論考を掲載した。政府や企業がAI導入を加速する一方、一般市民はAIが下す判断の透明性や安全性に対して依然として大きな疑念を持っており、この乖離が日本のAI普及を阻む最大の要因となっている。医療・雇用・金融など生活に直結する意思決定にAIが使われる場面が増える中、ルール整備だけでなく市民との対話を重視した信頼構築プロセスが急務と専門家は指摘する。日本政府が国家AI基本計画で「信頼できるAI」の創出を掲げながらも、現場レベルのガバナンスが追いついていない実態が浮き彫りになっている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/commentary/2026/06/12/japan/japans-real-ai-problem/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-06-12</span>
+      </div>
+      <h2 class="card-title">Moonshot AI、Kimi K2.7-Code をオープンウェイト公開——1兆パラメータMoEが Hugging Face に登場</h2>
+      <p class="card-summary">Moonshot AIは6月12日、コーディング特化の大規模言語モデル「Kimi K2.7-Code」をHugging Faceでオープンウェイト公開した。総パラメータ数1兆のMoEアーキテクチャ（アクティブ32B・384エキスパート）を採用し、前バージョン「K2.6」比でKimi Code Bench v2スコアが21.8%向上したと報告している。コンテキストウィンドウは256Kトークンで長時間エージェントによるソフトウェアエンジニアリングタスクを主な用途とし、改定MITライセンスのもとで商用利用も可能だ。Kimi APIでは入力100万トークンあたり0.95ドル・出力4.00ドルの料金設定となっており、高コストな商用モデルに対するコスト効率の高い代替として注目を集めている。</p>
+      <div class="card-footer">
+        <span class="card-source">MarkTechPost</span>
+        <a class="card-link" href="https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
