@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-20</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-20</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-06-20</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-19.html">2026-06-19</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-18.html">2026-06-18</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-17.html">2026-06-17</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-16.html">2026-06-16</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-15.html">2026-06-15</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-14.html">2026-06-14</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-13.html">2026-06-13</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-20</span>
+      </div>
+      <h2 class="card-title">米国の輸出規制でAnthropicのFable 5/Mythos 5が海外ユーザー向け停止——ENISA緊急協議、50名超の幹部が制限撤廃を要求</h2>
+      <p class="card-summary">トランプ政権は国家安全保障上の懸念を理由に、AnthropicのFable 5とMythos 5モデルへの外国人アクセスを禁じる輸出規制指令を発令し、Anthropicは全顧客向けのアクセスを即時停止した。欧州連合サイバーセキュリティ機関（ENISA）は6月19日にサンフランシスコでAnthropicと緊急会合を行い、突然ロックアウトされた欧州のサイバーセキュリティチームへの影響への対応を協議した。NVIDIAやAdobeを含む50名以上のサイバーセキュリティ幹部が制限撤廃を求める公開書簡を政府に提出し、防衛用途の高度AIへのアクセス制限が脆弱性研究を損なうリスクを主張している。前例のない政府によるAIモデル輸出規制は米欧の技術同盟に亀裂をもたらし、国際的なAIガバナンス議論を新たな局面に押し上げた。</p>
+      <div class="card-footer">
+        <span class="card-source">Al Jazeera</span>
+        <a class="card-link" href="https://www.aljazeera.com/news/2026/6/19/us-export-ban-on-anthropics-ai-models-further-strains-alliances" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-06-20</span>
+      </div>
+      <h2 class="card-title">世界初のLLMエージェントによる実環境サイバー攻撃をSysdigが記録——AWSデータベースを4つのピボットで1時間以内に自律侵害</h2>
+      <p class="card-summary">Sysdigの脅威調査チームは、LLMエージェントが人間の介入なく後期侵害段階を自律実行した世界初の実環境サイバー攻撃を記録・公開した。攻撃者はmarimo上の脆弱性CVE-2026-39987を悪用してリモートコード実行を確立した後、LLMエージェントがAWS Secrets Managerから認証情報を収集し、4つのピボットで内部PostgreSQLデータベースに到達して2分以内に全データを流出させた。11のCloudflare Workers IPアドレスを介して22秒間で12件のAWS APIコールを分散発行する手法はリアルタイム生成であり、従来のソース別相関分析による防御機構を完全に回避している。LLMエージェントによる攻撃チェーン全体の自律実行を初めて実証した本事例は、AI対AIのサイバーセキュリティという新たなパラダイムへの対応を業界全体に迫るものとなった。</p>
+      <div class="card-footer">
+        <span class="card-source">The Agent Report / Sysdig</span>
+        <a class="card-link" href="https://the-agent-report.com/2026/06/sysdig-first-llm-agent-cyberattack-june-2026/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-20</span>
+      </div>
+      <h2 class="card-title">Pew Research調査：AIが社会に利益をもたらすと期待する米国人はわずか16%——3人に2人が「発展速度は速すぎる」と回答</h2>
+      <p class="card-summary">Pew Research Centerが2026年6月に発表した大規模世論調査によると、AIが今後20年で社会全体に利益をもたらすと回答した米国人はわずか16%にとどまることが明らかになった。約3分の2の回答者がAIの進化速度を「速すぎる」と感じており、政府によるAI規制の実効性を信頼する回答者は33%のみで、67%が懐疑的な立場を示した。フロンティアモデルの公開と急速なAI応用展開が続くなかで、技術的恩恵よりもリスクや不確実性を重視する国民感情の広がりが際立つ結果となっている。AI業界・政府機関・研究者には透明性の向上と安全基準の整備を通じて公衆の信頼を回復することが急務として浮かび上がっている。</p>
+      <div class="card-footer">
+        <span class="card-source">MarketingProfs / Pew Research</span>
+        <a class="card-link" href="https://www.marketingprofs.com/opinions/2026/55065/ai-update-june-19-2026-ai-news-and-views-from-the-past-week" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-20</span>
+      </div>
+      <h2 class="card-title">OpenAIがグローバルパートナーネットワークを正式発表——1億5000万ドル投資でAccenture・BCG・McKinseyら参画、年内30万人認定へ</h2>
+      <p class="card-summary">OpenAIは2026年6月14日、1億5000万ドルを投資したグローバルパートナーネットワークを正式発表し、Accenture・Bain・BCG・McKinsey・PwCなど主要コンサルティング・システムインテグレーター企業が創設パートナーとして参画した。Select・Advanced・Eliteの3段階の認定ティア制を設け、2026年末までにネットワーク全体で30万人のコンサルタントを認定することを目標としている。新設の「Forward Deployed Experts」プログラムでは認定パートナー企業のスタッフとOpenAI社内エンジニアリングチームが協働して企業クライアントに対応する体制を7月から稼働させる。モデル開発競争から企業への大規模AI実装競争へとフォーカスが移行するなか、OpenAIが構築する大規模パートナーエコシステムは業界全体のAI普及加速の核となると期待されている。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes / OpenAI</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/318436/20260615/openai-launches-partner-network-150m-bet-that-implementation-beats-model-power.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-06-20</span>
+      </div>
+      <h2 class="card-title">NVIDIAが5500億パラメータのMoEモデル「Nemotron 3 Ultra」を公開——ハイブリッドMamba-Transformer構造で100万トークンコンテキストに対応</h2>
+      <p class="card-summary">NVIDIAは2026年6月、総パラメータ5500億（推論時アクティブ550億）のMixture-of-Experts（MoE）モデル「Nemotron 3 Ultra」をオープンウェイトで公開した。同モデルはハイブリッドMamba-Transformerアーキテクチャを採用し、最大100万トークンのコンテキストウィンドウをサポートする。コーディング・数学・マルチステップ推論において高いベンチマーク性能を示しており、NVIDIAは「オープンモデルとして過去最高の推論性能」と紹介している。総パラメータ数が5500億ながら推論時に稼働するのは550億パラメータのみのMoE構造により計算効率が大幅に改善されており、GPUハードウェアに加えてAIモデル開発でも存在感を高めるNVIDIAの戦略転換として業界が注目している。</p>
+      <div class="card-footer">
+        <span class="card-source">Medium / NLPlanet</span>
+        <a class="card-link" href="https://medium.com/nlplanet/nvidia-launches-550b-moe-llm-weekly-ai-newsletter-june-8th-2026-d793375a6f60" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
