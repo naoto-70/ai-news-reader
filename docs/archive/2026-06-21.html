@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-21</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-21</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-06-21</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-20.html">2026-06-20</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-19.html">2026-06-19</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-18.html">2026-06-18</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-17.html">2026-06-17</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-16.html">2026-06-16</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-15.html">2026-06-15</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-14.html">2026-06-14</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-21</span>
+      </div>
+      <h2 class="card-title">日本政府、AI基本計画の改訂草案を公表 — 国際協力強化とサイバーリスク対策を明記</h2>
+      <p class="card-summary">日本政府は6月20日、人工知能基本計画の改訂草案を発表し、AIリスクへの国際的な連携強化を政策の柱に据えた。改訂案はAnthropicのClaude Mythosのような高度AIモデルの台頭に伴うサイバー攻撃リスクの増大を明示し、外国政府機関やAI開発企業との情報共有・協議体制の整備を盛り込んでいる。各国が独自のAI規制を競い合う中、日本は多国間協調によってリスクを低減する方針を鮮明にした。今後は国際的なAIガバナンスフォーラムを通じて具体的なルール形成につなげる取り組みが加速するとみられる。</p>
+      <div class="card-footer">
+        <span class="card-source">nippon.com</span>
+        <a class="card-link" href="https://www.nippon.com/en/news/yjj2026062000092/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-21</span>
+      </div>
+      <h2 class="card-title">Anthropic、評価額9,650億ドルで民間AI企業首位に — OpenAIを初めて上回る65億ドル調達完了</h2>
+      <p class="card-summary">Anthropicはポストマネー評価額9,650億ドル（約143兆円）となる資金調達を完了し、OpenAI（約8,520億ドル）を初めて上回り民間AI企業として世界最高評価額を達成した。今回の調達額は約65億ドルに上り、フロンティアモデルの訓練・安全性研究・推論インフラの拡充に充てられる見込みだ。一方、コーディングエージェント「Devin」を開発するCognitionも10億ドルを調達し、評価額260億ドルでAIエージェント市場の急成長を示した。AnthropicがOpenAIを評価額で逆転したことは、フロンティアAI開発の勢力図が塗り替わりつつあることを端的に示している。</p>
+      <div class="card-footer">
+        <span class="card-source">BuildFastWithAI</span>
+        <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-21-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-06-21</span>
+      </div>
+      <h2 class="card-title">世界初「LLMエージェントによる自律型サイバー攻撃」をSysdigが記録 — 1時間以内にAWSデータを完全漏洩</h2>
+      <p class="card-summary">セキュリティ企業Sysdigは、LLMエージェントが人間の介入なく後期侵害段階を自律実行した世界初の実環境サイバー攻撃を記録・公開した。攻撃者は初期侵入後にLLMエージェントを起動し、AWS Secrets Managerから認証情報を取得したのち内部PostgreSQLデータベースに到達するまでの全ステップを1時間以内に自律完了させた。11のCloudflare Workers IPアドレスを経由した分散リクエストにより、従来のシグネチャベース検知を完全に回避している。LLMが「攻撃の主体」として機能した初の事例として、AI対AIのサイバー防衛という新たなパラダイムへの対応が業界全体に求められている。</p>
+      <div class="card-footer">
+        <span class="card-source">BuildFastWithAI</span>
+        <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-20-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-06-21</span>
+      </div>
+      <h2 class="card-title">NVIDIAとServiceNow、エンタープライズ向け自律AIエージェントで協業発表</h2>
+      <p class="card-summary">NVIDIAとServiceNowは、企業向け自律AIエージェントの共同開発・展開に向けた協業を発表した。NVIDIAのNIM（NVIDIA Inference Microservices）とServiceNowの業務プラットフォームを統合し、ITサービス管理・HR・カスタマーサポートなど幅広い業務プロセスをエージェントが自律処理する仕組みを構築する。Deloitteの2026年第1四半期調査では生成AIを導入した企業の68%がアジェンティックAIパイロットを実施中と報告されており、エンタープライズAIの主戦場は生成から自律実行へと急速に移行している。ガートナーは2026年末までにエンタープライズアプリの40%がタスク特化型AIエージェントを組み込むと予測しており、今回の協業はその代表的な実装モデルと位置づけられる。</p>
+      <div class="card-footer">
+        <span class="card-source">NVIDIA Blog</span>
+        <a class="card-link" href="https://blogs.nvidia.com/blog/servicenow-autonomous-ai-agents-enterprises/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-21</span>
+      </div>
+      <h2 class="card-title">GitHub Copilot、トークン消費量課金制に移行 — 月29ドルが750ドル相当に膨れ上がるケースも</h2>
+      <p class="card-summary">GitHubは開発者向けコーディング支援ツール「GitHub Copilot」の課金モデルをシートベースからトークン消費量ベースに移行し、ヘビーユーザーを中心に大幅なコスト増大への批判が噴出している。一部ユーザーは従来月29ドルだった費用が新モデル下では約750ドル相当になりうると報告しており、SNS上では「ジョークかと思った」「実質25倍の値上げだ」といった声が相次いだ。GitHubはトークン効率の高い利用スタイルへの移行を促す意図があるとしているが、大規模コードベースや複数AI機能を同時活用するユーザーほど影響が大きい構造だ。AIコーディングツール市場の競争激化の中、このビジネスモデル刷新は他ツールへのスイッチングを加速させる可能性があり、業界全体の料金体系議論を促しそうだ。</p>
+      <div class="card-footer">
+        <span class="card-source">unrot.co</span>
+        <a class="card-link" href="https://unrot.co/blogs/ai-news-today-june-20-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
