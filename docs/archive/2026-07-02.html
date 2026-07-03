@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-06-26</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-06-26</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-06-26</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-25.html">2026-06-25</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-24.html">2026-06-24</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-23.html">2026-06-23</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-22.html">2026-06-22</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-21.html">2026-06-21</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-20.html">2026-06-20</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-19.html">2026-06-19</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-24</span>
+      </div>
+      <h2 class="card-title">OpenAI、初の独自AIチップ「Jalapeño」をBroadcomと共同発表——わずか9ヶ月で設計完了し2026年末に初期展開へ</h2>
+      <p class="card-summary">OpenAIとBroadcomは6月24日、OpenAI初の独自AIチップ「Jalapeño」を共同発表した。LLMの推論処理に特化して設計されたこのチップは、初回設計から製造テープアウトまでわずか9ヶ月という半導体業界最速とされる開発サイクルを達成している。OpenAI自身のモデルが設計・最適化の一部を高速化するために活用されており、ソフトウェアとハードウェアの共同開発という新しいアプローチを体現した事例となっている。Microsoftなどパートナーとともにギガワットスケールのデータセンターへの展開を2026年末に開始し、2027〜2028年にかけて本格量産段階へ移行するロードマップが示された。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-06-24</span>
+      </div>
+      <h2 class="card-title">AnthropicがAlibabaによるClaude「蒸留攻撃」2,880万回を米上院に告発——史上最大規模のモデル模倣キャンペーン</h2>
+      <p class="card-summary">Anthropicは6月10日付けで米上院銀行委員会に書簡を送り、AlibabaのQwen AIラボに関連するオペレーターが約2万5,000件の不正アカウントを使い、4月22日〜6月5日の間にClaudeへ2,880万回もの不正アクセスを行ったと告発した。この「蒸留攻撃」とは、AIモデルへの大量クエリから応答ペアを収集し、別モデルが類似能力を模倣できるよう学習させる手法を指す。攻撃はソフトウェアエンジニアリングとエージェント推論という高付加価値分野を集中的に標的とし、Anthropic社が過去に確認した中で最大規模の模倣キャンペーンになったという。Alibabaは発表時点で公式コメントを出しておらず、米議会は立法的な対応を検討していると報じられている。</p>
+      <div class="card-footer">
+        <span class="card-source">CNBC</span>
+        <a class="card-link" href="https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-06-26</span>
+      </div>
+      <h2 class="card-title">Google DeepMindから6日間で上級AI研究者4名が流出——Alphabetの時価総額が約$2,700億消失</h2>
+      <p class="card-summary">6月20日から26日の約1週間で、Google DeepMindの主要研究者4名が相次いでライバル企業へ移籍した。ノーベル化学賞受賞者のJohn Jumper、GeminiのJonas Adler・Alexander Pritzelの3名はAnthropicへ、Transformerの共著者Noam ShazeerはOpenAIへと転じた。この人材流出が報じられるなかAlphabet株が急落し、時価総額から2,700億ドル（約40兆円）以上が消失するという異例の株価下落が生じた。競争の激化するAI業界でIPO前の未公開株式（エクイティ）を目当てとしたスタートアップへの移籍が続いており、既存大手とAI専業スタートアップの人材争奪戦が一段と熾烈化している。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-06-26</span>
+      </div>
+      <h2 class="card-title">GoogleがGemini 3.5 Proを7月に延期——I/O 2026での「来月リリース」予告から2ヶ月ずれ込む</h2>
+      <p class="card-summary">GoogleはI/O 2026でSundar Pichai CEOが「来月リリース」と公表していたGemini 3.5 Proを7月以降に延期すると報じられた。公式理由として初期テスターからのフィードバックや実世界ユースケースへの対応強化が挙げられているが、同週に主要研究者4名が競合他社へ離脱したことも影響しているとみられる。現在Gemini 3.5 Proは内部テストおよび限定的なエンタープライズプレビューにとどまっており、一般公開時期は未確定だ。兄弟モデルのGemini 3.5 Flashはすでに一般提供中であり、両モデルの公開タイミングに大きなギャップが生じている。</p>
+      <div class="card-footer">
+        <span class="card-source">Crypto Briefing</span>
+        <a class="card-link" href="https://cryptobriefing.com/google-delays-gemini-35-pro-launch-to-july-2026/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-06-26</span>
+      </div>
+      <h2 class="card-title">AnthropicがQ2 2026に初の黒字転換を達成見込み——売上高$109億・営業利益$5.59億、目標を2年前倒し</h2>
+      <p class="card-summary">Anthropicは2026年第2四半期（4〜6月）に売上高$109億（前四半期比130%増）、営業利益$5.59億という史上初の黒字転換を達成する見通しとなった。当初は2028年以降の黒字化を投資家に示していたが、Claude CodeがAIコーディング市場の約40%シェアを獲得したことで業績が大幅に上振れた。ただし同社は今後の四半期での継続的な黒字化は見込めないと説明しており、計算資源プロバイダーとの割引契約終了後には費用が増加する見込みだ。年換算売上高は$470億規模に達しており、IPOを視野に入れた財務基盤の整備が着実に進んでいる。</p>
+      <div class="card-footer">
+        <span class="card-source">AI Weekly</span>
+        <a class="card-link" href="https://aiweekly.co/alerts/anthropic-projects-first-operating-profit-in-q2-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
