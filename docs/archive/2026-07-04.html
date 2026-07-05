@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-04</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-04</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-04</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-03.html">2026-07-03</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-02.html">2026-07-02</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-25.html">2026-06-25</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-24.html">2026-06-24</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-23.html">2026-06-23</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-22.html">2026-06-22</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-21.html">2026-06-21</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-07-04</span>
+      </div>
+      <h2 class="card-title">中国・美団が1.6兆パラメータ「LongCat-2.0」をオープンソース公開——国産チップのみで訓練、SWE-Bench ProでGPT-5.5を超える59.5点</h2>
+      <p class="card-summary">中国の大手フードデリバリー企業・美団（Meituan）が、総パラメータ数1.6兆の大規模言語モデル「LongCat-2.0」をGitHubとHugging FaceでMITライセンスにて公開した。同モデルはMoE（Mixture-of-Experts）アーキテクチャを採用し、1トークンあたり330億〜560億パラメータを動的に活性化させる設計で、1Mトークンのコンテキストウィンドウを備える。5万基以上の中国製ASICクラスタのみで学習を完了しており、Nvidiaへの依存なしにフロンティア級モデルを構築できることを実証した点が業界の注目を集めている。コーディングベンチマーク「SWE-Bench Pro」ではGPT-5.5の58.6点を上回る59.5点を記録し、「Owl Alpha」という匿名モデルとして2か月間OpenRouterの世界ランキングを首位独走していたことも明らかになった。</p>
+      <div class="card-footer">
+        <span class="card-source">VentureBeat</span>
+        <a class="card-link" href="https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-04</span>
+      </div>
+      <h2 class="card-title">国連・ITU、「AI for Good グローバル委員会」を設立——ベニオフ＆カガメ共同委員長、フアン・ジャシー・スミスら44名が結集</h2>
+      <p class="card-summary">国連（UN）と国際電気通信連合（ITU）は7月1日、「AI for Goodグローバル委員会」を正式に発足させ、SalesforceのCEOマーク・ベニオフ氏とルワンダのポール・カガメ大統領が共同委員長に就任した。NVIDIA創業者ジェンスン・フアン氏、Amazon CEOアンディ・ジャシー氏、MicrosoftプレジデントのブラッドSmith氏、Anthropic共同創業者のジャック・クラーク氏を含む計44名の幹部・国家元首が委員として名を連ねている。初回会合は7月8日にジュネーブで開催予定で、AIインフラ強化・医療や教育への応用加速・信頼性確保の3テーマに集中して議論する。フルの外交的合意形成の手続きを省いた「機動型ビジネス幹部チーム」として設計されており、勧告公表やワーキンググループ設置を迅速に進める方針だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Axios</span>
+        <a class="card-link" href="https://www.axios.com/2026/07/01/un-ai-commission-ceos-world-leaders" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-07-04</span>
+      </div>
+      <h2 class="card-title">Anthropic、Claude Enterpriseに詳細分析ダッシュボードと支出管理機能を追加——グループ別コスト可視化・モデル権限設定・超過アラートを実装</h2>
+      <p class="card-summary">Anthropicは7月3日、Claude Enterprise向けに管理者コンソールの大幅アップデートを発表し、グループ別・ユーザー別のコストと利用状況を詳細に可視化する分析ダッシュボードを追加した。新ダッシュボードでは作成されたアーティファクト、編集ファイル数、使用スキル・コネクター数といったアウトプットが費用と並べて表示され、既存のSCIMグループ構成に沿ったフィルタリングも可能になった。あわせて、グループ単位でのモデルデフォルト設定と支出上限の設定、超過アラートのしきい値設定が実装されており、Analytics APIを通じて財務・ITシステムへのデータ連携も可能となっている。急拡大するエンタープライズ向けエージェント自動化の利用を組織全体で統制・管理したい企業のニーズに応える機能強化となっている。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-07-04</span>
+      </div>
+      <h2 class="card-title">OpenAI、GPT-5.6 SolをCerebrasで稼働——最大750トークン/秒の超高速推論、Sol・Terra・Luna3モデル体制で近く一般提供へ</h2>
+      <p class="card-summary">OpenAIは7月より、旗艦モデル「GPT-5.6 Sol」をCerebrasのウェーハスケールハードウェアで稼働させ、最大750トークン/秒という業界最速水準の推論速度を限定パートナーに提供し始めた。GPT-5.6シリーズはSol（入力$5/M・出力$30/M）、Terra（$2.5/$15）、Luna（$1/$6）の3モデル構成で、現在は米政府が承認した約20組織のみが利用できる限定プレビュー段階だ。SolはTerminal-Bench 2.1（コマンドラインワークフロー計画・反復・ツール連携テスト）で最高スコアを記録し、脆弱性調査・エクスプロイト開発を含む長期サイバーセキュリティタスクでも最高水準の性能を示している。一般公開は「数週間後」を予定しており、Cerebras上での高速推論はフロンティアモデルのコストと応答速度の課題を大幅に緩和すると期待される。</p>
+      <div class="card-footer">
+        <span class="card-source">VentureBeat</span>
+        <a class="card-link" href="https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-04</span>
+      </div>
+      <h2 class="card-title">国連初のAIガバナンス国際対話、7月6〜7日にジュネーブで開幕——加盟国と民間が集う史上最大規模のAI規制議論</h2>
+      <p class="card-summary">国連総会決議とグローバルデジタル・コンパクトに基づき設立された「AIガバナンスに関するグローバル対話」の第1回会合が7月6〜7日、スイス・ジュネーブのパレクスポで開幕する。政府・国際機関・学術界・市民社会・民間セクターが一堂に会し、AI機会と社会的影響・格差是正・安全で信頼できるAI・人権の尊重という4テーマで国際協力の枠組みを議論する初の国連公式プラットフォームとなる。全加盟国と関係ステークホルダーが参加できる設計で、技術先進国だけでなくグローバルサウスを含む全加盟国の優先事項を反映したガバナンス構築を目指している。第2回会合は2027年5月にニューヨークで開催予定で、今回のジュネーブ会合は史上最大規模のAIガバナンス国際対話として注目されている。</p>
+      <div class="card-footer">
+        <span class="card-source">UNESCO</span>
+        <a class="card-link" href="https://www.unesco.org/en/articles/global-dialogue-ai-governance-geneva-6-7-july" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
