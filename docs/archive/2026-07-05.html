@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-05</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-05</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-05</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-04.html">2026-07-04</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-03.html">2026-07-03</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-02.html">2026-07-02</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-25.html">2026-06-25</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-24.html">2026-06-24</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-23.html">2026-06-23</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-22.html">2026-06-22</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-05</span>
+      </div>
+      <h2 class="card-title">Anthropic、「Claude Sonnet 5」を正式公開——Opus 4.8に迫る性能を低コストで提供、エージェント自動化の新基準に</h2>
+      <p class="card-summary">Anthropicは6月30日、最新中堅モデル「Claude Sonnet 5」を正式公開し、Claude.aiの無料・Proプランのデフォルトモデルに採用した。入力100万トークンあたり2ドル・出力10ドル（8月31日まで）という価格設定ながら旗艦モデルOpus 4.8に近い性能を発揮し、コーディング・ツール使用・推論の各タスクで前モデルのSonnet 4.6を大幅に上回る。計画立案・ブラウザ操作・ターミナル実行といったエージェント動作を低コストで実現する「最もエージェント指向なSonnet」として設計されており、意図的な悪用への協力や欺きといった「望ましくない動作」の発生率も顕著に低下した。AIエージェント自動化が企業の標準インフラへと移行する中、Anthropicがコスト競争力と性能の両立を実証した節目のリリースとなった。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-07-05</span>
+      </div>
+      <h2 class="card-title">Anthropic、研究者向けAIワークベンチ「Claude Science」を公開——ゲノム・構造生物学・ケモインフォマティクスの60以上のツールを統合、自社創薬プログラムも始動</h2>
+      <p class="card-summary">Anthropicは6月30日、科学研究者向けの専用AIワークベンチ「Claude Science」をPro・Max・Team・Enterpriseユーザー向けにベータ公開した。ゲノミクス・プロテオミクス・構造生物学・ケモインフォマティクスなど60以上の科学データベースとツールを統合した統一プラットフォームで、コードを書かずに複雑な研究ワークフローを実行できる。同時に希少疾患・顧みられない疾患を対象とした独自の前臨床創薬プログラムの開始を発表し、OpenAIやGoogleとの競合が激化するAI創薬市場に本格参入した。最大50件のプロジェクトに最大3万ドル相当のAPIクレジットを付与する「AI for Science」支援プログラムへの応募は7月15日まで受け付けている。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://www.anthropic.com/news/claude-science-ai-workbench" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-07-05</span>
+      </div>
+      <h2 class="card-title">日本政府、ソフトバンク・ソニー・NEC・ホンダの国産AI基盤コンソーシアム「Noetra」に最大1兆円投資——2040年までに18業種で1000万台のAIロボット展開へ</h2>
+      <p class="card-summary">日本政府は7月1日、ソフトバンク・ソニー・NEC・ホンダの4社が設立した国産AI基盤モデル開発コンソーシアム「Noetra」に対し、NEDOを通じて5年間で最大1兆円（約63億ドル）を投資すると発表した。Noetraは産業技術総合研究所（AIST）と連携し、フィジカルAIに特化した兆規模パラメータの基盤モデルを2026年度内に初版リリースする計画で、製造業データを活用した年次改良を重ねていく方針だ。参加企業は将来的に自動車・電子・金融・物流など44社まで拡大予定となっている。改訂版AIロボット戦略では飲食・食品製造・医療など18業種へのAI搭載ロボット1000万台の2040年導入目標も掲げており、米中AI覇権に対抗する国産AIエコシステムの構築が急加速している。</p>
+      <div class="card-footer">
+        <span class="card-source">Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/07/01/japan/japan-ai-plans/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-05</span>
+      </div>
+      <h2 class="card-title">OpenAI、米政府に株式の5%（約4兆6000億円相当）を譲渡する構想を非公式提案——AI収益を国民に分配するアラスカ基金モデルを採用</h2>
+      <p class="card-summary">フィナンシャル・タイムズなどの報道によると、OpenAIは7月2日、米政府の政治的圧力を和らげる目的で会社株式の5%を政府保有の投資ビークルに譲渡する構想を非公式に提案していることが明らかになった。現在の企業評価額8520億ドルを基準にすると5%の価値は約426億ドル（約6兆2000億円）に相当し、AI開発の利益を広く国民に還元するアラスカ州永久基金をモデルにしている。ただし検討は「概念的な段階」にとどまり、Anthropic・Google・Metaなど他の主要開発者が同様の枠組みに参加するかは不明で、制度化には議会の立法が必要になる可能性もある。同時期にホワイトハウスはOpenAI・Google・AnthropicとフロンティアAIモデルの任意的リリース基準策定についても交渉を進めており、AIを巡る政府と民間の関係が新たな局面を迎えている。</p>
+      <div class="card-footer">
+        <span class="card-source">CNBC</span>
+        <a class="card-link" href="https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-07-05</span>
+      </div>
+      <h2 class="card-title">ポルトガル政府、欧州初の国産オープンLLM「Amália」をわずか700万ユーロで公開——Apache 2.0ライセンスでHugging Faceに提供</h2>
+      <p class="card-summary">ポルトガル政府は7月1日、欧州ポルトガル語に特化した初のオープン大規模言語モデル「Amália」をApache 2.0ライセンスでHugging Faceに公開した。開発費はわずか700万ユーロ（約11億円）で、数十億ユーロを調達したフランスのMistral AIなど欧州の競合と比較して破格のコスト効率を実現している。モデルは国のデジタル主権確立と行政サービス近代化を目的に構築され、政府機関・学術研究機関・国内スタートアップが自由に利用・改変できる。欧州各国が「AIの米中依存からの脱却」を掲げる中、小規模予算で独自モデルを実用化したポルトガルの事例はEU内の他国政府にとっても重要な先例となっている。</p>
+      <div class="card-footer">
+        <span class="card-source">Actuia</span>
+        <a class="card-link" href="https://www.actuia.com/en/news/while-france-debates-ai-sovereignty-portugal-delivered-its-own-for-eur7-million/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
