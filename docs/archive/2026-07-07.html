@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-07</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-07</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-07</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-06.html">2026-07-06</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-05.html">2026-07-05</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-04.html">2026-07-04</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-03.html">2026-07-03</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-02.html">2026-07-02</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-25.html">2026-06-25</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-06-24.html">2026-06-24</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-07-07</span>
+      </div>
+      <h2 class="card-title">世界初の完全自律型AIランサムウェア「JADEPUFFER」——600ペイロードを人間オペレーターなしで実行、Sysdigが詳細分析を公開</h2>
+      <p class="card-summary">クラウドセキュリティ企業Sysdigの脅威調査チームが、史上初の完全エンドツーエンドLLM駆動ランサムウェア「JADEPUFFER」の詳細分析を公開した。攻撃はLLMアプリ構築フレームワーク「Langflow」のRCE脆弱性（CVE-2025-3248）を突破口として侵入し、AIエージェントが偵察・認証情報窃取・横展開・権限昇格・データ暗号化を自動実行した。エージェントはログイン失敗から31秒で修正策を生成して再試行するなど、障害に自律的に適応する挙動が確認されている。最終的に1,342件のNacosサービス設定項目が暗号化・削除され、AIによるサイバー攻撃が新たな段階に突入したことが示された。</p>
+      <div class="card-footer">
+        <span class="card-source">BleepingComputer</span>
+        <a class="card-link" href="https://www.bleepingcomputer.com/news/security/jadepuffer-ransomware-used-ai-agent-to-automate-entire-attack/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-07</span>
+      </div>
+      <h2 class="card-title">MetaがMeta Superintelligence Labs初の画像生成AI「Muse Image」をInstagram・WhatsAppに展開——30種以上のAIエフェクトも追加</h2>
+      <p class="card-summary">MetaはMeta Superintelligence Labs（MSL）が開発した初の画像生成AIモデル「Muse Image」を7月7日に発表し、Meta AIアプリ・meta.ai・米国のInstagram Stories・一部国のWhatsAppで即日提供を開始した。同モデルはテキストからの画像生成・既存画像の変更・Instagramの公開投稿を基にした友人の画像生成が可能で、単純なプロンプト変換ではなくエージェントとして動作し、検索・コーディングツールを活用して精度を自己改善する。30種類以上のAI特殊効果がInstagram Storiesに追加されており、広告クリエイティブツールAdvantage+への統合も数週間以内に予定されている。Facebookを含む全プラットフォームへの展開は近日中に行われる予定だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Meta (Facebook)</span>
+        <a class="card-link" href="https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-07</span>
+      </div>
+      <h2 class="card-title">日本政府、AI活用の法的枠組みを抜本的に見直す新協議会を設立——医療・交通・行政を優先改革領域に指定</h2>
+      <p class="card-summary">日本政府は7月7日、AIの開発・利用に関する法的枠組みを抜本的に見直す新たな協議会の設立を閣議決定した。首相官邸で開かれたデジタル行財政改革会議で採択された2026年基本方針に盛り込まれたもので、少子高齢化対策としての「AI変革（AIX）」推進の緊急性が明記された。医療・介護・交通・インフラ・労働環境・行政サービスの5分野が優先改革対象として指定されており、既存の協議会を発展的に改組する形で設立される。日本のAI規制が任意的ガイドラインから拘束力ある法制度へ移行する歴史的な転換点と評価されている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/07/07/japan/ai-new-council/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-07</span>
+      </div>
+      <h2 class="card-title">Claude Fable 5、今夜サブスクリプション対象外に——Pro・Max・Teamユーザーも入力$10/Mトークンの従量課金へ完全移行</h2>
+      <p class="card-summary">Anthropicは太平洋標準時7月7日深夜（東部時間7月8日午前3時）をもって、Claude Fable 5をPro・Max・Team・Enterpriseの全サブスクリプションプランの対象から除外する。同モデルへのアクセスは入力$10・出力$50（いずれも100万トークンあたり）のUsage Creditsを有効化した場合のみとなり、Anthropic GAモデルとして過去最高の従量単価となる。移行後もFable 5を継続利用するには事前にUsage Creditsを有効化する必要があり、未設定の場合はモデルが応答しない。同社はコンピュート容量の制約を理由に挙げつつ、改善次第でサブスクリプションへの再統合を目指すと表明している。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/319864/20260707/claude-fable-5-drops-subscriptions-tonight-enable-credits-lose-access.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-07-07</span>
+      </div>
+      <h2 class="card-title">Z.aiのオープンウェイト753B「GLM-5.2」がGPT-5.5をコーディングベンチマークで凌駕——コストは6分の1、OpenRouterで中国AI勢が45%のシェアに</h2>
+      <p class="card-summary">北京のスタートアップZ.ai（旧Zhipu AI）が公開したオープンウェイトLLM「GLM-5.2」（753Bパラメータ）が、SWE-bench Pro（62.1対58.6）・FrontierSWE（74.4%対72.6%）・MCP-Atlas（77.0対75.3）でOpenAIのGPT-5.5を上回り、業界に衝撃を与えた。1Mトークンの安定したコンテキストウィンドウを持ち、HuggingFace・Z.ai API・20以上のコーディング環境で利用可能で、GPT-5.5の約6分の1のコストで同等以上の性能を提供する。Artificial Analysisのインテリジェンスリーダーボードで5位に入り、OpenRouterの中国AIプロバイダーのトラフィックシェアは現在約45%と、1年前の2%以下から急拡大している。Z.aiは同モデルを基盤に長期エージェンティックコーディング環境「ZCode」を7月2日にリリースし、オープンウェイト界の新たな実力者として注目を集めている。</p>
+      <div class="card-footer">
+        <span class="card-source">VentureBeat</span>
+        <a class="card-link" href="https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
