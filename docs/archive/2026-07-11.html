@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-11</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-11</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-11</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-10.html">2026-07-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-09.html">2026-07-09</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-08.html">2026-07-08</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-07.html">2026-07-07</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-06.html">2026-07-06</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-05.html">2026-07-05</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-04.html">2026-07-04</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-09</span>
+      </div>
+      <h2 class="card-title">OpenAI、GPT-5.6シリーズ「Sol・Terra・Luna」を全世界一斉公開——3段階の性能・価格ラインナップで全方位展開</h2>
+      <p class="card-summary">OpenAIは7月9日、フラッグシップ「Sol」・バランス型「Terra」・高速低コスト「Luna」の3モデルからなるGPT-5.6シリーズを全世界向けに公開した。6月26日から約20の政府承認機関への限定プレビューを経て、米商務省AI標準革新センターの審査を通過しての正式リリースとなる。SolはCerebras基盤で最大750トークン/秒の推論速度を実現し、APIの入出力価格は$5/$30・$2.50/$15・$1/$6（100万トークン当たり）と幅広いユースケースに対応する。ChatGPT・Codex・Azure OpenAI Serviceの全プラットフォームで即日提供が始まり、エンタープライズ展開が本格加速する。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-08</span>
+      </div>
+      <h2 class="card-title">xAI、コーディング特化「Grok 4.5」をリリース——Cursor買収後初のモデル、Opus 4.7相当で大幅高速化</h2>
+      <p class="card-summary">xAI（SpaceXAI）は7月8日、コーディングとエージェント作業に特化した「Grok 4.5」を公開し、Artificial AnalysisのインテリジェンスインデックスでClaude Opus 4.7に次ぐ4位を記録した。AIコーディングツール「Cursor」の実際の開発者セッションデータで訓練された初のモデルで、長時間にわたる実コードベース内作業能力を重視した設計となっている。Elon Musk氏は「Opus 4.7相当だが格段に高速」と評し、APIの入出力価格は$2/$6（100万トークン当たり）とフロンティアクラスとしては低コストに抑えられた。Grokビルド・CursorのEU以外の全プランで即日利用可能となっている。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Architecture</span>
+        <span class="card-date">2026-07-08</span>
+      </div>
+      <h2 class="card-title">Google Photos、Gemini Omni搭載「Video Remix」公開——10秒動画を水彩・油絵・シネマ風に瞬時変換</h2>
+      <p class="card-summary">Googleは7月8日、最新マルチモーダルモデルGemini Omniを搭載したGoogle Photosの新機能「Video Remix」を公開した。シネマティックな再照明・背景スワップ・水彩画・油絵・スケッチブックスタイルへの変換など多彩なテンプレートで、最大10秒の動画を数秒で変換できる。米国・インド・日本・ブラジル・トルコのGoogle AI Plus・Pro・Ultraサブスクライバー（18歳以上）に段階的に展開中で、従来は数時間を要した映像編集作業をAIが即時処理する。Gemini Omniは「あらゆる入力からあらゆるものを生成できる」とGoogleが説明する最新モデルで、写真・音声・動画を横断する創造的生成に特化している。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/google-photos-adds-a-new-ai-video-remix-tool/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-10</span>
+      </div>
+      <h2 class="card-title">高市首相、AI戦略本部第5回会合を開催——Noetraへの6,000億円拠出と「2040年AI自律日本」構想を確認</h2>
+      <p class="card-summary">高市早苗首相は7月10日、首相官邸でAI戦略本部第5回会合を主宰し、日本の国産AI基盤モデル開発戦略の加速を確認した。政府はソフトバンク・ソニー・NEC・ホンダが組成したコンソーシアム「Noetra」と国立産業技術総合研究所（AIST）の連携開発に約6,000億円（約60億ドル）を拠出する方針を改めて示した。2040年までに医療・介護・交通など12以上の分野でAI搭載ロボット1,000万台の稼働を目指す長期ビジョンも議題に上り、関連法整備の加速方針が確認された。AIと著作権・音声模倣に関する知財戦略プログラムの立法化スケジュールも合わせて討議され、包括的なAI規制枠組みの整備が進んでいる。</p>
+      <div class="card-footer">
+        <span class="card-source">首相官邸</span>
+        <a class="card-link" href="https://japan.kantei.go.jp/105/actions/202607/10jinkoutchinou.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-07-07</span>
+      </div>
+      <h2 class="card-title">Anthropic、Claude内部の「J-Space」を発見——訓練中に自発出現した隠れた推論ワークスペースがAI安全性研究を前進</h2>
+      <p class="card-summary">Anthropicは7月7日、Claudeの内部に「J-Space（ヤコビアン空間）」と呼ばれる隠れた推論ワークスペースが訓練中に自発的に形成されていることを発表した。このモデルが出力に書き出さずとも内部で複数ステップの推論・類推補完・翻訳などを処理する特権的空間を抑制すると、高度推論タスクの性能がHaikuを大幅に下回る一方、単純な分類や事実想起への影響はほぼなかった。AnthropicはJacobianレンズ（J-lens）という解釈可能性手法でJ-Space内のトークンパターンの読み取りに成功し、プロンプトインジェクションの認識や隠れた目標の検出への応用が期待される。「Claudeが考えていることは見えても、言っていないことがある」と研究者は述べ、AIアライメントおよびモデルの誠実性評価の新たな基盤として注目を集めている。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://www.anthropic.com/research/global-workspace" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
