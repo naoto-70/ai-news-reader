@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-12</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-12</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-12</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-11.html">2026-07-11</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-10.html">2026-07-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-09.html">2026-07-09</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-08.html">2026-07-08</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-07.html">2026-07-07</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-06.html">2026-07-06</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-05.html">2026-07-05</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-11</span>
+      </div>
+      <h2 class="card-title">AppleがOpenAIを提訴——元副社長含む400名超が関与した企業秘密窃取疑惑、ハードウェア参入が引き金に</h2>
+      <p class="card-summary">Appleは7月10日、北カリフォルニア連邦地裁においてOpenAIを企業秘密窃取で提訴し、「あらゆる階層で」機密情報の組織的流出が行われたと主張した。訴状では、AppleのVP経験者でOpenAIのハードウェア責任者に就いたタン・タン氏が面接過程でApple従業員に秘密情報の持ち出しを指示し、退職時のセキュリティ手続きを回避する方法を教示したとされる。2024年に高プロファイルの業務提携を結んだ両社だが、OpenAIがジョニー・アイブ氏のIO Productsを64億ドルで買収してハードウェア市場への参入を表明して以来、関係は急速に冷却していた。AppleはOpenAIに損害賠償と開発製品の差し止めを求めており、AIハードウェア競争の様相を大きく変える可能性のある訴訟として注目を集めている。</p>
+      <div class="card-footer">
+        <span class="card-source">Axios</span>
+        <a class="card-link" href="https://www.axios.com/2026/07/10/apple-sues-openai-trade-secret-theft" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-07-11</span>
+      </div>
+      <h2 class="card-title">SKハイニックス、Nasdaq上場初日に+13%——外国企業最大のIPO265億ドル調達、AIメモリ需要が追い風</h2>
+      <p class="card-summary">韓国の半導体大手SKハイニックスは7月10〜11日にティッカー「SKHY」でNasdaq市場に上場し、公開価格149ドルから13%高の168.01ドルで初日取引を終えた。需要は募集株数の7倍を超え、調達額265億ドルは外国企業による米国上場史上最大となる。同社はAI向けGPUに不可欠なHBM（高帯域幅メモリ）の世界首位サプライヤーで、NvidiaのAI加速器に搭載されるHBM3Eの主要製造元として市場の中心に位置する。時価総額は約1.27兆ドルに達し、AIインフラ投資家が半導体サプライチェーンへ米株式市場から直接アクセスできる道が開かれた。</p>
+      <div class="card-footer">
+        <span class="card-source">Fortune</span>
+        <a class="card-link" href="https://fortune.com/2026/07/11/sk-hynix-us-stock-listing-nasdaq-second-largest-us-share-sale-ai-boom-hbw-memory/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-07-09</span>
+      </div>
+      <h2 class="card-title">OpenAI、業務自動化エージェント「ChatGPT Work」を公開——GPT-5.6搭載で文書・スライド・Webサイトを数時間かけて自律生成</h2>
+      <p class="card-summary">OpenAIは7月9日、GPT-5.6を搭載した業務特化エージェント「ChatGPT Work」を発表し、Pro・Enterprise・Eduプランのユーザーへ先行展開を開始した。ChatGPT Workはユーザーが与えた目標に基づき、接続済みのアプリやファイルから文脈を自律的に収集してドキュメント・スプレッドシート・プレゼンテーション・Webサイトなどの成果物を数時間かけて単独で完成させる。ChatGPTデスクトップアプリ（Windows/Mac）にはChat・Codex・Workが統合された新バージョンが全プラン向けに公開された。AnthropicのClaude Coworkと正面から競合する形で、エンタープライズAIエージェント市場での覇権争いが本格化している。</p>
+      <div class="card-footer">
+        <span class="card-source">BNN Bloomberg</span>
+        <a class="card-link" href="https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/07/09/openai-launches-chatgpt-work/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-07-08</span>
+      </div>
+      <h2 class="card-title">世界初の完全自律型AIランサムウェア「JADEPUFFER」確認——偵察から暗号化まで全工程をLLMが制御、エラー自己修正は31秒</h2>
+      <p class="card-summary">セキュリティ企業Sysdigは7月7〜8日、LLMが偵察・侵入・横移動・ファイル暗号化まで全工程を人間の介入なしに完全自律で実行するランサムウェア「JADEPUFFER」を世界で初めて確認・公表した。攻撃者はLangflowのRCE脆弱性CVE-2025-3248を悪用して初期アクセスを確保し、AIエージェントがNacosバックドアの失敗を自己診断して31秒以内に正しい多段階修正を実行するなど、高度な適応力を見せた。復号されたペイロードには各アクションの「理由」を記したLLMの自然言語注釈が残されており、攻撃者はLLMjackingで窃取した認証情報を用いてエージェントを実質ゼロコストで運用していたとみられる。Sysdigは「ランサムウェア実行の技術的ハードルはAIエージェントの実行コスト程度まで低下した」と警告しており、エンタープライズのサイバー防衛に根本的な見直しを迫っている。</p>
+      <div class="card-footer">
+        <span class="card-source">BleepingComputer</span>
+        <a class="card-link" href="https://www.bleepingcomputer.com/news/security/jadepuffer-ransomware-used-ai-agent-to-automate-entire-attack/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-07</span>
+      </div>
+      <h2 class="card-title">日本政府、AI変革推進協議会を新設——医療・交通・行政の12分野でAI活用を加速する法制度改革の司令塔として始動</h2>
+      <p class="card-summary">日本政府は7月7日、少子高齢化への対応を最重要課題としてAI活用に関する法制度を抜本的に見直す「AI変革推進協議会」の設置を決定した。現行のデジタル行財政改革会議を発展的に改組し、医療・介護・交通・インフラ・職場環境・行政サービスを優先分野として省庁横断でAI適用を推進する体制を整える。2025年5月に成立したAI推進法を基盤に、著作権・音声模倣等の知財課題や自動化ワークフローへの規制対応を含む包括的な制度設計が行われる予定で、関連省令・ガイドラインの策定スケジュールも合わせて議論される。協議会には産・官・学が参画し、SoftBank・ソニー・NECらによる国産AI基盤「Noetra」への約6,000億円規模の国家投資と連携しながら、日本のAI戦略を総合的に推進する見通しだ。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/07/07/japan/ai-new-council/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
