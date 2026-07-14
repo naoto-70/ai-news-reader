@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-13</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-13</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-13</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-12.html">2026-07-12</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-11.html">2026-07-11</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-10.html">2026-07-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-09.html">2026-07-09</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-08.html">2026-07-08</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-07.html">2026-07-07</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-06.html">2026-07-06</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-13</span>
+      </div>
+      <h2 class="card-title">日本人の約6割が夏休みの旅行計画に生成AIを活用——観光地情報から旅程作成まで急速に浸透</h2>
+      <p class="card-summary">日本で今夏の旅行を計画している人の61.2%が生成AIを活用していることが最新調査で明らかになった。国内・海外旅行を予定する回答者の過半数が、旅程の作成や観光地の食事・交通手段に関する情報収集にAIを利用している。旅行業界では、AIが特定の観光地への集中を助長するオーバーツーリズムの懸念が浮上する一方、個人化された旅程提案サービスへの需要が急増しており、AI旅行アシスタントの市場競争が本格化している。消費者向けAIが、旅行計画という日常的な意思決定プロセスに深く浸透しつつあることを示す象徴的なデータとして注目されている。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/07/13/japan/society/ai-summer-vacation-trips/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-13</span>
+      </div>
+      <h2 class="card-title">Google、Gemini 3.5 Proのリリースを7月17日に設定——アーキテクチャを全面再設計し200万トークン対応へ</h2>
+      <p class="card-summary">GoogleはGemini 3.5 Proのリリース目標を2026年7月17日（木）とし、既存の2.5 Proアーキテクチャを全廃して一から再設計したモデルとなることが報告されている。報告されているスペックには200万トークンのコンテキストウィンドウ、新たな深層推論モード「Deep Think」、数学的推論・SVG生成・全体的な画像品質の大幅改善が含まれる。ただし、Googleは公式なリリース日・価格・ベンチマーク・APIドキュメントのいずれも発表していないため、現時点では全仕様が未確認情報として扱われる。一部のエンタープライズ顧客はすでに限定プレビューにアクセスしており、週内の正式発表が期待されている。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-13</span>
+      </div>
+      <h2 class="card-title">中国、先進AIモデルへの海外アクセス制限を検討——商務省がAlibaba・ByteDance・Z.aiと協議</h2>
+      <p class="card-summary">中国商務省がAlibaba・ByteDance・Z.aiの幹部と会合を持ち、国内の最先端AIモデルへの海外からのAPIアクセスを制限する措置を検討していることがロイターの報道で明らかになった。背景には、中国製モデルの米国企業向けAPIトラフィックが1年前の約4.5%から現在は30〜46%にまで急拡大したことがある。議論ではクローズドとオープンソースの両モデルが対象となっており、先端AI技術の流出をロシア安全保障法上の違反として扱う可能性も示唆されている。米国企業の中にはコスト削減を目的にAnthropicなどからDeepSeekへ乗り換えた例もあり、制限が実施された場合の影響は広範に及ぶ可能性がある。</p>
+      <div class="card-footer">
+        <span class="card-source">AIToolsRecap</span>
+        <a class="card-link" href="https://aitoolsrecap.com/Blog/ai-news-july-13-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-07-11</span>
+      </div>
+      <h2 class="card-title">日本の総務省、人手不足の地方自治体にAIエージェント導入を検討——全自治体の74%がすでにAIを活用</h2>
+      <p class="card-summary">総務省は、深刻な人手不足に直面する地方自治体の業務を自律的に処理するAIエージェントの導入検討を開始した。2025年10月時点で全国自治体の74%が何らかの形でAIを活用しており、今後はタスクを自律実行できるエージェント型AIへの移行が議題に上がっている。少子高齢化による行政サービスの担い手不足が深刻化する中、AIエージェントが窓口対応・文書処理・スケジュール管理などの業務を代替することで、住民サービスの質維持を図る狙いがある。政府は7月7日に設置を決定したAI変革推進協議会とも連携し、地方自治体へのAI展開を加速する方針だ。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/07/11/japan/japan-local-government-ai-agents/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-10</span>
+      </div>
+      <h2 class="card-title">OpenAI、フルデュプレックス音声AI「GPT-Live」を全ユーザーに展開——ターン制を廃し同時並行の自然会話を実現</h2>
+      <p class="card-summary">OpenAIは7月8日、フルデュプレックスアーキテクチャを採用した新世代音声AIモデル「GPT-Live」をすべてのChatGPTユーザーへ展開した。従来のターン制モデルとは異なり、GPT-Liveは聴取・発話・推論を同時並行で実行し、人間同士の会話に近い自然な割り込みや相槌が可能になった。GPT-Live-1とGPT-Live-1 miniの2バリアントが提供され、無料プランにはminiが、有料プランにはGPT-Live-1がデフォルト音声体験として割り当てられる。バックグラウンドでGPT-5.5が稼働し、ウェブ検索や複雑な推論が必要な場合はフロンティアモデルへのタスク委譲も自動で行われる。</p>
+      <div class="card-footer">
+        <span class="card-source">TechTimes</span>
+        <a class="card-link" href="https://www.techtimes.com/articles/320041/20260710/chatgpt-voice-goes-full-duplex-gpt-live-ends-turn-based-ai-conversations.htm" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
