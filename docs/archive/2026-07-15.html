@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-15</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-15</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-15</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-14.html">2026-07-14</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-13.html">2026-07-13</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-12.html">2026-07-12</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-11.html">2026-07-11</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-10.html">2026-07-10</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-09.html">2026-07-09</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-08.html">2026-07-08</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-07-14</span>
+      </div>
+      <h2 class="card-title">GoogleのGemini、英国版Chromeでデスクトップ展開開始——カレンダー・Gmail連携で「ページを離れずAI操作」が実現</h2>
+      <p class="card-summary">Googleは7月14日、AI搭載ブラウザアシスタント「Gemini in Chrome」を英国のデスクトップユーザーへ正式提供開始した。EUの厳格なAI規制から外れた英国での展開は今回が本格的な初の大規模ロールアウトとなる。ユーザーは長文コンテンツのサマリー生成や複数タブにまたがる情報比較のほか、GoogleカレンダーやGmail・YouTube・Mapsとの連携機能をページを移動せずに使えるようになった。モバイル（iOS）への提供は8月を予定しており、「Nano Banana 2」モデルを用いたウェブ上の画像変換機能も追加されている。</p>
+      <div class="card-footer">
+        <span class="card-source">Android Authority</span>
+        <a class="card-link" href="https://www.androidauthority.com/gemini-chrome-ask-gemini-desktop-expansion-3687239/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-07-14</span>
+      </div>
+      <h2 class="card-title">Spotify、会話型AIアシスタント「Talk to Spotify」をベータ公開——テキストまたは音声で曲を選ぶ新体験</h2>
+      <p class="card-summary">Spotifyは7月14日、Premium会員を対象に会話型AI機能「Talk to Spotify」をベータ版として米国・アイルランド・スウェーデンのiOS・Androidユーザーへ提供開始した。「最近聴いていないアーティストをかけて」と入力するとプレイリストを生成・再生し、「その中からこのアーティストは除いて」と続けて絞り込むことができる。曲のリリース日や制作背景・関連アーティストの提案など音楽情報の問い合わせも可能で、Spotifyは自社AI技術と複数の外部モデルを組み合わせてこの機能を実現していると発表した。当初は英語のみの対応で、18歳以上のPremiumユーザーが利用できる。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/07/14/spotify-expands-its-ai-push-with-a-chatgpt-like-music-assistant/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-14</span>
+      </div>
+      <h2 class="card-title">AnthropicがK-12教育者向け「Claude for Teachers」を無料提供——全米50州カリキュラム対応、1年間プレミアム無料</h2>
+      <p class="card-summary">Anthropicは7月14日、米国の幼稚園〜高校（K-12）の教員を対象に、プレミアム版Claudeへの無料アクセスと全50州の教育基準に対応した授業計画機能を提供する「Claude for Teachers」を発表した。学習目標を入力するだけで州ごとの学習指導要領に沿った授業計画と生徒向け教材をClaude が自動生成し、異なる習熟度の生徒に対応する差別化教材も作成できる。ASSISTments・Canva Education・MagicSchoolなど主要教育プラットフォームとの連携に加え、FERPA準拠のデータ保護ポリシーが適用され生徒情報はモデル訓練に使用されない。2027年6月30日までに申請した認証済み教員には1年間のプレミアムアクセスが無料で提供される。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://www.anthropic.com/news/claude-for-teachers" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-14</span>
+      </div>
+      <h2 class="card-title">ニューヨーク州、大型AIデータセンターを全米初の一時停止——電力・水資源の懸念を受け最大1年間の許可凍結</h2>
+      <p class="card-summary">ニューヨーク州のキャシー・ホーコール知事は7月14日、50メガワット以上の電力を消費する「ハイパースケール」データセンターの新規建設を最大1年間停止する行政命令に署名し、全米初の州単位でのAIデータセンター建設モラトリアムを発動した。知事は「ハイパースケールAIデータセンターは電力網の容量を超えるほどの電力を消費し、地域の一般家庭の電気代を押し上げている」と指摘し、停止期間中に環境影響・エネルギー需要・水使用に関するルール整備を義務付けた。既に許可取得済みの施設や研究・教育・医療向けの小規模施設は対象外とされており、規制期間中にデータセンター運営者が送電コストを自己負担する仕組みの導入も検討される。他州の対応にも注目が集まる象徴的な政策転換となった。</p>
+      <div class="card-footer">
+        <span class="card-source">CNBC</span>
+        <a class="card-link" href="https://www.cnbc.com/2026/07/14/new-york-ai-data-center-ban.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-13</span>
+      </div>
+      <h2 class="card-title">日本の20〜50代の約6割が夏の旅行計画に生成AI活用——観光地・グルメ・交通情報を検索エンジン代わりに</h2>
+      <p class="card-summary">明治安田生命が2026年6月に20〜50代の1,120人を対象に実施した調査で、旅行計画者の61.2%が生成AIを活用して国内外の旅程作成や観光情報収集をしていることが判明した。飲食店情報や交通手段の調査にも生成AIが活用されており、従来の検索エンジンから用途が移行しつつある傾向が浮き彫りになった。特に若い世代でのAI活用率が高く、旅行産業・観光業界における生成AIの実用化が急速に進んでいることを示す調査結果として注目を集めている。日本では訪日客需要の回復とあいまってAIを活用した観光コンシェルジュサービスへの投資が活発化している。</p>
+      <div class="card-footer">
+        <span class="card-source">The Japan Times</span>
+        <a class="card-link" href="https://www.japantimes.co.jp/news/2026/07/13/japan/society/ai-summer-vacation-trips/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
