@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-19</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-19</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-19</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-18.html">2026-07-18</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-17.html">2026-07-17</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-16.html">2026-07-16</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-15.html">2026-07-15</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-14.html">2026-07-14</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-13.html">2026-07-13</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-12.html">2026-07-12</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-19</span>
+      </div>
+      <h2 class="card-title">習近平主席が「世界AI協力機構（WAICO）」を上海で発足——29カ国が署名、開発途上国向けAI支援を宣言</h2>
+      <p class="card-summary">2026年7月17日、習近平主席は上海で開催された世界人工知能大会の基調演説に登壇し、国際的なAI協力を推進する「世界AI協力機構（WAICO）」の設立を発表した。ロシア・ブラジル・インドネシア・南アフリカ・マレーシアなど29カ国が設立協定に署名し、本部は上海に置かれる。中国は途上国に対してAI研修・セミナーの機会5,000件を提供するほか、ASEAN・アフリカ連合・BRICSとのAI応用協力センターを設置する計画を表明した。習主席は「AIの発展は一国の独り舞台ではなく、国際協力の交響楽であるべきだ」と述べ、米国の輸出規制に対抗するグローバル南半球向けの陣営構築を明確に打ち出した。</p>
+      <div class="card-footer">
+        <span class="card-source">Al Jazeera</span>
+        <a class="card-link" href="https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-19</span>
+      </div>
+      <h2 class="card-title">AnthropicがFable 5の提供形態を再編——7月20日よりMax・Team Premiumは50%制限継続、Proユーザーは従量課金へ</h2>
+      <p class="card-summary">Anthropicは7月20日をもって最上位モデルFable 5の提供プランを大幅に変更することを発表した。MaxおよびTeam Premiumプランのユーザーは引き続きFable 5にアクセスできるが、週次利用上限の50%に制限される恒久的な措置となる。一方、ProおよびTeam Standardのユーザーには100ドル分の移行クレジットが一時付与されるが、以後はAPI従量課金に移行する形だ。Fable 5の料金は入力100万トークンあたり10ドル・出力50ドルとOpus 4.8の2倍に設定されており、高需要モデルへのアクセスをサブスクリプション階層で明確化する戦略的な判断とみられる。</p>
+      <div class="card-footer">
+        <span class="card-source">The Decoder</span>
+        <a class="card-link" href="https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-07-19</span>
+      </div>
+      <h2 class="card-title">NVIDIAのジェンスン・ファンが日本AI市場に大きく賭ける——Noetra社がRubinチップ2万7,500枚を調達、ロボット大国化に向け加速</h2>
+      <p class="card-summary">NVIDIAのジェンスン・ファンCEOは7月17日のBloomberg取材で、日本が次世代AI・ロボット産業の世界的なハブになるとの確信を表明した。日本の政府系AI企業Noetra（SoftBank・Sony等が出資）がNVIDIAの最新チップ「Rubin」を2万7,500枚調達することが明らかになり、物理AIとロボット産業の融合計画が具体化した。FanucおよびYaskawa Electricとの提携も同時に発表され、製造ロボットへのAI統合が本格化する見通しだ。日本政府は2040年までに10以上の産業分野で1,000万台超のAIロボット稼働を目標に掲げており、半導体・データセンターへの積極投資が続く見込みだ。</p>
+      <div class="card-footer">
+        <span class="card-source">Bloomberg</span>
+        <a class="card-link" href="https://www.bloomberg.com/news/newsletters/2026-07-17/why-nvidia-s-jensen-huang-is-betting-on-japan-s-ai-future" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-07-19</span>
+      </div>
+      <h2 class="card-title">Moonshot AIがKimi K3を公開——2兆パラメータMoEでオープン初の「3兆クラス」フロンティアモデルを主張、7月27日に全ウェイト公開予定</h2>
+      <p class="card-summary">中国のMoonshot AIは7月16日、Mixture-of-Experts（MoE）アーキテクチャを採用した大規模モデル「Kimi K3」をリリースし、オープンウェイトとしては世界初の3兆クラスのフロンティアモデルと主張した。SWE-Bench Verifiedや数学ベンチマークにおいてGPT-5.6やOpus 4.8を上回る結果を示したとされ、ウェブ版・モバイル版では推論レベルを「Standard・High・Max」の3段階で選択できる機能が実装されている。完全なモデルウェイトは7月27日にオープンソースとして公開される予定で、研究者・開発者コミュニティから高い注目を集めている。Kimi K3の登場により、オープンモデルとクローズドモデルの性能差はさらに縮まったとの評価が広まっている。</p>
+      <div class="card-footer">
+        <span class="card-source">LLM Stats</span>
+        <a class="card-link" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-19</span>
+      </div>
+      <h2 class="card-title">国連グテーレス事務総長「AIは一握りの大国でなく全人類が形作るべき」——200名超の専門家・ノーベル賞受賞者16名が即時行動を要求</h2>
+      <p class="card-summary">国連のアントニオ・グテーレス事務総長は2026年7月、各国政府とテクノロジー企業に対し、AIの恩恵がすべての国に公平に行き渡るよう協調して取り組むことを強く求めた。グテーレス氏は「AIは一握りの大国だけでなく全人類によって形作られるべきだ」と発言し、南半球の途上国を中心とした格差拡大への深刻な懸念を表明した。スタンフォード大学デジタル経済ラボが主導する公開書簡には、ノーベル賞受賞者16名を含む200名以上の経済学者・AI研究者が署名し、政策立案者と企業リーダーに対して「今すぐ行動しなければならない」と警告している。米中間のAIガバナンス対立が深まる中、国連は中立的な国際枠組み構築に向けた議論を加速させる方針だ。</p>
+      <div class="card-footer">
+        <span class="card-source">UN News</span>
+        <a class="card-link" href="https://news.un.org/en/story/2026/07/1167965" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
