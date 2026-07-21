@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-20</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-20</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-20</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-19.html">2026-07-19</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-18.html">2026-07-18</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-17.html">2026-07-17</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-16.html">2026-07-16</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-15.html">2026-07-15</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-14.html">2026-07-14</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-13.html">2026-07-13</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Research</span>
+        <span class="card-date">2026-07-20</span>
+      </div>
+      <h2 class="card-title">CuspAI、4億5,000万ドルのシリーズB調達——ジェフ・ベゾス出資の「AIマテリアルズ・ファウンドリー」が材料科学に革命をもたらす</h2>
+      <p class="card-summary">ケンブリッジ発の素材発見AIスタートアップCuspAIは2026年7月20日、シリーズBとして4億5,000万ドル（評価額26億ドル）の資金調達を発表した。ラウンドをリードしたのはKleiner PerkinsとNEAで、ジェフ・ベゾスのBezos Expeditions・AMD Ventures・英国Sovereign AI Venture Fundも参加した。同時に「AIマテリアルズ・ファウンドリー」構想を発表し、NVIDIA・Meta・Samsung・現代自動車グループなど45社超が計算資源・実験室・科学知識を共有するプラットフォームに参画する。半導体・エネルギー・先端製造向けの新素材開発にAIを活用するCuspAIは、前回ラウンドの5倍超となる評価額を実現し、欧州ディープテックの新たなベンチマークと称されている。</p>
+      <div class="card-footer">
+        <span class="card-source">Tech.eu</span>
+        <a class="card-link" href="https://tech.eu/2026/07/20/jeff-bezos-and-sovereign-ai-back-cuspai-in-450m-raise/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-20</span>
+      </div>
+      <h2 class="card-title">EUがGoogleにAndroidの競合AI開放を義務付け——DMAに基づく拘束力ある仕様でGemineの独占的優位を解消へ</h2>
+      <p class="card-summary">欧州委員会は2026年7月16日、デジタル市場法（DMA）に基づく拘束力のある仕様措置をGoogleに対して発動し、Android端末上で自社AIサービス（Gemini）と同等の条件で競合AIアシスタントが利用できるよう11項目の機能開放を命じた。競合AIは音声コマンドによる起動やアプリをまたいだタスク実行（メッセージ送信・予約・情報取得など）が可能になる。また第二の措置として、Googleは匿名化した検索ランキング・クエリ・クリックデータを競合検索エンジンに共有することが義務付けられる。Android 18での実装期限は2027年8月1日で、検索データの提供開始は2027年1月が目安とされており、EU競争当局のAI分野への規制が本格化する転換点となる。</p>
+      <div class="card-footer">
+        <span class="card-source">Unite.AI</span>
+        <a class="card-link" href="https://www.unite.ai/eu-compels-google-to-share-android-and-search-data-with-rival-ai-assistants/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Agentic AI</span>
+        <span class="card-date">2026-07-20</span>
+      </div>
+      <h2 class="card-title">AnthropicとBlackstoneが15億ドル規模の「Ode」を共同設立——次の1兆ドルはモデルではなくAI実装にあり</h2>
+      <p class="card-summary">AnthropicとBlackstone（Goldman Sachs・Hellman &amp; Friedmanも参加）は2026年7月15日、AI実装専門会社「Ode」を共同設立したと発表した。Odeは企業に上級エンジニアの小チームを派遣し、AIが最も効果を発揮できる業務を特定したうえでシステムを構築・運用するビジネスモデルを採用する。評価額は15億ドルに達しており、「次の1兆ドルのAIビジネスはモデルではなく実装にある」という戦略的賭けを明確にした。単なるAPIの提供ではなく現場での実践的なAI統合を柱とするOdeの登場は、テック業界の競争軸がモデル性能からビジネス実装力へと移行しつつある潮流を体現している。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-07-20</span>
+      </div>
+      <h2 class="card-title">SAPがPrior Labsの買収を完了——設立18カ月で€10億超、欧州初の「構造化データ特化型」フロンティアAI研究所が誕生</h2>
+      <p class="card-summary">SAPは2026年7月17日、ドイツ発のAIスタートアップPrior Labsの買収完了を発表した。設立からわずか18カ月での€10億超の買収は欧州ディープテック史上でも異例のスピードで、SAPは今後4年間でPrior Labsに€10億超を追加投資する計画だ。Prior Labsは「表形式基盤モデル（Tabular Foundation Models）」の先駆者であり、企業の基幹システムに蓄積された構造化データを直接学習できるAIを開発してきた。SAPはPrior Labsを独立した研究体制のまま存続させながら、エンタープライズAIの根幹となる構造化データ領域で世界有数のフロンティアラボに育て上げる戦略を掲げており、欧州発のAI研究機関として国際的な競争力強化が期待される。</p>
+      <div class="card-footer">
+        <span class="card-source">Tech.eu</span>
+        <a class="card-link" href="https://tech.eu/2026/07/17/sap-acquires-prior-labs-just-18-months-after-launch-in-eur1b-deal/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-07-20</span>
+      </div>
+      <h2 class="card-title">Kimi K3がArena.aiのコーディングランキング首位を獲得——ペアワイズ勝率76%、7月27日の全ウェイト公開に業界注目</h2>
+      <p class="card-summary">Moonshot AIのKimi K3がArena.aiの「フロントエンドコード・アリーナ」でペアワイズ勝率76%を達成し、GPT-5.6やGemini 3.5 Proを抑えてトップに立ったことが明らかになった。2.8兆パラメータのMixture-of-Experts（MoE）アーキテクチャを採用するKimi K3は、SWE-Bench Verifiedや数学・推論ベンチマークでも最高水準のスコアを記録している。モデル全体のウェイトは2026年7月27日にオープンソースとして公開される予定で、自社サーバーでの運用を希望する研究者・企業からの需要が急騰している。超大規模オープンモデルがクローズドフロンティアモデルを超えるという新たな時代の到来を告げる出来事として、世界のAI開発者コミュニティで大きな話題となっている。</p>
+      <div class="card-footer">
+        <span class="card-source">LLM Stats</span>
+        <a class="card-link" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
