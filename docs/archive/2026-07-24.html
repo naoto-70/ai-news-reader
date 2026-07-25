@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-07-24</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-07-24</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./index.html">2026-07-24</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-23.html">2026-07-23</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-22.html">2026-07-22</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-21.html">2026-07-21</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-20.html">2026-07-20</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-19.html">2026-07-19</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-18.html">2026-07-18</a>
+    <a class="archive-link" href="/ai-news-reader/archive/2026-07-17.html">2026-07-17</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-24</span>
+      </div>
+      <h2 class="card-title">GoogleがGemini 3.6 Flashほか3モデルを一斉公開——Gemini 4の事前学習も開始、Gemini 3.5 Proは再延期</h2>
+      <p class="card-summary">Google DeepMindは7月21日、新モデル「Gemini 3.6 Flash」「Gemini 3.5 Flash-Lite」「Gemini 3.5 Flash Cyber」の3本を同時公開した。Gemini 3.6 Flashは入力$1.50・出力$7.50/100万トークンで100万トークンのコンテキストウィンドウに対応し、前世代より約17%少ない出力トークンでコーディングや長文処理の性能を向上させた。サイバーセキュリティ特化版の「Gemini 3.5 Flash Cyber」は政府・信頼パートナー限定の限定アクセスプログラムとして提供される。また次世代モデル「Gemini 4」の事前学習開始が明らかにされた一方、業界が期待していたGemini 3.5 Proはコーディングと複雑な推論タスクの評価基準を満たせず再度延期された。</p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="card-link" href="https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Open Weights</span>
+        <span class="card-date">2026-07-24</span>
+      </div>
+      <h2 class="card-title">DeepSeek V4が本日GAへ完全移行——旧API「deepseek-chat」「deepseek-reasoner」は本日UTC 15:59で廃止</h2>
+      <p class="card-summary">中国AI企業DeepSeekは7月20日、4月24日にプレビュー公開したV4モデルファミリーを正式GA（一般提供）へ移行した。フラッグシップ「DeepSeek-V4-Pro」は総パラメータ数1.6兆・アクティブ49Bの巨大MoEモデルで、100万トークンのコンテキストウィンドウを入力$0.14/100万トークンという低価格で提供する。軽量版「DeepSeek-V4-Flash」（284B総/13BアクティブMoE）も同時リリースされ、高スループット用途に最適化された。旧モデル名「deepseek-chat」および「deepseek-reasoner」は本日7月24日UTC 15:59をもって廃止・アクセス不能となるため、利用中の開発者は速やかなAPI移行が求められる。</p>
+      <div class="card-footer">
+        <span class="card-source">Tech Insider</span>
+        <a class="card-link" href="https://tech-insider.org/au/deepseek-v4-general-availability-2026/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-07-24</span>
+      </div>
+      <h2 class="card-title">米議会が超党派「AIキルスイッチ法」を提出——DHSにAIモデルの強制停止権限を付与する法案</h2>
+      <p class="card-summary">米下院のテッド・リウ議員（民主・カリフォルニア）とネイサニエル・モラン議員（共和・テキサス）は7月23日、「AI Kill Switch Act（AIキルスイッチ法）」を超党派で共同提出した。同法案は米国土安全保障省（DHS）に対し、危険と判断したAIモデルの強制シャットダウン・スロットリング・一時停止を大手AI企業に命令する権限を付与する。単一モデルの停止から企業全体の計算リソース制限まで幅広い措置を含んでおり、発動要件の透明性や運用の恣意性についてAI業界・市民自由団体からの強い反発が見込まれる。今週OpenAIが大規模エージェントプラットフォームを発表するなど業界の技術進化が加速するなか、AI規制の転換点となる立法動向として注目される。</p>
+      <div class="card-footer">
+        <span class="card-source">BuildFast with AI</span>
+        <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-07-24</span>
+      </div>
+      <h2 class="card-title">Alphabetが2026年設備投資見通しを1,950〜2,050億ドルに引き上げ——AI基盤整備への投資が過去最大規模に</h2>
+      <p class="card-summary">Googleの親会社Alphabetは7月23日、2026年の設備投資（CapEx）見通しを従来計画から引き上げ、年間1,950億〜2,050億ドル（約28〜30兆円）に達すると発表した。AI向けデータセンターとコンピューティングインフラへの積極投資が主因で、前年比でも大幅な増加となる。同社は次世代モデル「Gemini 4」の事前学習開始も確認しており、次世代LLM開発に向けたインフラ整備を急加速させている。Microsoft・Meta・AWSを含む主要クラウドプロバイダーが揃って過去最大規模の設備投資を競い合う構図が続いており、Gartnerによると2026年のAIプラットフォーム市場は前年比63%成長と予測されるなか、各社の投資熱は衰えを見せない。</p>
+      <div class="card-footer">
+        <span class="card-source">Tech Startups</span>
+        <a class="card-link" href="https://techstartups.com/2026/07/23/top-tech-news-today-july-23-2026-amd-anthropic-google-samsung-spacex-more/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Model Release</span>
+        <span class="card-date">2026-07-24</span>
+      </div>
+      <h2 class="card-title">Moonshot AI、Kimi K3完全オープンウェイト公開を7月27日に予告——2.8兆パラメータMoEで100万トークンコンテキスト対応</h2>
+      <p class="card-summary">中国AI企業Moonshot AIは7月16日にリリースしたKimi K3について、完全なオープンウェイト公開を7月27日に実施すると予告した。Kimi K3は総パラメータ数2.8兆のMixture-of-Expertsモデルで、ネイティブビジョン対応と100万トークンのコンテキストウィンドウを備え、現時点でリリースされた最大のオープンウェイトモデルとなる。一方、米ホワイトハウスOSTPのマイケル・クラッチオス局長はKimi K3がAnthropicの「Claude Fable 5」を無断蒸留して開発されたと公式に非難しており、Moonshotは7月24日時点でこの主張に対する公式回答を出していない。Moonshot AIは香港IPOを6ヶ月以内に実施し評価額500億ドルを目指すとも報じられており、技術と外交の両面で注目を集める企業となっている。</p>
+      <div class="card-footer">
+        <span class="card-source">BuildFast with AI</span>
+        <a class="card-link" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-24-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
