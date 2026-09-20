@@ -231,26 +231,52 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI最前線ニュース — 本日の注目4トピック（9月18日の公式発表より）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済0件（9月18〜20日の公開情報）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
     <article class="card">
       <div class="card-meta">
-        <span class="card-tag">Safety</span>
-        <span class="card-date">発表日: 2026-09-18</span>
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">記事公開日: 2026-09-20</span>
       </div>
-      <h2 class="card-title">AnthropicとAccenture、AI開発現場に入る評価体制で提携</h2>
-      <p class="card-summary">Anthropicは9月18日、AccentureとのAI評価に関する提携を発表した。Accenture傘下のFacultyが主導し、モデル評価、レッドチーミング、アラインメントや安全対策の検証を行う。評価者は社員に近いアクセス権で開発過程を確認する構想で、両社はそれぞれ今後5年間で少なくとも10億ドルを関連能力の整備に投じる見込みとしている。当面の評価費用はAnthropicが直接負担し、情報アクセスや報告方法の共通基準はまだ確立されていない。</p>
+      <h2 class="card-title">Qwen3.8-Omni-Flash、音声・動画の理解からツール実行へ</h2>
+      <p class="card-summary">Alibaba Cloudは9月20日の公式記事で、9月18日にQwen側で発表された「Qwen3.8-Omni-Flash」の技術概要を紹介した。テキスト・画像・音声・動画を入力でき、100万トークンのコンテキストに対応する。音声や動画の内容を読み取るだけでなく、タスクの計画とツール実行につなぐ設計で、Qwen-MM-Pluginsの拡張とリアルタイム処理向けQwen-Live Harnessの公開も説明している。動画編集や会議内容からの作業実行などを想定しており、性能改善の数値は提供元の評価として示されている。</p>
       <div class="card-footer">
-        <span class="card-source">Anthropic</span>
-        <a class="card-link" href="https://www.anthropic.com/news/accenture-embedded-evaluation" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Alibaba Cloud / Qwen</span>
+        <a class="card-link" href="https://www.alibabacloud.com/blog/qwen3-8-omni-flash-omni-senses--agentic-delivery-_603580" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
-        <span class="card-tag">Product</span>
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開日: 2026-09-19</span>
+      </div>
+      <h2 class="card-title">Claude Code v2.1.278、自動モードの判定をサーバー側へ移行</h2>
+      <p class="card-summary">Anthropicは9月19日、Claude Code v2.1.278を公開した。Claude API・Enterprise、およびBedrock・Vertex・Foundry・ゲートウェイ経由の利用で、自動モードの判定をサーバー側で行う設定が既定になった。リリースノートによると、この判定処理の追加料金は発生せず、課金対象の処理にフォールバックした際には警告する。対象のクラウド・ゲートウェイ環境では環境変数CLAUDE_CODE_AUTO_MODE_SERVER=0で切り替えられ、/statusに判定の実行場所を示す行が追加された。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.278" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開日: 2026-09-18（UTC）</span>
+      </div>
+      <h2 class="card-title">OpenAI Node SDK v7.19.0、Webhookエンドポイント管理を追加</h2>
+      <p class="card-summary">OpenAIの公式Node.js / TypeScript SDK v7.19.0が9月18日UTCに公開された。Webhookエンドポイントの管理機能が追加され、MCPのconnector_idは非推奨とされた。Webhookを利用する実装では新しい管理機能が更新点となる。connector_idを使うコードでは移行先や互換性を確認する必要があるが、このリリースノート自体には削除時期は記載されていない。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/openai/openai-node/releases/tag/v7.19.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
         <span class="card-date">発表日: 2026-09-18</span>
       </div>
       <h2 class="card-title">Grok Voice Transcribe 2.0公開、多言語・雑音下の文字起こしを改善</h2>
@@ -263,20 +289,7 @@
 
     <article class="card">
       <div class="card-meta">
-        <span class="card-tag">Policy</span>
-        <span class="card-date">発表日: 2026-09-18</span>
-      </div>
-      <h2 class="card-title">OpenAI、オーストラリアの若年層向けAI安全指針を公表</h2>
-      <p class="card-summary">OpenAIは9月18日、「Australian Youth Safety Blueprint」を公表した。AIリテラシー、年齢に応じた安全対策、プライバシーに配慮した年齢確認、現実の支援窓口との接続、保護者向け管理機能などを含む6つの柱を示している。同社によると、オーストラリアでは8月から13〜17歳と判定された利用者向けにChatGPT for Teensを展開している。今回の発表は企業による安全指針であり、新たな法律の施行を意味するものではない。</p>
-      <div class="card-footer">
-        <span class="card-source">OpenAI</span>
-        <a class="card-link" href="https://openai.com/index/australian-youth-safety-blueprint/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">Research</span>
+        <span class="card-tag">AI技術</span>
         <span class="card-date">発表日: 2026-09-18</span>
       </div>
       <h2 class="card-title">Google、物流拠点間の最適化研究向け「MilleMiglia」を紹介</h2>
@@ -289,6 +302,10 @@
 
     <!-- CARDS:END -->
   </div>
+  <section aria-labelledby="payment-heading">
+    <h2 id="payment-heading" class="page-heading">決済 — CAFIS・周辺基盤</h2>
+    <p class="page-heading">9月20日の調査では、CAFISと周辺の公式情報から直近の掲載対象を確認できませんでした。今回は決済記事の掲載はありません。</p>
+  </section>
 </main>
 
 <footer>
