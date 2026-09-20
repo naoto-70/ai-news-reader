@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-08-02</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-08-02</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link" href="../index.html">最新号</a>
+    <a class="archive-link current" href="./2026-08-02.html">2026-08-02</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-08-01.html">2026-08-01</a>
+    <a class="archive-link" href="./2026-07-31.html">2026-07-31</a>
+    <a class="archive-link" href="./2026-07-30.html">2026-07-30</a>
+    <a class="archive-link" href="./2026-07-29.html">2026-07-29</a>
+    <a class="archive-link" href="./2026-07-28.html">2026-07-28</a>
+    <a class="archive-link" href="./2026-07-27.html">2026-07-27</a>
+    <a class="archive-link" href="./2026-07-26.html">2026-07-26</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI最前線ニュース — 本日のトップ5トピック</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-08-02</span>
+      </div>
+      <h2 class="card-title">カリフォルニア州SB 942施行——月間100万ユーザー超のAI事業者にC2PA透かし・検出ツール提供を義務化</h2>
+      <p class="card-summary">カリフォルニア州のAIコンテンツ透明性法「SB 942」が2026年8月2日に施行された。月間アクティブユーザー100万人以上を抱える生成AIプロバイダーに対し、生成した画像・動画・音声へのC2PA互換プロベナンス（出自情報）の埋め込みを義務付けるほか、無償の公開検出ツールの提供とユーザーへの可視的AIラベル表示オプションの提供も求めている。違反した場合はカリフォルニア州検事総長または市民訴訟の対象となる。OpenAI・Google・Metaなど大手AIプロバイダーはすでに対応策の整備に追われており、業界全体のコンテンツ認証基盤構築を加速させる可能性がある。</p>
+      <div class="card-footer">
+        <span class="card-source">AI Weekly</span>
+        <a class="card-link" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-08-02</span>
+      </div>
+      <h2 class="card-title">DeepSeekをサイバー攻撃に悪用——Palo Alto Unit 42が460台超への侵害を確認</h2>
+      <p class="card-summary">Palo Alto NetworksのUnit 42は2026年8月2日、中国・珠海を拠点とする脅威アクター「knaithe」がDeepSeekをオープンソースのHermes Agentフレームワークに組み込み、Telegramを指令チャネルとして460台以上のインターネット公開システムへの攻撃を実施したことを報告した。攻撃者はAIを使ってターゲット列挙・公開エクスプロイト収集・自動侵害の一連の工程を効率化しており、LLMがサイバー攻撃の自動化に実用段階で利用された事例として注目されている。Unit 42はIOC（侵害の痕跡）リストを公開し、組織に対してHermes Agent実行痕跡のモニタリング強化を呼びかけている。</p>
+      <div class="card-footer">
+        <span class="card-source">AI Weekly / Palo Alto Networks</span>
+        <a class="card-link" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Policy</span>
+        <span class="card-date">2026-08-01</span>
+      </div>
+      <h2 class="card-title">米連邦政府、大統領令14409の期限を超過——フロンティアモデル開示・サイバー人材計画が未公表のまま</h2>
+      <p class="card-summary">大統領令14409（EO 14409）が定めた2026年8月1日の期限を、米連邦政府は公表なしに超過した。約束されていた機密ベンチマーキングプロセス、フロンティアモデルの自主的開示枠組み、連邦サイバー人材計画の3件について、連邦官報への掲載・NISTやCISAからの公示・OSTP声明のいずれも発出されていない。政策専門家はAI行政の実施能力への懸念を示しており、議会からも追加の法的拘束力を持つ規制枠組みを求める声が上がっている。大統領令の不履行は欧州AI法との整合を求めるIT企業にも影響する可能性がある。</p>
+      <div class="card-footer">
+        <span class="card-source">AI Weekly</span>
+        <a class="card-link" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-08-01</span>
+      </div>
+      <h2 class="card-title">GoogleがAI Studioモバイルアプリを突然キャンセル——事前登録80万件超にもかかわらず方針転換</h2>
+      <p class="card-summary">GoogleはiOS・Android向けに予告していたAI Studioモバイルアプリの開発中止を2026年8月1日に発表した。Google I/O 2026での発表以来80万件超の事前登録を集めていたにもかかわらず、スタンドアロンアプリの提供は見送り、アプリ作成機能はGeminiアプリのモバイル・デスクトップ版に統合される方針に変更された。Googleはこれを「ユーザーが実際にいる場所へのシームレスな提供」と説明しているが、開発者コミュニティからは独立したAI開発環境の消滅を懸念する声も上がっている。開発者向けのアプリ構築・テスト機能はGemini APIダッシュボードからも引き続き利用できる。</p>
+      <div class="card-footer">
+        <span class="card-source">blog.mean.ceo</span>
+        <a class="card-link" href="https://blog.mean.ceo/ai-product-launches-news-august-2026/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">Infrastructure</span>
+        <span class="card-date">2026-08-02</span>
+      </div>
+      <h2 class="card-title">日本政府・産業界・NVIDIAが世界初の国家AIインフラを始動——FRONTiaプロジェクトで製造・医療・物流を強化</h2>
+      <p class="card-summary">日本政府（経済産業省）、産業界、NVIDIAは共同で、NVIDIA Vera RubinアーキテクチャをベースとしたAIファクトリー構築プロジェクトを正式に始動させた。実施主体はSoftBankとSonyなどの企業連合「Noetra Corp.」が担い、日本独自のソブリンAIモデル開発を推進する国家プロジェクト「FRONTia」の計算基盤として位置付けられる。製造・物流・医療分野を重点領域とし、2040年までにAI搭載ロボット1,000万台の稼働と国産LLMの実用化を目指す日本のAI戦略に直結するインフラとなる。NVIDIAは本件を「世界初の国家規模AIインフラ」と位置付けており、同様の国家AIプロジェクトの国際的な先行モデルとして注目される。</p>
+      <div class="card-footer">
+        <span class="card-source">NVIDIA Newsroom</span>
+        <a class="card-link" href="https://nvidianews.nvidia.com/news/japan-government-industrial-leaders-and-nvidia-launch-the-worlds-first-national-ai-infrastructure" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
