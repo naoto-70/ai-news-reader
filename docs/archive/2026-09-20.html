@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-09-20</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-09-20</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./2026-09-20.html">2026-09-20</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-08-02.html">2026-08-02</a>
+    <a class="archive-link" href="./2026-08-01.html">2026-08-01</a>
+    <a class="archive-link" href="./2026-07-31.html">2026-07-31</a>
+    <a class="archive-link" href="./2026-07-30.html">2026-07-30</a>
+    <a class="archive-link" href="./2026-07-29.html">2026-07-29</a>
+    <a class="archive-link" href="./2026-07-28.html">2026-07-28</a>
+    <a class="archive-link" href="./2026-07-27.html">2026-07-27</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（決済欄は9月21日に追加確認）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">記事公開日: 2026-09-20</span>
+      </div>
+      <h2 class="card-title">Qwen3.8-Omni-Flash、音声・動画の理解からツール実行へ</h2>
+      <p class="card-summary">Alibaba Cloudは9月20日の公式記事で、9月18日にQwen側で発表された「Qwen3.8-Omni-Flash」の技術概要を紹介した。テキスト・画像・音声・動画を入力でき、100万トークンのコンテキストに対応する。音声や動画の内容を読み取るだけでなく、タスクの計画とツール実行につなぐ設計で、Qwen-MM-Pluginsの拡張とリアルタイム処理向けQwen-Live Harnessの公開も説明している。動画編集や会議内容からの作業実行などを想定しており、性能改善の数値は提供元の評価として示されている。</p>
+      <div class="card-footer">
+        <span class="card-source">Alibaba Cloud / Qwen</span>
+        <a class="card-link" href="https://www.alibabacloud.com/blog/qwen3-8-omni-flash-omni-senses--agentic-delivery-_603580" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開日: 2026-09-19</span>
+      </div>
+      <h2 class="card-title">Claude Code v2.1.278、自動モードの判定をサーバー側へ移行</h2>
+      <p class="card-summary">Anthropicは9月19日、Claude Code v2.1.278を公開した。Claude API・Enterprise、およびBedrock・Vertex・Foundry・ゲートウェイ経由の利用で、自動モードの判定をサーバー側で行う設定が既定になった。リリースノートによると、この判定処理の追加料金は発生せず、課金対象の処理にフォールバックした際には警告する。対象のクラウド・ゲートウェイ環境では環境変数CLAUDE_CODE_AUTO_MODE_SERVER=0で切り替えられ、/statusに判定の実行場所を示す行が追加された。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.278" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開日: 2026-09-18（UTC）</span>
+      </div>
+      <h2 class="card-title">OpenAI Node SDK v7.19.0、Webhookエンドポイント管理を追加</h2>
+      <p class="card-summary">OpenAIの公式Node.js / TypeScript SDK v7.19.0が9月18日UTCに公開された。Webhookエンドポイントの管理機能が追加され、MCPのconnector_idは非推奨とされた。Webhookを利用する実装では新しい管理機能が更新点となる。connector_idを使うコードでは移行先や互換性を確認する必要があるが、このリリースノート自体には削除時期は記載されていない。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/openai/openai-node/releases/tag/v7.19.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">発表日: 2026-09-18</span>
+      </div>
+      <h2 class="card-title">Grok Voice Transcribe 2.0公開、多言語・雑音下の文字起こしを改善</h2>
+      <p class="card-summary">SpaceXAIは9月18日、音声認識モデル「Grok Voice Transcribe 2.0」を公開した。言語の自動判定、話者の識別、単語単位のタイムスタンプに対応し、録音ファイルとリアルタイム音声の両方を処理できる。同社は実環境での評価で前版から精度が向上したと説明している。発表時の料金は音声1時間あたりバッチ処理0.10ドル、ストリーミング0.20ドルで据え置き。性能改善は提供元の評価に基づく。</p>
+      <div class="card-footer">
+        <span class="card-source">SpaceXAI</span>
+        <a class="card-link" href="https://x.ai/news/grok-voice-transcribe-2" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">発表日: 2026-09-18</span>
+      </div>
+      <h2 class="card-title">Google、物流拠点間の最適化研究向け「MilleMiglia」を紹介</h2>
+      <p class="card-summary">Google Researchは9月18日、物流拠点間の輸送を研究するためのデータ生成ツール「MilleMiglia」を紹介した。車両の固定運行時刻、拠点の処理能力、荷物の積み替えを含む現実的な問題例を生成し、ソースコードを公開している。企業の機密データをそのまま公開せずに、最適化手法の比較や機械学習用データの作成に使える研究基盤を目指す。専用の最適化ソルバーとAPIは開発中とされ、今回の公開物は問題例の生成ツールだ。</p>
+      <div class="card-footer">
+        <span class="card-source">Google Research</span>
+        <a class="card-link" href="https://www.research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+  </div>
+  <section aria-labelledby="payment-heading">
+    <h2 id="payment-heading" class="page-heading">決済 — CAFIS・関連サービスと業界動向</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-meta">
+          <span class="card-tag">決済</span>
+          <span class="card-date">発表・提供開始: 2026-09-01</span>
+        </div>
+        <h2 class="card-title">NTTデータ、ADAPTIS e-Commerceを学費オンライン収納に連携</h2>
+        <p class="card-summary">NTTデータとNTTデータ関西は、京都外国語大学・短期大学向けに学費のオンライン納付を開始した。NTTデータ関西の学費オンライン決済サービスにADAPTIS e-Commerceを連携し、カード、PayPay、Pay-easyなどを受け付ける。大学側は納付状況や精算内訳を画面で確認でき、入金の照合作業を減らせる。CAFIS運営元の関連サービスを用いた実例だが、記事はCAFIS本体の接続仕様変更を発表していない。</p>
+        <div class="card-footer">
+          <span class="card-source">NTTデータ</span>
+          <a class="card-link" href="https://www.nttdata.com/global/ja/news/topics/2026/090100/" target="_blank" rel="noopener">詳細を見る →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">
+          <span class="card-tag">決済</span>
+          <span class="card-date">本番適用予定: 2026-10-02</span>
+        </div>
+        <h2 class="card-title">GMO-PG、Visa・Mastercardのブランドルール変更に伴う仮売上処理を案内</h2>
+        <p class="card-summary">GMO-PGの開発者資料によると、Visa・Mastercardのルール変更を受け、実売上可能期間（仮売上から25日）を過ぎた取引を日次でキャンセルする処理を適用する。テスト環境では9月8日から、本番環境では10月2日からキャンセルを開始し、本番では9月6日以降の仮売上が対象。期限超過後は実売上や金額変更ができないため、加盟店は売上確定と再与信の運用を確認したい。これはGMO-PG側の仕様であり、CAFIS側の適用は確認されていない。</p>
+        <div class="card-footer">
+          <span class="card-source">GMOペイメントゲートウェイ / 開発者資料</span>
+          <a class="card-link" href="https://docs.gmo-pg.com/mulpay/docs/payment-method/credit/card/overview" target="_blank" rel="noopener">詳細を見る →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">
+          <span class="card-tag">決済</span>
+          <span class="card-date">公開: 2026-09-15</span>
+        </div>
+        <h2 class="card-title">GMO-PG、1つのQRから複数の決済手段を選べる機能を追加</h2>
+        <p class="card-summary">PGマルチペイメントサービスの「リンクタイプ Plus」で、手段ごとに発行していたQRコードを1つにまとめ、読み取り後に支払い手段を選べるようにする。テスト環境は9月15日、本番環境は9月29日の提供予定。QR発行や店舗・請求書の案内を設計する際に関係する、国内PSPの実装変更だ。CAFISとの接続関係はこの発表からは確認できない。</p>
+        <div class="card-footer">
+          <span class="card-source">GMOペイメントゲートウェイ / リリースノート</span>
+          <a class="card-link" href="https://docs.gmo-pg.com/mulpay/changelog" target="_blank" rel="noopener">詳細を見る →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">
+          <span class="card-tag">決済</span>
+          <span class="card-date">公開: 2026-09-14</span>
+        </div>
+        <h2 class="card-title">PCI SSC、暗号鍵の運用と管理を扱うKMO基準v1.0を公開</h2>
+        <p class="card-summary">PCI SSCが、カード会員データ保護に使う暗号鍵の生成から廃棄までの運用・評価要件をまとめた。初期の対象はPINとP2PEの鍵で、クラウドやリモートHSMの利用も扱う。決済基盤の鍵管理・審査に関わる共通基準として把握すべき変更だが、CAFIS固有の対応要否や適用日を示した発表ではない。</p>
+        <div class="card-footer">
+          <span class="card-source">PCI Security Standards Council</span>
+          <a class="card-link" href="https://blog.pcisecuritystandards.org/just-published-pci-key-management-operations-kmo-standard-v1.0" target="_blank" rel="noopener">詳細を見る →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">
+          <span class="card-tag">決済</span>
+          <span class="card-date">発表: 2026-09-09</span>
+        </div>
+        <h2 class="card-title">Mastercard、加盟店と購買AIをつなぐAgent Connectを発表</h2>
+        <p class="card-summary">Mastercardは、加盟店・AIエージェント・決済事業者を単一の接続点でつなぐ「Agent Connect」を発表した。参加するエージェントは商品情報の取得、価格・配送条件の確認、利用者が承認した購入へ進める構想で、加盟店は接続するAI体験や取引条件を管理する。エージェント経由決済で加盟店接続と承認の設計が変わりうる動向として注目する。CAFISでの採用・接続は発表されていない。</p>
+        <div class="card-footer">
+          <span class="card-source">Mastercard</span>
+          <a class="card-link" href="https://www.mastercard.com/us/en/news-and-trends/press/2026/september/mastercard-gives-merchants-a-simpler-way-to-build--connect-and-s.html" target="_blank" rel="noopener">詳細を見る →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- CARDS:END -->
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
