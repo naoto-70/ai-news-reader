@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-09-22</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-09-22</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./2026-09-22.html">2026-09-22</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <a class="archive-link" href="./2026-08-02.html">2026-08-02</a>
+    <a class="archive-link" href="./2026-08-01.html">2026-08-01</a>
+    <a class="archive-link" href="./2026-07-31.html">2026-07-31</a>
+    <a class="archive-link" href="./2026-07-30.html">2026-07-30</a>
+    <a class="archive-link" href="./2026-07-29.html">2026-07-29</a>
+    <a class="archive-link" href="./2026-07-28.html">2026-07-28</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月22日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-20</span>
+      </div>
+      <h2 class="card-title">Qwen-Image-2.1、生成と編集を統合した7B画像モデルを公開</h2>
+      <p class="card-summary">Qwenは画像生成・編集モデルQwen-Image-2.1の重みと実装を公開した。7Bパラメータの単一ストリームDiTにQwen3-VL 8BのテキストエンコーダとRGBA対応VAEを組み合わせ、テキストからの生成、複数画像を用いた編集、透明背景の出力に対応する。入力のテキストや画像を初回ステップで計算して後続の拡散ステップで再利用する設計を説明している。利用前に研究向けライセンスの条件確認が必要だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Qwen / GitHub</span>
+        <a class="card-link" href="https://github.com/QwenLM/Qwen-Image-2.1" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-21</span>
+      </div>
+      <h2 class="card-title">ComfyUI v0.37.0、Qwen-Image-2.1対応とディスク・VRAM最適化を追加</h2>
+      <p class="card-summary">ComfyUIはv0.37.0を公開し、Qwen-Image-2.1のワークフローを標準で扱えるようにした。速いストレージでは--fast-diskを自動有効化し、Wanでcomfy kitchen attentionを使う際のVRAMピークも削減した。非bf16 GPUでVAEデコードが失敗する問題も修正している。画像生成環境の更新時は、モデル対応だけでなくGPU互換性とメモリ使用量を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Comfy-Org / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.37.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-21</span>
+      </div>
+      <h2 class="card-title">LangGraph 1.2.12、interrupt()に応答スキーマを追加</h2>
+      <p class="card-summary">LangGraphの1.2.12では、人の入力などで処理を中断するinterrupt()にresponse_schemaが追加された。中断から戻る値の形を明示できる更新で、承認画面や外部入力を挟むエージェントの入出力契約を設計しやすくなる。リリースにはv3ストリームの型宣言とサブグラフ検出の修正も含まれる。既存フローに適用する際は中断・再開の境界を検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LangChain / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.12" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-21</span>
+      </div>
+      <h2 class="card-title">Langfuse 4.41.0、イベントのRust側エンコードと自動化フィルタを追加</h2>
+      <p class="card-summary">LLM観測基盤Langfuseの4.41.0は、v4のネイティブブロックとイベントバイト列のエンコードをRust側に移した。プロンプトイベントをタグで絞る自動化フィルタも追加された。同日公開の4.40.0では会話のtranscript spanを元のtraceに結び付ける変更が入っており、会話追跡の実装を更新する場合は両リリースの差分を確認できる。性能改善の幅はリリースノートからは分からない。</p>
+      <div class="card-footer">
+        <span class="card-source">Langfuse / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.41.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">発表: 2026-09-21</span>
+      </div>
+      <h2 class="card-title">Fastly、モデル呼び出しの統制とプロンプト攻撃対策を発表</h2>
+      <p class="card-summary">FastlyはAI Runtime Control、AI Firewall、API Securityを発表した。モデル呼び出しを単一の接続点に通して仮想キー、利用量・予算、レート制限、フェイルオーバーを管理し、推論リクエスト上でプロンプトインジェクションを検査する。エージェントが企業APIを使う際はAPI契約に反する呼び出しを観測・遮断できるとしている。提供元の機能説明であり、独立した防御性能の評価ではない。</p>
+      <div class="card-footer">
+        <span class="card-source">Fastly</span>
+        <a class="card-link" href="https://investors.fastly.com/news-releases/news-release-details/fastly-launches-ai-firewall-and-ai-runtime-control-secure-and" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+  </div>
+  <section aria-labelledby="payment-heading">
+    <h2 id="payment-heading" class="page-heading">決済 — CAFIS・関連サービスと業界動向</h2>
+    <div class="cards">
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-21</span>
+      </div>
+      <h2 class="card-title">GMOフィナンシャルゲート、決済端末の一部障害から復旧</h2>
+      <p class="card-summary">9月21日、GMOフィナンシャルゲートの決済端末で一部のクレジット・銀聯取引にエラーや処理遅延が発生した。公表された影響時間帯は6時40分〜8時20分頃と9時39分〜10時43分頃で、同日10時43分時点で正常利用を確認した。原因は調査中。加盟店の売上・エラー照合で確認すべき事象だが、CAFISが原因または影響先だったという発表はない。</p>
+      <div class="card-footer">
+        <span class="card-source">GMOフィナンシャルゲート</span>
+        <a class="card-link" href="https://gmo-fg.com/news/2026/09/20260921125800.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-21</span>
+      </div>
+      <h2 class="card-title">Mastercard、利用者の条件に基づくAI代理購入の取引事例を公表</h2>
+      <p class="card-summary">Mastercard、Flybits、Rogers Bankはカナダで、利用者が指定した予算などの条件に従い、AIアシスタントが商品選定から購入まで進める取引を実施したと発表した。決済にはMastercard Agent Payを使用し、利用者の指示の確認と支出上限の制御を重視する。代理購入で同意と取引をどう結び付けるかの実例だが、日本やCAFISでの提供・接続は示されていない。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard Canada</span>
+        <a class="card-link" href="https://www.mastercard.com/ca/en/news-and-trends/press/2026/september/mastercard-flybits-and-rogers-establish-benchmark-for-agentic-commerce-in-canada.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-09-15</span>
+      </div>
+      <h2 class="card-title">PCI SSC、決済環境でのAIシステム保護に関する補足資料を公開</h2>
+      <p class="card-summary">PCI SSCは、決済環境でAIを導入・利用する際のリスク評価と、AIを使った攻撃から従来システムを守る観点を整理した情報補足資料を公開した。AIの導入範囲や影響を評価する枠組みを示す一方、既存のPCI基準との差異があれば基準本文が優先される。決済データを扱う組織のAI運用の参考資料であり、CAFIS固有の新しい義務を定めた発表ではない。</p>
+      <div class="card-footer">
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://blog.pcisecuritystandards.org/just-published-security-considerations-for-ai-systems" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-09</span>
+      </div>
+      <h2 class="card-title">Checkout.com、米国でカードネットワークへの直接接続を開始</h2>
+      <p class="card-summary">Checkout.comは米ジョージア州のMerchant Acquirer Limited Purpose Bank認可に基づき、米国内の加盟店向けカード決済処理を開始した。カードネットワークへ直接接続し、第三者の中継への依存を減らして決済処理を自社で制御する。決済ネットワークの接続構成として参考になるが、対象は米国事業で、CAFISの接続変更を意味しない。</p>
+      <div class="card-footer">
+        <span class="card-source">Checkout.com</span>
+        <a class="card-link" href="https://www.checkout.com/newsroom/checkout-com-goes-live-with-us-direct-acquiring-under-malpb-charter" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">草案公開: 2026-09-01 / 意見期限: 09-30</span>
+      </div>
+      <h2 class="card-title">EMVCo、カードによるAI代理決済の仕様枠組み草案を公開</h2>
+      <p class="card-summary">EMVCoは、AIが利用者の代わりにカード決済する際の権限委任や購買意図をどう伝えるかを整理した仕様枠組みの草案を公開し、9月30日まで意見を募集している。継続購入、累積予算、購入後の処理など時間をまたぐ意図管理が焦点で、将来の3-D Secureやトークン化技術との関係も検討する。正式仕様や国内実装は未確定だが、加盟店・決済基盤側が標準化の方向を把握できる。</p>
+      <div class="card-footer">
+        <span class="card-source">EMVCo</span>
+        <a class="card-link" href="https://www.emvco.com/news/emvco-requests-feedback-on-framework-for-secure-interoperable-and-scalable-card-based-agentic-payments/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    </div>
+  </section>
+  <!-- CARDS:END -->
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>

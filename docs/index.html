@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-09-22</title>
+  <title>AI News Daily — 2026-09-23</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-09-22</span>
+    <span class="site-date">2026-09-23</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-09-22</a>
+    <a class="archive-link current" href="./index.html">2026-09-23</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-09-22.html">2026-09-22</a>
     <a class="archive-link" href="./archive/2026-09-20.html">2026-09-20</a>
     <a class="archive-link" href="./archive/2026-08-02.html">2026-08-02</a>
     <a class="archive-link" href="./archive/2026-08-01.html">2026-08-01</a>
@@ -231,71 +232,71 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月22日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月23日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-20</span>
+        <span class="card-date">発表: 2026-09-22</span>
       </div>
-      <h2 class="card-title">Qwen-Image-2.1、生成と編集を統合した7B画像モデルを公開</h2>
-      <p class="card-summary">Qwenは画像生成・編集モデルQwen-Image-2.1の重みと実装を公開した。7Bパラメータの単一ストリームDiTにQwen3-VL 8BのテキストエンコーダとRGBA対応VAEを組み合わせ、テキストからの生成、複数画像を用いた編集、透明背景の出力に対応する。入力のテキストや画像を初回ステップで計算して後続の拡散ステップで再利用する設計を説明している。利用前に研究向けライセンスの条件確認が必要だ。</p>
+      <h2 class="card-title">OpenAI、GPT-6 SolとLunaをAPI・Codexへ投入</h2>
+      <p class="card-summary">OpenAIはGPT-6 SolとLunaを公開し、APIではそれぞれ<code>gpt-6-sol</code>と<code>gpt-6-luna</code>で提供を始めた。100万トークン当たりの入出力価格はSolが2ドル／10ドル、Lunaが0.10ドル／0.50ドルで、GPT-5.6のプロモーション価格から50%引き下げたとしている。性能比較は提供元の評価であり、本番移行前に既存タスクで品質・遅延・総コストを測りたい。</p>
       <div class="card-footer">
-        <span class="card-source">Qwen / GitHub</span>
-        <a class="card-link" href="https://github.com/QwenLM/Qwen-Image-2.1" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-21</span>
+        <span class="card-date">公開: 2026-09-22</span>
       </div>
-      <h2 class="card-title">ComfyUI v0.37.0、Qwen-Image-2.1対応とディスク・VRAM最適化を追加</h2>
-      <p class="card-summary">ComfyUIはv0.37.0を公開し、Qwen-Image-2.1のワークフローを標準で扱えるようにした。速いストレージでは--fast-diskを自動有効化し、Wanでcomfy kitchen attentionを使う際のVRAMピークも削減した。非bf16 GPUでVAEデコードが失敗する問題も修正している。画像生成環境の更新時は、モデル対応だけでなくGPU互換性とメモリ使用量を確認したい。</p>
+      <h2 class="card-title">GPT-6のプロンプトキャッシュ、診断・明示境界・事前生成に対応</h2>
+      <p class="card-summary">OpenAIはGPT-6向けプロンプトキャッシュを更新した。再利用可能な共通プレフィックスの割引対象期間を30分とし、ヒット率を確認するダッシュボード、ツール定義などの差分からミス原因を返す診断、明示的なキャッシュ境界、事前生成を追加した。<code>configuration_update</code>で推論強度を変える場合はキャッシュを維持できるため、長時間エージェントでは応答時間と入力コストの両方を計測できる。</p>
       <div class="card-footer">
-        <span class="card-source">Comfy-Org / GitHub Releases</span>
-        <a class="card-link" href="https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.37.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://openai.com/index/better-prompt-caching-for-gpt-6/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-21</span>
+        <span class="card-date">公開: 2026-09-22</span>
       </div>
-      <h2 class="card-title">LangGraph 1.2.12、interrupt()に応答スキーマを追加</h2>
-      <p class="card-summary">LangGraphの1.2.12では、人の入力などで処理を中断するinterrupt()にresponse_schemaが追加された。中断から戻る値の形を明示できる更新で、承認画面や外部入力を挟むエージェントの入出力契約を設計しやすくなる。リリースにはv3ストリームの型宣言とサブグラフ検出の修正も含まれる。既存フローに適用する際は中断・再開の境界を検証したい。</p>
+      <h2 class="card-title">vLLM 0.30.0、GPU上の重みキャッシュと疎KVのホスト退避を追加</h2>
+      <p class="card-summary">vLLM 0.30.0は、量子化・TP分割済みの重みをGPUに保持し、再起動時にCUDA IPCで再利用する<code>--load-format ipc_cache</code>を追加した。GPU圧迫時に疎MLAのKVページをpinned host memoryへ退避するHiSparse、推測デコード対応のGumbel-max透かし、DeepSeek-V4.1-Flashなどのモデル対応も含む。scale-out endpointの有効化方法やGPTQ activation orderingの削除など破壊的変更があるため、更新前に起動引数と量子化方式の確認が必要だ。</p>
       <div class="card-footer">
-        <span class="card-source">LangChain / GitHub Releases</span>
-        <a class="card-link" href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.12" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">vLLM / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/vllm-project/vllm/releases/tag/v0.30.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-21</span>
+        <span class="card-date">公開: 2026-09-22</span>
       </div>
-      <h2 class="card-title">Langfuse 4.41.0、イベントのRust側エンコードと自動化フィルタを追加</h2>
-      <p class="card-summary">LLM観測基盤Langfuseの4.41.0は、v4のネイティブブロックとイベントバイト列のエンコードをRust側に移した。プロンプトイベントをタグで絞る自動化フィルタも追加された。同日公開の4.40.0では会話のtranscript spanを元のtraceに結び付ける変更が入っており、会話追跡の実装を更新する場合は両リリースの差分を確認できる。性能改善の幅はリリースノートからは分からない。</p>
+      <h2 class="card-title">Anthropic Python SDK 1.8.0、ツール定義とMCP固定機能を拡張</h2>
+      <p class="card-summary">AnthropicのPython SDK 1.8.0は、Claude Opus 5.5、インラインのツール定義、MCP tool-list pinningのベータ対応を追加した。ツールランナーでは<code>add_tools()</code>の変更が即時反映され、compaction要求から返信専用パラメータを除外する修正も入った。開いたストリームを残した場合にPython 3.13終了時にクラッシュする問題も直しており、MCPや長時間ストリームを使う実装で更新価値が高い。</p>
       <div class="card-footer">
-        <span class="card-source">Langfuse / GitHub Releases</span>
-        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.41.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Anthropic / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.8.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">発表: 2026-09-21</span>
+        <span class="card-date">公開: 2026-09-22</span>
       </div>
-      <h2 class="card-title">Fastly、モデル呼び出しの統制とプロンプト攻撃対策を発表</h2>
-      <p class="card-summary">FastlyはAI Runtime Control、AI Firewall、API Securityを発表した。モデル呼び出しを単一の接続点に通して仮想キー、利用量・予算、レート制限、フェイルオーバーを管理し、推論リクエスト上でプロンプトインジェクションを検査する。エージェントが企業APIを使う際はAPI契約に反する呼び出しを観測・遮断できるとしている。提供元の機能説明であり、独立した防御性能の評価ではない。</p>
+      <h2 class="card-title">LiteLLM 1.102.0、ストリーミング後段ガードレールと鍵の秘匿を強化</h2>
+      <p class="card-summary">LiteLLM 1.102.0は、ストリーミング応答にpost-callガードレールの処理とテキスト書き換えを適用できるようにした。プロバイダー鍵がpass-through失敗時のtracebackへ出る問題を修正し、模擬File Searchが要求元のvector storeだけを見るよう範囲も限定した。MCPではサーバー単位のOAuth relay discoveryを任意で有効化できる。プロキシ更新時はストリーム改変と監査ログを回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Fastly</span>
-        <a class="card-link" href="https://investors.fastly.com/news-releases/news-release-details/fastly-launches-ai-firewall-and-ai-runtime-control-secure-and" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">LiteLLM / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.102.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
   </div>
@@ -305,65 +306,65 @@
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-21</span>
+        <span class="card-date">発表: 2026-09-03 / 順次導入: 09月〜</span>
       </div>
-      <h2 class="card-title">GMOフィナンシャルゲート、決済端末の一部障害から復旧</h2>
-      <p class="card-summary">9月21日、GMOフィナンシャルゲートの決済端末で一部のクレジット・銀聯取引にエラーや処理遅延が発生した。公表された影響時間帯は6時40分〜8時20分頃と9時39分〜10時43分頃で、同日10時43分時点で正常利用を確認した。原因は調査中。加盟店の売上・エラー照合で確認すべき事象だが、CAFISが原因または影響先だったという発表はない。</p>
+      <h2 class="card-title">ファミリーマート1万6500店、約40手段対応の次期決済システムへ</h2>
+      <p class="card-summary">NECは、全国約1万6500のファミリーマート店舗へ次期決済端末を9月から順次導入する。NECのマルチサービスゲートウェイと連携し、クレジット、電子マネー、QR・バーコードなど約40の決済サービスを扱う。CAFIS/ADAPTISとの接続関係は発表されていないが、大規模加盟店の端末・ゲートウェイ更改として、接続先、売上集計、切替期間、障害時の経路確認に関係する国内動向だ。</p>
       <div class="card-footer">
-        <span class="card-source">GMOフィナンシャルゲート</span>
-        <a class="card-link" href="https://gmo-fg.com/news/2026/09/20260921125800.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">NEC</span>
+        <a class="card-link" href="https://jpn.nec.com/press/202609/20260903_01.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-21</span>
+        <span class="card-date">発表: 2026-09-04 / 実証: 09-01〜11-30</span>
       </div>
-      <h2 class="card-title">Mastercard、利用者の条件に基づくAI代理購入の取引事例を公表</h2>
-      <p class="card-summary">Mastercard、Flybits、Rogers Bankはカナダで、利用者が指定した予算などの条件に従い、AIアシスタントが商品選定から購入まで進める取引を実施したと発表した。決済にはMastercard Agent Payを使用し、利用者の指示の確認と支出上限の制御を重視する。代理購入で同意と取引をどう結び付けるかの実例だが、日本やCAFISでの提供・接続は示されていない。</p>
+      <h2 class="card-title">SBPSのPayCAS、登録カードを使う顔認証決済を実証</h2>
+      <p class="card-summary">NEC、SBペイメントサービス、SB C&amp;Sは、NECのBio-IDiom Services for SaaSとPayCASを連携した顔認証決済を開始した。利用者は顔情報とクレジットカードを事前登録し、カードやスマートフォンを提示せず支払う。11月30日までソフトバンク本社の社員食堂で1000件超の決済を想定して運用を検証する。CAFIS接続は公表されておらず、国内PSP・端末側の本人認証統合として追うべき事例だ。</p>
       <div class="card-footer">
-        <span class="card-source">Mastercard Canada</span>
-        <a class="card-link" href="https://www.mastercard.com/ca/en/news-and-trends/press/2026/september/mastercard-flybits-and-rogers-establish-benchmark-for-agentic-commerce-in-canada.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">SBペイメントサービス</span>
+        <a class="card-link" href="https://www.sbpayment.jp/news/press/2026/20260904_001584/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-09-15</span>
+        <span class="card-date">発表: 2026-09-11 / 提供予定: 年内</span>
       </div>
-      <h2 class="card-title">PCI SSC、決済環境でのAIシステム保護に関する補足資料を公開</h2>
-      <p class="card-summary">PCI SSCは、決済環境でAIを導入・利用する際のリスク評価と、AIを使った攻撃から従来システムを守る観点を整理した情報補足資料を公開した。AIの導入範囲や影響を評価する枠組みを示す一方、既存のPCI基準との差異があれば基準本文が優先される。決済データを扱う組織のAI運用の参考資料であり、CAFIS固有の新しい義務を定めた発表ではない。</p>
+      <h2 class="card-title">MastercardとGoogle Pay、端末生体認証でオンラインカード決済へ</h2>
+      <p class="card-summary">MastercardとGoogle Payは、スマートフォンの指紋・顔認証でオンラインカード取引を承認する仕組みをインドで年内に提供する予定だ。Mastercard Consumer Device Cardholder Verification Method（CDCVM）を使い、対象イシュアーの保存済みカードではSMSのワンタイムパスワードへの依存を減らす。日本やCAFISでの提供は示されていないが、3-D Secureを含む本人認証、責任分界、認証結果の受け渡しを検討する際の関連動向だ。</p>
       <div class="card-footer">
-        <span class="card-source">PCI Security Standards Council</span>
-        <a class="card-link" href="https://blog.pcisecuritystandards.org/just-published-security-considerations-for-ai-systems" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Mastercard India</span>
+        <a class="card-link" href="https://newsroom.mastercard.com/news/ap/en-in/newsroom/press-releases/en-in/2026/september-1/mastercard-and-google-pay-collaborate-to-soon-bring-device-biometric-card-payment-experiences-on-google-pay/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-09</span>
+        <span class="card-date">発表: 2026-09-01</span>
       </div>
-      <h2 class="card-title">Checkout.com、米国でカードネットワークへの直接接続を開始</h2>
-      <p class="card-summary">Checkout.comは米ジョージア州のMerchant Acquirer Limited Purpose Bank認可に基づき、米国内の加盟店向けカード決済処理を開始した。カードネットワークへ直接接続し、第三者の中継への依存を減らして決済処理を自社で制御する。決済ネットワークの接続構成として参考になるが、対象は米国事業で、CAFISの接続変更を意味しない。</p>
+      <h2 class="card-title">Visa、A2A送金の不正を単一APIで採点するProtectを更新</h2>
+      <p class="card-summary">Visaは口座間送金向けA2A Protectに、Featurespaceの技術を統合したリアルタイムの不正スコアを追加した。金融機関は単一APIで接続でき、各アラートには検知理由の平易な説明を付ける。任意参加でネットワーク横断の兆候もスコアへ反映する。検知率などの数値はVisaの実績・評価に基づく。カード取引やCAFIS本体の変更ではないが、即時送金での事前判定、誤検知、説明可能性を設計する参考になる。</p>
       <div class="card-footer">
-        <span class="card-source">Checkout.com</span>
-        <a class="card-link" href="https://www.checkout.com/newsroom/checkout-com-goes-live-with-us-direct-acquiring-under-malpb-charter" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://investor.visa.com/news/news-details/2026/Visa-Launches-Enhanced-A2A-Protect-Innovations-to-Help-Financial-Institutions-Stop-Fraud-Before-Money-Leaves-Accounts/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">草案公開: 2026-09-01 / 意見期限: 09-30</span>
+        <span class="card-date">発表: 2026-09-10</span>
       </div>
-      <h2 class="card-title">EMVCo、カードによるAI代理決済の仕様枠組み草案を公開</h2>
-      <p class="card-summary">EMVCoは、AIが利用者の代わりにカード決済する際の権限委任や購買意図をどう伝えるかを整理した仕様枠組みの草案を公開し、9月30日まで意見を募集している。継続購入、累積予算、購入後の処理など時間をまたぐ意図管理が焦点で、将来の3-D Secureやトークン化技術との関係も検討する。正式仕様や国内実装は未確定だが、加盟店・決済基盤側が標準化の方向を把握できる。</p>
+      <h2 class="card-title">Mastercard Wallet Pay、NFC・QR・オンラインを横断するウォレット接続を展開</h2>
+      <p class="card-summary">Mastercardは、デジタルウォレット事業者をグローバルな加盟店受け入れ網へ接続するWallet Payを発表した。NFC、QR、オンライン決済とクロスボーダー送金を対象にし、Alipay+の提携ウォレット、GCash、KakaoPay、Mercado Pagoなどが参加する。日本やCAFISでの採用・接続は示されていない。国内側では、海外ウォレット受け入れ時のブランド経路、トークン、精算、返金・不正対策の差分を確認する材料になる。</p>
       <div class="card-footer">
-        <span class="card-source">EMVCo</span>
-        <a class="card-link" href="https://www.emvco.com/news/emvco-requests-feedback-on-framework-for-secure-interoperable-and-scalable-card-based-agentic-payments/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://newsroom.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-launches-wallet-pay-to-scale-digital-wallets-worldwide/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     </div>
