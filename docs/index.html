@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-09-23</title>
+  <title>AI News Daily — 2026-09-27</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-09-23</span>
+    <span class="site-date">2026-09-27</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-09-23</a>
+    <a class="archive-link current" href="./index.html">2026-09-27</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-09-23.html">2026-09-23</a>
     <a class="archive-link" href="./archive/2026-09-22.html">2026-09-22</a>
     <a class="archive-link" href="./archive/2026-09-20.html">2026-09-20</a>
     <a class="archive-link" href="./archive/2026-08-02.html">2026-08-02</a>
@@ -226,77 +227,76 @@
     <a class="archive-link" href="./archive/2026-07-31.html">2026-07-31</a>
     <a class="archive-link" href="./archive/2026-07-30.html">2026-07-30</a>
     <a class="archive-link" href="./archive/2026-07-29.html">2026-07-29</a>
-    <a class="archive-link" href="./archive/2026-07-28.html">2026-07-28</a>
     <!-- ARCHIVE-LINKS:END -->
   </div>
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月23日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月27日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">発表: 2026-09-22</span>
+        <span class="card-date">GitHub公開: 2026-09-26</span>
       </div>
-      <h2 class="card-title">OpenAI、GPT-6 SolとLunaをAPI・Codexへ投入</h2>
-      <p class="card-summary">OpenAIはGPT-6 SolとLunaを公開し、APIではそれぞれ<code>gpt-6-sol</code>と<code>gpt-6-luna</code>で提供を始めた。100万トークン当たりの入出力価格はSolが2ドル／10ドル、Lunaが0.10ドル／0.50ドルで、GPT-5.6のプロモーション価格から50%引き下げたとしている。性能比較は提供元の評価であり、本番移行前に既存タスクで品質・遅延・総コストを測りたい。</p>
+      <h2 class="card-title">Google ADK 2.10.0、スキルの寿命管理と実行コスト評価を追加</h2>
+      <p class="card-summary">Google Agent Development Kit 2.10.0は、1ターンだけ有効な<code>EPHEMERAL</code>スキル、同時に有効化できるスキル数の上限、明示的なアンロードを実験機能として追加した。MongoDBのベクトル・ハイブリッド検索ツールと、実行時間・トークン消費・モデル呼び出し回数を測る評価指標も入った。スキル機能は<code>ADK_ENABLE_SKILL_LIFECYCLE=1</code>が必要で、BigQuery保護モードなどには挙動変更があるため、更新時は評価結果とデータ操作の回帰確認が必要だ。</p>
       <div class="card-footer">
-        <span class="card-source">OpenAI</span>
-        <a class="card-link" href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Google ADK / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/google/adk-python/releases/tag/v2.10.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-22</span>
+        <span class="card-date">公開: 2026-09-26</span>
       </div>
-      <h2 class="card-title">GPT-6のプロンプトキャッシュ、診断・明示境界・事前生成に対応</h2>
-      <p class="card-summary">OpenAIはGPT-6向けプロンプトキャッシュを更新した。再利用可能な共通プレフィックスの割引対象期間を30分とし、ヒット率を確認するダッシュボード、ツール定義などの差分からミス原因を返す診断、明示的なキャッシュ境界、事前生成を追加した。<code>configuration_update</code>で推論強度を変える場合はキャッシュを維持できるため、長時間エージェントでは応答時間と入力コストの両方を計測できる。</p>
+      <h2 class="card-title">Pydantic AI 2.51.0、OpenAI GPT-Liveとリアルタイム文脈使用率に対応</h2>
+      <p class="card-summary">Pydantic AI 2.51.0は<code>OpenAILiveModel</code>を追加し、OpenAI GPT-Liveをリアルタイムセッションとして扱えるようにした。セッションには文脈窓の使用率を示す<code>context_window_used</code>も公開する。通常実行ではエージェントグラフを毎回組み直さずキャッシュし、単一のツールセットや能力分岐では不要なタスクグループを作らないようにした。音声・低遅延実装では切断時の応答ID保持やストリーム再生も修正されている。</p>
       <div class="card-footer">
-        <span class="card-source">OpenAI</span>
-        <a class="card-link" href="https://openai.com/index/better-prompt-caching-for-gpt-6/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Pydantic AI / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.51.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-22</span>
+        <span class="card-date">公開: 2026-09-26</span>
       </div>
-      <h2 class="card-title">vLLM 0.30.0、GPU上の重みキャッシュと疎KVのホスト退避を追加</h2>
-      <p class="card-summary">vLLM 0.30.0は、量子化・TP分割済みの重みをGPUに保持し、再起動時にCUDA IPCで再利用する<code>--load-format ipc_cache</code>を追加した。GPU圧迫時に疎MLAのKVページをpinned host memoryへ退避するHiSparse、推測デコード対応のGumbel-max透かし、DeepSeek-V4.1-Flashなどのモデル対応も含む。scale-out endpointの有効化方法やGPTQ activation orderingの削除など破壊的変更があるため、更新前に起動引数と量子化方式の確認が必要だ。</p>
-      <div class="card-footer">
-        <span class="card-source">vLLM / GitHub Releases</span>
-        <a class="card-link" href="https://github.com/vllm-project/vllm/releases/tag/v0.30.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-22</span>
-      </div>
-      <h2 class="card-title">Anthropic Python SDK 1.8.0、ツール定義とMCP固定機能を拡張</h2>
-      <p class="card-summary">AnthropicのPython SDK 1.8.0は、Claude Opus 5.5、インラインのツール定義、MCP tool-list pinningのベータ対応を追加した。ツールランナーでは<code>add_tools()</code>の変更が即時反映され、compaction要求から返信専用パラメータを除外する修正も入った。開いたストリームを残した場合にPython 3.13終了時にクラッシュする問題も直しており、MCPや長時間ストリームを使う実装で更新価値が高い。</p>
+      <h2 class="card-title">Claude Agent SDK Python、バックグラウンド・サブエージェント後の継続失敗を修正</h2>
+      <p class="card-summary">Claude Agent SDK for Python 0.2.160は、フック、<code>can_use_tool</code>、SDK内MCPサーバーを使う<code>query()</code>で、バックグラウンド・サブエージェント完了直後に標準入力が早く閉じ、次のターンが<code>Stream closed</code>になる問題を修正した。CLIの<code>session_state_changed</code>を監視し、<code>idle</code>になるまで入力を維持する。待機上限は既定10分で環境変数から変更できるため、長時間エージェントではSDKと同梱CLIを揃えて更新したい。</p>
       <div class="card-footer">
         <span class="card-source">Anthropic / GitHub Releases</span>
-        <a class="card-link" href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.8.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.160" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-22</span>
+        <span class="card-date">公開: 2026-09-25</span>
       </div>
-      <h2 class="card-title">LiteLLM 1.102.0、ストリーミング後段ガードレールと鍵の秘匿を強化</h2>
-      <p class="card-summary">LiteLLM 1.102.0は、ストリーミング応答にpost-callガードレールの処理とテキスト書き換えを適用できるようにした。プロバイダー鍵がpass-through失敗時のtracebackへ出る問題を修正し、模擬File Searchが要求元のvector storeだけを見るよう範囲も限定した。MCPではサーバー単位のOAuth relay discoveryを任意で有効化できる。プロキシ更新時はストリーム改変と監査ログを回帰確認したい。</p>
+      <h2 class="card-title">Langfuse 4.46.0、スキル管理と実験結果の横並び比較を追加</h2>
+      <p class="card-summary">Langfuse 4.46.0は基本的なスキル管理、実験結果のサイド・バイ・サイド比較、データセット項目の整形JSON表示を追加した。トレース表では100行表示を選べる。内蔵アシスタントがデータ保持設定を守るよう修正され、データセット実行項目の読み取りはリードレプリカへ移された。セルフホスト環境では、スキルの登録・評価運用と保持ポリシーが期待どおりかを更新後に確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">LiteLLM / GitHub Releases</span>
-        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.102.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Langfuse / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.46.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">プレリリース: 2026-09-25</span>
+      </div>
+      <h2 class="card-title">Ollama 0.40.0 RC、Apple Siliconで対応モデルをMLX実行へ自動切替</h2>
+      <p class="card-summary">Ollama 0.40.0のリリース候補版は、Apple Silicon上でMLXが対応するモデルを既定でMLXランタイムへ載せる。例としてQwen 3.8が示され、プレリリース期間中に対応モデルを追加する予定だ。従来の実行バックエンドから自動で切り替わるため、Macでローカル推論を運用する場合は、モデルごとの出力互換性、初回読み込み、メモリ使用量、生成速度を測ってから安定版へ移行したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Ollama / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.0-rc0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
   </div>
@@ -306,65 +306,65 @@
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-03 / 順次導入: 09月〜</span>
+        <span class="card-date">発表: 2026-09-25 / 開始: 10-07</span>
       </div>
-      <h2 class="card-title">ファミリーマート1万6500店、約40手段対応の次期決済システムへ</h2>
-      <p class="card-summary">NECは、全国約1万6500のファミリーマート店舗へ次期決済端末を9月から順次導入する。NECのマルチサービスゲートウェイと連携し、クレジット、電子マネー、QR・バーコードなど約40の決済サービスを扱う。CAFIS/ADAPTISとの接続関係は発表されていないが、大規模加盟店の端末・ゲートウェイ更改として、接続先、売上集計、切替期間、障害時の経路確認に関係する国内動向だ。</p>
-      <div class="card-footer">
-        <span class="card-source">NEC</span>
-        <a class="card-link" href="https://jpn.nec.com/press/202609/20260903_01.html" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-04 / 実証: 09-01〜11-30</span>
-      </div>
-      <h2 class="card-title">SBPSのPayCAS、登録カードを使う顔認証決済を実証</h2>
-      <p class="card-summary">NEC、SBペイメントサービス、SB C&amp;Sは、NECのBio-IDiom Services for SaaSとPayCASを連携した顔認証決済を開始した。利用者は顔情報とクレジットカードを事前登録し、カードやスマートフォンを提示せず支払う。11月30日までソフトバンク本社の社員食堂で1000件超の決済を想定して運用を検証する。CAFIS接続は公表されておらず、国内PSP・端末側の本人認証統合として追うべき事例だ。</p>
-      <div class="card-footer">
-        <span class="card-source">SBペイメントサービス</span>
-        <a class="card-link" href="https://www.sbpayment.jp/news/press/2026/20260904_001584/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-11 / 提供予定: 年内</span>
-      </div>
-      <h2 class="card-title">MastercardとGoogle Pay、端末生体認証でオンラインカード決済へ</h2>
-      <p class="card-summary">MastercardとGoogle Payは、スマートフォンの指紋・顔認証でオンラインカード取引を承認する仕組みをインドで年内に提供する予定だ。Mastercard Consumer Device Cardholder Verification Method（CDCVM）を使い、対象イシュアーの保存済みカードではSMSのワンタイムパスワードへの依存を減らす。日本やCAFISでの提供は示されていないが、3-D Secureを含む本人認証、責任分界、認証結果の受け渡しを検討する際の関連動向だ。</p>
-      <div class="card-footer">
-        <span class="card-source">Mastercard India</span>
-        <a class="card-link" href="https://newsroom.mastercard.com/news/ap/en-in/newsroom/press-releases/en-in/2026/september-1/mastercard-and-google-pay-collaborate-to-soon-bring-device-biometric-card-payment-experiences-on-google-pay/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-01</span>
-      </div>
-      <h2 class="card-title">Visa、A2A送金の不正を単一APIで採点するProtectを更新</h2>
-      <p class="card-summary">Visaは口座間送金向けA2A Protectに、Featurespaceの技術を統合したリアルタイムの不正スコアを追加した。金融機関は単一APIで接続でき、各アラートには検知理由の平易な説明を付ける。任意参加でネットワーク横断の兆候もスコアへ反映する。検知率などの数値はVisaの実績・評価に基づく。カード取引やCAFIS本体の変更ではないが、即時送金での事前判定、誤検知、説明可能性を設計する参考になる。</p>
+      <h2 class="card-title">Visa・stera transit、4鉄道のタッチ乗車にVポイントを連携</h2>
+      <p class="card-summary">Visa、三井住友カード、QUADRACなどは、京王電鉄、つくばエクスプレス、ゆりかもめ、江ノ島電鉄の全線全駅で、Visaのタッチ乗車に応じたVポイント付与を10月7日から2年間実証する。三井住友カードの<code>stera transit</code>を使い、利用者は対象カードを事前設定する。CAFIS/ADAPTISとの直接接続は発表されていないが、交通決済と会員ID・ポイント計算を結ぶ国内事例として、乗車確定後の集計、取消・返金、精算照合の設計が注目点になる。</p>
       <div class="card-footer">
         <span class="card-source">Visa</span>
-        <a class="card-link" href="https://investor.visa.com/news/news-details/2026/Visa-Launches-Enhanced-A2A-Protect-Innovations-to-Help-Financial-Institutions-Stop-Fraud-Before-Money-Leaves-Accounts/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://www.visa.co.jp/about-visa/newsroom/press-releases/nr-jp-260925.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-10</span>
+        <span class="card-date">規則版: 2026-06-02 / 発効: 10-01</span>
       </div>
-      <h2 class="card-title">Mastercard Wallet Pay、NFC・QR・オンラインを横断するウォレット接続を展開</h2>
-      <p class="card-summary">Mastercardは、デジタルウォレット事業者をグローバルな加盟店受け入れ網へ接続するWallet Payを発表した。NFC、QR、オンライン決済とクロスボーダー送金を対象にし、Alipay+の提携ウォレット、GCash、KakaoPay、Mercado Pagoなどが参加する。日本やCAFISでの採用・接続は示されていない。国内側では、海外ウォレット受け入れ時のブランド経路、トークン、精算、返金・不正対策の差分を確認する材料になる。</p>
+      <h2 class="card-title">Mastercard欧州規則、保存済みカード情報のトークン化対応を10月1日から要求</h2>
+      <p class="card-summary">Mastercard Rulesは10月1日から、欧州の対象地域で加盟店へリモート電子取引を提供するアクワイアラーと、その加盟店ゲートウェイ・第三者プロセサーを含むサービス事業者に、保存済みカード情報のトークン化対応を求める。Mastercard Secure Card on File APIまたはEMVCo仕様に沿う第三者TSPの同等サービスを使う。日本・CAFISへの規則変更ではないが、欧州加盟店を扱う国内PSPは対象範囲、COF移行、トークン受け渡し、試験・認定を確認すべき時期だ。</p>
       <div class="card-footer">
-        <span class="card-source">Mastercard</span>
-        <a class="card-link" href="https://newsroom.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-launches-wallet-pay-to-scale-digital-wallets-worldwide/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Mastercard Rules</span>
+        <a class="card-link" href="https://www.mastercard.com/content/dam/mccom/shared/business/support/rules-pdfs/mastercard-rules.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表・提供開始: 2026-09-14</span>
+      </div>
+      <h2 class="card-title">JCBなど5社、決済端末一体型のクラウドPOS「HELLO POS」を開始</h2>
+      <p class="card-summary">JCB、JMS、tance、GNS、ITFORは、決済から商品・売上管理、レシート・領収書印刷までをSATURN1000F2端末1台で扱う「HELLO POS」の提供を始めた。商品は1000点まで登録でき、Web管理画面で売上確認とCSV出力ができる。CAFIS/ADAPTISとの接続関係は発表されていない。国内の加盟店端末統合として、決済経路、日計・精算データ、返品処理、端末アプリ更新の責任分界を確認する材料になる。</p>
+      <div class="card-footer">
+        <span class="card-source">JCB</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000001464.000011361.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-09-15</span>
+      </div>
+      <h2 class="card-title">GMO-PG、共通ポイントの契約・接続・精算を1本化</h2>
+      <p class="card-summary">GMO-PGは「PGマルチペイメントサービス」のオプションとして、共通ポイントの契約、システム接続、精算を一元化するポイント決済サービスを開始した。1契約・1接続でPontaポイント、PayPayポイントに対応し、Vポイントは2026年秋ごろの開始を予定する。CAFIS本体の変更ではないが、国内PSPが決済以外の価値移転も単一接続へ束ねる動きで、加盟店側はポイント残高、取消、精算、障害時の切り分けを決済本体と分けて設計したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GMOペイメントゲートウェイ</span>
+        <a class="card-link" href="https://corp-appgw.gmo-pg.com/news/press/gmo-paymentgateway/2026/0915.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">草案公開: 09-07・08 / 意見期限: 09-30</span>
+      </div>
+      <h2 class="card-title">EMVCo、Click to Pay向けSRC 1.6 API・JavaScript SDKの第2草案を公開</h2>
+      <p class="card-summary">EMVCoは、Click to Payの共通実装基盤となるSecure Remote Commerce（SRC）1.6について、APIとJavaScript SDKのDraft 2を公開し、9月30日まで意見を受け付けている。SRCは決済データ交換のインターフェースを定め、EMV 3-D SecureやPayment Tokenisationとの相互運用も想定する。資料は購読者向けで正式仕様ではなく、国内採用やCAFISへの影響も未確定だが、EC・PSPの実装担当は現行連携との差分とブランド側の採用方針を追いたい。</p>
+      <div class="card-footer">
+        <span class="card-source">EMVCo</span>
+        <a class="card-link" href="https://www.emvco.com/emv-technologies/secure-remote-commerce/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     </div>

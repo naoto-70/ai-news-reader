@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-09-23</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-09-23</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./2026-09-23.html">2026-09-23</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <a class="archive-link" href="./2026-08-02.html">2026-08-02</a>
+    <a class="archive-link" href="./2026-08-01.html">2026-08-01</a>
+    <a class="archive-link" href="./2026-07-31.html">2026-07-31</a>
+    <a class="archive-link" href="./2026-07-30.html">2026-07-30</a>
+    <a class="archive-link" href="./2026-07-29.html">2026-07-29</a>
+    <a class="archive-link" href="./2026-07-28.html">2026-07-28</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月23日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">発表: 2026-09-22</span>
+      </div>
+      <h2 class="card-title">OpenAI、GPT-6 SolとLunaをAPI・Codexへ投入</h2>
+      <p class="card-summary">OpenAIはGPT-6 SolとLunaを公開し、APIではそれぞれ<code>gpt-6-sol</code>と<code>gpt-6-luna</code>で提供を始めた。100万トークン当たりの入出力価格はSolが2ドル／10ドル、Lunaが0.10ドル／0.50ドルで、GPT-5.6のプロモーション価格から50%引き下げたとしている。性能比較は提供元の評価であり、本番移行前に既存タスクで品質・遅延・総コストを測りたい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-22</span>
+      </div>
+      <h2 class="card-title">GPT-6のプロンプトキャッシュ、診断・明示境界・事前生成に対応</h2>
+      <p class="card-summary">OpenAIはGPT-6向けプロンプトキャッシュを更新した。再利用可能な共通プレフィックスの割引対象期間を30分とし、ヒット率を確認するダッシュボード、ツール定義などの差分からミス原因を返す診断、明示的なキャッシュ境界、事前生成を追加した。<code>configuration_update</code>で推論強度を変える場合はキャッシュを維持できるため、長時間エージェントでは応答時間と入力コストの両方を計測できる。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://openai.com/index/better-prompt-caching-for-gpt-6/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-22</span>
+      </div>
+      <h2 class="card-title">vLLM 0.30.0、GPU上の重みキャッシュと疎KVのホスト退避を追加</h2>
+      <p class="card-summary">vLLM 0.30.0は、量子化・TP分割済みの重みをGPUに保持し、再起動時にCUDA IPCで再利用する<code>--load-format ipc_cache</code>を追加した。GPU圧迫時に疎MLAのKVページをpinned host memoryへ退避するHiSparse、推測デコード対応のGumbel-max透かし、DeepSeek-V4.1-Flashなどのモデル対応も含む。scale-out endpointの有効化方法やGPTQ activation orderingの削除など破壊的変更があるため、更新前に起動引数と量子化方式の確認が必要だ。</p>
+      <div class="card-footer">
+        <span class="card-source">vLLM / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/vllm-project/vllm/releases/tag/v0.30.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-22</span>
+      </div>
+      <h2 class="card-title">Anthropic Python SDK 1.8.0、ツール定義とMCP固定機能を拡張</h2>
+      <p class="card-summary">AnthropicのPython SDK 1.8.0は、Claude Opus 5.5、インラインのツール定義、MCP tool-list pinningのベータ対応を追加した。ツールランナーでは<code>add_tools()</code>の変更が即時反映され、compaction要求から返信専用パラメータを除外する修正も入った。開いたストリームを残した場合にPython 3.13終了時にクラッシュする問題も直しており、MCPや長時間ストリームを使う実装で更新価値が高い。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.8.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-22</span>
+      </div>
+      <h2 class="card-title">LiteLLM 1.102.0、ストリーミング後段ガードレールと鍵の秘匿を強化</h2>
+      <p class="card-summary">LiteLLM 1.102.0は、ストリーミング応答にpost-callガードレールの処理とテキスト書き換えを適用できるようにした。プロバイダー鍵がpass-through失敗時のtracebackへ出る問題を修正し、模擬File Searchが要求元のvector storeだけを見るよう範囲も限定した。MCPではサーバー単位のOAuth relay discoveryを任意で有効化できる。プロキシ更新時はストリーム改変と監査ログを回帰確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LiteLLM / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.102.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+  </div>
+  <section aria-labelledby="payment-heading">
+    <h2 id="payment-heading" class="page-heading">決済 — CAFIS・関連サービスと業界動向</h2>
+    <div class="cards">
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-03 / 順次導入: 09月〜</span>
+      </div>
+      <h2 class="card-title">ファミリーマート1万6500店、約40手段対応の次期決済システムへ</h2>
+      <p class="card-summary">NECは、全国約1万6500のファミリーマート店舗へ次期決済端末を9月から順次導入する。NECのマルチサービスゲートウェイと連携し、クレジット、電子マネー、QR・バーコードなど約40の決済サービスを扱う。CAFIS/ADAPTISとの接続関係は発表されていないが、大規模加盟店の端末・ゲートウェイ更改として、接続先、売上集計、切替期間、障害時の経路確認に関係する国内動向だ。</p>
+      <div class="card-footer">
+        <span class="card-source">NEC</span>
+        <a class="card-link" href="https://jpn.nec.com/press/202609/20260903_01.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-04 / 実証: 09-01〜11-30</span>
+      </div>
+      <h2 class="card-title">SBPSのPayCAS、登録カードを使う顔認証決済を実証</h2>
+      <p class="card-summary">NEC、SBペイメントサービス、SB C&amp;Sは、NECのBio-IDiom Services for SaaSとPayCASを連携した顔認証決済を開始した。利用者は顔情報とクレジットカードを事前登録し、カードやスマートフォンを提示せず支払う。11月30日までソフトバンク本社の社員食堂で1000件超の決済を想定して運用を検証する。CAFIS接続は公表されておらず、国内PSP・端末側の本人認証統合として追うべき事例だ。</p>
+      <div class="card-footer">
+        <span class="card-source">SBペイメントサービス</span>
+        <a class="card-link" href="https://www.sbpayment.jp/news/press/2026/20260904_001584/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-11 / 提供予定: 年内</span>
+      </div>
+      <h2 class="card-title">MastercardとGoogle Pay、端末生体認証でオンラインカード決済へ</h2>
+      <p class="card-summary">MastercardとGoogle Payは、スマートフォンの指紋・顔認証でオンラインカード取引を承認する仕組みをインドで年内に提供する予定だ。Mastercard Consumer Device Cardholder Verification Method（CDCVM）を使い、対象イシュアーの保存済みカードではSMSのワンタイムパスワードへの依存を減らす。日本やCAFISでの提供は示されていないが、3-D Secureを含む本人認証、責任分界、認証結果の受け渡しを検討する際の関連動向だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard India</span>
+        <a class="card-link" href="https://newsroom.mastercard.com/news/ap/en-in/newsroom/press-releases/en-in/2026/september-1/mastercard-and-google-pay-collaborate-to-soon-bring-device-biometric-card-payment-experiences-on-google-pay/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-01</span>
+      </div>
+      <h2 class="card-title">Visa、A2A送金の不正を単一APIで採点するProtectを更新</h2>
+      <p class="card-summary">Visaは口座間送金向けA2A Protectに、Featurespaceの技術を統合したリアルタイムの不正スコアを追加した。金融機関は単一APIで接続でき、各アラートには検知理由の平易な説明を付ける。任意参加でネットワーク横断の兆候もスコアへ反映する。検知率などの数値はVisaの実績・評価に基づく。カード取引やCAFIS本体の変更ではないが、即時送金での事前判定、誤検知、説明可能性を設計する参考になる。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://investor.visa.com/news/news-details/2026/Visa-Launches-Enhanced-A2A-Protect-Innovations-to-Help-Financial-Institutions-Stop-Fraud-Before-Money-Leaves-Accounts/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-10</span>
+      </div>
+      <h2 class="card-title">Mastercard Wallet Pay、NFC・QR・オンラインを横断するウォレット接続を展開</h2>
+      <p class="card-summary">Mastercardは、デジタルウォレット事業者をグローバルな加盟店受け入れ網へ接続するWallet Payを発表した。NFC、QR、オンライン決済とクロスボーダー送金を対象にし、Alipay+の提携ウォレット、GCash、KakaoPay、Mercado Pagoなどが参加する。日本やCAFISでの採用・接続は示されていない。国内側では、海外ウォレット受け入れ時のブランド経路、トークン、精算、返金・不正対策の差分を確認する材料になる。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://newsroom.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-launches-wallet-pay-to-scale-digital-wallets-worldwide/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    </div>
+  </section>
+  <!-- CARDS:END -->
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
