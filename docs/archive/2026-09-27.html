@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-09-27</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-09-27</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="./2026-09-27.html">2026-09-27</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-09-23.html">2026-09-23</a>
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <a class="archive-link" href="./2026-08-02.html">2026-08-02</a>
+    <a class="archive-link" href="./2026-08-01.html">2026-08-01</a>
+    <a class="archive-link" href="./2026-07-31.html">2026-07-31</a>
+    <a class="archive-link" href="./2026-07-30.html">2026-07-30</a>
+    <a class="archive-link" href="./2026-07-29.html">2026-07-29</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月27日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">GitHub公開: 2026-09-26</span>
+      </div>
+      <h2 class="card-title">Google ADK 2.10.0、スキルの寿命管理と実行コスト評価を追加</h2>
+      <p class="card-summary">Google Agent Development Kit 2.10.0は、1ターンだけ有効な<code>EPHEMERAL</code>スキル、同時に有効化できるスキル数の上限、明示的なアンロードを実験機能として追加した。MongoDBのベクトル・ハイブリッド検索ツールと、実行時間・トークン消費・モデル呼び出し回数を測る評価指標も入った。スキル機能は<code>ADK_ENABLE_SKILL_LIFECYCLE=1</code>が必要で、BigQuery保護モードなどには挙動変更があるため、更新時は評価結果とデータ操作の回帰確認が必要だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Google ADK / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/google/adk-python/releases/tag/v2.10.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-26</span>
+      </div>
+      <h2 class="card-title">Pydantic AI 2.51.0、OpenAI GPT-Liveとリアルタイム文脈使用率に対応</h2>
+      <p class="card-summary">Pydantic AI 2.51.0は<code>OpenAILiveModel</code>を追加し、OpenAI GPT-Liveをリアルタイムセッションとして扱えるようにした。セッションには文脈窓の使用率を示す<code>context_window_used</code>も公開する。通常実行ではエージェントグラフを毎回組み直さずキャッシュし、単一のツールセットや能力分岐では不要なタスクグループを作らないようにした。音声・低遅延実装では切断時の応答ID保持やストリーム再生も修正されている。</p>
+      <div class="card-footer">
+        <span class="card-source">Pydantic AI / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.51.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-26</span>
+      </div>
+      <h2 class="card-title">Claude Agent SDK Python、バックグラウンド・サブエージェント後の継続失敗を修正</h2>
+      <p class="card-summary">Claude Agent SDK for Python 0.2.160は、フック、<code>can_use_tool</code>、SDK内MCPサーバーを使う<code>query()</code>で、バックグラウンド・サブエージェント完了直後に標準入力が早く閉じ、次のターンが<code>Stream closed</code>になる問題を修正した。CLIの<code>session_state_changed</code>を監視し、<code>idle</code>になるまで入力を維持する。待機上限は既定10分で環境変数から変更できるため、長時間エージェントではSDKと同梱CLIを揃えて更新したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.160" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-25</span>
+      </div>
+      <h2 class="card-title">Langfuse 4.46.0、スキル管理と実験結果の横並び比較を追加</h2>
+      <p class="card-summary">Langfuse 4.46.0は基本的なスキル管理、実験結果のサイド・バイ・サイド比較、データセット項目の整形JSON表示を追加した。トレース表では100行表示を選べる。内蔵アシスタントがデータ保持設定を守るよう修正され、データセット実行項目の読み取りはリードレプリカへ移された。セルフホスト環境では、スキルの登録・評価運用と保持ポリシーが期待どおりかを更新後に確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Langfuse / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.46.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">プレリリース: 2026-09-25</span>
+      </div>
+      <h2 class="card-title">Ollama 0.40.0 RC、Apple Siliconで対応モデルをMLX実行へ自動切替</h2>
+      <p class="card-summary">Ollama 0.40.0のリリース候補版は、Apple Silicon上でMLXが対応するモデルを既定でMLXランタイムへ載せる。例としてQwen 3.8が示され、プレリリース期間中に対応モデルを追加する予定だ。従来の実行バックエンドから自動で切り替わるため、Macでローカル推論を運用する場合は、モデルごとの出力互換性、初回読み込み、メモリ使用量、生成速度を測ってから安定版へ移行したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Ollama / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.0-rc0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+  </div>
+  <section aria-labelledby="payment-heading">
+    <h2 id="payment-heading" class="page-heading">決済 — CAFIS・関連サービスと業界動向</h2>
+    <div class="cards">
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-25 / 開始: 10-07</span>
+      </div>
+      <h2 class="card-title">Visa・stera transit、4鉄道のタッチ乗車にVポイントを連携</h2>
+      <p class="card-summary">Visa、三井住友カード、QUADRACなどは、京王電鉄、つくばエクスプレス、ゆりかもめ、江ノ島電鉄の全線全駅で、Visaのタッチ乗車に応じたVポイント付与を10月7日から2年間実証する。三井住友カードの<code>stera transit</code>を使い、利用者は対象カードを事前設定する。CAFIS/ADAPTISとの直接接続は発表されていないが、交通決済と会員ID・ポイント計算を結ぶ国内事例として、乗車確定後の集計、取消・返金、精算照合の設計が注目点になる。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://www.visa.co.jp/about-visa/newsroom/press-releases/nr-jp-260925.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">規則版: 2026-06-02 / 発効: 10-01</span>
+      </div>
+      <h2 class="card-title">Mastercard欧州規則、保存済みカード情報のトークン化対応を10月1日から要求</h2>
+      <p class="card-summary">Mastercard Rulesは10月1日から、欧州の対象地域で加盟店へリモート電子取引を提供するアクワイアラーと、その加盟店ゲートウェイ・第三者プロセサーを含むサービス事業者に、保存済みカード情報のトークン化対応を求める。Mastercard Secure Card on File APIまたはEMVCo仕様に沿う第三者TSPの同等サービスを使う。日本・CAFISへの規則変更ではないが、欧州加盟店を扱う国内PSPは対象範囲、COF移行、トークン受け渡し、試験・認定を確認すべき時期だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard Rules</span>
+        <a class="card-link" href="https://www.mastercard.com/content/dam/mccom/shared/business/support/rules-pdfs/mastercard-rules.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表・提供開始: 2026-09-14</span>
+      </div>
+      <h2 class="card-title">JCBなど5社、決済端末一体型のクラウドPOS「HELLO POS」を開始</h2>
+      <p class="card-summary">JCB、JMS、tance、GNS、ITFORは、決済から商品・売上管理、レシート・領収書印刷までをSATURN1000F2端末1台で扱う「HELLO POS」の提供を始めた。商品は1000点まで登録でき、Web管理画面で売上確認とCSV出力ができる。CAFIS/ADAPTISとの接続関係は発表されていない。国内の加盟店端末統合として、決済経路、日計・精算データ、返品処理、端末アプリ更新の責任分界を確認する材料になる。</p>
+      <div class="card-footer">
+        <span class="card-source">JCB</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000001464.000011361.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-09-15</span>
+      </div>
+      <h2 class="card-title">GMO-PG、共通ポイントの契約・接続・精算を1本化</h2>
+      <p class="card-summary">GMO-PGは「PGマルチペイメントサービス」のオプションとして、共通ポイントの契約、システム接続、精算を一元化するポイント決済サービスを開始した。1契約・1接続でPontaポイント、PayPayポイントに対応し、Vポイントは2026年秋ごろの開始を予定する。CAFIS本体の変更ではないが、国内PSPが決済以外の価値移転も単一接続へ束ねる動きで、加盟店側はポイント残高、取消、精算、障害時の切り分けを決済本体と分けて設計したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GMOペイメントゲートウェイ</span>
+        <a class="card-link" href="https://corp-appgw.gmo-pg.com/news/press/gmo-paymentgateway/2026/0915.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">草案公開: 09-07・08 / 意見期限: 09-30</span>
+      </div>
+      <h2 class="card-title">EMVCo、Click to Pay向けSRC 1.6 API・JavaScript SDKの第2草案を公開</h2>
+      <p class="card-summary">EMVCoは、Click to Payの共通実装基盤となるSecure Remote Commerce（SRC）1.6について、APIとJavaScript SDKのDraft 2を公開し、9月30日まで意見を受け付けている。SRCは決済データ交換のインターフェースを定め、EMV 3-D SecureやPayment Tokenisationとの相互運用も想定する。資料は購読者向けで正式仕様ではなく、国内採用やCAFISへの影響も未確定だが、EC・PSPの実装担当は現行連携との差分とブランド側の採用方針を追いたい。</p>
+      <div class="card-footer">
+        <span class="card-source">EMVCo</span>
+        <a class="card-link" href="https://www.emvco.com/emv-technologies/secure-remote-commerce/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    </div>
+  </section>
+  <!-- CARDS:END -->
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
