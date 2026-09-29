@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-09-28</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-09-28</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-09-28</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-09-27.html">2026-09-27</a>
+    <a class="archive-link" href="./2026-09-23.html">2026-09-23</a>
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <a class="archive-link" href="./2026-08-02.html">2026-08-02</a>
+    <a class="archive-link" href="./2026-08-01.html">2026-08-01</a>
+    <a class="archive-link" href="./2026-07-31.html">2026-07-31</a>
+    <a class="archive-link" href="./2026-07-30.html">2026-07-30</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月28日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">修正公開: 2026-09-25</span>
+      </div>
+      <h2 class="card-title">OpenAI、GPT-6 Sol／Lunaの画像理解を劣化させたエンコード不具合を修正</h2>
+      <p class="card-summary">OpenAIは、GPT-6 SolとLunaで画像エンコードの不具合により画像理解が低下していた問題を修正した。APIとCodexの視覚タスクに反映され、コンピューター操作も対象に含まれる。画像入力を使う評価は旧結果をそのまま比較せず再実行し、不具合期間中に失敗したワークフローも再試行するよう案内している。視覚評価の基準値と本番失敗率を修正前後で分けて記録したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI API Changelog</span>
+        <a class="card-link" href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">プレリリース: 2026-09-28 JST</span>
+      </div>
+      <h2 class="card-title">llama.cpp、Qwen3系の長文・マルチモーダル再ランキングを分割処理</h2>
+      <p class="card-summary">llama.cpp b11223は、因果型LLMを使うRANK poolingでバッチ分割を許可した。従来は入力が<code>n_ubatch</code>を超えると一律に拒否され、Qwen3／Qwen3-VLの長文・マルチモーダル再ランキングが失敗していた。実行時のattention種別を判定して因果モデルだけchunked prefillを使い、全トークンを同一バッチに置く必要があるBERT系cross-encoderは従来動作を保つ。</p>
+      <div class="card-footer">
+        <span class="card-source">llama.cpp / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11223" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-25</span>
+      </div>
+      <h2 class="card-title">DSPy 3.4、確率付き意思決定と非同期ReActV2を追加</h2>
+      <p class="card-summary">DSPy 3.4.0はTypeSafe経由のJev統合を試験導入し、真偽、選択、順序尺度の判断を確率・信頼度とともに返す型を通常のSignatureで扱えるようにした。非同期ツールに対応するReActV2と、信頼できる生成コード向けの常駐CPython実行環境も追加した。LM APIの移行リリースでもあり、旧カスタムLM連携は3.4で警告、3.5が移行期限になる。ローカル実行環境はセキュリティサンドボックスではない。</p>
+      <div class="card-footer">
+        <span class="card-source">DSPy / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/stanfordnlp/dspy/releases/tag/3.4.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">RC公開: 2026-09-23</span>
+      </div>
+      <h2 class="card-title">TensorRT-LLM 1.3 RC、KVキャッシュV2を既定化し推論APIを整理</h2>
+      <p class="card-summary">NVIDIAのTensorRT-LLM 1.3.0 RC28は、Llama／Llama 4でKV-cache manager V2を既定にし、KV再利用の階層別追跡やtoken-aware ADP routingを追加した。旧TensorRT版のserve・eval・benchmark経路は削除され、Triton MoE backendも非推奨になった。分散推論、Qwen3.5、DeepSeek-V4-Flash、マルチモーダルchunked prefillなどに既知問題が列挙されているため、RC導入は対象モデルと並列構成ごとの検証が前提になる。</p>
+      <div class="card-footer">
+        <span class="card-source">NVIDIA TensorRT-LLM / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/NVIDIA/TensorRT-LLM/releases/tag/v1.3.0rc28" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-26</span>
+      </div>
+      <h2 class="card-title">Cline Desktop 0.0.37、Bedrock上のOpenAIモデルで推論設定エラーを修正</h2>
+      <p class="card-summary">Cline Desktop 0.0.37は、Amazon Bedrockの推論プロファイル経由でOpenAIモデルを使う際、reasoning effortを指定すると未対応の<code>reasoningConfig</code>が送られて失敗する問題を修正した。更新確認・再起動とリリースノートをまとめたAbout画面、更新後に機能差分を示すWhat's new、macOSの診断情報エクスポート導線も追加した。Bedrock利用者はモデルIDの<code>us.openai.</code>／<code>global.openai.</code>経路で回帰確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cline / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/cline/cline/releases/tag/desktop-v0.0.37" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+  </div>
+  <section aria-labelledby="payment-heading">
+    <h2 id="payment-heading" class="page-heading">決済 — CAFIS・関連サービスと業界動向</h2>
+    <div class="cards">
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-09-25</span>
+      </div>
+      <h2 class="card-title">CARDNET、CAFISセンターのメンテナンス完了を通知</h2>
+      <p class="card-summary">日本カードネットワークは加盟店向けサイトで、CAFISセンターのメンテナンス完了を9月25日に掲示した。CAFISとの直接関係が確認できる運用情報だが、作業時間、影響範囲、加盟店側の確認事項など本文は端末識別番号（TID）でのログインが必要で、公開情報からは補えない。対象加盟店と接続事業者はJCNお知らせサービスまたは専用サイトで原文を確認し、監視・取引照合に必要な対応を判断したい。</p>
+      <div class="card-footer">
+        <span class="card-source">日本カードネットワーク</span>
+        <a class="card-link" href="https://www.cardnet.co.jp/non-login/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-18 / 開始予定: 10-21</span>
+      </div>
+      <h2 class="card-title">PAYTREE、鹿児島のバス・市電で車載器の決済処理基盤に</h2>
+      <p class="card-summary">キャナルペイメントサービスの「PAYTREE」が、鹿児島県内の路線バス・市電で始まるPayどん交通系決済機能の車載器処理基盤に採用された。乗車時と降車時にアプリの二次元コードを読み取り、専用の交通系マネーで運賃を精算する。CPSはJCBと日本カードネットワークなどの合弁会社だが、本件のCAFIS／ADAPTIS接続は公表されていない。車載器通信、乗降照合、運賃確定、オフライン時の扱いを追う国内事例になる。</p>
+      <div class="card-footer">
+        <span class="card-source">キャナルペイメントサービス</span>
+        <a class="card-link" href="https://www.canalpayment.co.jp/news/20260917/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表・取扱開始: 2026-09-17</span>
+      </div>
+      <h2 class="card-title">JCB・CPS、NFCタグ決済を8種のコード決済へ拡張</h2>
+      <p class="card-summary">JCBとCPSは、スマートフォンをNFCタグにかざしてWeb決済画面を開くサービスに、PAYTREE経由でPayPay、d払い、au PAY、楽天ペイ、メルペイ、AEON Pay、Alipay+、WeChat Payを追加した。従来のApple Pay／Google Payに加え、電源や専用決済端末を置きにくい移動販売・催事でも複数手段を提供できる。本件とCAFIS／ADAPTISの直接接続は発表されておらず、ブラウザー遷移、取消、入金照合の運用確認が要点になる。</p>
+      <div class="card-footer">
+        <span class="card-source">JCB・キャナルペイメントサービス</span>
+        <a class="card-link" href="https://www.canalpayment.co.jp/news/20260916/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-22</span>
+      </div>
+      <h2 class="card-title">Adyen、3DS・ブランドPasskey等を取引ごとに自動選択</h2>
+      <p class="card-summary">AdyenはAuthenticateを更新し、3DS、Google Secure Payment Authentication、Mastercard Payment Passkeys、Visa Payment Passkeys、data-only flowから、取引ごとに認証経路をリアルタイム選択するようにした。3DSでは150超のデータ項目と発行会社の過去傾向を使い、承認に送る情報も最適化する。CAFISへの採用は公表されていないが、国内PSPにとっても複数認証方式の振り分け、フォールバック、責任分界を比較する材料になる。</p>
+      <div class="card-footer">
+        <span class="card-source">Adyen</span>
+        <a class="card-link" href="https://www.adyen.com/press-and-media/adyen-launches-authenticate-upgrade" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">解説公開: 09-25 / 第1段階発効: 10-01</span>
+      </div>
+      <h2 class="card-title">豪州、Visa・Mastercard等のサーチャージ規則と手数料上限を変更</h2>
+      <p class="card-summary">豪州では10月1日から、EFTPOS、Mastercard、Visaが原則としてカード支払への追加手数料を禁じる規則を導入し、国内取引のインターチェンジ上限も引き下げる。2027年4月には国外発行カードの上限と情報開示も続く。日本・CAFISの規則変更ではないが、豪州取引を扱う加盟店・PSPはcheckout、POS、定期課金、wallet、fallback経路のサーチャージ判定と、複数ゲートウェイ間の設定整合を10月1日までに確認する必要がある。</p>
+      <div class="card-footer">
+        <span class="card-source">Checkout.com（RBA決定の実装解説）</span>
+        <a class="card-link" href="https://www.checkout.com/blog/australia-card-payment-changes-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    </div>
+  </section>
+  <!-- CARDS:END -->
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
