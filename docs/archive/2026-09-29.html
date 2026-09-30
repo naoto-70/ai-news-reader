@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-09-29</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-09-29</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-09-29</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-09-28.html">2026-09-28</a>
+    <a class="archive-link" href="./2026-09-27.html">2026-09-27</a>
+    <a class="archive-link" href="./2026-09-23.html">2026-09-23</a>
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <a class="archive-link" href="./2026-08-02.html">2026-08-02</a>
+    <a class="archive-link" href="./2026-08-01.html">2026-08-01</a>
+    <a class="archive-link" href="./2026-07-31.html">2026-07-31</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（9月29日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-28</span>
+      </div>
+      <h2 class="card-title">Anthropic、Claude Sonnet 5.5を公開—推論速度とエージェント性能を更新</h2>
+      <p class="card-summary">AnthropicはClaude Sonnet 5.5を公開し、Sonnet 5比で30%以上高速化したと説明した。入力100万トークン当たり2ドル、出力10ドルの料金は据え置きで、APIでは推論量を調整する<code>effort</code>を選べる。Terminal-Bench 4.0の70.6%などは同社評価値であり、実運用では対象タスクの成功率、トークン数、レイテンシを再計測したい。サイバー領域にはOpus 5.5相当の強化策も適用される。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-28</span>
+      </div>
+      <h2 class="card-title">Hcompany、GUI・コード・APIを1モデルで扱うオープンモデルHolo4を公開</h2>
+      <p class="card-summary">Hcompanyは、画面操作、コーディング、MCP、API呼び出しを共通モデルで扱うHolo4を公開した。27Bのdense版と35B-A3BのMoE版を用意し、BF16、FP8、NVFP4、4-bit GGUFの重み、学習用trajectory、データセットを配布する。約1万件の合成タスクを使う教師あり学習と強化学習を組み合わせた。OSWorld 2.0の61.7%は同社条件の評価で、比較時はハーネスとタスク集合を合わせる必要がある。</p>
+      <div class="card-footer">
+        <span class="card-source">Hcompany / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/Hcompany/holo4" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">プレリリース: 2026-09-29 JST</span>
+      </div>
+      <h2 class="card-title">llama.cpp、OpenAI互換Embeddings APIのマルチモーダル入力形式を統一</h2>
+      <p class="card-summary">llama.cpp b11240は、<code>/v1/embeddings</code>でテキスト・画像・音声・動画を混在させるOpenAI形式のtyped contentを受け付けるようにした。各入力を<code>{&quot;content&quot;:[...]}</code>で包む形式に統一し、Qwen3-VL-Embeddingなどを扱える。従来形式は維持する一方、裸のcontent配列には移行メッセージを返す。埋め込みと再ランキングでは誤った共有を避けるため、ステートレス要求間のKV prefix再利用も無効化した。</p>
+      <div class="card-footer">
+        <span class="card-source">llama.cpp / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11240" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">安定版: 2026-09-28</span>
+      </div>
+      <h2 class="card-title">LiteLLM 1.103.0、MCP認可・ストリーミングエラー・コスト計算を改善</h2>
+      <p class="card-summary">LiteLLM 1.103.0は、MCPのdelegated OAuthにadmissionを必須化し、Anthropic変換時の途中エラーを同API形式のerror eventとして返すようにした。Responses APIのreasoning指定変換、BedrockのS3管理ファイル一覧・削除、deployment間のprompt cacheコスト予測も追加・修正した。Realtime音声キャッシュとGemini embedding-2の課金計算を直し、Dockerイメージはcosign署名付きになったため、プロキシ運用者は認可設定と請求メトリクスを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LiteLLM / GitHub Releases</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.103.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-28</span>
+      </div>
+      <h2 class="card-title">AWS、vLLM-Omniによるリアルタイム音声生成をSageMakerで実装</h2>
+      <p class="card-summary">AWSは、vLLM-Omni 1.5のコンテナでQwen3-TTSをSageMaker AIへ配置し、入力テキストと生成音声を双方向ストリーミングする実装例を公開した。HTTP/2 WebSocketを維持するsidecarがネイティブの<code>v1/audio/speech/stream</code>へ中継し、24kHz PCMをチャンク返却する。g6、g6e、g5、g4dnを順に試す構成だが、実際の配備は1種類で、各instance quotaと選択されたGPUの費用確認が必要になる。</p>
+      <div class="card-footer">
+        <span class="card-source">AWS Machine Learning Blog</span>
+        <a class="card-link" href="https://aws.amazon.com/blogs/machine-learning/build-real-time-voice-applications-with-vllm-omni-on-sagemaker-ai-part-1/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公表: 2026-09-28 / 適用: 10-01</span>
+      </div>
+      <h2 class="card-title">金融庁、サイバー攻撃時の個人データ漏えい報告様式を追加</h2>
+      <p class="card-summary">金融庁は、関係省庁間のサイバーインシデント報告手続の改定を受け、金融分野の個人情報保護Q&amp;Aを10月1日付で改訂する。DDoS・ランサムウェアに加え、「その他のサイバー攻撃等」の共通様式を監督当局への漏えい報告に使えるようにする。CAFIS／ADAPTIS固有の変更ではないが、カード会社や決済事業者は事故受付から個人データ判定、当局報告までの運用手順と帳票を見直す対象になる。</p>
+      <div class="card-footer">
+        <span class="card-source">金融庁</span>
+        <a class="card-link" href="https://www.fsa.go.jp/news/r8/sonota/20260928/20260928.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">告知: 2026-09-28 / 停止: 11-26</span>
+      </div>
+      <h2 class="card-title">PayPay、アプリ5.64.0未満を11月26日から利用停止</h2>
+      <p class="card-summary">PayPayは、11月26日からアプリの利用可能バージョンを5.64.0以上へ引き上げる。旧版の利用者は更新しない限り決済を含むサービスを使えなくなる。CAFIS接続の変更ではなくPayPayレールの利用端末側更新だが、PayPayを店頭導線や問い合わせ対応に組み込む加盟店・PSPは、停止日前の告知、更新できない端末の扱い、決済失敗時の切り分け手順を準備したい。</p>
+      <div class="card-footer">
+        <span class="card-source">PayPay</span>
+        <a class="card-link" href="https://paypay.ne.jp/notice/20260928/f-01/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供: 2026年9月</span>
+      </div>
+      <h2 class="card-title">Stripe、組織内アカウント間で顧客・決済手段を共有可能に</h2>
+      <p class="card-summary">StripeはOrganizationsで、複数のStripeアカウント間に顧客情報と保存済み決済手段を共有する機能を提供した。事業・地域別のアカウントを残したまま、重複登録や決済手段の移行を減らせる。CAFISへの採用や接続を示す発表ではなく、競合PSPのtoken vault設計として参考になる。共有単位、利用者への通知・同意、権限境界、障害時の影響範囲を確認してから有効化したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe Shipped</span>
+        <a class="card-link" href="https://stripe.com/shipped" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-17 / 開始予定: 10-07</span>
+      </div>
+      <h2 class="card-title">インフキュリオンら、医薬品流通向け請求書カード払いを10月開始</h2>
+      <p class="card-summary">インフキュリオン、アルフレッサ、三井住友カードは、医薬品卸と製薬企業間の請求をカード払いにするPharmaTradePayを10月7日に開始する。WinvoiceのAPIと三井住友カードの発行・加盟店基盤を組み合わせ、卸の支払時期を維持しつつ、メーカー側の回収サイトを最短30日にそろえる。CAFIS／ADAPTISとの直接関係は公表されていないが、国内B2B決済におけるPSP・アクワイアラ協業とAPI組み込みの事例として接続・精算設計を追いたい。</p>
+      <div class="card-footer">
+        <span class="card-source">インフキュリオン</span>
+        <a class="card-link" href="https://www.infcurion.com/news/news-20260917_001/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-14</span>
+      </div>
+      <h2 class="card-title">Worldline、UCP対応のエージェント決済ハンドラーを発表</h2>
+      <p class="card-summary">Worldlineは、Universal Commerce Protocol（UCP）対応のGlobal Collect Payment Handlerを発表した。エージェントコマース基盤と加盟店バックエンドの間を共通アダプターでつなぎ、加盟店が決済設定を一度宣言すれば、カード、wallet、欧州の決済手段をUCP接続先から扱える構成を示す。CAFISへの接続・採用は確認されていない国外動向だが、国内側でもagent認証、決済手段提示、同意証跡、責任分界を設計する際の比較材料になる。</p>
+      <div class="card-footer">
+        <span class="card-source">Worldline</span>
+        <a class="card-link" href="https://worldline.com/en/home/top-navigation/media-relations/press-release/pr-2026_09_14_01" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
