@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-01</title>
+  <title>AI News Daily — 2026-10-03</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-01</span>
+    <span class="site-date">2026-10-03</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-01</a>
+    <a class="archive-link current" href="./index.html">2026-10-03</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-01.html">2026-10-01</a>
     <a class="archive-link" href="./archive/2026-09-30.html">2026-09-30</a>
     <a class="archive-link" href="./archive/2026-09-29.html">2026-09-29</a>
     <a class="archive-link" href="./archive/2026-09-28.html">2026-09-28</a>
@@ -226,143 +227,142 @@
     <a class="archive-link" href="./archive/2026-09-23.html">2026-09-23</a>
     <a class="archive-link" href="./archive/2026-09-22.html">2026-09-22</a>
     <a class="archive-link" href="./archive/2026-09-20.html">2026-09-20</a>
-    <a class="archive-link" href="./archive/2026-08-02.html">2026-08-02</a>
     <!-- ARCHIVE-LINKS:END -->
   </div>
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月1日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月3日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-01（日本時間）</span>
+        <span class="card-date">公開: 2026-10-02（日本時間）</span>
       </div>
-      <h2 class="card-title">Transformers 5.18、リアルタイム話者分離と4モーダル推論モデルに対応</h2>
-      <p class="card-summary">Hugging FaceのTransformers 5.18.0は、NVIDIA Nemotron 3 DiarizationとNemotronH Omniを追加した。話者分離モデルはストリーミング／オフラインの両方で最大8話者を扱い、80ミリ秒から30.4秒までの入力バッファを1つのチェックポイントで切り替えられる。NemotronH OmniはMamba-Transformer系の言語モデルにRADIO視覚エンコーダーと任意の音声エンコーダーを接続し、テキスト・画像・動画・音声を同じ自己回帰モデルで処理する。導入時はモデルごとの前処理と破壊的変更を確認したい。</p>
+      <h2 class="card-title">OpenAI Python SDK 3.23、Agentsの型付きストリームと成果物取得に対応</h2>
+      <p class="card-summary">OpenAI Python SDK 3.23.0は、Agentsセッションのストリームから型付き回答と最終出力を受け取り、ターンへファイルをステージして成果物をダウンロードできるようにした。セッショントレース、Realtime翻訳、型付きアプリ操作のツール公開も追加した。再接続時には送達が不確かな型付きメッセージを再送しない修正と送信キュー上限の適用が入っており、長時間エージェントでは成果物保存と再接続後の重複処理を重点確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Hugging Face / GitHub</span>
-        <a class="card-link" href="https://github.com/huggingface/transformers/releases/tag/v5.18.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">OpenAI / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.23.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-30</span>
+        <span class="card-date">公開: 2026-10-02</span>
       </div>
-      <h2 class="card-title">Pydantic AI 2.52、web_fetchのDoS脆弱性を修正し実行Workspaceを統一</h2>
-      <p class="card-summary">Pydantic AI 2.52.0は、ローカルの<code>web_fetch</code>が攻撃者の深くネストしたHTMLを変換するとCPUとメモリを過剰消費し得る中程度の脆弱性を修正した。プロバイダー標準のWeb取得は対象外で、修正版はv2系が2.52.0、v1系が1.107.7。あわせて<code>ctx.workspace</code>を通じ、Coder、Shell、FileSystemをローカル・Modal・E2B・Fly.io Sprite・SSHなどで同じAPIから実行できるようにした。外部HTMLを取得するエージェントは更新を優先したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Pydantic AI / GitHub</span>
-        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.52.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-01（日本時間）</span>
-      </div>
-      <h2 class="card-title">Anthropic Python SDK 1.10／1.11、管理APIとMCP Tunnel型を拡張</h2>
-      <p class="card-summary">AnthropicのPython SDK 1.10.0は、Claude Enterpriseの分析・利用額上限・RBAC、ユーザー別利用量／費用、PluginsとPlugin MarketplacesをAdmin APIに追加し、Organization APIを一般提供にした。MCP Tunnels betaでは読取専用のtransport情報と作成時の一時relay tokenを返す。設定ファイルがgroup／other書込み可能なら拒否する防御も入った。続く1.11.0は利用額上限一覧APIを追加し、Sonnet 4.5を非推奨化した。</p>
-      <div class="card-footer">
-        <span class="card-source">Anthropic / GitHub</span>
-        <a class="card-link" href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.10.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-30</span>
-      </div>
-      <h2 class="card-title">Hugging Face、オープンTTSを多言語・音声複製・初回音声遅延で比較</h2>
-      <p class="card-summary">Hugging FaceはOpen TTS Leaderboardを公開した。明瞭度をQwen3 ASRによるWER／CER、速度をH200上のRTFxとH200／CPU上のtime-to-first-audio、話者類似度をWavLM埋め込みのコサイン類似度で測る。英語と中国語に加え日本語などのCV3-Evalを選べ、音声複製の有無も分けて比較できる。客観指標の評価を数時間に短縮する一方、自然さや表現力、人の好みは直接測れないため、Listenタブの音声確認と併用する設計だ。</p>
-      <div class="card-footer">
-        <span class="card-source">Hugging Face</span>
-        <a class="card-link" href="https://huggingface.co/blog/open-tts-leaderboard" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-09-30</span>
-      </div>
-      <h2 class="card-title">Cline 4.1.22、拒否フォールバックとエラー復旧を改善</h2>
-      <p class="card-summary">Cline 4.1.22は、Anthropic直結時にサーバー側のrefusal fallbackを使い、OpenRouter／Cline経由ではAnthropicモデルが別の上流へ切り替わる構成にした。コンテンツフィルターで遮断された応答も空応答ではなく理由を表示する。APIエラー後の新規メッセージ送信、送信直後の取消、推論トークンの二重計上なども修正した。モデルを固定していない複数プロバイダーでは既定がGPT-6.1 Sol等へ変わるため、再現性が必要な運用はモデルIDを明示したい。</p>
+      <h2 class="card-title">Cline SDK 0.0.90、Agent TeamsのSQLite肥大化と長時間劣化を修正</h2>
+      <p class="card-summary">Cline SDK 0.0.90は、チーム実行中のストリーム断片と2秒ごとのheartbeatが完了済みメンバーの全文を含む状態を毎回保存していた問題を改めた。ライブ更新は永続化せず、変更対象だけを約300ミリ秒単位で一括保存し、runには要約を保持、team_eventsは1チーム2,000行・30日に制限する。SQLiteスキーマv2への移行で既存データも圧縮されるため、更新前にDBのバックアップと移行後の容量・再開動作を確認したい。</p>
       <div class="card-footer">
         <span class="card-source">Cline / GitHub</span>
-        <a class="card-link" href="https://github.com/cline/cline/releases/tag/v4.1.22" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/cline/cline/releases/tag/sdk/sdk/v0.0.90" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">Hugging Face Hub 2.1、Job再試行・ポート公開とSandbox資格情報を更新</h2>
+      <p class="card-summary">huggingface_hub 2.1.0は、Jobの自動再試行、保存済み仕様からの再実行、cron再設定、実行中ポートの認証付き／一般公開を追加した。ZeroGPU残量APIや推論Endpointのrecipe指定にも対応する。一方、共有Sandboxはscope付きcapability tokenを必須化し、旧ホストとの相互接続はできない破壊的変更となる。Job制御を自動化するエージェントは再試行回数と公開ポートを明示し、Sandbox poolを先に更新する必要がある。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face / GitHub</span>
+        <a class="card-link" href="https://github.com/huggingface/huggingface_hub/releases/tag/v2.1.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">Ai2、兆パラメータ級MoE向け学習基盤Olmo-core 3を公開</h2>
+      <p class="card-summary">Ai2はOlmo-core 3でMoE学習をFSDP中心から、expertをGPU常駐させ入力を送るDDP基盤へ再設計した。expert／pipeline並列、分散optimizer、GPU内routing、grouped GEMMを組み合わせる。提供元のB300評価では47Bモデルが旧実装比約2.7倍、MXFP8はBF16比でthroughput約21%増・peak memory 103GiBから95GiBとなった。1.2T構成の値はrandom routingによるシステム試験で、学習品質や長時間安定性の評価とは分けて見る必要がある。</p>
+      <div class="card-footer">
+        <span class="card-source">Ai2 / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/allenai/olmocore3" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+      </div>
+      <h2 class="card-title">Codex 0.160、再接続時の重複送信とSubagent環境の初期化失敗を改善</h2>
+      <p class="card-summary">Codex 0.160.0は、送達が不確かな送信を解決してから未送信キューを再開し、再接続時の二重送信を防ぐ。起動中の環境をSubagent生成時に保持して設定・準備失敗を通知するほか、SQLite接続時の停止、Windows sandboxのPowerShell代替処理と長いパスの権限修復を修正した。Guardian reviewには過去指示とhandoff文脈を渡す任意機能が加わったため、更新後は再開・分岐・委譲の状態復元と権限境界を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI Codex / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.160.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-09-30</span>
+        <span class="card-date">提供開始: 2026-09-30</span>
       </div>
-      <h2 class="card-title">Mastercard、AI起点取引を推定するAgent Payの信頼シグナルを発表</h2>
-      <p class="card-summary">MastercardはAgent Pay Trust Frameworkのintelligence層を拡張し、AIエージェントが開始した取引である確率を示すスコアを米国で試験すると発表した。将来は行動、加盟店、取引パターン、credential riskなどを組み合わせ、issuerと加盟店の承認・追加確認判断に使う。CloudflareのWeb信号やSkyfireのKnow Your Agentとの連携も検討する。日本やCAFIS／ADAPTISへの提供・電文追加は発表されておらず、現時点では国際ブランド側で増える認証・不正判定信号として仕様化の動向を追う段階だ。</p>
+      <h2 class="card-title">NTTデータ、エディオン416店舗へADAPTISモバイル端末2,000台を導入</h2>
+      <p class="card-summary">NTTデータはADAPTISの新モバイル決済端末約2,000台をエディオン416店舗へ提供した。商品説明や商談の場所で会計でき、一般カードに加えて会員・ポイント処理を伴うエディオン提携カードのタッチ決済にも対応する。1台の端末を複数のタブレットPOSから利用し、決済基盤側で提携カード処理を担うことでPOS開発負荷を抑える。ADAPTISへの直接導入事例として、端末共有時の排他制御、ポイント照合、店舗内通信と障害時運用が確認点になる。</p>
+      <div class="card-footer">
+        <span class="card-source">NTTデータ</span>
+        <a class="card-link" href="https://www.nttdata.com/global/ja/news/topics/2026/093004/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">北國銀行、VisaNet直結型クラウドアクワイアリング基盤Axiosを稼働</h2>
+      <p class="card-summary">北國銀行はインフキュリオンのフルクラウド型アクワイアリング基盤Axiosを採用し、加盟店サービス「スマートプラン」を開始した。Visa Cloud Connect／Platform ConnectでVisaNetへ接続し、API型の加盟店管理、AndroidのTap to Phone、QR決済、預金型ステーブルコイン「トチカ」を単一基盤で扱う。CAFIS／ADAPTISへの接続変更ではなく競合経路の国内稼働事例であり、アクワイアラーは経路選択、端末レス受入、精算・照合・障害分界を比較する材料になる。</p>
+      <div class="card-footer">
+        <span class="card-source">インフキュリオン</span>
+        <a class="card-link" href="https://www.infcurion.com/news/news-20261001_001/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-09-28</span>
+      </div>
+      <h2 class="card-title">PCI SSC、Secure Software Lifecycle Standard 2.0を公開</h2>
+      <p class="card-summary">PCI SSCは決済ソフトウェア事業者の開発・保守プロセスを評価するSecure SLC Standardを2.0へ更新した。Secure Software Standard 2.0の「sensitive assets」とSAIDに整合し、AIを含むdigital toolsを安全な開発ライフサイクルで管理する要件を追加した。Q4 2026に評価者向け研修を用意し、開始後はv1.1から12カ月の移行期間に入る。CAFIS固有仕様ではないが、決済ソフトの委託先管理、開発証跡、AI利用台帳と評価計画へ反映が必要になる。</p>
+      <div class="card-footer">
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://blog.pcisecuritystandards.org/pci-ssc-releases-version-2.0-of-the-secure-software-lifecycle-standard" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表・提供: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">MastercardとBMO、業務ソフト内で法人向け仮想カード決済を提供</h2>
+      <p class="card-summary">MastercardとBMOは、ERP・購買・買掛金・出張管理の画面内でBMO Commercialの仮想カードを発行・承認・照合できる機能を米国とカナダで提供した。Mastercard Commercial Expressの標準連携を使い、利用額などの制御と照合データを支払処理に組み込む。日本やCAFIS／ADAPTISへの展開は発表されていない別地域の動向だが、国内B2B決済では仮想カードの発番、承認、請求書突合を業務SaaSへ埋め込む際のAPI・責任分界の参考になる。</p>
       <div class="card-footer">
         <span class="card-source">Mastercard</span>
-        <a class="card-link" href="https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-Advances-Agentic-Commerce-With-New-Trust-and-Intelligence-Services/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://www.mastercard.com/ca/en/news-and-trends/press/2026/october/mastercard-and-bmo-enable-embedded-commercial-payments.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">完了: 2026-09-30</span>
+        <span class="card-date">公開: 2026-10-01</span>
       </div>
-      <h2 class="card-title">SBPS、カード会社16社へ直接接続するSP.LINKSの子会社化を完了</h2>
-      <p class="card-summary">SBペイメントサービスはSP.LINKSの子会社化を完了した。SP.LINKSは非対面分野で大手カード会社16社に直接接続する独自ネットワークとカードデータ処理センターを持ち、SBPSは自社のアクワイアリング、B2B金融、オンライン決済基盤と統合する方針。CAFIS／ADAPTISとの接続変更は示されていないが、国内PSPの接続経路、障害分界、精算、加盟店契約の競争環境に関わる動きであり、移行計画やサービス仕様の続報を確認したい。</p>
+      <h2 class="card-title">Visa、ステーブルコイン連動カードの法人利用比率と接続範囲を公表</h2>
+      <p class="card-summary">Visaは、自社分類による2026年度累計でステーブルコイン連動カード取扱高の約17%がbusiness／commercial programだったと公表した。対応プログラムは160超で、用途は精算、資金管理、payout、越境取引へ広がり、Visa Directのpre-fundingにもつなげている。CAFIS／ADAPTISの採用や国内接続を示す発表ではなく別レールの動向である。国内運用では、法人カード取引と原資移動を分けて、資金源、為替、返金、会計、規制対応の責任範囲を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">SBペイメントサービス</span>
-        <a class="card-link" href="https://www.sbpayment.jp/news/press/2026/20260930_001599/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">移行期限: 2026-09</span>
-      </div>
-      <h2 class="card-title">Visa Acceptance、HTTP Signature利用者にJWT／MLE移行期限</h2>
-      <p class="card-summary">Visa Acceptance Solutions（Cybersource）は、REST APIのMessage Level Encryption対応に伴い、HTTP Signature方式の加盟店へ2026年9月までのJWT messaging移行を求めている。独自実装でJWTを生成する場合は構築方法も更新が必要で、未対応は取引失敗の恐れがある。共有secret key pairはJWTでも継続利用できる。CAFISの変更ではなく別ゲートウェイの接続要件だが、併用する国内加盟店やマルチPSP基盤では認証方式、鍵管理、暗号化試験、切替後の監視を確認すべき期限情報だ。</p>
-      <div class="card-footer">
-        <span class="card-source">Visa Acceptance Solutions</span>
-        <a class="card-link" href="https://developer.cybersource.com/content/dam/docs/cybs/en-us/platform/relnote/all/na/rn-2026-05-01.pdf" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">修正版: 2026-09-20</span>
-      </div>
-      <h2 class="card-title">Adyen Web 6.45.2、追加認証画面が出ない決済不能バグを修正</h2>
-      <p class="card-summary">AdyenはWeb Components／Drop-in 6.45.2を公開し、追加actionが必要な取引で認証画面が表示されず、利用者が決済を完了できない6.45.1の既知不具合を修正した。6.45.1は使用しないよう明記され、修正版はCheckout API v69以降を必要とする。CAFIS／ADAPTISとは別のPSP実装だが、3-D Secureやredirectなど追加処理を伴う決済の回帰試験、フロントSDKのバージョン固定、障害時の切戻しという国内加盟店共通の運用判断に直結する。</p>
-      <div class="card-footer">
-        <span class="card-source">Adyen Docs</span>
-        <a class="card-link" href="https://docs.adyen.com/online-payments/release-notes" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">開始: 2026-09-30</span>
-      </div>
-      <h2 class="card-title">PayPay加盟店、HIVEX経由で海外Binance Payを受入可能に</h2>
-      <p class="card-summary">PayPayはHIVEXを介して海外のBinance Payとの連携を開始した。海外利用者はPayPay加盟店のMPM（利用者読取）とCPM（店舗読取）の双方で支払え、加盟店への売上金は日本円で精算される。日本居住のBinance Japan利用者は対象外。CAFIS／ADAPTISや国内カード電文への接続は発表されておらず、PayPayの越境QRレールに追加された決済手段である。加盟店・端末側では対象表示、返金・照合、問い合わせ分界を既存HIVEX運用の範囲で確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">PayPay</span>
-        <a class="card-link" href="https://about.paypay.ne.jp/pr/20260930/01/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22806.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->

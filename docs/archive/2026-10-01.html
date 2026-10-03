@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-01</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-01</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-09-30.html">2026-09-30</a>
+    <a class="archive-link" href="./2026-09-29.html">2026-09-29</a>
+    <a class="archive-link" href="./2026-09-28.html">2026-09-28</a>
+    <a class="archive-link" href="./2026-09-27.html">2026-09-27</a>
+    <a class="archive-link" href="./2026-09-23.html">2026-09-23</a>
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <a class="archive-link" href="./2026-08-02.html">2026-08-02</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月1日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-01（日本時間）</span>
+      </div>
+      <h2 class="card-title">Transformers 5.18、リアルタイム話者分離と4モーダル推論モデルに対応</h2>
+      <p class="card-summary">Hugging FaceのTransformers 5.18.0は、NVIDIA Nemotron 3 DiarizationとNemotronH Omniを追加した。話者分離モデルはストリーミング／オフラインの両方で最大8話者を扱い、80ミリ秒から30.4秒までの入力バッファを1つのチェックポイントで切り替えられる。NemotronH OmniはMamba-Transformer系の言語モデルにRADIO視覚エンコーダーと任意の音声エンコーダーを接続し、テキスト・画像・動画・音声を同じ自己回帰モデルで処理する。導入時はモデルごとの前処理と破壊的変更を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face / GitHub</span>
+        <a class="card-link" href="https://github.com/huggingface/transformers/releases/tag/v5.18.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">Pydantic AI 2.52、web_fetchのDoS脆弱性を修正し実行Workspaceを統一</h2>
+      <p class="card-summary">Pydantic AI 2.52.0は、ローカルの<code>web_fetch</code>が攻撃者の深くネストしたHTMLを変換するとCPUとメモリを過剰消費し得る中程度の脆弱性を修正した。プロバイダー標準のWeb取得は対象外で、修正版はv2系が2.52.0、v1系が1.107.7。あわせて<code>ctx.workspace</code>を通じ、Coder、Shell、FileSystemをローカル・Modal・E2B・Fly.io Sprite・SSHなどで同じAPIから実行できるようにした。外部HTMLを取得するエージェントは更新を優先したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Pydantic AI / GitHub</span>
+        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.52.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-01（日本時間）</span>
+      </div>
+      <h2 class="card-title">Anthropic Python SDK 1.10／1.11、管理APIとMCP Tunnel型を拡張</h2>
+      <p class="card-summary">AnthropicのPython SDK 1.10.0は、Claude Enterpriseの分析・利用額上限・RBAC、ユーザー別利用量／費用、PluginsとPlugin MarketplacesをAdmin APIに追加し、Organization APIを一般提供にした。MCP Tunnels betaでは読取専用のtransport情報と作成時の一時relay tokenを返す。設定ファイルがgroup／other書込み可能なら拒否する防御も入った。続く1.11.0は利用額上限一覧APIを追加し、Sonnet 4.5を非推奨化した。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / GitHub</span>
+        <a class="card-link" href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.10.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">Hugging Face、オープンTTSを多言語・音声複製・初回音声遅延で比較</h2>
+      <p class="card-summary">Hugging FaceはOpen TTS Leaderboardを公開した。明瞭度をQwen3 ASRによるWER／CER、速度をH200上のRTFxとH200／CPU上のtime-to-first-audio、話者類似度をWavLM埋め込みのコサイン類似度で測る。英語と中国語に加え日本語などのCV3-Evalを選べ、音声複製の有無も分けて比較できる。客観指標の評価を数時間に短縮する一方、自然さや表現力、人の好みは直接測れないため、Listenタブの音声確認と併用する設計だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/open-tts-leaderboard" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">Cline 4.1.22、拒否フォールバックとエラー復旧を改善</h2>
+      <p class="card-summary">Cline 4.1.22は、Anthropic直結時にサーバー側のrefusal fallbackを使い、OpenRouter／Cline経由ではAnthropicモデルが別の上流へ切り替わる構成にした。コンテンツフィルターで遮断された応答も空応答ではなく理由を表示する。APIエラー後の新規メッセージ送信、送信直後の取消、推論トークンの二重計上なども修正した。モデルを固定していない複数プロバイダーでは既定がGPT-6.1 Sol等へ変わるため、再現性が必要な運用はモデルIDを明示したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cline / GitHub</span>
+        <a class="card-link" href="https://github.com/cline/cline/releases/tag/v4.1.22" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">Mastercard、AI起点取引を推定するAgent Payの信頼シグナルを発表</h2>
+      <p class="card-summary">MastercardはAgent Pay Trust Frameworkのintelligence層を拡張し、AIエージェントが開始した取引である確率を示すスコアを米国で試験すると発表した。将来は行動、加盟店、取引パターン、credential riskなどを組み合わせ、issuerと加盟店の承認・追加確認判断に使う。CloudflareのWeb信号やSkyfireのKnow Your Agentとの連携も検討する。日本やCAFIS／ADAPTISへの提供・電文追加は発表されておらず、現時点では国際ブランド側で増える認証・不正判定信号として仕様化の動向を追う段階だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-Advances-Agentic-Commerce-With-New-Trust-and-Intelligence-Services/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">完了: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">SBPS、カード会社16社へ直接接続するSP.LINKSの子会社化を完了</h2>
+      <p class="card-summary">SBペイメントサービスはSP.LINKSの子会社化を完了した。SP.LINKSは非対面分野で大手カード会社16社に直接接続する独自ネットワークとカードデータ処理センターを持ち、SBPSは自社のアクワイアリング、B2B金融、オンライン決済基盤と統合する方針。CAFIS／ADAPTISとの接続変更は示されていないが、国内PSPの接続経路、障害分界、精算、加盟店契約の競争環境に関わる動きであり、移行計画やサービス仕様の続報を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">SBペイメントサービス</span>
+        <a class="card-link" href="https://www.sbpayment.jp/news/press/2026/20260930_001599/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">移行期限: 2026-09</span>
+      </div>
+      <h2 class="card-title">Visa Acceptance、HTTP Signature利用者にJWT／MLE移行期限</h2>
+      <p class="card-summary">Visa Acceptance Solutions（Cybersource）は、REST APIのMessage Level Encryption対応に伴い、HTTP Signature方式の加盟店へ2026年9月までのJWT messaging移行を求めている。独自実装でJWTを生成する場合は構築方法も更新が必要で、未対応は取引失敗の恐れがある。共有secret key pairはJWTでも継続利用できる。CAFISの変更ではなく別ゲートウェイの接続要件だが、併用する国内加盟店やマルチPSP基盤では認証方式、鍵管理、暗号化試験、切替後の監視を確認すべき期限情報だ。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa Acceptance Solutions</span>
+        <a class="card-link" href="https://developer.cybersource.com/content/dam/docs/cybs/en-us/platform/relnote/all/na/rn-2026-05-01.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">修正版: 2026-09-20</span>
+      </div>
+      <h2 class="card-title">Adyen Web 6.45.2、追加認証画面が出ない決済不能バグを修正</h2>
+      <p class="card-summary">AdyenはWeb Components／Drop-in 6.45.2を公開し、追加actionが必要な取引で認証画面が表示されず、利用者が決済を完了できない6.45.1の既知不具合を修正した。6.45.1は使用しないよう明記され、修正版はCheckout API v69以降を必要とする。CAFIS／ADAPTISとは別のPSP実装だが、3-D Secureやredirectなど追加処理を伴う決済の回帰試験、フロントSDKのバージョン固定、障害時の切戻しという国内加盟店共通の運用判断に直結する。</p>
+      <div class="card-footer">
+        <span class="card-source">Adyen Docs</span>
+        <a class="card-link" href="https://docs.adyen.com/online-payments/release-notes" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">開始: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">PayPay加盟店、HIVEX経由で海外Binance Payを受入可能に</h2>
+      <p class="card-summary">PayPayはHIVEXを介して海外のBinance Payとの連携を開始した。海外利用者はPayPay加盟店のMPM（利用者読取）とCPM（店舗読取）の双方で支払え、加盟店への売上金は日本円で精算される。日本居住のBinance Japan利用者は対象外。CAFIS／ADAPTISや国内カード電文への接続は発表されておらず、PayPayの越境QRレールに追加された決済手段である。加盟店・端末側では対象表示、返金・照合、問い合わせ分界を既存HIVEX運用の範囲で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">PayPay</span>
+        <a class="card-link" href="https://about.paypay.ne.jp/pr/20260930/01/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
