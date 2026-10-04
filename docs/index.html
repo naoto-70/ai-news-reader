@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-03</title>
+  <title>AI News Daily — 2026-10-04</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-03</span>
+    <span class="site-date">2026-10-04</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-03</a>
+    <a class="archive-link current" href="./index.html">2026-10-04</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-03.html">2026-10-03</a>
     <a class="archive-link" href="./archive/2026-10-01.html">2026-10-01</a>
     <a class="archive-link" href="./archive/2026-09-30.html">2026-09-30</a>
     <a class="archive-link" href="./archive/2026-09-29.html">2026-09-29</a>
@@ -232,59 +233,46 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月3日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月4日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+        <span class="card-date">公開: 2026-10-04（日本時間）</span>
       </div>
-      <h2 class="card-title">OpenAI Python SDK 3.23、Agentsの型付きストリームと成果物取得に対応</h2>
-      <p class="card-summary">OpenAI Python SDK 3.23.0は、Agentsセッションのストリームから型付き回答と最終出力を受け取り、ターンへファイルをステージして成果物をダウンロードできるようにした。セッショントレース、Realtime翻訳、型付きアプリ操作のツール公開も追加した。再接続時には送達が不確かな型付きメッセージを再送しない修正と送信キュー上限の適用が入っており、長時間エージェントでは成果物保存と再接続後の重複処理を重点確認したい。</p>
+      <h2 class="card-title">LiteLLM 1.104、コンテナ署名とProxyの初期秘密鍵検査を導入</h2>
+      <p class="card-summary">LiteLLM 1.104.0は全Dockerイメージをcosignで署名し、固定コミットに置いた公開鍵で検証できるようにした。Proxyはmaster keyが未設定・空・既知の公開値なら起動を拒否する破壊的変更となり、漏えい済みパスワード検知と強制リセットも加わった。MCPではtools/list前のtools/callが404になる問題や資格情報分離の回帰も修正した。更新時は秘密鍵注入を先に確認し、固定鍵でイメージを検証してから展開したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LiteLLM / GitHub</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.104.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-03</span>
+      </div>
+      <h2 class="card-title">Pydantic AI 2.54、GPT Liveの再接続とHTTP接続プールを改善</h2>
+      <p class="card-summary">Pydantic AI 2.54.0は、切断したOpenAI Liveセッションを保存済みセッションのforkか履歴再生で再接続し、生成するHTTPクライアントの接続プール上限をOpenAI SDKに合わせた。GPT Liveから委譲型WebSearchToolを使えるほか、予期しないBackgroundTools例外ではrunを終了し、symlinkのrealpath取得失敗時は処理を閉じる修正も入った。音声エージェントでは再接続時の履歴重複と接続数、ツール失敗時の終了処理を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Pydantic / GitHub</span>
+        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.54.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-03（日本時間）</span>
+      </div>
+      <h2 class="card-title">OpenAI Python SDK 3.24、カスタム音声作成とAgentセッションイベントを追加</h2>
+      <p class="card-summary">OpenAI Python SDK 3.24.0は、APIからのカスタム音声作成とAgentセッションイベントに対応した。あわせてPython向けrequest routingフィールドとparse helper内のroutingフィールドを優先して扱う修正が入った。前日の3.23で追加された型付きAgentsストリームや成果物取得とは別の更新で、音声生成を組み込む実装は新しいリソースとイベント型を固定し、既存のparse処理でルーティング先が変わらないか回帰確認したい。</p>
       <div class="card-footer">
         <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.23.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-02</span>
-      </div>
-      <h2 class="card-title">Cline SDK 0.0.90、Agent TeamsのSQLite肥大化と長時間劣化を修正</h2>
-      <p class="card-summary">Cline SDK 0.0.90は、チーム実行中のストリーム断片と2秒ごとのheartbeatが完了済みメンバーの全文を含む状態を毎回保存していた問題を改めた。ライブ更新は永続化せず、変更対象だけを約300ミリ秒単位で一括保存し、runには要約を保持、team_eventsは1チーム2,000行・30日に制限する。SQLiteスキーマv2への移行で既存データも圧縮されるため、更新前にDBのバックアップと移行後の容量・再開動作を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Cline / GitHub</span>
-        <a class="card-link" href="https://github.com/cline/cline/releases/tag/sdk/sdk/v0.0.90" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-01</span>
-      </div>
-      <h2 class="card-title">Hugging Face Hub 2.1、Job再試行・ポート公開とSandbox資格情報を更新</h2>
-      <p class="card-summary">huggingface_hub 2.1.0は、Jobの自動再試行、保存済み仕様からの再実行、cron再設定、実行中ポートの認証付き／一般公開を追加した。ZeroGPU残量APIや推論Endpointのrecipe指定にも対応する。一方、共有Sandboxはscope付きcapability tokenを必須化し、旧ホストとの相互接続はできない破壊的変更となる。Job制御を自動化するエージェントは再試行回数と公開ポートを明示し、Sandbox poolを先に更新する必要がある。</p>
-      <div class="card-footer">
-        <span class="card-source">Hugging Face / GitHub</span>
-        <a class="card-link" href="https://github.com/huggingface/huggingface_hub/releases/tag/v2.1.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-01</span>
-      </div>
-      <h2 class="card-title">Ai2、兆パラメータ級MoE向け学習基盤Olmo-core 3を公開</h2>
-      <p class="card-summary">Ai2はOlmo-core 3でMoE学習をFSDP中心から、expertをGPU常駐させ入力を送るDDP基盤へ再設計した。expert／pipeline並列、分散optimizer、GPU内routing、grouped GEMMを組み合わせる。提供元のB300評価では47Bモデルが旧実装比約2.7倍、MXFP8はBF16比でthroughput約21%増・peak memory 103GiBから95GiBとなった。1.2T構成の値はrandom routingによるシステム試験で、学習品質や長時間安定性の評価とは分けて見る必要がある。</p>
-      <div class="card-footer">
-        <span class="card-source">Ai2 / Hugging Face</span>
-        <a class="card-link" href="https://huggingface.co/blog/allenai/olmocore3" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.24.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -293,37 +281,50 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-02（日本時間）</span>
       </div>
-      <h2 class="card-title">Codex 0.160、再接続時の重複送信とSubagent環境の初期化失敗を改善</h2>
-      <p class="card-summary">Codex 0.160.0は、送達が不確かな送信を解決してから未送信キューを再開し、再接続時の二重送信を防ぐ。起動中の環境をSubagent生成時に保持して設定・準備失敗を通知するほか、SQLite接続時の停止、Windows sandboxのPowerShell代替処理と長いパスの権限修復を修正した。Guardian reviewには過去指示とhandoff文脈を渡す任意機能が加わったため、更新後は再開・分岐・委譲の状態復元と権限境界を確認したい。</p>
+      <h2 class="card-title">Google ADK 2.11、Agent実行の中断・Tool確認・SQLite記憶を実装</h2>
+      <p class="card-summary">Google ADK for Python 2.11.0はRunner、Workflow、nodeへabort_signalを渡す穏当な中断を追加し、/run_sse切断時も実行を止める。Workflowのtool nodeはRequestInputで利用者確認を待てるようになり、別モデルへの相談をturn／session予算で制限するModelConsultToolとsqlite://の記憶サービスも加わった。Dev UIのruntime-configはインストール先ファイルではなくHTTP配信へ変わるため、中断時の副作用と設定取得を更新前に試したい。</p>
       <div class="card-footer">
-        <span class="card-source">OpenAI Codex / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.160.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Google ADK / GitHub</span>
+        <a class="card-link" href="https://github.com/google/adk-python/releases/tag/v2.11.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+      </div>
+      <h2 class="card-title">Agno 3.1.1、RAGページ同期の進捗・中断・失敗経路を可視化</h2>
+      <p class="card-summary">Agno 3.1.1はKnowledgeのページ同期が型付きPageSyncProgressと最終SyncReportを返し、Workflowでも既存REST/SSE経路へStepProgressEventを流せるようにした。中断要求を実処理へ伝え、失敗パスと原因連鎖を報告し、一時的な取得失敗には期限付き再試行を行う。Mintlify系サイトで非ページファイルを除外し、誤ったpartial判定により削除済み文書が検索対象へ残る問題も修正しており、RAG運用ではprune結果まで監視できる。</p>
+      <div class="card-footer">
+        <span class="card-source">Agno / GitHub</span>
+        <a class="card-link" href="https://github.com/agno-agi/agno/releases/tag/v3.1.1" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">提供開始: 2026-09-30</span>
+        <span class="card-date">対応開始: 2026-09-30</span>
       </div>
-      <h2 class="card-title">NTTデータ、エディオン416店舗へADAPTISモバイル端末2,000台を導入</h2>
-      <p class="card-summary">NTTデータはADAPTISの新モバイル決済端末約2,000台をエディオン416店舗へ提供した。商品説明や商談の場所で会計でき、一般カードに加えて会員・ポイント処理を伴うエディオン提携カードのタッチ決済にも対応する。1台の端末を複数のタブレットPOSから利用し、決済基盤側で提携カード処理を担うことでPOS開発負荷を抑える。ADAPTISへの直接導入事例として、端末共有時の排他制御、ポイント照合、店舗内通信と障害時運用が確認点になる。</p>
+      <h2 class="card-title">楽天ペイ、Stripeの国内オンライン決済手段として利用可能に</h2>
+      <p class="card-summary">楽天ペイメントは、Stripeを導入する国内加盟店で楽天ペイのオンライン決済を使えるようにした。接続にはネットスターズのStarPayを利用し、対面決済への対応も順次予定する。CAFIS／ADAPTISへの接続変更ではなく、国内QR・アカウント決済を別PSP経由で受け入れる動向である。加盟店側はStripeでの有効化条件に加え、ポイント利用、取消・返金、入金・照合データがカード決済とどう分かれるかを確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">NTTデータ</span>
-        <a class="card-link" href="https://www.nttdata.com/global/ja/news/topics/2026/093004/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">楽天ペイメント</span>
+        <a class="card-link" href="https://payment.rakuten.co.jp/news/2026093001/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">提供開始: 2026-10-01</span>
+        <span class="card-date">公開: 2026-10-01（日本時間）</span>
       </div>
-      <h2 class="card-title">北國銀行、VisaNet直結型クラウドアクワイアリング基盤Axiosを稼働</h2>
-      <p class="card-summary">北國銀行はインフキュリオンのフルクラウド型アクワイアリング基盤Axiosを採用し、加盟店サービス「スマートプラン」を開始した。Visa Cloud Connect／Platform ConnectでVisaNetへ接続し、API型の加盟店管理、AndroidのTap to Phone、QR決済、預金型ステーブルコイン「トチカ」を単一基盤で扱う。CAFIS／ADAPTISへの接続変更ではなく競合経路の国内稼働事例であり、アクワイアラーは経路選択、端末レス受入、精算・照合・障害分界を比較する材料になる。</p>
+      <h2 class="card-title">Stripe Node SDK 23、Node 20必須化とWebhook時刻検証を変更</h2>
+      <p class="card-summary">stripe-node 23.0.0は既定APIを2026-09-30.endiveへ更新し、Node.js 18を対象外としてNode 20以上を必須にした。Webhook署名のverifyHeader系はtolerance省略時にも既定の時刻許容幅を検証し、途中で切れたHTTP応答はStripeConnectionErrorへ分類する。PayPayや3DS 2.3.0／2.3.1の型も追加された。CAFIS固有変更ではない別PSPのSDK更新であり、runtime、Webhook再送、例外処理とAPI型の互換性を先に検証したい。</p>
       <div class="card-footer">
-        <span class="card-source">インフキュリオン</span>
-        <a class="card-link" href="https://www.infcurion.com/news/news-20261001_001/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-node/releases/tag/v23.0.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -332,37 +333,37 @@
         <span class="card-tag">決済</span>
         <span class="card-date">公開: 2026-09-28</span>
       </div>
-      <h2 class="card-title">PCI SSC、Secure Software Lifecycle Standard 2.0を公開</h2>
-      <p class="card-summary">PCI SSCは決済ソフトウェア事業者の開発・保守プロセスを評価するSecure SLC Standardを2.0へ更新した。Secure Software Standard 2.0の「sensitive assets」とSAIDに整合し、AIを含むdigital toolsを安全な開発ライフサイクルで管理する要件を追加した。Q4 2026に評価者向け研修を用意し、開始後はv1.1から12カ月の移行期間に入る。CAFIS固有仕様ではないが、決済ソフトの委託先管理、開発証跡、AI利用台帳と評価計画へ反映が必要になる。</p>
+      <h2 class="card-title">Adyen Web 6.46、日本向け住所入力と支払ボタン表示を更新</h2>
+      <p class="card-summary">Adyen Web 6.46.0は、日本向けAddress componentをローカライズし、都道府県セレクタを含む入力項目と日本語訳を更新した。支払ボタン上部の免責文を設定できるようにし、ギフトカード残高確認中のloading表示も修正した。CAFIS／ADAPTISとは直接関係しない別PSPのCheckout SDKだが、国内加盟店では保存済み住所との項目対応、決済同意文の表示位置、ギフトカード二重操作防止を端末幅ごとに回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">PCI Security Standards Council</span>
-        <a class="card-link" href="https://blog.pcisecuritystandards.org/pci-ssc-releases-version-2.0-of-the-secure-software-lifecycle-standard" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Adyen / GitHub</span>
+        <a class="card-link" href="https://github.com/Adyen/adyen-web/releases/tag/v6.46.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表・提供: 2026-10-01</span>
+        <span class="card-date">MVP提供日: 2026-09-30（発表）</span>
       </div>
-      <h2 class="card-title">MastercardとBMO、業務ソフト内で法人向け仮想カード決済を提供</h2>
-      <p class="card-summary">MastercardとBMOは、ERP・購買・買掛金・出張管理の画面内でBMO Commercialの仮想カードを発行・承認・照合できる機能を米国とカナダで提供した。Mastercard Commercial Expressの標準連携を使い、利用額などの制御と照合データを支払処理に組み込む。日本やCAFIS／ADAPTISへの展開は発表されていない別地域の動向だが、国内B2B決済では仮想カードの発番、承認、請求書突合を業務SaaSへ埋め込む際のAPI・責任分界の参考になる。</p>
+      <h2 class="card-title">TISI、PAYCIERGEへAI脆弱性対応基盤のMVPを組み込み</h2>
+      <p class="card-summary">TISIはPAYCIERGEの次世代決済プラットフォームへ「AI Security Control Plane」のMVPを組み込み、9月30日から提供すると発表した。脆弱性情報、構成、アプリ資材、診断結果、攻撃状況を横断分析し、AIが対応優先度を提示、人の承認後に修復・検証・適用する。CAFIS／ADAPTISへの変更ではない国内決済基盤の動向である。導入検討時は資産台帳との結合、AI判断の根拠、承認・監査証跡、自動パッチの停止条件を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Mastercard</span>
-        <a class="card-link" href="https://www.mastercard.com/ca/en/news-and-trends/press/2026/october/mastercard-and-bmo-enable-embedded-commercial-payments.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">TISI</span>
+        <a class="card-link" href="https://www.tisi.jp/news/2026/tisi_news/20260915_1.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-01</span>
+        <span class="card-date">提供開始: 2026-09-15</span>
       </div>
-      <h2 class="card-title">Visa、ステーブルコイン連動カードの法人利用比率と接続範囲を公表</h2>
-      <p class="card-summary">Visaは、自社分類による2026年度累計でステーブルコイン連動カード取扱高の約17%がbusiness／commercial programだったと公表した。対応プログラムは160超で、用途は精算、資金管理、payout、越境取引へ広がり、Visa Directのpre-fundingにもつなげている。CAFIS／ADAPTISの採用や国内接続を示す発表ではなく別レールの動向である。国内運用では、法人カード取引と原資移動を分けて、資金源、為替、返金、会計、規制対応の責任範囲を確認したい。</p>
+      <h2 class="card-title">GMO-PG、共通ポイントの接続・契約・精算を単一APIへ集約</h2>
+      <p class="card-summary">GMO-PGはPGマルチペイメントサービスのオプションとして、Vポイント、Pontaポイント、PayPayポイントの契約・システム接続・精算を1契約・1接続へまとめるポイント決済サービスを開始した。Vポイントは2026年秋に提供予定で、PayPayポイントは付与のみを扱う。CAFIS固有変更ではなく国内PSPの関連動向だが、ポイントを支払に併用する加盟店はAPIの部分取消、残高不足、ポイント別精算とカード売上との照合を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Visa</span>
-        <a class="card-link" href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22806.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">GMOペイメントゲートウェイ</span>
+        <a class="card-link" href="https://www.gmo-pg.com/news/press/gmo-paymentgateway/2026/0915.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->

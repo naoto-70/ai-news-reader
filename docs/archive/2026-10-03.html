@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-03</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-03</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-03</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <a class="archive-link" href="./2026-09-30.html">2026-09-30</a>
+    <a class="archive-link" href="./2026-09-29.html">2026-09-29</a>
+    <a class="archive-link" href="./2026-09-28.html">2026-09-28</a>
+    <a class="archive-link" href="./2026-09-27.html">2026-09-27</a>
+    <a class="archive-link" href="./2026-09-23.html">2026-09-23</a>
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月3日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+      </div>
+      <h2 class="card-title">OpenAI Python SDK 3.23、Agentsの型付きストリームと成果物取得に対応</h2>
+      <p class="card-summary">OpenAI Python SDK 3.23.0は、Agentsセッションのストリームから型付き回答と最終出力を受け取り、ターンへファイルをステージして成果物をダウンロードできるようにした。セッショントレース、Realtime翻訳、型付きアプリ操作のツール公開も追加した。再接続時には送達が不確かな型付きメッセージを再送しない修正と送信キュー上限の適用が入っており、長時間エージェントでは成果物保存と再接続後の重複処理を重点確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.23.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-02</span>
+      </div>
+      <h2 class="card-title">Cline SDK 0.0.90、Agent TeamsのSQLite肥大化と長時間劣化を修正</h2>
+      <p class="card-summary">Cline SDK 0.0.90は、チーム実行中のストリーム断片と2秒ごとのheartbeatが完了済みメンバーの全文を含む状態を毎回保存していた問題を改めた。ライブ更新は永続化せず、変更対象だけを約300ミリ秒単位で一括保存し、runには要約を保持、team_eventsは1チーム2,000行・30日に制限する。SQLiteスキーマv2への移行で既存データも圧縮されるため、更新前にDBのバックアップと移行後の容量・再開動作を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cline / GitHub</span>
+        <a class="card-link" href="https://github.com/cline/cline/releases/tag/sdk/sdk/v0.0.90" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">Hugging Face Hub 2.1、Job再試行・ポート公開とSandbox資格情報を更新</h2>
+      <p class="card-summary">huggingface_hub 2.1.0は、Jobの自動再試行、保存済み仕様からの再実行、cron再設定、実行中ポートの認証付き／一般公開を追加した。ZeroGPU残量APIや推論Endpointのrecipe指定にも対応する。一方、共有Sandboxはscope付きcapability tokenを必須化し、旧ホストとの相互接続はできない破壊的変更となる。Job制御を自動化するエージェントは再試行回数と公開ポートを明示し、Sandbox poolを先に更新する必要がある。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face / GitHub</span>
+        <a class="card-link" href="https://github.com/huggingface/huggingface_hub/releases/tag/v2.1.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">Ai2、兆パラメータ級MoE向け学習基盤Olmo-core 3を公開</h2>
+      <p class="card-summary">Ai2はOlmo-core 3でMoE学習をFSDP中心から、expertをGPU常駐させ入力を送るDDP基盤へ再設計した。expert／pipeline並列、分散optimizer、GPU内routing、grouped GEMMを組み合わせる。提供元のB300評価では47Bモデルが旧実装比約2.7倍、MXFP8はBF16比でthroughput約21%増・peak memory 103GiBから95GiBとなった。1.2T構成の値はrandom routingによるシステム試験で、学習品質や長時間安定性の評価とは分けて見る必要がある。</p>
+      <div class="card-footer">
+        <span class="card-source">Ai2 / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/allenai/olmocore3" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+      </div>
+      <h2 class="card-title">Codex 0.160、再接続時の重複送信とSubagent環境の初期化失敗を改善</h2>
+      <p class="card-summary">Codex 0.160.0は、送達が不確かな送信を解決してから未送信キューを再開し、再接続時の二重送信を防ぐ。起動中の環境をSubagent生成時に保持して設定・準備失敗を通知するほか、SQLite接続時の停止、Windows sandboxのPowerShell代替処理と長いパスの権限修復を修正した。Guardian reviewには過去指示とhandoff文脈を渡す任意機能が加わったため、更新後は再開・分岐・委譲の状態復元と権限境界を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI Codex / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.160.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">NTTデータ、エディオン416店舗へADAPTISモバイル端末2,000台を導入</h2>
+      <p class="card-summary">NTTデータはADAPTISの新モバイル決済端末約2,000台をエディオン416店舗へ提供した。商品説明や商談の場所で会計でき、一般カードに加えて会員・ポイント処理を伴うエディオン提携カードのタッチ決済にも対応する。1台の端末を複数のタブレットPOSから利用し、決済基盤側で提携カード処理を担うことでPOS開発負荷を抑える。ADAPTISへの直接導入事例として、端末共有時の排他制御、ポイント照合、店舗内通信と障害時運用が確認点になる。</p>
+      <div class="card-footer">
+        <span class="card-source">NTTデータ</span>
+        <a class="card-link" href="https://www.nttdata.com/global/ja/news/topics/2026/093004/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">北國銀行、VisaNet直結型クラウドアクワイアリング基盤Axiosを稼働</h2>
+      <p class="card-summary">北國銀行はインフキュリオンのフルクラウド型アクワイアリング基盤Axiosを採用し、加盟店サービス「スマートプラン」を開始した。Visa Cloud Connect／Platform ConnectでVisaNetへ接続し、API型の加盟店管理、AndroidのTap to Phone、QR決済、預金型ステーブルコイン「トチカ」を単一基盤で扱う。CAFIS／ADAPTISへの接続変更ではなく競合経路の国内稼働事例であり、アクワイアラーは経路選択、端末レス受入、精算・照合・障害分界を比較する材料になる。</p>
+      <div class="card-footer">
+        <span class="card-source">インフキュリオン</span>
+        <a class="card-link" href="https://www.infcurion.com/news/news-20261001_001/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-09-28</span>
+      </div>
+      <h2 class="card-title">PCI SSC、Secure Software Lifecycle Standard 2.0を公開</h2>
+      <p class="card-summary">PCI SSCは決済ソフトウェア事業者の開発・保守プロセスを評価するSecure SLC Standardを2.0へ更新した。Secure Software Standard 2.0の「sensitive assets」とSAIDに整合し、AIを含むdigital toolsを安全な開発ライフサイクルで管理する要件を追加した。Q4 2026に評価者向け研修を用意し、開始後はv1.1から12カ月の移行期間に入る。CAFIS固有仕様ではないが、決済ソフトの委託先管理、開発証跡、AI利用台帳と評価計画へ反映が必要になる。</p>
+      <div class="card-footer">
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://blog.pcisecuritystandards.org/pci-ssc-releases-version-2.0-of-the-secure-software-lifecycle-standard" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表・提供: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">MastercardとBMO、業務ソフト内で法人向け仮想カード決済を提供</h2>
+      <p class="card-summary">MastercardとBMOは、ERP・購買・買掛金・出張管理の画面内でBMO Commercialの仮想カードを発行・承認・照合できる機能を米国とカナダで提供した。Mastercard Commercial Expressの標準連携を使い、利用額などの制御と照合データを支払処理に組み込む。日本やCAFIS／ADAPTISへの展開は発表されていない別地域の動向だが、国内B2B決済では仮想カードの発番、承認、請求書突合を業務SaaSへ埋め込む際のAPI・責任分界の参考になる。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://www.mastercard.com/ca/en/news-and-trends/press/2026/october/mastercard-and-bmo-enable-embedded-commercial-payments.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">Visa、ステーブルコイン連動カードの法人利用比率と接続範囲を公表</h2>
+      <p class="card-summary">Visaは、自社分類による2026年度累計でステーブルコイン連動カード取扱高の約17%がbusiness／commercial programだったと公表した。対応プログラムは160超で、用途は精算、資金管理、payout、越境取引へ広がり、Visa Directのpre-fundingにもつなげている。CAFIS／ADAPTISの採用や国内接続を示す発表ではなく別レールの動向である。国内運用では、法人カード取引と原資移動を分けて、資金源、為替、返金、会計、規制対応の責任範囲を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22806.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
