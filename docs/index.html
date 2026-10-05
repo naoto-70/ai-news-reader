@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-04</title>
+  <title>AI News Daily — 2026-10-05</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-04</span>
+    <span class="site-date">2026-10-05</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-04</a>
+    <a class="archive-link current" href="./index.html">2026-10-05</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-04.html">2026-10-04</a>
     <a class="archive-link" href="./archive/2026-10-03.html">2026-10-03</a>
     <a class="archive-link" href="./archive/2026-10-01.html">2026-10-01</a>
     <a class="archive-link" href="./archive/2026-09-30.html">2026-09-30</a>
@@ -233,7 +234,7 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月4日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月5日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
@@ -242,11 +243,11 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-04（日本時間）</span>
       </div>
-      <h2 class="card-title">LiteLLM 1.104、コンテナ署名とProxyの初期秘密鍵検査を導入</h2>
-      <p class="card-summary">LiteLLM 1.104.0は全Dockerイメージをcosignで署名し、固定コミットに置いた公開鍵で検証できるようにした。Proxyはmaster keyが未設定・空・既知の公開値なら起動を拒否する破壊的変更となり、漏えい済みパスワード検知と強制リセットも加わった。MCPではtools/list前のtools/callが404になる問題や資格情報分離の回帰も修正した。更新時は秘密鍵注入を先に確認し、固定鍵でイメージを検証してから展開したい。</p>
+      <h2 class="card-title">Claude Code 2.1.289、管理ポリシーの迂回とPlugin障害を修正</h2>
+      <p class="card-summary">Claude Code 2.1.289は、管理端末で複合シェルコマンド内のdeny／askルールが利用者導入modの承認で上書きされる問題を修正した。環境変数代入を前置したコマンド、symlink経由でIDEから指定したファイルにもルールを適用し、利用者pluginが組織管理MCPサーバーの認証ツール説明を書き換える経路も閉じた。agent.spawnと待機状態の取得も加わったため、管理環境では更新後にコマンド承認、symlink、plugin境界を回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">LiteLLM / GitHub</span>
-        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.104.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Anthropic / GitHub</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.289" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -255,115 +256,115 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-03</span>
       </div>
-      <h2 class="card-title">Pydantic AI 2.54、GPT Liveの再接続とHTTP接続プールを改善</h2>
-      <p class="card-summary">Pydantic AI 2.54.0は、切断したOpenAI Liveセッションを保存済みセッションのforkか履歴再生で再接続し、生成するHTTPクライアントの接続プール上限をOpenAI SDKに合わせた。GPT Liveから委譲型WebSearchToolを使えるほか、予期しないBackgroundTools例外ではrunを終了し、symlinkのrealpath取得失敗時は処理を閉じる修正も入った。音声エージェントでは再接続時の履歴重複と接続数、ツール失敗時の終了処理を確認したい。</p>
+      <h2 class="card-title">ThinkingBox、Agentの回答文ではなく最終状態と副作用を反復評価</h2>
+      <p class="card-summary">MicrosoftとHugging Faceは、状態を持つ業務Agent向け評価環境ThinkingBoxを公開した。各試行を初期化済みの独立MCPセッションで動かし、507の合成業務を各20回実行、最終データベース状態と余計・不足した副作用を実行可能な判定器で検査する。477件は状態だけ、30件は応答rubricも使う。単発のtool call成功率だけでは本番信頼性を測れないため、同一条件の反復成功率とコミット前の状態検証を評価設計へ加えたい。</p>
       <div class="card-footer">
-        <span class="card-source">Pydantic / GitHub</span>
-        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.54.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Microsoft / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-03（日本時間）</span>
+        <span class="card-date">公開: 2026-10-05（日本時間）</span>
       </div>
-      <h2 class="card-title">OpenAI Python SDK 3.24、カスタム音声作成とAgentセッションイベントを追加</h2>
-      <p class="card-summary">OpenAI Python SDK 3.24.0は、APIからのカスタム音声作成とAgentセッションイベントに対応した。あわせてPython向けrequest routingフィールドとparse helper内のroutingフィールドを優先して扱う修正が入った。前日の3.23で追加された型付きAgentsストリームや成果物取得とは別の更新で、音声生成を組み込む実装は新しいリソースとイベント型を固定し、既存のparse処理でルーティング先が変わらないか回帰確認したい。</p>
+      <h2 class="card-title">llama.cpp b11398、x86 tinyBLASの端数K処理をベクトル化</h2>
+      <p class="card-summary">llama.cpp b11398は、x86向けtinyBLASで行列積のK次元がブロック幅で割り切れない末尾処理を更新し、BF16に加えてFP16／FP32のtailもベクトル化した。参照実装との比較時にはtinyBLASを除外するテスト修正も含む。公開ノートに実測値はないため性能向上幅は未確認だが、CPU推論で該当dtypeと端数形状を使う環境は、更新前後の数値一致と小・中バッチのレイテンシを実測したい。</p>
       <div class="card-footer">
-        <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.24.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">llama.cpp / GitHub</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11398" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+        <span class="card-date">RC公開: 2026-10-04（日本時間）</span>
       </div>
-      <h2 class="card-title">Google ADK 2.11、Agent実行の中断・Tool確認・SQLite記憶を実装</h2>
-      <p class="card-summary">Google ADK for Python 2.11.0はRunner、Workflow、nodeへabort_signalを渡す穏当な中断を追加し、/run_sse切断時も実行を止める。Workflowのtool nodeはRequestInputで利用者確認を待てるようになり、別モデルへの相談をturn／session予算で制限するModelConsultToolとsqlite://の記憶サービスも加わった。Dev UIのruntime-configはインストール先ファイルではなくHTTP配信へ変わるため、中断時の副作用と設定取得を更新前に試したい。</p>
+      <h2 class="card-title">LiteLLM 1.105 RC、guardrail判定欠落をfail-closedへ変更</h2>
+      <p class="card-summary">LiteLLM 1.105.0-rc.1は、Straiker v3のsk_agt_キーをv3経路へ送り、判定結果が欠けた場合に通過させず失敗として扱う。Proxyはデータベース設定が起動時に失敗した場合に必ず終了し、日次活動APIは非正規の日付を拒否する。Azure Data Lakeではclient call IDが同じファイルを共有する問題も直した。正式版前のRCなので、guardrail不能時の利用者向けエラーと起動監視を検証環境で確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Google ADK / GitHub</span>
-        <a class="card-link" href="https://github.com/google/adk-python/releases/tag/v2.11.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">LiteLLM / GitHub</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.105.0-rc.1" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+        <span class="card-date">告知: 2026-10-01</span>
       </div>
-      <h2 class="card-title">Agno 3.1.1、RAGページ同期の進捗・中断・失敗経路を可視化</h2>
-      <p class="card-summary">Agno 3.1.1はKnowledgeのページ同期が型付きPageSyncProgressと最終SyncReportを返し、Workflowでも既存REST/SSE経路へStepProgressEventを流せるようにした。中断要求を実処理へ伝え、失敗パスと原因連鎖を報告し、一時的な取得失敗には期限付き再試行を行う。Mintlify系サイトで非ページファイルを除外し、誤ったpartial判定により削除済み文書が検索対象へ残る問題も修正しており、RAG運用ではprune結果まで監視できる。</p>
+      <h2 class="card-title">OpenAI、旧Codex・小型モデルとTTSモデルの終了日を告知</h2>
+      <p class="card-summary">OpenAIはgpt-5.3-codex、gpt-5.4-nano、gpt-5.1を2027年4月1日にAPIから終了し、推奨先をgpt-6-solまたはgpt-6-lunaとした。tts-1、tts-1-hdと2つのgpt-4o-mini-tts snapshotは2027年1月6日に終了し、gpt-realtime-2.1-miniへの移行を案内する。モデルIDを設定・評価データ・音声パイプラインから洗い出し、応答品質、tool schema、音声形式と費用を期限前に比較したい。</p>
       <div class="card-footer">
-        <span class="card-source">Agno / GitHub</span>
-        <a class="card-link" href="https://github.com/agno-agi/agno/releases/tag/v3.1.1" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">対応開始: 2026-09-30</span>
+        <span class="card-date">発効: 2026-10-30</span>
       </div>
-      <h2 class="card-title">楽天ペイ、Stripeの国内オンライン決済手段として利用可能に</h2>
-      <p class="card-summary">楽天ペイメントは、Stripeを導入する国内加盟店で楽天ペイのオンライン決済を使えるようにした。接続にはネットスターズのStarPayを利用し、対面決済への対応も順次予定する。CAFIS／ADAPTISへの接続変更ではなく、国内QR・アカウント決済を別PSP経由で受け入れる動向である。加盟店側はStripeでの有効化条件に加え、ポイント利用、取消・返金、入金・照合データがカード決済とどう分かれるかを確認したい。</p>
+      <h2 class="card-title">Visa、APを含むカード保存型Token RequestorへVCESを有効化</h2>
+      <p class="card-summary">Visaは10月30日、米国・カナダ・アジア太平洋・CEMEAのcard-on-file Token RequestorすべてにVisa Credential Enrichment Serviceを有効化する。トークン発行成功率の改善を目的とし、DCSF対象サービスのため追加製品料金はないとしている。opt-out期限の9月30日は経過した。CAFIS／ADAPTISへの直接変更は確認できないが、国内のアクワイアラー・PSPは対象Token Requestor、属性補完の扱い、発行結果の監視をVisa窓口と確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">楽天ペイメント</span>
-        <a class="card-link" href="https://payment.rakuten.co.jp/news/2026093001/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Visa Merchant Business News Digest</span>
+        <a class="card-link" href="https://www.visa.com/en-us/resources/visa-merchant-business-news-digest" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-01（日本時間）</span>
+        <span class="card-date">発効: 2026-10-24</span>
       </div>
-      <h2 class="card-title">Stripe Node SDK 23、Node 20必須化とWebhook時刻検証を変更</h2>
-      <p class="card-summary">stripe-node 23.0.0は既定APIを2026-09-30.endiveへ更新し、Node.js 18を対象外としてNode 20以上を必須にした。Webhook署名のverifyHeader系はtolerance省略時にも既定の時刻許容幅を検証し、途中で切れたHTTP応答はStripeConnectionErrorへ分類する。PayPayや3DS 2.3.0／2.3.1の型も追加された。CAFIS固有変更ではない別PSPのSDK更新であり、runtime、Webhook再送、例外処理とAPI型の互換性を先に検証したい。</p>
+      <h2 class="card-title">Visa、給油所MCC 5541へ0120アクワイアラー確認通知を拡大</h2>
+      <p class="card-summary">Visaは10月24日のVisaNet Business Enhancementsで、MCC 5542の自動燃料給油機に適用している0120 acquirer confirmation adviceを、MCC 5541のサービスステーションへ広げる。全地域・全Visaカード製品が対象とされる。CAFIS／ADAPTISがこの通知をどう扱うかは公開資料では確認できないため、給油加盟店を扱う国内アクワイアラー・接続事業者はMCC設定、通知メッセージの生成・受信、照合処理の試験要否を接続先へ確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Stripe / GitHub</span>
-        <a class="card-link" href="https://github.com/stripe/stripe-node/releases/tag/v23.0.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Visa Merchant Business News Digest</span>
+        <a class="card-link" href="https://www.visa.com/en-us/resources/visa-merchant-business-news-digest" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-09-28</span>
+        <span class="card-date">試行開始: 2026-10-02</span>
       </div>
-      <h2 class="card-title">Adyen Web 6.46、日本向け住所入力と支払ボタン表示を更新</h2>
-      <p class="card-summary">Adyen Web 6.46.0は、日本向けAddress componentをローカライズし、都道府県セレクタを含む入力項目と日本語訳を更新した。支払ボタン上部の免責文を設定できるようにし、ギフトカード残高確認中のloading表示も修正した。CAFIS／ADAPTISとは直接関係しない別PSPのCheckout SDKだが、国内加盟店では保存済み住所との項目対応、決済同意文の表示位置、ギフトカード二重操作防止を端末幅ごとに回帰確認したい。</p>
+      <h2 class="card-title">JCB、名古屋SRTで位置連動のNFCタグ決済を試行</h2>
+      <p class="card-summary">JCBとトヨタ紡織は、名古屋SRT車内のMOOX-RIDEが配信する位置連動コンテンツに応じ、1つのNFCタグの遷移先を切り替える仕組みを共同開発した。利用者はブラウザー上で周辺施設の券や商品をApple Pay／Google Pay経由で購入する。運賃支払いではなく、CAFIS／ADAPTISへの変更も発表されていない。移動中の加盟店導線として、タグ改ざん対策、位置切替、購入履歴の再表示、現地での引換確認が運用上の確認点になる。</p>
       <div class="card-footer">
-        <span class="card-source">Adyen / GitHub</span>
-        <a class="card-link" href="https://github.com/Adyen/adyen-web/releases/tag/v6.46.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">JCB</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000001479.000011361.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">MVP提供日: 2026-09-30（発表）</span>
+        <span class="card-date">連携開始: 2026-09-30</span>
       </div>
-      <h2 class="card-title">TISI、PAYCIERGEへAI脆弱性対応基盤のMVPを組み込み</h2>
-      <p class="card-summary">TISIはPAYCIERGEの次世代決済プラットフォームへ「AI Security Control Plane」のMVPを組み込み、9月30日から提供すると発表した。脆弱性情報、構成、アプリ資材、診断結果、攻撃状況を横断分析し、AIが対応優先度を提示、人の承認後に修復・検証・適用する。CAFIS／ADAPTISへの変更ではない国内決済基盤の動向である。導入検討時は資産台帳との結合、AI判断の根拠、承認・監査証跡、自動パッチの停止条件を確認したい。</p>
+      <h2 class="card-title">メルカート、注文時の不正検知をO-PLUXと標準API連携</h2>
+      <p class="card-summary">クラウドECのメルカートは、O-PLUX Payment Protectionとの標準連携を開始した。注文時のAPI連携で不正ログイン・不正注文をリアルタイム判定し、個別開発なしで目視確認を自動化する。O-PLUXは共有ネガティブデータ、名寄せ、機械学習とルールを使うとしている。CAFIS固有変更ではない加盟店側の不正対策であり、導入時は判定不能時の扱い、保留・解除手順、誤検知率、3DSや決済承認との実行順序を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">TISI</span>
-        <a class="card-link" href="https://www.tisi.jp/news/2026/tisi_news/20260915_1.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">メルカート / Cacco</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000000084.000023201.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">提供開始: 2026-09-15</span>
+        <span class="card-date">公開: 2026-09-24</span>
       </div>
-      <h2 class="card-title">GMO-PG、共通ポイントの接続・契約・精算を単一APIへ集約</h2>
-      <p class="card-summary">GMO-PGはPGマルチペイメントサービスのオプションとして、Vポイント、Pontaポイント、PayPayポイントの契約・システム接続・精算を1契約・1接続へまとめるポイント決済サービスを開始した。Vポイントは2026年秋に提供予定で、PayPayポイントは付与のみを扱う。CAFIS固有変更ではなく国内PSPの関連動向だが、ポイントを支払に併用する加盟店はAPIの部分取消、残高不足、ポイント別精算とカード売上との照合を確認したい。</p>
+      <h2 class="card-title">Checkout.com Node SDK 5.4、暗号化CVV取得と本人確認APIを更新</h2>
+      <p class="card-summary">Checkout.com Node SDK 5.4.0は、カード更新時に任意HTTPヘッダーで暗号化CVVを要求できるようにし、本人確認APIへattempt一覧のページングと提出画像の取得を追加した。一方、getPDFReportはBufferではなく事前署名URLを含むJSONを返す破壊的変更となる。CAFIS／ADAPTISとは直接関係しない別PSPのSDKだが、更新時は暗号鍵の保管・ログ除外、URLの期限、既存レポート処理の型変更を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">GMOペイメントゲートウェイ</span>
-        <a class="card-link" href="https://www.gmo-pg.com/news/press/gmo-paymentgateway/2026/0915.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Checkout.com / GitHub</span>
+        <a class="card-link" href="https://github.com/checkout/checkout-sdk-node/releases/tag/5.4.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->

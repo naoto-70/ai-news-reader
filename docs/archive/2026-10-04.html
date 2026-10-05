@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-04</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-04</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-04</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <a class="archive-link" href="./2026-09-30.html">2026-09-30</a>
+    <a class="archive-link" href="./2026-09-29.html">2026-09-29</a>
+    <a class="archive-link" href="./2026-09-28.html">2026-09-28</a>
+    <a class="archive-link" href="./2026-09-27.html">2026-09-27</a>
+    <a class="archive-link" href="./2026-09-23.html">2026-09-23</a>
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月4日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-04（日本時間）</span>
+      </div>
+      <h2 class="card-title">LiteLLM 1.104、コンテナ署名とProxyの初期秘密鍵検査を導入</h2>
+      <p class="card-summary">LiteLLM 1.104.0は全Dockerイメージをcosignで署名し、固定コミットに置いた公開鍵で検証できるようにした。Proxyはmaster keyが未設定・空・既知の公開値なら起動を拒否する破壊的変更となり、漏えい済みパスワード検知と強制リセットも加わった。MCPではtools/list前のtools/callが404になる問題や資格情報分離の回帰も修正した。更新時は秘密鍵注入を先に確認し、固定鍵でイメージを検証してから展開したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LiteLLM / GitHub</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.104.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-03</span>
+      </div>
+      <h2 class="card-title">Pydantic AI 2.54、GPT Liveの再接続とHTTP接続プールを改善</h2>
+      <p class="card-summary">Pydantic AI 2.54.0は、切断したOpenAI Liveセッションを保存済みセッションのforkか履歴再生で再接続し、生成するHTTPクライアントの接続プール上限をOpenAI SDKに合わせた。GPT Liveから委譲型WebSearchToolを使えるほか、予期しないBackgroundTools例外ではrunを終了し、symlinkのrealpath取得失敗時は処理を閉じる修正も入った。音声エージェントでは再接続時の履歴重複と接続数、ツール失敗時の終了処理を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Pydantic / GitHub</span>
+        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.54.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-03（日本時間）</span>
+      </div>
+      <h2 class="card-title">OpenAI Python SDK 3.24、カスタム音声作成とAgentセッションイベントを追加</h2>
+      <p class="card-summary">OpenAI Python SDK 3.24.0は、APIからのカスタム音声作成とAgentセッションイベントに対応した。あわせてPython向けrequest routingフィールドとparse helper内のroutingフィールドを優先して扱う修正が入った。前日の3.23で追加された型付きAgentsストリームや成果物取得とは別の更新で、音声生成を組み込む実装は新しいリソースとイベント型を固定し、既存のparse処理でルーティング先が変わらないか回帰確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.24.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+      </div>
+      <h2 class="card-title">Google ADK 2.11、Agent実行の中断・Tool確認・SQLite記憶を実装</h2>
+      <p class="card-summary">Google ADK for Python 2.11.0はRunner、Workflow、nodeへabort_signalを渡す穏当な中断を追加し、/run_sse切断時も実行を止める。Workflowのtool nodeはRequestInputで利用者確認を待てるようになり、別モデルへの相談をturn／session予算で制限するModelConsultToolとsqlite://の記憶サービスも加わった。Dev UIのruntime-configはインストール先ファイルではなくHTTP配信へ変わるため、中断時の副作用と設定取得を更新前に試したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Google ADK / GitHub</span>
+        <a class="card-link" href="https://github.com/google/adk-python/releases/tag/v2.11.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-02（日本時間）</span>
+      </div>
+      <h2 class="card-title">Agno 3.1.1、RAGページ同期の進捗・中断・失敗経路を可視化</h2>
+      <p class="card-summary">Agno 3.1.1はKnowledgeのページ同期が型付きPageSyncProgressと最終SyncReportを返し、Workflowでも既存REST/SSE経路へStepProgressEventを流せるようにした。中断要求を実処理へ伝え、失敗パスと原因連鎖を報告し、一時的な取得失敗には期限付き再試行を行う。Mintlify系サイトで非ページファイルを除外し、誤ったpartial判定により削除済み文書が検索対象へ残る問題も修正しており、RAG運用ではprune結果まで監視できる。</p>
+      <div class="card-footer">
+        <span class="card-source">Agno / GitHub</span>
+        <a class="card-link" href="https://github.com/agno-agi/agno/releases/tag/v3.1.1" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">対応開始: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">楽天ペイ、Stripeの国内オンライン決済手段として利用可能に</h2>
+      <p class="card-summary">楽天ペイメントは、Stripeを導入する国内加盟店で楽天ペイのオンライン決済を使えるようにした。接続にはネットスターズのStarPayを利用し、対面決済への対応も順次予定する。CAFIS／ADAPTISへの接続変更ではなく、国内QR・アカウント決済を別PSP経由で受け入れる動向である。加盟店側はStripeでの有効化条件に加え、ポイント利用、取消・返金、入金・照合データがカード決済とどう分かれるかを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">楽天ペイメント</span>
+        <a class="card-link" href="https://payment.rakuten.co.jp/news/2026093001/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-01（日本時間）</span>
+      </div>
+      <h2 class="card-title">Stripe Node SDK 23、Node 20必須化とWebhook時刻検証を変更</h2>
+      <p class="card-summary">stripe-node 23.0.0は既定APIを2026-09-30.endiveへ更新し、Node.js 18を対象外としてNode 20以上を必須にした。Webhook署名のverifyHeader系はtolerance省略時にも既定の時刻許容幅を検証し、途中で切れたHTTP応答はStripeConnectionErrorへ分類する。PayPayや3DS 2.3.0／2.3.1の型も追加された。CAFIS固有変更ではない別PSPのSDK更新であり、runtime、Webhook再送、例外処理とAPI型の互換性を先に検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-node/releases/tag/v23.0.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-09-28</span>
+      </div>
+      <h2 class="card-title">Adyen Web 6.46、日本向け住所入力と支払ボタン表示を更新</h2>
+      <p class="card-summary">Adyen Web 6.46.0は、日本向けAddress componentをローカライズし、都道府県セレクタを含む入力項目と日本語訳を更新した。支払ボタン上部の免責文を設定できるようにし、ギフトカード残高確認中のloading表示も修正した。CAFIS／ADAPTISとは直接関係しない別PSPのCheckout SDKだが、国内加盟店では保存済み住所との項目対応、決済同意文の表示位置、ギフトカード二重操作防止を端末幅ごとに回帰確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Adyen / GitHub</span>
+        <a class="card-link" href="https://github.com/Adyen/adyen-web/releases/tag/v6.46.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">MVP提供日: 2026-09-30（発表）</span>
+      </div>
+      <h2 class="card-title">TISI、PAYCIERGEへAI脆弱性対応基盤のMVPを組み込み</h2>
+      <p class="card-summary">TISIはPAYCIERGEの次世代決済プラットフォームへ「AI Security Control Plane」のMVPを組み込み、9月30日から提供すると発表した。脆弱性情報、構成、アプリ資材、診断結果、攻撃状況を横断分析し、AIが対応優先度を提示、人の承認後に修復・検証・適用する。CAFIS／ADAPTISへの変更ではない国内決済基盤の動向である。導入検討時は資産台帳との結合、AI判断の根拠、承認・監査証跡、自動パッチの停止条件を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">TISI</span>
+        <a class="card-link" href="https://www.tisi.jp/news/2026/tisi_news/20260915_1.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-09-15</span>
+      </div>
+      <h2 class="card-title">GMO-PG、共通ポイントの接続・契約・精算を単一APIへ集約</h2>
+      <p class="card-summary">GMO-PGはPGマルチペイメントサービスのオプションとして、Vポイント、Pontaポイント、PayPayポイントの契約・システム接続・精算を1契約・1接続へまとめるポイント決済サービスを開始した。Vポイントは2026年秋に提供予定で、PayPayポイントは付与のみを扱う。CAFIS固有変更ではなく国内PSPの関連動向だが、ポイントを支払に併用する加盟店はAPIの部分取消、残高不足、ポイント別精算とカード売上との照合を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GMOペイメントゲートウェイ</span>
+        <a class="card-link" href="https://www.gmo-pg.com/news/press/gmo-paymentgateway/2026/0915.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
