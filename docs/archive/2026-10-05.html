@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-05</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-05</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-05</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <a class="archive-link" href="./2026-09-30.html">2026-09-30</a>
+    <a class="archive-link" href="./2026-09-29.html">2026-09-29</a>
+    <a class="archive-link" href="./2026-09-28.html">2026-09-28</a>
+    <a class="archive-link" href="./2026-09-27.html">2026-09-27</a>
+    <a class="archive-link" href="./2026-09-23.html">2026-09-23</a>
+    <a class="archive-link" href="./2026-09-22.html">2026-09-22</a>
+    <a class="archive-link" href="./2026-09-20.html">2026-09-20</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月5日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-04（日本時間）</span>
+      </div>
+      <h2 class="card-title">Claude Code 2.1.289、管理ポリシーの迂回とPlugin障害を修正</h2>
+      <p class="card-summary">Claude Code 2.1.289は、管理端末で複合シェルコマンド内のdeny／askルールが利用者導入modの承認で上書きされる問題を修正した。環境変数代入を前置したコマンド、symlink経由でIDEから指定したファイルにもルールを適用し、利用者pluginが組織管理MCPサーバーの認証ツール説明を書き換える経路も閉じた。agent.spawnと待機状態の取得も加わったため、管理環境では更新後にコマンド承認、symlink、plugin境界を回帰確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / GitHub</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.289" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-03</span>
+      </div>
+      <h2 class="card-title">ThinkingBox、Agentの回答文ではなく最終状態と副作用を反復評価</h2>
+      <p class="card-summary">MicrosoftとHugging Faceは、状態を持つ業務Agent向け評価環境ThinkingBoxを公開した。各試行を初期化済みの独立MCPセッションで動かし、507の合成業務を各20回実行、最終データベース状態と余計・不足した副作用を実行可能な判定器で検査する。477件は状態だけ、30件は応答rubricも使う。単発のtool call成功率だけでは本番信頼性を測れないため、同一条件の反復成功率とコミット前の状態検証を評価設計へ加えたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Microsoft / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-05（日本時間）</span>
+      </div>
+      <h2 class="card-title">llama.cpp b11398、x86 tinyBLASの端数K処理をベクトル化</h2>
+      <p class="card-summary">llama.cpp b11398は、x86向けtinyBLASで行列積のK次元がブロック幅で割り切れない末尾処理を更新し、BF16に加えてFP16／FP32のtailもベクトル化した。参照実装との比較時にはtinyBLASを除外するテスト修正も含む。公開ノートに実測値はないため性能向上幅は未確認だが、CPU推論で該当dtypeと端数形状を使う環境は、更新前後の数値一致と小・中バッチのレイテンシを実測したい。</p>
+      <div class="card-footer">
+        <span class="card-source">llama.cpp / GitHub</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11398" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">RC公開: 2026-10-04（日本時間）</span>
+      </div>
+      <h2 class="card-title">LiteLLM 1.105 RC、guardrail判定欠落をfail-closedへ変更</h2>
+      <p class="card-summary">LiteLLM 1.105.0-rc.1は、Straiker v3のsk_agt_キーをv3経路へ送り、判定結果が欠けた場合に通過させず失敗として扱う。Proxyはデータベース設定が起動時に失敗した場合に必ず終了し、日次活動APIは非正規の日付を拒否する。Azure Data Lakeではclient call IDが同じファイルを共有する問題も直した。正式版前のRCなので、guardrail不能時の利用者向けエラーと起動監視を検証環境で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LiteLLM / GitHub</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.105.0-rc.1" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">告知: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">OpenAI、旧Codex・小型モデルとTTSモデルの終了日を告知</h2>
+      <p class="card-summary">OpenAIはgpt-5.3-codex、gpt-5.4-nano、gpt-5.1を2027年4月1日にAPIから終了し、推奨先をgpt-6-solまたはgpt-6-lunaとした。tts-1、tts-1-hdと2つのgpt-4o-mini-tts snapshotは2027年1月6日に終了し、gpt-realtime-2.1-miniへの移行を案内する。モデルIDを設定・評価データ・音声パイプラインから洗い出し、応答品質、tool schema、音声形式と費用を期限前に比較したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発効: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">Visa、APを含むカード保存型Token RequestorへVCESを有効化</h2>
+      <p class="card-summary">Visaは10月30日、米国・カナダ・アジア太平洋・CEMEAのcard-on-file Token RequestorすべてにVisa Credential Enrichment Serviceを有効化する。トークン発行成功率の改善を目的とし、DCSF対象サービスのため追加製品料金はないとしている。opt-out期限の9月30日は経過した。CAFIS／ADAPTISへの直接変更は確認できないが、国内のアクワイアラー・PSPは対象Token Requestor、属性補完の扱い、発行結果の監視をVisa窓口と確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa Merchant Business News Digest</span>
+        <a class="card-link" href="https://www.visa.com/en-us/resources/visa-merchant-business-news-digest" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発効: 2026-10-24</span>
+      </div>
+      <h2 class="card-title">Visa、給油所MCC 5541へ0120アクワイアラー確認通知を拡大</h2>
+      <p class="card-summary">Visaは10月24日のVisaNet Business Enhancementsで、MCC 5542の自動燃料給油機に適用している0120 acquirer confirmation adviceを、MCC 5541のサービスステーションへ広げる。全地域・全Visaカード製品が対象とされる。CAFIS／ADAPTISがこの通知をどう扱うかは公開資料では確認できないため、給油加盟店を扱う国内アクワイアラー・接続事業者はMCC設定、通知メッセージの生成・受信、照合処理の試験要否を接続先へ確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa Merchant Business News Digest</span>
+        <a class="card-link" href="https://www.visa.com/en-us/resources/visa-merchant-business-news-digest" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">試行開始: 2026-10-02</span>
+      </div>
+      <h2 class="card-title">JCB、名古屋SRTで位置連動のNFCタグ決済を試行</h2>
+      <p class="card-summary">JCBとトヨタ紡織は、名古屋SRT車内のMOOX-RIDEが配信する位置連動コンテンツに応じ、1つのNFCタグの遷移先を切り替える仕組みを共同開発した。利用者はブラウザー上で周辺施設の券や商品をApple Pay／Google Pay経由で購入する。運賃支払いではなく、CAFIS／ADAPTISへの変更も発表されていない。移動中の加盟店導線として、タグ改ざん対策、位置切替、購入履歴の再表示、現地での引換確認が運用上の確認点になる。</p>
+      <div class="card-footer">
+        <span class="card-source">JCB</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000001479.000011361.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">連携開始: 2026-09-30</span>
+      </div>
+      <h2 class="card-title">メルカート、注文時の不正検知をO-PLUXと標準API連携</h2>
+      <p class="card-summary">クラウドECのメルカートは、O-PLUX Payment Protectionとの標準連携を開始した。注文時のAPI連携で不正ログイン・不正注文をリアルタイム判定し、個別開発なしで目視確認を自動化する。O-PLUXは共有ネガティブデータ、名寄せ、機械学習とルールを使うとしている。CAFIS固有変更ではない加盟店側の不正対策であり、導入時は判定不能時の扱い、保留・解除手順、誤検知率、3DSや決済承認との実行順序を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">メルカート / Cacco</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000000084.000023201.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-09-24</span>
+      </div>
+      <h2 class="card-title">Checkout.com Node SDK 5.4、暗号化CVV取得と本人確認APIを更新</h2>
+      <p class="card-summary">Checkout.com Node SDK 5.4.0は、カード更新時に任意HTTPヘッダーで暗号化CVVを要求できるようにし、本人確認APIへattempt一覧のページングと提出画像の取得を追加した。一方、getPDFReportはBufferではなく事前署名URLを含むJSONを返す破壊的変更となる。CAFIS／ADAPTISとは直接関係しない別PSPのSDKだが、更新時は暗号鍵の保管・ログ除外、URLの期限、既存レポート処理の型変更を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Checkout.com / GitHub</span>
+        <a class="card-link" href="https://github.com/checkout/checkout-sdk-node/releases/tag/5.4.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
