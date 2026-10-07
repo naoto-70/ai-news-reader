@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-06</title>
+  <title>AI News Daily — 2026-10-07</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-06</span>
+    <span class="site-date">2026-10-07</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-06</a>
+    <a class="archive-link current" href="./index.html">2026-10-07</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-06.html">2026-10-06</a>
     <a class="archive-link" href="./archive/2026-10-05.html">2026-10-05</a>
     <a class="archive-link" href="./archive/2026-10-04.html">2026-10-04</a>
     <a class="archive-link" href="./archive/2026-10-03.html">2026-10-03</a>
@@ -228,143 +229,142 @@
     <a class="archive-link" href="./archive/2026-09-28.html">2026-09-28</a>
     <a class="archive-link" href="./archive/2026-09-27.html">2026-09-27</a>
     <a class="archive-link" href="./archive/2026-09-23.html">2026-09-23</a>
-    <a class="archive-link" href="./archive/2026-09-22.html">2026-09-22</a>
     <!-- ARCHIVE-LINKS:END -->
   </div>
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月6日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月7日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-06（日本時間）</span>
+        <span class="card-date">公開: 2026-10-07（日本時間）</span>
       </div>
-      <h2 class="card-title">Claude Code 2.1.290、Subagentの承認判定とHook監査情報を拡張</h2>
-      <p class="card-summary">Claude Code 2.1.290は、plugin hookのtool.checkイベントへagentIdと組織が要求する承認上限ceilingを追加し、Subagentと本体の権限判定を区別できるようにした。turn.stepにはAPI自身が実行したtool callのID・入力・開始／終了時刻を含むserverToolUsesが加わり、plugin validateは承認を止めるhookに例外処理があるかを列挙する。管理設定が外部symlinkを指す場合やsandbox許可設定が無視される場合の警告も増えたため、監査・承認pluginは新フィールドと失敗時の閉じ方を確認したい。</p>
+      <h2 class="card-title">Claude Code 2.1.292、SandboxとHook承認の迂回経路を修正</h2>
+      <p class="card-summary">Claude Code 2.1.292は、networkのUNC pathを読む際にPreToolUse hook承認やauto modeが権限確認を迂回する問題、承認済みPDF・notebookのlink差し替えで別fileを読める問題、managed read-deny pathの付け替え後もproject grantやcredential injectionが残る問題を修正した。workflow agentをagent.spawn hookで拒否でき、tool.checkのallowだけで質問・plan承認を通す挙動も止めた。Plugin・sandbox運用では更新後にread deny、network path、hook worker再起動中のfail-closedを再試験したい。</p>
       <div class="card-footer">
         <span class="card-source">Anthropic / GitHub</span>
-        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.290" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.292" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-06（日本時間）</span>
+        <span class="card-date">公開: 2026-10-07（日本時間）</span>
       </div>
-      <h2 class="card-title">llama.cpp 0.6、MTP向け拡張Batch APIとllama_processを導入</h2>
-      <p class="card-summary">llama.cpp 0.6.0は、tokenとembeddingを同一batchで扱い、MTPやdeepstack用の状態embeddingを渡せるllama_batch_ext／llama_process APIを追加した。GLM-5.3-FlashとQwen4ExpのMTP speculative decoding、MetalのF16 KV向けflash attention、Vulkanの量子化K/V向けsparse attentionにも対応する。一方でsession形式のversionが更新されたため、埋め込み統合、状態保存の互換性、モデル別の速度と数値一致を更新前に検証したい。</p>
+      <h2 class="card-title">Transformers 5.19、マルチモーダルEmbeddingGemma 2とMoE並列化を追加</h2>
+      <p class="card-summary">Hugging Face Transformers 5.19.0は、text・image・audio・videoを共通768次元空間へ埋め込むEmbeddingGemma 2を追加した。Matryoshka学習により512・256・128次元へ切り詰められ、未使用のvision／audio towerをload時に無効化できる。Qwen3 MoEなどではexpert parallelのtoken dispatchを既定化し、EP sizeとTP sizeを同じにする制約を外した。一方、router logitsの返却classやcontinuous batchingのcache更新が変わるため、出力型、検索精度、memory使用量、既存custom cacheの互換性を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face / GitHub</span>
+        <a class="card-link" href="https://github.com/huggingface/transformers/releases/tag/v5.19.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-07（日本時間）</span>
+      </div>
+      <h2 class="card-title">OpenAI Python 3.25、Streaming session内のlocal tool実行を統合</h2>
+      <p class="card-summary">OpenAI Python SDK 3.25.0は、streaming session作成中にlocal toolを実行できるようにし、その失敗をobserverへ通知できるようにした。typed function helperはdefer_loading=trueのtool searchへ対応し、必要なtoolを遅延公開する構成を型付きで扱える。API型にはagent turn itemとusage source groupingが加わり、response format変換helperもpublic exportになった。Agent実装ではstream途中のtool例外、遅延tool解決、usage集計のgroup単位、再接続時の重複実行を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.25.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-07（日本時間）</span>
+      </div>
+      <h2 class="card-title">llama.cpp b11457、CUDAのXIELU演算をBF16へ拡張</h2>
+      <p class="card-summary">llama.cpp b11457は、CUDA版XIELU kernelのtype dispatchへnv_bfloat16を追加し、これまでBF16＋XIELUを拒否していたtemporary gateを外した。releaseではF32・F16・BF16のbackend testを加え、RTX 4090で全caseを通したと報告する一方、MetalのBF16 XIELUは引き続き未対応としている。XIELUを使うmodelをBF16でCUDA実行する環境は、従来のfallbackや変換を外す前に、対象GPU・CUDA版で出力一致、throughput、memory使用量を測定したい。</p>
       <div class="card-footer">
         <span class="card-source">llama.cpp / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11457" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-05（日本時間）</span>
+        <span class="card-date">公開: 2026-10-07（日本時間）</span>
       </div>
-      <h2 class="card-title">vLLM 0.31、GPU上の量子化済み重みを再起動後も再利用</h2>
-      <p class="card-summary">vLLM 0.31.0は、vllm preloadでweight-cache daemonを起動し、量子化後の重みをGPUメモリに保持してengine再起動時の再ロードを減らす。data parallel、MTP draft model、health endpointとready待機が加わり、CRIUで初期化済みengineを復元するsnapshotも実験提供した。Model Runner V2ではdraft-model speculative decodingとcustom logits processorを実装したため、再起動時間だけでなくGPU占有、daemon障害時の復旧、snapshotのカーネル・driver依存を確認したい。</p>
+      <h2 class="card-title">LangChain Core 1.6.7、Bedrock Converseのredacted_contentを保持</h2>
+      <p class="card-summary">LangChain Core 1.6.7は、Amazon Bedrock Converse経由のOpenAI互換出力をv1形式へ変換する際、redacted_contentを落とさず残すよう修正した。providerがsafetyやreasoningの都合で内容をredactしたことを下流のtrace・再生処理へ伝えられ、空contentとの区別を保ちやすくなる。併せてPython 3.14のinspect.signature周辺をhardeningした。Bedrockをagentや監査pipelineへつなぐ環境は、message serialization、checkpoint再開、redacted blockを通常textとして扱わない分岐を回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">vLLM / GitHub</span>
-        <a class="card-link" href="https://github.com/vllm-project/vllm/releases/tag/v0.31.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">LangChain / GitHub</span>
+        <a class="card-link" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.7" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
-        <span class="card-tag">AI技術</span>
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-10-20</span>
+      </div>
+      <h2 class="card-title">JR東日本、Suicaアプリでコード決済teppayを10月20日開始</h2>
+      <p class="card-summary">JR東日本は、モバイルSuicaへteppay機能を追加し、10月20日11時以降に順次開始する。本人確認後のteppay残高は最大30万円の決済に使え、View Card連携払い、残高送付、Suicaへのcharge、定期券購入へつなげる。店頭はJCB Smart Code加盟店、onlineはapp内発行のteppay JCB prepaidで国内JCB加盟店を利用する構成だ。CAFIS／ADAPTISの変更ではない国内別経路として、加盟店はブランド有効化、上限、refund・残高戻し、既存Suica電子moneyとの表示・照合分離を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">JR東日本</span>
+        <a class="card-link" href="https://www.jreast.co.jp/press/2026/20261006_ho03.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">改定: 2026-10-05</span>
+      </div>
+      <h2 class="card-title">PayPay商品券特約、併用決済の取消可能額を明文化</h2>
+      <p class="card-summary">PayPayは商品券加盟店特約を10月5日に改定した。従来はPayPay商品券だけの決済について、使用した商品券の有効期限内に限り取消可能としていたが、現行条項は商品券を含む決済を対象に、取消時点で有効な商品券額と他の支払手段による支払額の合計まで全部・一部取消を認め、それを超える取消は承認しないと定める。CAFIS／ADAPTISとは別のwallet運用だが、加盟店は混合支払の原取引内訳、期限切れ後の返金可能額、POSの部分取消と問い合わせ手順を規約に合わせたい。</p>
+      <div class="card-footer">
+        <span class="card-source">PayPay</span>
+        <a class="card-link" href="https://about.paypay.ne.jp/terms/merchant/rule/gift-voucher/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
         <span class="card-date">公開: 2026-10-06（日本時間）</span>
       </div>
-      <h2 class="card-title">OpenAI Agents JS 0.19、Tool承認再開時の入力すり替えを防止</h2>
-      <p class="card-summary">OpenAI Agents JS 0.19.0は、条件付きtool承認を正規化済みの実行入力へ結び付け、永続化した承認から再開する際も現行policyを再評価するよう変更した。複製不能な正規化値は承認前に拒否し、function toolとRealtimeの承認入力parse失敗は既定で秘匿する。Realtimeでは大きな音声bufferのencode時stack overflowや自動応答待ちの滞留も修正されたため、承認状態の保存形式、再開時policy、エラーtraceへの機密入力混入を回帰確認したい。</p>
+      <h2 class="card-title">Stripe Android 23.22、process全体へ及ぶHTTP cacheを停止</h2>
+      <p class="card-summary">Stripe Android SDK 23.22.0は、app内の別network requestにも影響し得たprocess-wide HTTP response cacheのinstallを停止した。PaymentSheetにはGoPayとMoMoのPaymentIntent、PixのPaymentIntent／SetupIntent対応を追加し、Embedded Payment Elementは決済処理中の保存済みpayment methodの表示・編集操作を無効化した。CAFIS／ADAPTISとは直接関係しない別PSP実装だが、mobile加盟店はcache policy、決済中UIの二重操作、地域別payment methodの表示条件とredirect復帰を回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">OpenAI Agents JS / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-agents-js/releases/tag/%40openai%2Fagents-realtime%400.19.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-android/releases/tag/v23.22.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
-        <span class="card-tag">AI技術</span>
+        <span class="card-tag">決済</span>
         <span class="card-date">公開: 2026-10-05（日本時間）</span>
       </div>
-      <h2 class="card-title">MCP TypeScript SDK 2.3.1、Bearer tokenのaudience検証を旧Serverへ追加</h2>
-      <p class="card-summary">Model Context Protocol TypeScript SDK 2.3.1は、server-legacyのrequireBearerAuthにexpectedResourceを追加した。設定すると、このMCP server向けに発行されたtokenだけを受け付け、tokenのaudienceが別resourceを示す場合を拒否できる。既定では無効のopt-in変更で、現行統合は自動では保護されない。複数MCP serverで認可基盤を共有する環境はresource indicatorとaud claimを揃え、誤audience・audience欠落・legacy clientの試験を追加したい。</p>
+      <h2 class="card-title">Visa Cybersource Node 0.0.84、agent鍵削除endpointを除外</h2>
+      <p class="card-summary">Cybersource REST Client Node 0.0.84は、Intelligent Commerce Productへproduct feed bulk jobの取得endpointを追加する一方、merchant／agentのkeyIdを指定するDELETE endpointをSDKから削除した。Payments、Visa Protect Risk Insights、Merchant Boardingも更新し、単純stringを返すAPIのMessage Level Encryption response処理を修正した。CAFIS／ADAPTISとは別のVisa系gateway実装であり、利用者はcodegen差分、鍵失効・rotationの代替手順、MLE復号後のresponse型、旧method呼び出しの検出を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Model Context Protocol / GitHub</span>
-        <a class="card-link" href="https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.3.1" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Cybersource / GitHub</span>
+        <a class="card-link" href="https://github.com/CyberSource/cybersource-rest-client-node/releases/tag/0.0.84" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">終了予定: 2027-03-31</span>
+        <span class="card-date">公開: 2026-10-05（日本時間）</span>
       </div>
-      <h2 class="card-title">NTTデータ、INFOX-NET一部端末の電子マネー取引を2027年3月末で終了</h2>
-      <p class="card-summary">NTTデータは、INFOX-NETの一部機種で提供する電子マネーサービスを2027年3月31日に終了し、翌日から対象端末では電子マネー取引ができなくなると案内している。該当加盟店には、端末設置を申し込んだカード会社へ相談し、継続可能な端末へ置き換えるよう求める。CAFIS本体の終了ではないが、CAFISへ接続するINFOX-NET端末系の直接変更なので、対象機種・電子マネー種別・POS連動・切替日程と撤去手順を契約先別に確定したい。</p>
+      <h2 class="card-title">Checkout.com Node 5.5、航空・宿泊dataのendpoint差を明確化</h2>
+      <p class="card-summary">Checkout.com Node SDK 5.5.0は、Payments、Hosted Payments、Payment Links、Payment Sessions、Payment Contextsでairline_dataとaccommodation_dataの受理shapeが異なる点をdocumentとtestへ反映した。passengerが単一objectかarrayか、address_line1、ISO country codeなどを整理し、Payment Contextsではflight_leg_detailsのstop_over_codeを送ると拒否されることも明記した。CAFIS／ADAPTISとは別PSPでserver仕様変更の発表ではないが、旅行加盟店は共通DTOの使い回しを避け、endpoint別serializerとcontract testを見直したい。</p>
       <div class="card-footer">
-        <span class="card-source">NTTデータ</span>
-        <a class="card-link" href="https://www.nttdata.com/jp/ja/lineup/adaptis/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">対応期限: 2026-12-01</span>
-      </div>
-      <h2 class="card-title">Mastercard、取引全期間を結ぶTLIDを12月1日から必須化</h2>
-      <p class="card-summary">MastercardのTransaction Link Identifierは、同社が生成する一意の識別子をauthorization、clearing、refundなど取引の全期間で引き継ぐ仕組みで、Braintreeのnetwork updateでは12月1日を対応期限、2027年1月31日をassessment開始日としている。対象はglobalで、将来Trace IDを置き換える計画という。CAFIS／ADAPTISでの項目対応は公開資料から確認できないため、国内アクワイアラー・PSPは認証と売上、取消・返品、異議申立て、ログ・DB間の保持と接続試験を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">PayPal Braintree</span>
-        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">取扱開始: 2026-10-01</span>
-      </div>
-      <h2 class="card-title">JCB Smart Code、ゼンショー国内約5,290店へ接続を拡大</h2>
-      <p class="card-summary">JCBのコード決済スキーム「Smart Code」は、すき家・はま寿司などゼンショーグループの国内飲食店約5,290店で取り扱いを始めた。FamiPay、ANA Pay、銀行Pay系など複数サービスをJCBの決済情報処理センターと加盟店契約の一本化で受け入れる。CAFIS／ADAPTISの変更ではない国内の別経路だが、大規模加盟店接続の参考になる。加盟店側は対象ブランドのマスター、POS表示、取消・返品、入金・照合、未開始サービスの有効化時期を一括導入後に監視したい。</p>
-      <div class="card-footer">
-        <span class="card-source">ゼンショーホールディングス / JCB</span>
-        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000001153.000097263.html" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">提供開始: 2026-10-01</span>
-      </div>
-      <h2 class="card-title">ウェルネット、JPKIと端末証明書を組み込むOEM・地域マネーを開始</h2>
-      <p class="card-summary">ウェルネットは、「支払秘書」の基盤を使うOEM電子マネーと地域マネーの提供を開始した。本人認証のFPoSは、マイナンバーカードの公的個人認証で本人の実在性を確認し、利用端末に発行した証明書で当人性を確認する。CAFISとは別の前払式決済基盤で直接変更はないが、企業・自治体が独自マネーを発行する際の本人・端末ひも付けの参考になる。導入時はJPKI失敗、機種変更・証明書再発行、端末紛失、利用停止の運用を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">ウェルネット</span>
-        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000000015.000134921.html" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-09-24</span>
-      </div>
-      <h2 class="card-title">Adyen Node API 32.2、Submerchant情報とHTTPS接続再利用を追加</h2>
-      <p class="card-summary">Adyen Node API Library 32.2.0は、Payments Appのboarding token要求へsubMerchantDataを追加し、submerchantの本人・連絡先・住所情報を渡せるようにした。HTTP clientはHTTPS agentを要求間で再利用し、keepAlive設定に対応、308 redirectでもagentを保持し、証明書設定変更時には再構築する。CAFIS／ADAPTISとは直接関係しない別PSPの実装だが、marketplace型加盟店のonboardingと接続効率化の参考として、socket上限、proxy timeout、証明書rotationを負荷試験したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Adyen / GitHub</span>
-        <a class="card-link" href="https://github.com/Adyen/adyen-node-api-library/releases/tag/v32.2.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Checkout.com / GitHub</span>
+        <a class="card-link" href="https://github.com/checkout/checkout-sdk-node/releases/tag/5.5.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
