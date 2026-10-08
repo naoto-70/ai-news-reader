@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-07</title>
+  <title>AI News Daily — 2026-10-08</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-07</span>
+    <span class="site-date">2026-10-08</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-07</a>
+    <a class="archive-link current" href="./index.html">2026-10-08</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-07.html">2026-10-07</a>
     <a class="archive-link" href="./archive/2026-10-06.html">2026-10-06</a>
     <a class="archive-link" href="./archive/2026-10-05.html">2026-10-05</a>
     <a class="archive-link" href="./archive/2026-10-04.html">2026-10-04</a>
@@ -228,52 +229,38 @@
     <a class="archive-link" href="./archive/2026-09-29.html">2026-09-29</a>
     <a class="archive-link" href="./archive/2026-09-28.html">2026-09-28</a>
     <a class="archive-link" href="./archive/2026-09-27.html">2026-09-27</a>
-    <a class="archive-link" href="./archive/2026-09-23.html">2026-09-23</a>
     <!-- ARCHIVE-LINKS:END -->
   </div>
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月7日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月8日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-07（日本時間）</span>
+        <span class="card-date">公開: 2026-10-08（日本時間）</span>
       </div>
-      <h2 class="card-title">Claude Code 2.1.292、SandboxとHook承認の迂回経路を修正</h2>
-      <p class="card-summary">Claude Code 2.1.292は、networkのUNC pathを読む際にPreToolUse hook承認やauto modeが権限確認を迂回する問題、承認済みPDF・notebookのlink差し替えで別fileを読める問題、managed read-deny pathの付け替え後もproject grantやcredential injectionが残る問題を修正した。workflow agentをagent.spawn hookで拒否でき、tool.checkのallowだけで質問・plan承認を通す挙動も止めた。Plugin・sandbox運用では更新後にread deny、network path、hook worker再起動中のfail-closedを再試験したい。</p>
+      <h2 class="card-title">Claude Code 2.1.293、Haiku 5.5とMCP接続のmemory leak修正を投入</h2>
+      <p class="card-summary">Claude Code 2.1.293は、Anthropic APIの既定HaikuとなったClaude Haiku 5.5を追加し、1M contextと通常promptでinput 0.10ドル／output 0.50ドル（100万token当たり）を案内した。mod向けtool登録にはschemaをtool searchの後ろへ回すか決めるisDeferred、subagent statusにはagentTypeを追加した。HTTP MCP接続がcloseまで全requestを保持するmemory leakやcontext compaction前後のaction再実行も修正しており、長時間agentではmemory推移、deferred toolのprompt量、compaction後のidempotencyを確認したい。</p>
       <div class="card-footer">
         <span class="card-source">Anthropic / GitHub</span>
-        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.292" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.293" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-07（日本時間）</span>
+        <span class="card-date">公開: 2026-10-08（日本時間）</span>
       </div>
-      <h2 class="card-title">Transformers 5.19、マルチモーダルEmbeddingGemma 2とMoE並列化を追加</h2>
-      <p class="card-summary">Hugging Face Transformers 5.19.0は、text・image・audio・videoを共通768次元空間へ埋め込むEmbeddingGemma 2を追加した。Matryoshka学習により512・256・128次元へ切り詰められ、未使用のvision／audio towerをload時に無効化できる。Qwen3 MoEなどではexpert parallelのtoken dispatchを既定化し、EP sizeとTP sizeを同じにする制約を外した。一方、router logitsの返却classやcontinuous batchingのcache更新が変わるため、出力型、検索精度、memory使用量、既存custom cacheの互換性を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Hugging Face / GitHub</span>
-        <a class="card-link" href="https://github.com/huggingface/transformers/releases/tag/v5.19.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-07（日本時間）</span>
-      </div>
-      <h2 class="card-title">OpenAI Python 3.25、Streaming session内のlocal tool実行を統合</h2>
-      <p class="card-summary">OpenAI Python SDK 3.25.0は、streaming session作成中にlocal toolを実行できるようにし、その失敗をobserverへ通知できるようにした。typed function helperはdefer_loading=trueのtool searchへ対応し、必要なtoolを遅延公開する構成を型付きで扱える。API型にはagent turn itemとusage source groupingが加わり、response format変換helperもpublic exportになった。Agent実装ではstream途中のtool例外、遅延tool解決、usage集計のgroup単位、再接続時の重複実行を確認したい。</p>
+      <h2 class="card-title">Codex 0.161、GPT-6.1 Solを既定化しterminal内MCP loginを追加</h2>
+      <p class="card-summary">Codex 0.161.0は、同梱model catalogとAmazon Bedrock catalogの既定をGPT-6.1 Solへ変更し、Bedrockでmulti-agent V2と対応modelのUltra reasoning、GovCloud regionを扱えるようにした。active terminalから/mcp login &lt;name&gt;を実行でき、filesystem escalationはdenied readとnetwork制限を保ったままwrite範囲を拡張する。model非固定環境では出力・cost・latencyの変化を測り、MCP OAuth、background taskへ引き継ぐpermission、overload時のretry/fallbackを回帰確認したい。</p>
       <div class="card-footer">
         <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.25.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.161.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -282,50 +269,76 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-07（日本時間）</span>
       </div>
-      <h2 class="card-title">llama.cpp b11457、CUDAのXIELU演算をBF16へ拡張</h2>
-      <p class="card-summary">llama.cpp b11457は、CUDA版XIELU kernelのtype dispatchへnv_bfloat16を追加し、これまでBF16＋XIELUを拒否していたtemporary gateを外した。releaseではF32・F16・BF16のbackend testを加え、RTX 4090で全caseを通したと報告する一方、MetalのBF16 XIELUは引き続き未対応としている。XIELUを使うmodelをBF16でCUDA実行する環境は、従来のfallbackや変換を外す前に、対象GPU・CUDA版で出力一致、throughput、memory使用量を測定したい。</p>
+      <h2 class="card-title">Langfuse 4.54、traceのtopic分類と外部media storageを追加</h2>
+      <p class="card-summary">Langfuse 4.54.0は、traceをtopic bucketへ分類する機能、external media storage連携、structured review output、trace transcriptを使うsession viewを追加した。未完了observationがある場合にtrace latencyをNULLのまま保つ修正や、event bucketのS3 SlowDownをretry消化までwarningとして扱う修正も含む。観測基盤の利用者はtopic分類の評価sample、media保存先のaccess・retention、未完了traceを0 latencyとして集計しないdashboard、upgrade後のworker retryを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Langfuse / GitHub</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.54.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-07（日本時間）</span>
+      </div>
+      <h2 class="card-title">Cline 4.1.23、unknown finishと巨大MCP出力の欠落を抑止</h2>
+      <p class="card-summary">Cline 4.1.23は、model responseのfinish reasonが欠落・未認識なら完了扱いせず、一度だけcontinueさせるよう変更した。contextに収まらないMCP tool出力はpreviewとread_filesでpage取得するlinkを返し、cutoff以降も読める。custom Anthropic endpointへ公式API専用optionを送って400になるregression、model非対応のreasoning level、tool approvalのlate update競合も修正した。agent運用ではpartial responseの重複、page取得権限、gateway別request optionを検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cline / GitHub</span>
+        <a class="card-link" href="https://github.com/cline/cline/releases/tag/v4.1.23" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-07（日本時間）</span>
+      </div>
+      <h2 class="card-title">llama.cpp b11475、MetalのMUL_MAT＋ADD融合で誤ったresidualを加算するbugを修正</h2>
+      <p class="card-summary">llama.cpp b11475は、2つのmatrix multiplication出力を加算する形でMetalのMUL_MAT＋ADD融合が誤ったbufferをresidualとして選ぶ問題を修正した。Clef Flash Q8_0のdecision headでは、CPUで0.977だった選択肢確率がMetalで0.28付近へ崩れる例があり、fusion無効化で正しく戻ると報告する。修正前は追加testの28 case中27件が失敗したため、Apple Siliconでdecision modelや同形状graphを使う環境はbuild更新後にCPUとの確率一致と既存quantizationを再確認したい。</p>
       <div class="card-footer">
         <span class="card-source">llama.cpp / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11457" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-07（日本時間）</span>
-      </div>
-      <h2 class="card-title">LangChain Core 1.6.7、Bedrock Converseのredacted_contentを保持</h2>
-      <p class="card-summary">LangChain Core 1.6.7は、Amazon Bedrock Converse経由のOpenAI互換出力をv1形式へ変換する際、redacted_contentを落とさず残すよう修正した。providerがsafetyやreasoningの都合で内容をredactしたことを下流のtrace・再生処理へ伝えられ、空contentとの区別を保ちやすくなる。併せてPython 3.14のinspect.signature周辺をhardeningした。Bedrockをagentや監査pipelineへつなぐ環境は、message serialization、checkpoint再開、redacted blockを通常textとして扱わない分岐を回帰確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">LangChain / GitHub</span>
-        <a class="card-link" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.7" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11475" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">提供開始: 2026-10-20</span>
+        <span class="card-date">発表: 2026-10-07 / 改定: 10-14・10-21</span>
       </div>
-      <h2 class="card-title">JR東日本、Suicaアプリでコード決済teppayを10月20日開始</h2>
-      <p class="card-summary">JR東日本は、モバイルSuicaへteppay機能を追加し、10月20日11時以降に順次開始する。本人確認後のteppay残高は最大30万円の決済に使え、View Card連携払い、残高送付、Suicaへのcharge、定期券購入へつなげる。店頭はJCB Smart Code加盟店、onlineはapp内発行のteppay JCB prepaidで国内JCB加盟店を利用する構成だ。CAFIS／ADAPTISの変更ではない国内別経路として、加盟店はブランド有効化、上限、refund・残高戻し、既存Suica電子moneyとの表示・照合分離を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">JR東日本</span>
-        <a class="card-link" href="https://www.jreast.co.jp/press/2026/20261006_ho03.pdf" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">改定: 2026-10-05</span>
-      </div>
-      <h2 class="card-title">PayPay商品券特約、併用決済の取消可能額を明文化</h2>
-      <p class="card-summary">PayPayは商品券加盟店特約を10月5日に改定した。従来はPayPay商品券だけの決済について、使用した商品券の有効期限内に限り取消可能としていたが、現行条項は商品券を含む決済を対象に、取消時点で有効な商品券額と他の支払手段による支払額の合計まで全部・一部取消を認め、それを超える取消は承認しないと定める。CAFIS／ADAPTISとは別のwallet運用だが、加盟店は混合支払の原取引内訳、期限切れ後の返金可能額、POSの部分取消と問い合わせ手順を規約に合わせたい。</p>
+      <h2 class="card-title">PayPay、business account送金と12歳未満eKYCの残高規約を改定</h2>
+      <p class="card-summary">PayPayは残高利用規約を2段階で改定する。10月14日からauto chargeをbusiness accountへの送金にも適用し、PayPay銀行loan弁済へ充当する送金の上限を追加する。10月21日からは12歳未満の本人確認とPayPay money account開設条件を変更し、既存accountは継続利用可能とした。CAFIS／ADAPTISとは別walletの変更だが、送金limit、auto charge発火、年齢判定、既存利用者のgrandfatheringをcustomer support・risk rule・画面表示で揃えたい。</p>
       <div class="card-footer">
         <span class="card-source">PayPay</span>
-        <a class="card-link" href="https://about.paypay.ne.jp/terms/merchant/rule/gift-voucher/" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://paypay.ne.jp/notice/20261007/t-balance-terms/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">適用: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">Life Card、非接触未対応端末を終了—CAFIS-Arch端末も対象</h2>
+      <p class="card-summary">Life Cardは国際brand rule改定を受け、非接触未搭載のcard決済端末を9月30日で終了し、10月1日以降は対象端末でcard決済を利用不可とした。対象にはINFOX各機種、JET-S、COCに加えてCAFIS-Arch JT-C31／C520が明記され、同じ端末のJ-Debitも終了する。CAFIS本体の接続仕様変更を示す発表ではないが、CAFIS系端末を直接含むため、加盟店・保守事業者は稼働端末inventory、非接触reader有無、交換完了、J-Debit代替、10月以降の拒否・fallback logを再確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">ライフカード</span>
+        <a class="card-link" href="https://www.lifecard.co.jp/info/260309.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">提供開始: 2026-10-05</span>
+      </div>
+      <h2 class="card-title">Okage、NFC tabletだけで注文・決済するCOTS型Kioskを開始</h2>
+      <p class="card-summary">Okageは、NFC搭載tabletへCOTS決済を組み込み、別体の決済端末なしで注文から会計まで完結する「Okage Kiosk前払い タップ決済」を開始した。cardは非接触のみでswipe・差込には対応せず、PayPayなどのcode決済、cellular回線、receipt発行、kitchen display連携を備える。CAFIS／ADAPTISへの接続は発表されていない別方式の端末動向として、導入側は対応brand、offline・通信断時の扱い、contactless不可cardの案内、refund・reconciliation、device管理範囲を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Okage</span>
+        <a class="card-link" href="https://okagekk.com/post-5752/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -334,37 +347,24 @@
         <span class="card-tag">決済</span>
         <span class="card-date">公開: 2026-10-06（日本時間）</span>
       </div>
-      <h2 class="card-title">Stripe Android 23.22、process全体へ及ぶHTTP cacheを停止</h2>
-      <p class="card-summary">Stripe Android SDK 23.22.0は、app内の別network requestにも影響し得たprocess-wide HTTP response cacheのinstallを停止した。PaymentSheetにはGoPayとMoMoのPaymentIntent、PixのPaymentIntent／SetupIntent対応を追加し、Embedded Payment Elementは決済処理中の保存済みpayment methodの表示・編集操作を無効化した。CAFIS／ADAPTISとは直接関係しない別PSP実装だが、mobile加盟店はcache policy、決済中UIの二重操作、地域別payment methodの表示条件とredirect復帰を回帰確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Stripe / GitHub</span>
-        <a class="card-link" href="https://github.com/stripe/stripe-android/releases/tag/v23.22.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-05（日本時間）</span>
-      </div>
-      <h2 class="card-title">Visa Cybersource Node 0.0.84、agent鍵削除endpointを除外</h2>
-      <p class="card-summary">Cybersource REST Client Node 0.0.84は、Intelligent Commerce Productへproduct feed bulk jobの取得endpointを追加する一方、merchant／agentのkeyIdを指定するDELETE endpointをSDKから削除した。Payments、Visa Protect Risk Insights、Merchant Boardingも更新し、単純stringを返すAPIのMessage Level Encryption response処理を修正した。CAFIS／ADAPTISとは別のVisa系gateway実装であり、利用者はcodegen差分、鍵失効・rotationの代替手順、MLE復号後のresponse型、旧method呼び出しの検出を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Cybersource / GitHub</span>
-        <a class="card-link" href="https://github.com/CyberSource/cybersource-rest-client-node/releases/tag/0.0.84" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-05（日本時間）</span>
-      </div>
-      <h2 class="card-title">Checkout.com Node 5.5、航空・宿泊dataのendpoint差を明確化</h2>
-      <p class="card-summary">Checkout.com Node SDK 5.5.0は、Payments、Hosted Payments、Payment Links、Payment Sessions、Payment Contextsでairline_dataとaccommodation_dataの受理shapeが異なる点をdocumentとtestへ反映した。passengerが単一objectかarrayか、address_line1、ISO country codeなどを整理し、Payment Contextsではflight_leg_detailsのstop_over_codeを送ると拒否されることも明記した。CAFIS／ADAPTISとは別PSPでserver仕様変更の発表ではないが、旅行加盟店は共通DTOの使い回しを避け、endpoint別serializerとcontract testを見直したい。</p>
+      <h2 class="card-title">Checkout.com Node 5.6、platform onboardingの本人確認documentを明確化</h2>
+      <p class="card-summary">Checkout.com Node SDK 5.6.0は、Platforms APIでsub-entityと代表者documentをonboarding・更新する際の必須field、endpoint、top-level documentとのvalidation差をJSDocとtestで明確化した。multipart uploadのpurposeはidentificationではなくidentity_verificationを正しい値としてtestし、proof of address・registration・authorised signatoryもAPIへ構造を変えず送ることを検証する。CAFIS／ADAPTISとは別PSPでserver変更の発表ではないが、platform事業者はKYC file分類、serializer、upload contract testを点検したい。</p>
       <div class="card-footer">
         <span class="card-source">Checkout.com / GitHub</span>
-        <a class="card-link" href="https://github.com/checkout/checkout-sdk-node/releases/tag/5.5.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/checkout/checkout-sdk-node/releases/tag/5.6.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">非推奨化: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">PayPal Braintree、iOS Drop-in SDKを非推奨化—1年でsupport終了</h2>
+      <p class="card-summary">PayPal BraintreeはiOS Drop-in SDKを10月1日からdeprecatedとし、以後は新機能・改善・bug fixを提供しない。決済処理は2027年10月1日まで継続するが、その後はsupport対象外となり、処理が停止される可能性がある。iOS v7 SDKはDrop-in経由で未対応のため、Braintree iOS SDKへの移行を求める。CAFIS／ADAPTISとは別gatewayの変更だが、採用appはDrop-in依存箇所、3D Secure・wallet・vault flow、移行版のUIと決済回帰、2027年期限を台帳化したい。</p>
+      <div class="card-footer">
+        <span class="card-source">PayPal Braintree</span>
+        <a class="card-link" href="https://developer.paypal.com/braintree/docs/guides/drop-in/overview/ios/v7/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
