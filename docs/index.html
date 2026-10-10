@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-09</title>
+  <title>AI News Daily — 2026-10-10</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-09</span>
+    <span class="site-date">2026-10-10</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-09</a>
+    <a class="archive-link current" href="./index.html">2026-10-10</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-09.html">2026-10-09</a>
     <a class="archive-link" href="./archive/2026-10-08.html">2026-10-08</a>
     <a class="archive-link" href="./archive/2026-10-07.html">2026-10-07</a>
     <a class="archive-link" href="./archive/2026-10-06.html">2026-10-06</a>
@@ -228,52 +229,51 @@
     <a class="archive-link" href="./archive/2026-10-01.html">2026-10-01</a>
     <a class="archive-link" href="./archive/2026-09-30.html">2026-09-30</a>
     <a class="archive-link" href="./archive/2026-09-29.html">2026-09-29</a>
-    <a class="archive-link" href="./archive/2026-09-28.html">2026-09-28</a>
     <!-- ARCHIVE-LINKS:END -->
   </div>
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月9日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月10日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-09（日本時間）</span>
+        <span class="card-date">公開: 2026-10-10（日本時間）</span>
       </div>
-      <h2 class="card-title">Claude Code 2.1.295、失敗時に処理を止めるhookとMCP再接続を強化</h2>
-      <p class="card-summary">Claude Code 2.1.295は、command／HTTP hookに<code>onFailure: "block"</code>を追加し、hookを起動できない場合、timeout、想定外の終了codeで対象actionを止められるようにした。Claude Apps gatewayには上流TTFB timeout、model allowlist、request IDの記録を追加した。remote MCPは15秒超の停止後に再接続し、切断反復時は最大30秒backoffするほか、同じpagination cursorで接続ごとにloopする問題も修正した。agent基盤ではfail-closedの適用範囲、gatewayのmodel routing、障害復旧後のtool再実行を検証したい。</p>
+      <h2 class="card-title">Claude Code 2.1.296、管理hookの拒否処理とsecret秘匿を修正</h2>
+      <p class="card-summary">Claude Code 2.1.296は、managed settingsの<code>PreToolUse</code>とprompt hookが拒否を正しく強制できない問題を修正し、共有transcript・debug logでkey直後の値を見落としていたsecret redactionも直した。subagentごとの<code>autoCompactWindow</code>、workflow agent用model指定、529 retryの最大backoff設定も追加した。企業運用ではdeny hookの回帰test、既存logの取扱い、subagentのcontext圧縮とmodel割当を確認したい。</p>
       <div class="card-footer">
         <span class="card-source">Anthropic / GitHub</span>
-        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.295" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.296" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-09（日本時間）</span>
+        <span class="card-date">公開: 2026-10-10（日本時間）</span>
       </div>
-      <h2 class="card-title">Codex 0.162、managed worktreeとLinux sandbox防御を追加</h2>
-      <p class="card-summary">Codex 0.162.0は、機能を有効にした信頼済みlocal projectでGit worktreeを作成・一覧するmanaged toolを追加した。custom Responses互換providerはlive web searchとremote compactionを設定でき、JavaScript helperはpromiseの完了順streamと任意のranked tool searchに対応する。Linux sandboxでは、複数のread拒否対象がある起動処理、sandbox構築に使う実行fileが書き込み可能になる構成、ripgrep設定でdeny globを弱める経路を修正した。導入時はworktreeの権限境界、custom providerの互換性、deny ruleの回帰を確認したい。</p>
+      <h2 class="card-title">Pydantic AI 2.55、durable実行の再現性とcache観測を拡張</h2>
+      <p class="card-summary">Pydantic AI 2.55.0は全packageの最低versionをPython 3.11へ上げ、3.10では2.54.0以前が解決される。durable再実行で<code>run_id</code>と<code>conversation_id</code>を維持し、外部検索などのtool request、失敗したfallback modelのmodel・時間・error・usageを記録する。provider横断のprompt cache設定と診断、image入力対応の<code>OpenAIDecisionsModel</code>も追加した。更新時はPython runtime、再実行の副作用、失敗分を含むusage計上とcache hit率を検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Pydantic / GitHub</span>
+        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.55.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-09〜10（日本時間）</span>
+      </div>
+      <h2 class="card-title">OpenAI Python 3.27・3.28、hosted agent環境のprewarmと停止・期限をAPI化</h2>
+      <p class="card-summary">OpenAI Python SDK 3.27.0はprewarmed hosted environmentを追加し、続く3.28.0はagent environmentのsuspensionとexpirationを型・APIへ反映した。agent実行基盤で環境の起動待ちを抑えつつ、休止・期限切れをlifecycleとして扱うための変更である。利用側はSDKを更新し、環境状態を文字列前提で処理していないか、期限切れ時の再作成、休止からの復帰、prewarm poolの容量とcostを確認したい。</p>
       <div class="card-footer">
         <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.162.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-08（日本時間）</span>
-      </div>
-      <h2 class="card-title">Langfuse 4.55、FIPS modeとdecision model評価を追加</h2>
-      <p class="card-summary">Langfuse 4.55.0は、脆弱性0件のbase imageを使うDocker imageとFIPS modeをreleaseし、OpenAI decision modelを評価対象に追加した。score登録は<code>POST /scores</code>でbatch処理でき、API key認可をSystemRoleAssignmentsで管理できる。topic要約はfacetごとの複数callを1回へまとめ、Bedrockではsummary prompt prefixをcacheする。self-host利用者はFIPS要件とimage scan結果、既存score pipelineのbatch失敗単位、decision traceの評価基準、cacheによるcost・latency変化を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Langfuse / GitHub</span>
-        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.55.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.28.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -282,63 +282,63 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-09（日本時間）</span>
       </div>
-      <h2 class="card-title">llama.cpp b11513、CUDA Top-Kをtensor形状別に最適化</h2>
-      <p class="card-summary">llama.cpp b11513は、CUDAのTOP_Kを入力形状に応じて切り替える。短いrowはbitonic、長いrowが複数ならradix select、長いrowが1本ならDeviceTopKまたはCUB argsortを選び、radixのscratch memoryとbitonic処理をchunk単位に制限した。project提供のqwen4exp・34,816 tokenの計測では、Top-K kernel起動を1,671,253回から2,329回、所要時間を5,761.8msから941.8msへ減らした。CUDA利用者は実modelのrow形状、VRAM peak、出力一致とend-to-end latencyで効果を再測定したい。</p>
+      <h2 class="card-title">OpenAI Agents JS 0.20、local file操作とMCP discoveryを堅牢化</h2>
+      <p class="card-summary">Agents JS Core 0.20.0はMCP tool discoveryの自動取得を既定64 pageまでに制限し、それ以上は<code>maxListPages</code>の明示を求める。UnixLocalのfile操作は信頼済みPython 3と保護の有効化を必須にし、<code>runAs</code>、hardlinkを巻き込まない置換、親directoryの書込権限、所有権・permission保持を修正した。approval後のmodel callを<code>maxTurns</code>へ数え、cancelled checkpointの未確認terminal出力も秘匿するため、上限値とresume testを見直したい。</p>
       <div class="card-footer">
-        <span class="card-source">llama.cpp / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11513" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">OpenAI / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-agents-js/releases/tag/%40openai/agents-core%400.20.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-09（日本時間）</span>
+        <span class="card-date">公開: 2026-10-08</span>
       </div>
-      <h2 class="card-title">LangChain Core 1.6.8、IPv6を使うSSRF検査を強化</h2>
-      <p class="card-summary">LangChain Core 1.6.8は、scoped／compatible経路のIPv6 SSRF checkを強化したsecurity fixを含む。release noteが示す変更範囲はこの修正に限られ、CVEや影響version、攻撃成立条件は明記されていない。URL取得や外部resource参照をagentへ許可する運用では更新を優先し、IPv6 literal、redirect、名前解決後のaddress判定を含む許可・拒否testと、既存allowlistへの影響を確認したい。</p>
+      <h2 class="card-title">GPT-6.1 SolにUltrafast mode、agent用途はWebSocketを推奨</h2>
+      <p class="card-summary">OpenAIはResponses APIでGPT-6.1 SolのUltrafast modeを一般提供した。<code>model: "gpt-6.1-sol"</code>と<code>service_tier: "ultrafast"</code>を指定し、Standard・Fastとは別rate limitが適用される。料金はStandardの6倍で、agentが短時間にtool callを重ねる構成ではnetwork overheadで効果を失わないようpersistent WebSocketが強く推奨される。導入判断ではend-to-end latency、接続再利用、retry、rate limit、US／EU data residencyとcostを同じ負荷試験で比較したい。</p>
       <div class="card-footer">
-        <span class="card-source">LangChain / GitHub</span>
-        <a class="card-link" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.8" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://developers.openai.com/api/docs/guides/ultrafast-mode" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-10-08 / 適用: 2027-02・05</span>
+        <span class="card-date">案内: 2026年秋号 / 適用: 2026-10-01</span>
       </div>
-      <h2 class="card-title">Mastercard、欧州の新規card・terminalにoffline決済対応を要求</h2>
-      <p class="card-summary">Mastercardは欧州で、2027年2月から新規発行cardをoffline決済対応とし、同年5月から新規・交換terminalにもoffline対応を求める。停電や通信障害時にchip＋PINで、発行会社が設定する上限の範囲内で1件最大200euroをlocal承認し、復旧後にclearingへ送る仕組みで、Denmark・Sweden・Estonia・Latviaでは導入済みとする。欧州のbrand ruleでCAFIS／ADAPTISへの適用は確認されていないが、国内運用でもoffline limit、terminal・card設定、復旧後の重複防止とreconciliationを点検する参考になる。</p>
+      <h2 class="card-title">VisaのDCC表示ruleで、一部CAFIS Arch端末の多通貨決済を停止</h2>
+      <p class="card-summary">UC加盟店レターは、Visaのbrand ruleにより紙のrate票を使う通貨案内・選択を9月30日で終了し、10月1日から端末画面またはsign padでの表示・選択を必須と案内した。対応できないCAFIS ArchのPanasonic JT-C31（sign padなし）などはDCC機能を削除する。これは掲載機種への直接変更で、CAFIS Arch全体の停止ではない。対象加盟店は型番・sign pad有無、DCC設定、円貨／自国通貨をcard会員が選ぶ画面、staff案内を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Mastercard</span>
-        <a class="card-link" href="https://www.mastercard.com/news/europe/en/newsroom/press-releases/en/2026/mastercard-offline-payments-europe/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">UC Card</span>
+        <a class="card-link" href="https://www4.uccard.co.jp/contents/uc_letter/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公表: 2026-05-01 / 新規申請終了: 2026-10-31</span>
+        <span class="card-date">注意喚起: 2026-10-09 / 施行: 2027-04-01</span>
       </div>
-      <h2 class="card-title">PCI SSC、SPoC・CPoCの新規申請を10月末で終了</h2>
-      <p class="card-summary">PCI SSCは、software PIN entryのSPoCとcontactless COTSのCPoCについて、2026年10月31日を最後に新規solution申請を受け付けない。既存listingは通常のlifecycleで有効なまま残り、年次check pointと適用可能な変更申請は継続できる。portfolioの発展とMPoCの成熟を理由とする移行で、既存solutionが直ちに無効になる発表ではない。CAFIS／ADAPTISの採用方針は示されていないが、COTS端末の提供・接続事業者は認定version、更新予定、MPoC移行と加盟店展開日程を照合したい。</p>
+      <h2 class="card-title">金融庁、非対面本人確認のIC chip移行を施行日前に前倒し要請</h2>
+      <p class="card-summary">金融庁は、本人確認書類画像を含む情報漏えいを踏まえ、金融機関等へthird-party riskとincident対応を含むcybersecurity点検、本人確認書類・容貌画像の不自然さの再確認を要請した。改正規則で2027年4月1日から書類画像送信方式を廃止し、IC chip読取へ原則一本化するため、施行を待たず可能な限り早い対応も求める。CAFIS接続仕様の変更ではないが、issuer・PSP等はeKYC vendor、app読取、代替導線、data保持と委託先管理を点検したい。</p>
       <div class="card-footer">
-        <span class="card-source">PCI Security Standards Council</span>
-        <a class="card-link" href="https://www.pcisecuritystandards.org/wp-content/uploads/2026/05/PCI_SPoC_and_PCI_CPoC_Sunset_Bulletin.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">金融庁</span>
+        <a class="card-link" href="https://www.fsa.go.jp/news/r8/sonota/20261009/20261009.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">案内: 2026-10-08 / 停止: 10-11〜10-13</span>
+        <span class="card-date">更新: 2026-09-10 / 適用: 2026-09-28</span>
       </div>
-      <h2 class="card-title">PayPay、JA Bankのcharge・口座登録を最大54時間30分停止</h2>
-      <p class="card-summary">PayPayはJA Bankのmaintenanceに伴い、10月11日0時から13日6時30分まで、JA Bank口座からのchargeと新規bank account登録を利用不可とする。CAFIS／ADAPTISを経由するcard決済の変更ではなく、walletへのbank charge railに限る停止だが、長時間かつ連休中のため、対象口座利用者への事前表示、scheduled chargeの扱い、再試行時刻、他のcharge手段への案内を揃えたい。他の金融機関にも個別のmaintenance時間があるため、障害判定ではbank別予定との突合が必要になる。</p>
+      <h2 class="card-title">Zeus、Visa・Mastercardの仮売上を25日で自動取消</h2>
+      <p class="card-summary">国内PSPのZeusはbrand rule対応として、Visa／Mastercardの仮売上から売上処理までを25日以内、JCB／AMEX／Dinersを90日以内とし、期限超過取引を自動取消する仕様を9月28日に適用した。売上可能期限と海外発行card判定をresponse・管理画面へ返し、仮売上後の金額変更は再authorizationが必要になる。これはZeus固有の実装でCAFIS変更ではない。加盟店はcapture job、期限alert、再決済、取消失敗時の返金手順を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">PayPay</span>
-        <a class="card-link" href="https://paypay.ne.jp/notice/20261008/m-01/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Zeus</span>
+        <a class="card-link" href="https://support.cardservice.co.jp/hc/ja/articles/57222765462809-%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AB%E3%83%BC%E3%83%AB%E5%A4%89%E6%9B%B4%E3%81%AB%E3%82%88%E3%82%8B%E4%BB%95%E6%A7%98%E5%A4%89%E6%9B%B4%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E3%81%94%E8%B3%AA%E5%95%8F" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -347,24 +347,24 @@
         <span class="card-tag">決済</span>
         <span class="card-date">公開: 2026-10-07（日本時間）</span>
       </div>
-      <h2 class="card-title">Adyen .NET 36.1、network token置換とPAN fallbackの判定fieldを追加</h2>
-      <p class="card-summary">Adyen .NET API Library 36.1.0は、network tokenの透明性を高める<code>NetworkToken</code>と<code>Swapped</code>をmodelへ追加し、PANをnetwork tokenへ置換したか、PANへfallbackしたかを応答から判定できるようにした。forwarded payment応答にはreal-time account updater結果の<code>AccountUpdate</code>、OPIにはissuer IDとtransaction tokenの送受信fieldも加わった。CAFIS／ADAPTISとは別PSPのSDK変更で接続影響は確認されていないが、token利用率、fallback理由、account updaterの監視・精算照合へ新fieldを取り込む前にnull・version互換性をtestしたい。</p>
+      <h2 class="card-title">Adyen iOS 5.26、Apple Payのpartial payment失敗を修正</h2>
+      <p class="card-summary">Adyen iOS Checkout SDK 5.26.0は、gift cardなどのpartial payment後にApple Payで残額を払う際、Drop-inがorderを欠いたrequestを送り失敗する問題を修正した。Card Componentが表示上は切り詰めながら規定桁を超えるCVC／CVVを送信できた問題も直し、iPhone Duo表示に対応した。v5をCocoaPodsで配布する最後のreleaseでもある。CAFISとは別PSPの動向で、採用者は残額決済testとSPM／Carthage移行計画を確認したい。</p>
       <div class="card-footer">
         <span class="card-source">Adyen / GitHub</span>
-        <a class="card-link" href="https://github.com/Adyen/adyen-dotnet-api-library/releases/tag/v36.1.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/Adyen/adyen-ios/releases/tag/5.26.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-09（日本時間）</span>
+        <span class="card-date">案内: 2026-10-09 / 停止: 10-17〜10-18</span>
       </div>
-      <h2 class="card-title">Checkout.com Node 5.7、Payment SetupsでCash App Payに対応</h2>
-      <p class="card-summary">Checkout.com Node SDK 5.7.0は、Payment Setups APIのcreate・update・get・confirmにCash App Pay用のrequest／response fieldを追加した。customer objectもdevice、ID、country、tax numberなどを扱えるよう拡張し、integration testではcustomer識別情報とCash App Payの初期化・status fieldをAPIが返すことを確認している。CAFIS／ADAPTISとは別PSPのAPI変更で国内接続への直接影響は確認されていない。採用事業者はserialization、個人情報の取得目的と保管、confirm前後のstatus遷移、未対応versionとの互換性を検証したい。</p>
+      <h2 class="card-title">PayPay、みずほ銀行からのchargeを13時間停止</h2>
+      <p class="card-summary">PayPayはみずほ銀行のmaintenanceに伴い、10月17日22時から18日11時まで、同銀行口座からのchargeを停止する。PayPay残高での支払いやCAFIS／ADAPTISを経由するcard決済の変更ではなく、銀行口座からwalletへ資金を移す経路に限る予定停止である。wallet運用では対象利用者への事前表示、予約・自動chargeの扱い、失敗時の再試行時刻、残高不足時の代替手段を案内し、障害監視ではbank側の予定停止と切り分けたい。</p>
       <div class="card-footer">
-        <span class="card-source">Checkout.com / GitHub</span>
-        <a class="card-link" href="https://github.com/checkout/checkout-sdk-node/releases/tag/5.7.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">PayPay</span>
+        <a class="card-link" href="https://paypay.ne.jp/notice/20261009/m-01/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
