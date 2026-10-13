@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-12</title>
+  <title>AI News Daily — 2026-10-13</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-12</span>
+    <span class="site-date">2026-10-13</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-12</a>
+    <a class="archive-link current" href="./index.html">2026-10-13</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-12.html">2026-10-12</a>
     <a class="archive-link" href="./archive/2026-10-11.html">2026-10-11</a>
     <a class="archive-link" href="./archive/2026-10-10.html">2026-10-10</a>
     <a class="archive-link" href="./archive/2026-10-09.html">2026-10-09</a>
@@ -234,20 +235,33 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月12日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月13日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-12（日本時間）</span>
+        <span class="card-date">公開: 2026-10-13（日本時間）</span>
       </div>
-      <h2 class="card-title">llama.cpp b11559、OpenCLでGemma 4のGPU decodeとflash attentionを改善</h2>
-      <p class="card-summary">llama.cpp b11559はOpenCL backendを更新し、Gemma 4 E4BのGPU decodeを有効化したうえでE2Bにも拡張した。DK64/GQA8とDK128/GQA4のdecodeを最適化し、Gemma 4でDK512も許可する。OpenCL環境でGemma 4を動かす運用では、release noteに性能値は示されていないため、対象量子化・context長ごとにGPU offload、出力一致、token生成速度とmemory使用量を実機で比較したい。</p>
+      <h2 class="card-title">llama.cpp b11577、vLLM Decision 2/3対応とmulti-sequence推論を修正</h2>
+      <p class="card-summary">llama.cppのb11571〜b11577はvLLM Decision 2/3 modelを読み込めるようにし、Decision 3を複数sequenceで処理するcaseを修正した。no-cache attentionのKV次元を256へpadする変更や、Metalの大規模tensor・duplicate IDの修正も入った。Decision modelを組み込む環境では、model metadata、batch内のsequence数、cache有無、Metal/Vulkan別の出力一致とmemory再確保logを確認したい。</p>
       <div class="card-footer">
         <span class="card-source">ggml-org / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11559" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11577" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-13（日本時間）</span>
+      </div>
+      <h2 class="card-title">Langfuse 4.57、gateway API key期限とFIPS対応を強化</h2>
+      <p class="card-summary">Langfuse 4.57はgateway API keyに有効期限を追加し、FIPS modeではpasswordをPBKDF2でhash化、新規API keyでbcrypt計算を停止した。MD5を使うstorage optionはFIPS modeで拒否し、shadow authorizationの不一致を全件logへ残す。evaluationではdecision model evaluatorを正式化し、score保存結果の計測も追加した。self-host運用はkey失効時のrotation、FIPS設定とobject storageの組合せ、認可log量を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Langfuse / GitHub</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.57.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -256,11 +270,24 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-12（日本時間）</span>
       </div>
-      <h2 class="card-title">OpenAI Python 3.29、session課金errorとmetadata filterを型定義へ追加</h2>
-      <p class="card-summary">OpenAI Python 3.29.0はsession errorに<code>billing_not_active</code>、Live voiceに<code>shida</code>を追加し、metadata filter、beta APIのpagination limit・非null parameterを最新仕様へそろえた。128文字のsafety identifier、Decisionのchoice制約、Files APIのrate-limit responseもdocument化された。SDK更新時は生成型の差分を確認し、課金停止をretry対象から外す分岐、metadata filter、nullable前提のtestを見直したい。</p>
+      <h2 class="card-title">LangChain Core 1.6.10、model profileへ会話途中の指示対応可否を追加</h2>
+      <p class="card-summary">LangChainはCore 1.6.10、OpenAI 1.7.1、Anthropic 1.7.6で、model profileにmid-conversation instructionの対応可否を宣言できるようにした。provider別profileが同じcapability情報を持つため、agentやmiddlewareは会話途中に挿入する指示をmodelごとに分岐できる。更新時はprofile未設定時のfallback、会話履歴へのsystem/developer指示の配置、providerを切り替えたresume処理をtestしたい。</p>
       <div class="card-footer">
-        <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.29.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">LangChain / GitHub</span>
+        <a class="card-link" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.10" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-13（日本時間） / pre-release</span>
+      </div>
+      <h2 class="card-title">Ollama 0.40.4 RC、Decision modelとEmbeddingGemma 2を追加</h2>
+      <p class="card-summary">Ollama 0.40.4-rc0は内蔵llama.cppをb11521へ更新し、Decision modelとEmbeddingGemma 2を扱えるようにした。serverは検証済みmanifestとload済みmodelをinference route間で再利用し、MLXはspeculative rollback後のrecurrent stateをcompact化する。Codexのmodel pickerにもinstall済みmodelを表示する。正式版前のため、manifest更新、同時request、rollback後の長文生成とembedding出力を隔離環境で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Ollama / GitHub</span>
+        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.4-rc0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -269,50 +296,63 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-11（日本時間）</span>
       </div>
-      <h2 class="card-title">Ollama 0.40.3、request性能を理由にbackground model upgradeを一時停止</h2>
-      <p class="card-summary">Ollama 0.40.3は、embeddingなどのrequest性能に関係するbackground model upgradeを一時停止した。あわせて<code>ollama launch claude</code>のconnector警告と<code>ollama launch codex</code>のservice tier警告を除去した。0.40.2系でmodel更新後にlatencyやthroughputが変わった運用は0.40.3で同じworkloadを再測定し、model digestと起動時logを保存して差分を切り分けたい。release noteは影響量や条件を公表していない。</p>
+      <h2 class="card-title">LiteLLM 1.105、stream切断のfailoverとsecret scrubを強化</h2>
+      <p class="card-summary">LiteLLM 1.105.0はResponses streamが出力前に切れた場合のfallback、途中で切れたstreamの失敗判定とrequest timeoutを修正し、Bedrock ConverseのHTTP 200でもeventが無ければ502を返すようにした。Sentry送信前にobject表現やnested local内のPII・secretをscrubし、MCPのprotocol version・capability discoveryも設定可能になった。gateway運用では重複生成を避けるretry境界とerror mappingを再検証したい。</p>
       <div class="card-footer">
-        <span class="card-source">Ollama / GitHub</span>
-        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.3" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-10（日本時間）</span>
-      </div>
-      <h2 class="card-title">Codex 0.162.1、非同期の複数行質問によるTUI crashと起動失敗を修正</h2>
-      <p class="card-summary">Codex 0.162.1は、非同期質問が複数行を含むとTUIがcrashする不具合を直し、改行とhyperlinkの完全な宛先を保持するようにした。background serverとCLI defaultのfeature設定差で起動できない問題も修正し、互換性checkを明示的なcommand-line overrideだけに限定した。長時間稼働serverをCLI更新後も再利用する環境では、複数行question、URL表示、既存serverへの再接続を回帰確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.162.1" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-09</span>
-      </div>
-      <h2 class="card-title">Langfuse 4.56、評価・score系readをreplicaへ分離し観測画面を更新</h2>
-      <p class="card-summary">Langfuse 4.56はdecision modelの結果表示、session tool previewのsyntax highlight、topic map探索を更新した。さらにevaluator job、score比較、dataset run、session score、blob exportなど多数のreadをread replicaへ移し、ClickHouse課金組織向けspend alertも追加した。self-host運用はreplica lagが評価画面とexportへ及ぼす許容範囲を定め、primary障害時のread経路、alert閾値、MCP observation取得の必須date rangeを確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Langfuse / GitHub</span>
-        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.56.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">BerriAI / GitHub</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.105.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-09</span>
+        <span class="card-date">公開: 2026-10-12</span>
       </div>
-      <h2 class="card-title">【海外PSP】Worldpay Components SDK 1.241、guest cardと初期化項目を追加</h2>
-      <p class="card-summary">WorldpayはComponents SDK 1.241.0でguestのdebit/credit cardを追加し、生成した<code>sessionHref</code>をguest payment requestへ渡せるようにした。ACHでは<code>merchantName</code>が必須となり、card要素には<code>acceptedCardBrands</code>と<code>allowNonLuhnCompliantCards</code>を追加、<code>dob</code>は<code>dateOfBirth</code>へ変更された。CAFIS/ADAPTISへの直接変更ではない。対象merchantは初期化schemaとguest paymentのend-to-end testを更新したい。</p>
+      <h2 class="card-title">【海外orchestration】Spreedly、Adyen Checkout gateway接続を追加</h2>
+      <p class="card-summary">SpreedlyはAdyen Checkout gatewayを有効化し、authorize、capture、partial capture、refund、partial refund、void、verify、store/removeを提供した。card・ACH・Apple Pay・Google Pay・third-party token・network tokenに対応し、global／gateway固有／third-partyの3DS2も扱う。CAFIS/ADAPTISへの直接変更ではない。multi-PSP運用ではoperation別のidempotency、token portability、3DS2責任境界、partial処理後の精算照合を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Worldpay Developer</span>
-        <a class="card-link" href="https://docs.worldpay.com/access/products/releases" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Spreedly Developer</span>
+        <a class="card-link" href="https://developer.spreedly.com/changelog/support-for-adyen-checkout-gateway" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">規則公開: 2025-12-02 / 発効: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">【Mastercard／欧州】stored credentialのtokenization対応が発効</h2>
+      <p class="card-summary">Mastercard Rulesは欧州のremote electronic transactionを提供するacquirer、merchant gateway、third-party processorに、stored credentialをSecure Card on File APIまたはEMVCo準拠の同等token serviceでtoken化する対応を10月1日から求める。日本・CAFIS/ADAPTISへの同一rule適用は確認されていない。欧州取引を扱う事業者は対象国、token requestor、既存PANの移行、recurring／MIT識別、token更新とfallbackをacquirerへ確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard Rules</span>
+        <a class="card-link" href="https://www.mastercard.com/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">規則公開: 2026-04-18 / 発効: 2026-10-24</span>
+      </div>
+      <h2 class="card-title">【Visa／国外】DCAPとPayment Passkey要件を10月24日に拡大</h2>
+      <p class="card-summary">VisaはDigital Commerce Authentication Programを10月24日からCanada、CEMEA、LACの対象地域へ拡大する。参加acquirer・merchantには承認済みdata-sharing solutionと最低data品質を求め、対象issuerにはPayment Passkey取引とmerchant-led enrollmentのsupport要件を適用する。日本では4月から適用済みのAP ruleがあるが、CAFIS/ADAPTISの接続変更は公表資料だけでは確認できない。対象地域・ECI・cryptogram・data品質を接続先と照合したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa Rules</span>
+        <a class="card-link" href="https://cis.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公表: 2026-05-01 / 新規申請終了: 2026-10-31</span>
+      </div>
+      <h2 class="card-title">【PCI SSC】3DS SDK Standardの新規申請を10月末で終了</h2>
+      <p class="card-summary">PCI SSCはPCI 3DS SDK Standardのsunset期間を10月31日で終え、以後は同standardで新規submissionを受け付けない。既存listingは通常の有効期限まで残り、maintenance要件も継続する。Secure Software Standard 2.0がEMVCo 3DS SDKを含むSDKの代替評価経路になる。CAFIS接続仕様の変更ではないが、3DS SDK提供・採用側はlisting期限、次回更新、2.0への評価移行とmobile app release日程を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://www.pcisecuritystandards.org/wp-content/uploads/2026/05/PCI_3DS_SDK_Sunset_Bulletin.pdf" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -321,50 +361,11 @@
         <span class="card-tag">決済</span>
         <span class="card-date">公開: 2026-10-07</span>
       </div>
-      <h2 class="card-title">【海外gateway】IXOPAY、wallet取引のnetwork token誤適用などを修正</h2>
-      <p class="card-summary">IXOPAY Gateway v26.18は、wallet取引をnetwork tokenizationへ誤送信する問題と、存在しないnetwork tokenを使おうとするedge caseを修正した。Apple Pay・Google Payで誤ったtoken errorになる事象も対象となる。stored payment instrumentはmulti-method／wallet connectorへ拡張し、PCI APIはsurcharge時の金額内訳を返す。CAFIS/ADAPTISへの直接変更は確認されていないが、multi-PSP運用ではwalletとnetwork tokenのrouting回帰testが必要になる。</p>
+      <h2 class="card-title">【PCI SSC】決済環境のAI利用に追加security guidanceを公開</h2>
+      <p class="card-summary">PCI SSCは決済環境でAIを導入する際の追加guidanceを公開し、AIへのaccess管理、misuse低減、既存PCI controlとの対応、実例を扱うとした。これは必須要件ではなく、PCI standardと差がある場合はstandardが優先する。CAFIS/ADAPTISへの直接変更ではない。issuer・PSP・加盟店はcardholder dataへ触れるAIのscope、権限、prompt／output log、model・vendor変更、human approvalとincident責任を既存controlへ対応付けたい。</p>
       <div class="card-footer">
-        <span class="card-source">IXOPAY Developer Hub</span>
-        <a class="card-link" href="https://documentation.ixopay.com/releases" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-02 / 期限: 2026-10-15</span>
-      </div>
-      <h2 class="card-title">【海外PSP】Payabli、Apple Pay domain確認fileを10月15日までに要交換</h2>
-      <p class="card-summary">Payabliはsandbox・production向けのApple Pay domain-verification fileを更新し、10月2日より前に取得した旧fileは10月15日以降validationに通らないと告知した。新fileも<code>/.well-known/apple-developer-merchantid-domain-association</code>で配信し、API endpointの変更はない。CAFIS/ADAPTISへの直接変更ではない。対象merchantは全domain・環境のfile hash、CDN cache、redirectなしの応答、Apple側での再確認を期限前に点検したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Payabli Docs</span>
-        <a class="card-link" href="https://docs.payabli.com/changelog/api-changelog" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-06</span>
-      </div>
-      <h2 class="card-title">【国際brand／国外】Mastercard、UAEでClick to Payをcardへ自動有効化</h2>
-      <p class="card-summary">MastercardとWio BankはUAE発行cardでClick to Payを自動有効化した。online checkoutでcard番号を手入力せず、network tokenizationとEMVCo認証を使い、Mastercard Payment Passkeyは端末biometricsで認証する。これはUAE issuerの導入で、CAFIS/ADAPTISや日本発行cardへの適用は確認されていない。国内運用では、同方式を採用する場合のenrollment同意、token lifecycle、passkey fallback、device変更時の本人確認をbrand・issuerごとに確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Mastercard</span>
-        <a class="card-link" href="https://www.mastercard.com/news/eemea/en/newsroom/press-releases/en/2026/october/wio-bank-becomes-uae-s-first-bank-to-eliminate-manual-card-entry-through-mastercard-s-click-to-pay/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-06</span>
-      </div>
-      <h2 class="card-title">【口座振替／国外】GoCardless、失敗時のintelligent retry指定をAPIに明記</h2>
-      <p class="card-summary">GoCardlessはBilling Requestの<code>payment_request.retry_if_possible</code>をchangelogへ追加し、失敗時にeligibleな支払いをintelligent retryへ回せることを明記した。<code>actions.available_country_codes</code>と、金融機関機能ごとのstatusを返すpublic institutions APIも追加した。これは国外の口座振替railでCAFIS/ADAPTISへの直接変更ではない。retryを使う実装は重複回収防止、再試行中の残高・mandate状態、顧客通知、手動再請求との排他を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">GoCardless Docs</span>
-        <a class="card-link" href="https://docs.gocardless.com/docs/api-reference/changelog" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://www.pcisecuritystandards.org/about_us/press_releases/pci-ssc-publishes-additional-guidance-on-securing-ai-in-payment-environments/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
