@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-13</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-13</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-13</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月13日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-13（日本時間）</span>
+      </div>
+      <h2 class="card-title">llama.cpp b11577、vLLM Decision 2/3対応とmulti-sequence推論を修正</h2>
+      <p class="card-summary">llama.cppのb11571〜b11577はvLLM Decision 2/3 modelを読み込めるようにし、Decision 3を複数sequenceで処理するcaseを修正した。no-cache attentionのKV次元を256へpadする変更や、Metalの大規模tensor・duplicate IDの修正も入った。Decision modelを組み込む環境では、model metadata、batch内のsequence数、cache有無、Metal/Vulkan別の出力一致とmemory再確保logを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">ggml-org / GitHub</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11577" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-13（日本時間）</span>
+      </div>
+      <h2 class="card-title">Langfuse 4.57、gateway API key期限とFIPS対応を強化</h2>
+      <p class="card-summary">Langfuse 4.57はgateway API keyに有効期限を追加し、FIPS modeではpasswordをPBKDF2でhash化、新規API keyでbcrypt計算を停止した。MD5を使うstorage optionはFIPS modeで拒否し、shadow authorizationの不一致を全件logへ残す。evaluationではdecision model evaluatorを正式化し、score保存結果の計測も追加した。self-host運用はkey失効時のrotation、FIPS設定とobject storageの組合せ、認可log量を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Langfuse / GitHub</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.57.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-12（日本時間）</span>
+      </div>
+      <h2 class="card-title">LangChain Core 1.6.10、model profileへ会話途中の指示対応可否を追加</h2>
+      <p class="card-summary">LangChainはCore 1.6.10、OpenAI 1.7.1、Anthropic 1.7.6で、model profileにmid-conversation instructionの対応可否を宣言できるようにした。provider別profileが同じcapability情報を持つため、agentやmiddlewareは会話途中に挿入する指示をmodelごとに分岐できる。更新時はprofile未設定時のfallback、会話履歴へのsystem/developer指示の配置、providerを切り替えたresume処理をtestしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">LangChain / GitHub</span>
+        <a class="card-link" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.10" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-13（日本時間） / pre-release</span>
+      </div>
+      <h2 class="card-title">Ollama 0.40.4 RC、Decision modelとEmbeddingGemma 2を追加</h2>
+      <p class="card-summary">Ollama 0.40.4-rc0は内蔵llama.cppをb11521へ更新し、Decision modelとEmbeddingGemma 2を扱えるようにした。serverは検証済みmanifestとload済みmodelをinference route間で再利用し、MLXはspeculative rollback後のrecurrent stateをcompact化する。Codexのmodel pickerにもinstall済みmodelを表示する。正式版前のため、manifest更新、同時request、rollback後の長文生成とembedding出力を隔離環境で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Ollama / GitHub</span>
+        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.4-rc0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-11（日本時間）</span>
+      </div>
+      <h2 class="card-title">LiteLLM 1.105、stream切断のfailoverとsecret scrubを強化</h2>
+      <p class="card-summary">LiteLLM 1.105.0はResponses streamが出力前に切れた場合のfallback、途中で切れたstreamの失敗判定とrequest timeoutを修正し、Bedrock ConverseのHTTP 200でもeventが無ければ502を返すようにした。Sentry送信前にobject表現やnested local内のPII・secretをscrubし、MCPのprotocol version・capability discoveryも設定可能になった。gateway運用では重複生成を避けるretry境界とerror mappingを再検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">BerriAI / GitHub</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.105.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-12</span>
+      </div>
+      <h2 class="card-title">【海外orchestration】Spreedly、Adyen Checkout gateway接続を追加</h2>
+      <p class="card-summary">SpreedlyはAdyen Checkout gatewayを有効化し、authorize、capture、partial capture、refund、partial refund、void、verify、store/removeを提供した。card・ACH・Apple Pay・Google Pay・third-party token・network tokenに対応し、global／gateway固有／third-partyの3DS2も扱う。CAFIS/ADAPTISへの直接変更ではない。multi-PSP運用ではoperation別のidempotency、token portability、3DS2責任境界、partial処理後の精算照合を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Spreedly Developer</span>
+        <a class="card-link" href="https://developer.spreedly.com/changelog/support-for-adyen-checkout-gateway" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">規則公開: 2025-12-02 / 発効: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">【Mastercard／欧州】stored credentialのtokenization対応が発効</h2>
+      <p class="card-summary">Mastercard Rulesは欧州のremote electronic transactionを提供するacquirer、merchant gateway、third-party processorに、stored credentialをSecure Card on File APIまたはEMVCo準拠の同等token serviceでtoken化する対応を10月1日から求める。日本・CAFIS/ADAPTISへの同一rule適用は確認されていない。欧州取引を扱う事業者は対象国、token requestor、既存PANの移行、recurring／MIT識別、token更新とfallbackをacquirerへ確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard Rules</span>
+        <a class="card-link" href="https://www.mastercard.com/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">規則公開: 2026-04-18 / 発効: 2026-10-24</span>
+      </div>
+      <h2 class="card-title">【Visa／国外】DCAPとPayment Passkey要件を10月24日に拡大</h2>
+      <p class="card-summary">VisaはDigital Commerce Authentication Programを10月24日からCanada、CEMEA、LACの対象地域へ拡大する。参加acquirer・merchantには承認済みdata-sharing solutionと最低data品質を求め、対象issuerにはPayment Passkey取引とmerchant-led enrollmentのsupport要件を適用する。日本では4月から適用済みのAP ruleがあるが、CAFIS/ADAPTISの接続変更は公表資料だけでは確認できない。対象地域・ECI・cryptogram・data品質を接続先と照合したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa Rules</span>
+        <a class="card-link" href="https://cis.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公表: 2026-05-01 / 新規申請終了: 2026-10-31</span>
+      </div>
+      <h2 class="card-title">【PCI SSC】3DS SDK Standardの新規申請を10月末で終了</h2>
+      <p class="card-summary">PCI SSCはPCI 3DS SDK Standardのsunset期間を10月31日で終え、以後は同standardで新規submissionを受け付けない。既存listingは通常の有効期限まで残り、maintenance要件も継続する。Secure Software Standard 2.0がEMVCo 3DS SDKを含むSDKの代替評価経路になる。CAFIS接続仕様の変更ではないが、3DS SDK提供・採用側はlisting期限、次回更新、2.0への評価移行とmobile app release日程を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://www.pcisecuritystandards.org/wp-content/uploads/2026/05/PCI_3DS_SDK_Sunset_Bulletin.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-07</span>
+      </div>
+      <h2 class="card-title">【PCI SSC】決済環境のAI利用に追加security guidanceを公開</h2>
+      <p class="card-summary">PCI SSCは決済環境でAIを導入する際の追加guidanceを公開し、AIへのaccess管理、misuse低減、既存PCI controlとの対応、実例を扱うとした。これは必須要件ではなく、PCI standardと差がある場合はstandardが優先する。CAFIS/ADAPTISへの直接変更ではない。issuer・PSP・加盟店はcardholder dataへ触れるAIのscope、権限、prompt／output log、model・vendor変更、human approvalとincident責任を既存controlへ対応付けたい。</p>
+      <div class="card-footer">
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://www.pcisecuritystandards.org/about_us/press_releases/pci-ssc-publishes-additional-guidance-on-securing-ai-in-payment-environments/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
