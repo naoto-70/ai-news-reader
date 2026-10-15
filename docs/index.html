@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-14</title>
+  <title>AI News Daily — 2026-10-15</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-14</span>
+    <span class="site-date">2026-10-15</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-14</a>
+    <a class="archive-link current" href="./index.html">2026-10-15</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-14.html">2026-10-14</a>
     <a class="archive-link" href="./archive/2026-10-13.html">2026-10-13</a>
     <a class="archive-link" href="./archive/2026-10-12.html">2026-10-12</a>
     <a class="archive-link" href="./archive/2026-10-11.html">2026-10-11</a>
@@ -236,21 +237,20 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月14日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月15日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
 
-
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-14（日本時間）</span>
+        <span class="card-date">公開: 2026-10-15（日本時間）</span>
       </div>
-      <h2 class="card-title">Google ADK Python 2.12、tool出力検査とworkflow承認を追加</h2>
-      <p class="card-summary">Google ADK Python 2.12は、modelへ返す前にtool出力を検査・filterできる<code>after_tool_callback</code>と、workflow nodeの実行前に人の確認を要求する<code>require_confirmation</code>を追加した。Agent Engineでは専用service accountを指定でき、session内のGoogle credential暗号化にも対応する。長いsessionで最初のmodel requestまでを40%短縮したとの数値は提供元測定である。承認の再開経路、credential保存、callbackで除去したdataのtrace残存を確認したい。</p>
+      <h2 class="card-title">Claude Code 2.1.300、OTel標準属性とcache書込内訳を追加</h2>
+      <p class="card-summary">Claude Code 2.1.300はOpenTelemetry spanへ<code>gen_ai.provider.name</code>、conversation・tool・errorの標準属性を加え、API request eventでは5分・1時間cacheへ書いたtoken数を分離した。終了時にbackground commandが残ると<code>SessionEnd</code> hookが走らない問題や、resume後のMCP再接続中に自動tool検索が無効になる問題も修正した。観測backend側のfield mapping、cache cost集計、hookによるcleanup・監査処理を回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Google / GitHub</span>
-        <a class="card-link" href="https://github.com/google/adk-python/releases/tag/v2.12.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Anthropic / GitHub</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.300" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -259,50 +259,50 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-14（日本時間）</span>
       </div>
-      <h2 class="card-title">Pydantic AI 2.56、durable executionとmicroVM sandboxを拡張</h2>
-      <p class="card-summary">Pydantic AI 2.56はPostgreSQLを使う<code>PGTaskDurability</code>、Render Workflows連携、local smolvm microVMでcapabilityを動かす<code>SmolSandbox</code>を追加した。BrowserUseは既定でhost modelを使いtelemetryをopt-inへ変更し、user supplied clientを閉じずにMCPToolsetのauthを適用する修正も入った。再実行時のidempotency、task stateの永続化、sandbox境界、既存BrowserUseのmodel・telemetry設定をmigration testで確認したい。</p>
+      <h2 class="card-title">OpenAI Python 3.30・3.31、session予算上限とbrowser／computer toolsetを追加</h2>
+      <p class="card-summary">OpenAI Python SDK 3.30はbeta sessionのspending limit、OCI外部storage、organization単位のDecisions利用量、image toolのerror・moderation詳細を型へ追加し、async HTTP/1.1のconnection reuseを復旧した。続く3.31はbrowser／computer toolset対応の第1段を追加した。agent実装では予算超過時の終了経路、tool権限、image safety alertの記録、長時間streamでのconnection再利用を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Pydantic / GitHub</span>
-        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.56.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">OpenAI / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-13（日本時間）</span>
+        <span class="card-date">公開: 2026-10-15（日本時間）</span>
       </div>
-      <h2 class="card-title">Langfuse 4.58、trace内media取込のresource制御を追加</h2>
-      <p class="card-summary">Langfuse 4.58はOTel取込でTypeScript parsingより先にinline mediaを抽出し、upload poolへ同時実行数とbyte数の上限を追加した。S3 media requestにはtimeoutを設け、traceのidle判定をproject単位で設定できる。native抽出もmarkerのない入力では事前validationを省くなど高速化した。画像・音声を含む大量traceでは、pool上限、S3 timeout時の再試行、欠落検知、project別の完了判定を負荷試験したい。</p>
+      <h2 class="card-title">LangChain 1.4.6、HITL middlewareへcall単位の割込みを追加</h2>
+      <p class="card-summary">LangChain 1.4.6はHuman-in-the-Loop middlewareに、明示的に有効化するcall単位のinterruptを追加した。agent全体の固定policyだけでなく、同じtoolやworkflowでも個々の呼出し条件に応じて人の確認へ止められる変更である。導入時はinterrupt対象の条件、承認待ちstateの永続化、resume時の入力同一性、timeout・拒否・重複承認の処理を既存workflowと合わせて検証したい。</p>
       <div class="card-footer">
-        <span class="card-source">Langfuse / GitHub</span>
-        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.58.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">LangChain / GitHub</span>
+        <a class="card-link" href="https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.6" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-14（日本時間） / pre-release</span>
+        <span class="card-date">公開: 2026-10-15（日本時間） / pre-release</span>
       </div>
-      <h2 class="card-title">llama.cpp b11604、Arm SME2でQ4_K・Q6_K matrix multiplicationに対応</h2>
-      <p class="card-summary">llama.cpp b11604はKleidiAI backendへArm Scalable Matrix Extension 2を使うQ4_K・Q6_K量子化matrix multiplicationを追加した。対象CPUでK-quant modelの計算kernel選択肢が増える変更で、releaseはpre-release扱いである。導入時はSME2対応CPUとbuild optionの検出、未対応環境でのfallback、同一model・promptでの出力一致、token throughputとmemory使用量を既存backendと比較したい。</p>
+      <h2 class="card-title">llama.cpp b11622、tool argument内floatの桁落ちを修正</h2>
+      <p class="card-summary">llama.cpp b11622はJinjaの<code>tojson</code>がfloatをC++ streamの6桁精度で出力していたため、<code>48.858844</code>を<code>48.8588</code>、<code>1.0</code>を<code>1</code>へ変える問題を修正した。Pythonの<code>json.dumps</code>と同様に、同じ値へround-tripできる最短表現を使う。tool schema・tool call引数・template出力へ影響するため、座標、閾値、金額など小数精度が重要なfixtureで互換性を確認したい。</p>
       <div class="card-footer">
         <span class="card-source">ggml-org / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11604" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11622" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-14（日本時間）</span>
+        <span class="card-date">公開: 2026-10-15（日本時間） / release candidate</span>
       </div>
-      <h2 class="card-title">Cline 4.1.24、reasoning設定とMCP早期終了時のcrashを修正</h2>
-      <p class="card-summary">Cline 4.1.24はreasoningをoffにした際のGPT-6 Astra、GPT-6.1 Sol、Claude系modelの400 errorと、level指定だけのGeminiでthinking budgetが拒否される問題を修正した。MCP serverやhookが入力を読み切る前に終了してもextension hostが後からcrashしないようにし、画像によるtoken見積り過大も直した。provider別reasoning payload、MCP process終了、画像を含む長いsessionのcompaction時点を回帰testしたい。</p>
+      <h2 class="card-title">Ollama 0.40.5 RC、MLXのcustom kernelをCUDAへ移植</h2>
+      <p class="card-summary">Ollama 0.40.5-rc0はMLX向けMetal custom kernelをCUDAへ移植し、OpenAI Responses互換APIでは履歴内のcustom tool callを受け付けるようにした。正式版前の候補であり、対象model・GPUごとの適用範囲や性能値はrelease noteに示されていない。CUDA世代別のbuildとfallback、同一modelの出力一致・速度・VRAM、過去のcustom callを含むresponse継続を試してからproductionへ入れたい。</p>
       <div class="card-footer">
-        <span class="card-source">Cline / GitHub</span>
-        <a class="card-link" href="https://github.com/cline/cline/releases/tag/v4.1.24" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Ollama / GitHub</span>
+        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.5-rc0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -311,63 +311,63 @@
         <span class="card-tag">決済</span>
         <span class="card-date">規則公開: 2026-04-18 / 発効: 2026-10-24</span>
       </div>
-      <h2 class="card-title">【Visa／豪州】token provisioning・Visa Secureで複数認証を必須化</h2>
-      <p class="card-summary">Visa Rulesは豪州issuerに、10月24日からtoken provisioningまたはVisa Secure requestで複数のauthentication methodを実装するよう求める。step-upはSMS OTPだけに依存できず、生体認証対応deviceではbiometric authenticationもsupport対象となり、選択肢にはout-of-bandとissuer mobile banking appを含む。豪州限定ruleで、日本やCAFIS/ADAPTISへの同一要件は確認されていない。国内issuerは認証手段の冗長化とfallback設計をbrand別に比較する材料になる。</p>
+      <h2 class="card-title">【Visa／AP交通】open-loop transitの共通負担上限を4市場へ拡大</h2>
+      <p class="card-summary">Visa Rulesは10月24日からBangladesh、Macau、Nepal、Sri LankaのMobility and Transport Transactionにshared liability limitの適用資格を広げる。2024年7月のAP域内拡大に続き、open-loop transitの利用場面へ枠組みを広げる変更である。日本およびCAFIS/ADAPTISへの直接変更は公表されていない。交通決済の運用担当は、集約オーソリ、上限額、deny list、未回収時の責任分界を市場・brand別に照合する参考にしたい。</p>
       <div class="card-footer">
         <span class="card-source">Visa Rules</span>
-        <a class="card-link" href="https://cis.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://usa.visa.com/dam/VCOM/download/about-visa/visa-rules-public.pdf" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-14（日本時間）</span>
+        <span class="card-date">公開: 2026-10-14 / 改定: 2026-10-21</span>
       </div>
-      <h2 class="card-title">【口座振替SDK】GoCardless Node 11、最低runtimeをNode.js 22へ変更</h2>
-      <p class="card-summary">GoCardless Node SDK 11.0はHTTP clientの<code>got</code>をv16へ上げ、Node.js 22未満のsupportを終了した。API機能追加ではなくruntimeのbreaking changeで、SDK更新だけでも旧Node環境は対象外になる。CAFIS/ADAPTISとは別の国外口座振替railである。採用事業者はproduction・batch・serverlessのNode version、lockfileとtransitive dependency、proxy／TLS、timeout・retry・webhook処理をNode 22上で確認してからmajor versionを上げたい。</p>
+      <h2 class="card-title">【国内wallet】PayPay、残高連携と決済時chargeの規約改定日を確定</h2>
+      <p class="card-summary">PayPayは延期していた残高利用規約の改定を10月21日に実施する。決済時chargeの仕様を明確化し、PayPay残高連携の特則を新設、1回に払い出せる上限額も変更する。PayPay銀行の口座情報を加工表示する機能に伴い、電子決済等代行業の表示も改定する。CAFIS/ADAPTISへの変更ではない。wallet連携側は初回同意、auto-charge表示、払出上限、段階的な利用者拡大への問い合わせ動線を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">GoCardless / GitHub</span>
-        <a class="card-link" href="https://github.com/gocardless/gocardless-nodejs/releases/tag/v11.0.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">PayPay</span>
+        <a class="card-link" href="https://paypay.ne.jp/notice/20261014/t-balancelink02/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">文書更新: 2026-10-02</span>
+        <span class="card-date">公開: 2026-10-15（日本時間） / private preview</span>
       </div>
-      <h2 class="card-title">【国内wallet API】PayPay、payment methodのdisabled適用範囲を明記</h2>
-      <p class="card-summary">PayPay Open Payment APIは継続課金のGet payment methodsについて、responseの<code>disabled</code>は<code>CREDIT_CARD</code>だけに適用され、他の支払い方法では常に<code>false</code>になると文書を修正した。挙動変更の発表ではなくresponse解釈の明確化で、CAFIS/ADAPTISへの変更ではない。加盟店実装はこのflagだけで全payment methodの利用可否を共通判定せず、type、maintenance状態、API errorを分けて表示・選択可否を決めたい。</p>
+      <h2 class="card-title">【海外PSP SDK】Stripe Node 23.1 alpha、AWS workload identityと楽天ペイ型を追加</h2>
+      <p class="card-summary">Stripe Node 23.1.0-alpha.3はprivate preview APIを2026-10-14版へ固定し、AWS STSを使うworkload identity認証と<code>rakuten_pay</code>の型を追加した。一方、V2 off-session paymentの<code>capture</code> methodなどを削除するbreaking changeも含む。CAFIS/ADAPTISとは別gatewayのpreviewである。試用時は長期secretを置かない認証経路、PaymentIntent／SetupIntentの楽天ペイ分岐、off-session captureの代替flowを隔離環境で確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">PayPay Open Payment API</span>
-        <a class="card-link" href="https://www.paypay.ne.jp/opa/doc/jp/v1.0/continuous_payments" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-node/releases/tag/v23.1.0-alpha.3" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-12</span>
+        <span class="card-date">公開: 2026-10-07</span>
       </div>
-      <h2 class="card-title">【Mastercard／APAC】WEXとfleet payment・data基盤を統合へ</h2>
-      <p class="card-summary">MastercardとWEXはアジア太平洋で、fuel、maintenance、toll、parkingと一般business expenseを一つのpayment experienceへまとめるfleet network構想を発表した。real-timeのspend control、fuel種類・litre単位のdata、traditional・hybrid・EVを一つのaccountとinvoiceで扱う設計を掲げる。提供国・開始日とCAFIS/ADAPTISへの接続は公表されていない。国内fleet／法人card運用では商品master、利用制御、明細粒度、請求・精算照合を比較する参考になる。</p>
+      <h2 class="card-title">【PCI SSC】KMO 1.0、cloud HSMを含む鍵管理を共通標準化</h2>
+      <p class="card-summary">PCI SSCのKey Management and Operations Standard 1.0は、鍵管理systemの設計から生成・load・配布・利用・交換・破棄までを一つの標準へ集約し、remote／cloud HSMとsoftware cryptographyの要件を追加した。初期対象はPIN鍵とP2PE鍵で、FIPS 140-2／140-3 HSMにはpayment向け追加検証を求める。CAFIS固有仕様ではなく業界共通基準である。HSM提供形態、鍵owner、crypto period、既存PIN・P2PE評価とのmappingを棚卸ししたい。</p>
       <div class="card-footer">
-        <span class="card-source">Mastercard Newsroom</span>
-        <a class="card-link" href="https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/wex-and-mastercard-partner-to-launch-asia-pacific-s-first-unified-fleet-payments-network/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://blog.pcisecuritystandards.org/coffee-with-the-council-podcast-pci-ssc-introduces-key-management-and-operations-kmo-standard-v1.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-08</span>
+        <span class="card-date">公開・提供開始: 2026-10-07</span>
       </div>
-      <h2 class="card-title">【PayPal内部基盤】2,000超のtoolを認証・認可付きMCP Hubで仲介</h2>
-      <p class="card-summary">PayPalは内部の175 certified MCP server・2,000超のtoolを一つのHubで仲介する事例を公開した。<code>discover()</code>は利用者が許可されたcatalogだけからschemaを絞り、<code>invoke()</code>時にpolicyとcertificationを再確認し、下流では別のaudience-bound credentialを使う。数値は2026年5月時点の社内実績で、決済networkやCAFIS/ADAPTISの変更ではない。決済事業者が運用toolをagentへ開放する際のcredential分離、action承認、human／agent attribution、audit設計の参考になる。</p>
+      <h2 class="card-title">【国内PSP周辺】SBPS、個人事業主の口座・card資金管理に対応</h2>
+      <p class="card-summary">SBペイメントサービスは資金管理cloud「SBPS BizCRECO」を個人事業主へ拡大し、事業用の個人口座、複数銀行口座、クレジットカードの残高・入出金・利用情報を一画面で確認できるようにした。CAFIS/ADAPTISのtransaction接続変更ではなく、加盟店の資金・精算管理に近い関連動向である。利用時は口座連携の権限と更新頻度、card明細との名寄せ、事業・私用dataの分離、会計systemとの照合作業を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">PayPal Developer Blog</span>
-        <a class="card-link" href="https://developer.paypal.com/community/blog/One_connection_2000_tools/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">SB Payment Service</span>
+        <a class="card-link" href="https://www.sbpayment.jp/news/info/2026/20261007_001602/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
