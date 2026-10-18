@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-17</title>
+  <title>AI News Daily — 2026-10-18</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-17</span>
+    <span class="site-date">2026-10-18</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-17</a>
+    <a class="archive-link current" href="./index.html">2026-10-18</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-17.html">2026-10-17</a>
     <a class="archive-link" href="./archive/2026-10-16.html">2026-10-16</a>
     <a class="archive-link" href="./archive/2026-10-15.html">2026-10-15</a>
     <a class="archive-link" href="./archive/2026-10-14.html">2026-10-14</a>
@@ -239,59 +240,45 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月17日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月18日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
-
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-17（日本時間）</span>
+        <span class="card-date">公開: 2026-10-18（日本時間）</span>
       </div>
-      <h2 class="card-title">Claude Code 2.1.302、auto modeのmodel指定とMCP 2026-07-28互換を修正</h2>
-      <p class="card-summary">client側auto mode classifierのmodelを<code>CLAUDE_CODE_AUTO_MODE_MODEL</code>で指定できるようにした。MCP protocol 2026-07-28をnegotiationしたserverが<code>resultType</code>、<code>ttlMs</code>、<code>cacheScope</code>を省略するとtoolが消える問題と、ToolSearch・compaction後のprompt cache missも修正。128 MB超の画像Read拒否やhook同時実行12件上限も入り、gateway、MCP、大容量入力の回帰確認が必要になる。</p>
-      <div class="card-footer">
-        <span class="card-source">Anthropic / GitHub</span>
-        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.302" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-16（日本時間）</span>
-      </div>
-      <h2 class="card-title">Pydantic AI 2.57、低risk toolのmodel承認とMCP Apps中継を追加</h2>
-      <p class="card-summary">Harnessの<code>ApprovalReviewer</code>で低risk tool callを人へ回す前にmodelが審査でき、MCP Appsのtool resultをAG-UI／Vercel AI frontendへ中継する<code>read_resource_contents</code>と<code>call_tool_for_app</code>を追加した。Meta Muse用<code>MetaProvider</code>、service tier別cost計算も入った。compaction後のhistory不足や中断streamのSpendLimits計上漏れも修正され、承認policyとcost上限の回帰確認が必要になる。</p>
-      <div class="card-footer">
-        <span class="card-source">Pydantic / GitHub</span>
-        <a class="card-link" href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.57.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-16（日本時間）</span>
-      </div>
-      <h2 class="card-title">Transformers 5.20.1、Beam対応と旧Torch互換を修復</h2>
-      <p class="card-summary">coding・agent用途のmodel Beamをnative追加したpatch release。5.20.0で崩れた旧PyTorchでのmodel loadを修復し、distributed checkpointだけPyTorch 2.8以上を要求、<code>DtensorShardOperation</code>は2.6／2.7でも動くようにした。HunYuan-VLのbatch生成時の画像割当とexpert parallel下のDeepGEMM Mega MoEも修正。upgrade前にTorchのversion matrix、multi-GPU、画像batchをtestしたい。</p>
-      <div class="card-footer">
-        <span class="card-source">Hugging Face / GitHub</span>
-        <a class="card-link" href="https://github.com/huggingface/transformers/releases/tag/v5.20.1" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-17（日本時間）</span>
-      </div>
-      <h2 class="card-title">OpenAI Python 3.32、cache key・regional processing・Live Decisionsに対応</h2>
-      <p class="card-summary">OpenAI Python SDK 3.32は、APIのcache設定・key option、regional processing residency、response error diagnostics・model noticeへ型とclient対応を追加した。promptからのvoice作成、Live sessionのDecisionsとaudio fixture再生にも対応し、Realtime response error messageを明示、WebSocket connection処理を共通化した。data residency、cache key再利用、diagnosticsのlog処理、Realtime error分岐を確認したい。</p>
+      <h2 class="card-title">OpenAI Python 3.35、Live sideband eventとAgentsのultrafast tierを型定義</h2>
+      <p class="card-summary">OpenAI Python SDK 3.35は、Live APIのsideband eventをtyped objectとして追加し、Agents APIのultrafast service tierを指定できる型を入れた。WebSockets 13でbyte frameを受けた際に内容を保持する修正も含む。Liveのevent分岐、binary frame、service tierを指定したrunと既存Realtime処理を更新前後で回帰確認したい。</p>
       <div class="card-footer">
         <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.32.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.35.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-18（日本時間）</span>
+      </div>
+      <h2 class="card-title">llama.cpp b11716、Qualcomm HexagonでQ1_0・Q2_0推論に対応</h2>
+      <p class="card-summary">llama.cpp b11716はHexagon backendへQ1_0とQ2_0量子化を追加し、2D HMXの<code>MUL_MAT</code>経路で非正方tileを扱えるようにした。Q1_0はunpackと<code>vrmpy</code>のoverheadを減らすlayoutへ最適化し、Q1_0／Q2_0のvector dotも更新した。低bit化で容量を抑える一方、対応SoC・model形状での出力誤差、kernel選択、速度とmemoryを既存quantizationと比較する必要がある。</p>
+      <div class="card-footer">
+        <span class="card-source">llama.cpp / GitHub</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11716" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-18（日本時間）</span>
+      </div>
+      <h2 class="card-title">LiteLLM 1.103.5、Responses変換でtool callがchoices[1]へ落ちる回帰を修正</h2>
+      <p class="card-summary">LiteLLMのstable patchは、Responses API出力が複数messageとfunction callを含むと、Chat Completions変換後のtool callが<code>choices[1]</code>へ入り、<code>choices[0]</code>だけ読むagentがtoolを実行しない問題を修正した。text・reasoning・annotation・tool callを1つのchoiceへ統合し、toolがあれば<code>finish_reason=tool_calls</code>にする。Google ADK等とのgateway統合では非stream／stream両方とcitation offsetを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LiteLLM / GitHub</span>
+        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.103.5" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -300,76 +287,89 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-17（日本時間）</span>
       </div>
-      <h2 class="card-title">llama.cpp b11699、HTTP(S)_PROXYとloopback直結を実装</h2>
-      <p class="card-summary">pre-release b11699は、共通HTTP clientで<code>HTTPS_PROXY</code>／<code>HTTP_PROXY</code>と小文字版、basic認証、<code>NO_PROXY</code>を解釈するようにした。<code>-hf</code> downloadやremote server接続が企業proxy下で失敗する問題を直す。一方、localhost、127.0.0.0/8、::1、0.0.0.0は常に直結し、spawnしたlocal serverのhealth checkがproxy経由でhangする事象を防ぐ。proxy URL、認証、bypass範囲をstagingで確認したい。</p>
+      <h2 class="card-title">Ollama 0.40.6、GGUFのQ2_0 tensor・file typeに対応</h2>
+      <p class="card-summary">Ollama 0.40.6はGGUFへQ2_0 tensorとfile typeの対応を追加し、低bit modelをruntimeで認識できる範囲を広げた。Windowsでは親process終了後にrunnerが残る問題を修正し、<code>--ask</code> modeのquestion keyはidentifierを使うようにした。Q2_0 modelを配布・運用する場合は、manifest、pull／load、CPU・GPU別のfallback、出力品質と常駐runnerの終了を更新前後で確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">llama.cpp / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11699" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Ollama / GitHub</span>
+        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.6" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-17（日本時間）</span>
+      </div>
+      <h2 class="card-title">Vercel AI SDK 7.0.143、streamTextに低memory modeを追加</h2>
+      <p class="card-summary"><code>streamText</code>へ<code>experimental_lowMemory: true</code>を追加し、単一consumerのstreamでreplay bufferや最終content resultを保持せず、memory残留を減らせるようにした。<code>useChat()</code>はchat IDが実際に参照された時点で生成し、pre-render中の不要な乱数読取りも避ける。低memory modeでは後から最終結果を参照する処理との互換性が変わるため、consumer数、再生、終了後の参照とheap使用量を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Vercel / GitHub</span>
+        <a class="card-link" href="https://github.com/vercel/ai/releases/tag/ai%407.0.143" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-16 / 再開: 2026-10-09</span>
+        <span class="card-date">適用: 2026-10-01</span>
       </div>
-      <h2 class="card-title">【後払い／incident】クロネコ代金後払い、約526万件の顧客情報持出しを確認</h2>
-      <p class="card-summary">ヤマト運輸は9月28日の不正accessについて、一部顧客情報約526万件（emailを含むものは約49万件）、届け先情報約5万件、加盟店情報約4,100件の持出しを確認した。card情報、password、請求金額・債権残高は含まれず、serviceは10月9日に再開済み。CAFIS／ADAPTISとの関係は公表されていない。対象加盟店は該当注文、通知、phishing対応、再開後の請求・入金照合を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Yamato Holdings</span>
-        <a class="card-link" href="https://www.yamato-hd.co.jp/important/info_260929_1.html" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">適用: 2026-10-12</span>
-      </div>
-      <h2 class="card-title">【Mastercard／SCA】EU・英国の免除indicator fee、3段階へ改定</h2>
-      <p class="card-summary">MastercardはSCA免除indicator feeを一律EUR 0.02から、国内5 bps・域内10 bps・域外15 bpsへ変更し、承認・否認の双方を対象にした。国内・域内ではMIT、recurring、SCP、認証障害例外を除外し、域外は低risk TRA、少額、SCA delegationに限定する。EU・英国向けのbrand変更で、CAFIS／ADAPTISの国内仕様変更ではない。免除区分、否認分、fee明細をauthorization logと照合したい。</p>
+      <h2 class="card-title">【Mastercard／国外】未精算preauthorizationを30日で課金対象化</h2>
+      <p class="card-summary">MastercardはEuropeで、承認済みpreauthorizationを30日以内にclearingまたは全額reversalしない取引へTPE feeを導入した。取引額EUR 12以上は28 bps、EUR 12未満はEUR 0.033と案内されている。CAFIS／ADAPTISの国内接続変更ではないが、同一brandの国外取引を扱うPSP・加盟店は、auth、incremental auth、capture、取消の紐付けと未精算残の監視、fee明細の照合が必要になる。</p>
       <div class="card-footer">
         <span class="card-source">PayPal Braintree</span>
-        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026#mastercard-revised-authorization-acquirer-exemption-indicator-fee" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026#mastercard-introducing-not-reversed-or-cleared-preauthorization-tpe-program-in-europe" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">適用: 2026-10-19</span>
+        <span class="card-date">適用: 2026-10-01</span>
       </div>
-      <h2 class="card-title">【Visa／Canada】NABU feeをauthorization時の課金へ変更</h2>
-      <p class="card-summary">VisaはCanadaでAcquirer Clearing feeをAcquirer Network Access and Brand Usage（NABU）feeへ置き換え、authorization時に国内CAD 0.0195、域外CAD 0.0295を課金する。authorization reversalにも国内CAD 0.0098、域外CAD 0.0295が設定され、Braintreeはreversal時に二重課金となりうると案内する。CAFIS／ADAPTISの変更ではない。Canada取引はauth・reversal pairとfee見込、small ticket区分を照合したい。</p>
+      <h2 class="card-title">【Visa／国外】EuropeのAFTへConsumer Funding Feeを導入</h2>
+      <p class="card-summary">VisaはEuropeのwallet入金、prepaid load、送金資金などのAccount Funding TransactionへConsumer Funding Feeを導入した。対象の国内・intra-EEA取引はEUR 0.01で、Consumer Funding Acceleration Programではtokenized取引の0.20%上限がEUR 0.04、非tokenizedはEUR 0.07とされる。CAFIS／ADAPTISへの直接変更は確認できない。AFT／OCT区分、BAI、token有無と精算feeを接続先資料で照合したい。</p>
       <div class="card-footer">
         <span class="card-source">PayPal Braintree</span>
-        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026#visa-acquirer-network-access-and-brand-usage-fee-in-canada" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026#visa-new-aft-fee-and-client-to-client-program" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-15</span>
+        <span class="card-date">適用: 2027-01-01</span>
       </div>
-      <h2 class="card-title">【海外PSP／Web SDK】Adyen Web 6.47、gift card失敗表示とnull安全性を改善</h2>
-      <p class="card-summary">Adyen Web 6.47は、gift cardの残高照会失敗をshopperへ表示し、失敗後にDrop-inの支払buttonがloadingのままになる問題を修正した。brand別placeholder、merchant指定localeでの金額・日付formatも追加・修正し、3DS2、Click to Pay、Google Pay、PayPalなど広範なcomponentのnull安全性を改善した。CAFIS／ADAPTISの変更ではない。残高照会失敗、installment欠損値、locale別表示を回帰testしたい。</p>
+      <h2 class="card-title">【Mastercard／国外】非token・未認証CNPのCPDF feeを段階改定</h2>
+      <p class="card-summary">MastercardはEuropeと英国・IrelandでCustomer Performance Development Fundの料金を2027年から段階改定する。2027年はCard-on-Fileの非token・未認証取引を対象に地域別rateとcapを変え、2028年4月からGuest Checkoutも対象へ加えて名称をNot Tokenized CNPへ変更する計画。国内CAFIS／ADAPTISの確定変更ではない。国外ECはtoken率、3DS利用、domestic／intra／interregional区分別に費用を試算したい。</p>
       <div class="card-footer">
-        <span class="card-source">Adyen / GitHub</span>
-        <a class="card-link" href="https://github.com/Adyen/adyen-web/releases/tag/v6.47.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">PayPal Braintree</span>
+        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026#mastercard-revised-pricing-for-customer-performance-development-fund-in-eu--the-ukireland" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-16</span>
+        <span class="card-date">適用（日本）: 2029-01-01</span>
       </div>
-      <h2 class="card-title">【海外PSP／開発運用】Paddle CLI 0.1、決済運用をCI・agentから実行</h2>
-      <p class="card-summary">PaddleはBilling API用CLI 0.1を公開し、product、price、customer、subscriptionの操作とwebhook simulationをterminal・CIから実行できるようにした。agent環境ではJSON出力へ自動切替し、delete・cancelは対象IDの明示確認を必須にする。sandbox／productionも切替可能だが、1.0前はcommand・flag変更の可能性がある。CAFIS／ADAPTISとは別PSPであり、自動化ではversion固定、environment表示、破壊操作guardを確認したい。</p>
+      <h2 class="card-title">【Mastercard／日本】specialty merchant登録・取引feeを予告</h2>
+      <p class="card-summary">Mastercardはhigh-risk securities、暗号資産、非対面gambling・医薬品などを対象とするSpecialty Merchant Registration Programで、年額USD 1,000の登録feeに加え、1件USD 0.02と10 bpsの取引feeを日本では2029年1月1日から適用すると案内した。CAFIS／ADAPTIS側の対応は公表されていない。猶予は長いが、acquirer・PSPはMCCとTTI、加盟店審査、登録主体、費用転嫁と明細をbrand資料で確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Paddle</span>
-        <a class="card-link" href="https://developer.paddle.com/changelog/2026/paddle-cli" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">PayPal Braintree</span>
+        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026#mastercard-specialty-merchant-registration-program-fees" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-10（日本時間）</span>
+      </div>
+      <h2 class="card-title">【PayPal／Web SDK】paypal-js 11.2.2、V6 script読込みtimeoutを修正</h2>
+      <p class="card-summary"><code>@paypal/paypal-js</code> 11.2.2は、V6 core SDKのnamespaceが既に存在する一方、loaderがscriptのload eventを観測できなかった場合にtimeout扱いとなる問題を修正した。SPAでの再mount、複数component、既存scriptとの競合時に決済UIが出ない経路へ関係する。CAFIS／ADAPTISとは別の海外PSP SDKであり、採用siteは重複load、cache済みscript、遷移後の再初期化、timeout監視を回帰testしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">PayPal / GitHub</span>
+        <a class="card-link" href="https://github.com/paypal/paypal-js/releases/tag/%40paypal/paypal-js%4011.2.2" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
