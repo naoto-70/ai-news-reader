@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-19</title>
+  <title>AI News Daily — 2026-10-20</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-19</span>
+    <span class="site-date">2026-10-20</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-19</a>
+    <a class="archive-link current" href="./index.html">2026-10-20</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-19.html">2026-10-19</a>
     <a class="archive-link" href="./archive/2026-10-18.html">2026-10-18</a>
     <a class="archive-link" href="./archive/2026-10-17.html">2026-10-17</a>
     <a class="archive-link" href="./archive/2026-10-16.html">2026-10-16</a>
@@ -241,136 +242,136 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月19日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月20日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-19（日本時間）</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
       </div>
-      <h2 class="card-title">OpenAI Node 7.39、Realtime接続の回復を回数制限付きで追加</h2>
-      <p class="card-summary">OpenAI Node SDK 7.39は、Realtimeのmodel sessionで任意指定できる<code>reconnect: true</code>を追加した。再接続時はcredentialを更新し同じconnection objectを使うが、server sessionのstateや送信済みcommandは復元しない。未送信commandはbyte上限付きで保持でき、利用側がstate復元後にflushする。初回<code>open</code>前の送信禁止、retry上限、state再構築と重複実行防止をtestしたい。</p>
+      <h2 class="card-title">Claude Code 2.1.304、modの許可判定を人へ委譲可能に</h2>
+      <p class="card-summary">Claude Codeは<code>tool.check</code>でmodが<code>decider: "person"</code>を返し、permission dialogやhost callbackだけに最終許可を委ねられるようにした。read-only判定を示す<code>e.isReadOnly</code>も追加する。mount先などへの<code>rm -r</code>警告、headless実行でsubagentを使ったturn上限回避の防止、worktree削除の修正も含むため、独自modの判定順序と非対話環境の停止条件を回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">OpenAI / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-node/releases/tag/v7.39.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Anthropic / GitHub</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.304" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-19（日本時間）</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
       </div>
-      <h2 class="card-title">llama.cpp b11721、Qwen4ExpのCUDA post処理を1 kernelへ融合</h2>
-      <p class="card-summary">Qwen4Exp系の<code>SCALE → SIGMOID → SCALE → hc_post</code>をCUDAで融合し、従来4 kernelだった処理を1 kernelで実行する。<code>dsv4_hc_post_f32</code>がraw weightから<code>scale_out * sigmoid(scale_in * p)</code>を計算する構成で、開発元PRはRTX Pro 6000上のQwen4-Nextで約3%のtoken generation改善を報告する。提供元測定のため、対象model・GPU・batch別に出力一致とthroughputを再計測したい。</p>
+      <h2 class="card-title">llama.cpp b11747、Qwen-VLの画像resizeをTransformersと一致</h2>
+      <p class="card-summary">Qwen2／2.5／3-VLなどの画像処理からletterbox paddingを外し、Pythonのhalf-even roundingに合わせて<code>std::nearbyint</code>を使う。これまで入力画像の縦横比や丸め境界でvision token数がTransformers実装とずれる場合があった。既存GGUFの再変換は不要とされるが、画像・動画promptのtoken数、位置情報、出力差とKV cache見積もりを更新前後で確認したい。</p>
       <div class="card-footer">
         <span class="card-source">llama.cpp / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11721" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11747" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-18（日本時間）</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
       </div>
-      <h2 class="card-title">vLLM 0.32、低精度KV cacheとserving securityを大幅更新</h2>
-      <p class="card-summary">vLLM 0.32はNVFP4 KV cacheの対応GPUを広げ、ROCmへ4bit KV cacheを追加した。複数API workerではleast-loaded routingを導入し、短いrequestで43〜85%のreq/s改善を開発元benchmarkで示す。chat templateのresource exhaustion、ZMQ socket枯渇など3件のadvisoryを修正し、CORSの既定値も制限した。Python 3.10廃止、Responses reasoning event名変更を含むため、upgrade前にclient・origin・templateを確認したい。</p>
+      <h2 class="card-title">Vercel AI SDK 7.0.144、低memory streaming APIを分離</h2>
+      <p class="card-summary">低memory modeは<code>streamText({ experimental_lowMemory: true, ...options })</code>から、独立した<code>experimental_streamTextLowMemory(options)</code>へ移った。再利用するoptionsや<code>ReturnType</code>で型が崩れる問題を避ける変更で、既存のexperimental指定はcall siteの移行が必要になる。Perplexity Decisions API対応も加わったため、stream event、型推論、abort・error処理をcompileと実行の両方で確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">vLLM / GitHub</span>
-        <a class="card-link" href="https://github.com/vllm-project/vllm/releases/tag/v0.32.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Vercel AI SDK / GitHub</span>
+        <a class="card-link" href="https://github.com/vercel/ai/releases/tag/ai%407.0.144" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-18（日本時間）</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
       </div>
-      <h2 class="card-title">LiteLLM 1.106、stdio MCP serverを既定で無効化</h2>
-      <p class="card-summary">LiteLLM Proxyはlocal commandを起動できるstdio MCP transportを既定で停止し、登録済みserverもupgrade後はprocessを起動しない。必要な場合だけprocess環境変数<code>LITELLM_ENABLE_MCP_STDIO=true</code>を設定して再起動する。無効時はtool callが403、作成・更新が422となり、config fileやDBからの有効化は無視される。既存stdio連携は明示的な移行が必要で、remote HTTP/SSE serverへの影響も回帰確認したい。</p>
+      <h2 class="card-title">Langfuse 4.64、AI Gatewayの受付制御をmemory budgetへ変更</h2>
+      <p class="card-summary">AI Gatewayは4つのrequest数slot poolを廃止し、instance単位のmemory budgetでrequest bodyと固定overheadを予約する方式へ変えた。枯渇時は503を返し、旧上限変数は無視される。新しい<code>LANGFUSE_AI_GATEWAY_MEMORY_BUDGET_BYTES</code>の既定値は1 GiB、request overheadは2 MiBで、metrics名も変わるbreaking changeである。deploy前に環境変数、alert、large body時のbackpressureを見直したい。</p>
       <div class="card-footer">
-        <span class="card-source">LiteLLM / GitHub</span>
-        <a class="card-link" href="https://github.com/BerriAI/litellm/releases/tag/v1.106.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Langfuse / GitHub</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.64.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-18（日本時間）／RC</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
       </div>
-      <h2 class="card-title">Ollama 0.40.7 RC、speculative draft種別の自動判定を拡大</h2>
-      <p class="card-summary">release candidateでは、llama-serverが判定できるdraft modelに固定の<code>--spec-type</code>を渡さず、未判定のMTP sidecarとEagle3だけ明示するよう変更した。Responsesの<code>effort</code>をnon-thinking modelでも受け付け、MLXへPPLX Decider 1.2対応も加えた。RCのため本番導入は急がず、draft modelの自動判定、acceptance率、fallback、thinking有無別のResponses互換性を検証したい。</p>
+      <h2 class="card-title">Transformers 5.20.2、multimodal生成とBF16 expert並列の回帰を修正</h2>
+      <p class="card-summary"><code>generate</code>内の<code>prepare_inputs_for_generation</code>で一部入力が元の型を失い、multimodal modelで問題になる回帰を修正した。BF16のexpert parallelismで<code>ep_size &lt; fsdp_size</code>の場合にexpert gradientがゼロになる問題、VLMがtext-onlyと報告するmetadata、<code>eager_mask</code>のhost-to-device copyも直す。学習jobはgradient nonzeroとloss、生成系は画像入力とdevice転送を再検証したい。</p>
       <div class="card-footer">
-        <span class="card-source">Ollama / GitHub</span>
-        <a class="card-link" href="https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Hugging Face / GitHub</span>
+        <a class="card-link" href="https://github.com/huggingface/transformers/releases/tag/v5.20.2" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">適用予定: 2027-04-01</span>
+        <span class="card-date">公開: 2026-10-19</span>
       </div>
-      <h2 class="card-title">【Visa／欧州】CNP authorizationをDCSFへ統合課金</h2>
-      <p class="card-summary">VisaはEUの全authorizationへDigital Commerce Services Feeを導入し、VAU／Real Time VAU、VDCU、AVS、CVV2の個別課金を終了してflat feeへまとめる。PayPal Braintreeの公開資料ではGroup Aが2.25 bps、主にcross-borderのGroup Bが10 bpsとされる。CAFIS／ADAPTISの国内変更ではないが、欧州ECを扱うacquirer・PSPは従来service feeとの二重計上、authorization件数、domestic／cross-border区分を確認したい。</p>
+      <h2 class="card-title">【Mastercard／別レール】stablecoin送金向け事前risk score API</h2>
+      <p class="card-summary">Mastercardは決済dataとblockchain analyticsを組み合わせ、送金前に取引文脈、資金源、制裁対象へのexposure、scam指標からrisk scoreを返す「Stablecoin Security」を発表した。platform非依存APIとして既存のfraud・compliance・case管理へ接続し、北米から開始、世界向け提供は2027年予定とする。CAFIS／ADAPTISへの採用は確認されていないが、即時性の高い別レールで事前判定を組み込む設計の参考になる。</p>
       <div class="card-footer">
-        <span class="card-source">PayPal Braintree</span>
-        <a class="card-link" href="https://developer.paypal.com/braintree/articles/risk-and-security/compliance/network-updates/fall/2026#visa-introducing-digital-commerce-services-fee-in-eu" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://www.mastercard.com/us/en/news-and-trends/press/2026/october/Mastercard-brings-risk-intelligence-to-stablecoin-payments.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-14（日本時間）</span>
+        <span class="card-date">公開: 2026-10-15</span>
       </div>
-      <h2 class="card-title">【GoCardless／口座振替SDK】API errorにstatus code・headerを公開</h2>
-      <p class="card-summary">GoCardless Node 10.14.0は<code>ApiError</code>とsubclassへ<code>statusCode</code>と<code>headers</code>を追加し、logger・error trackerで<code>RateLimitError</code>などclass名を識別できるようにした。CAFIS／ADAPTISとは別の口座振替APIだが、429時のretry制御や障害分析でresponse情報を利用できる。upgrade後は<code>Retry-After</code>の扱い、error grouping、headerを記録する際の機密情報除外を確認したい。</p>
+      <h2 class="card-title">【Visa Direct／国外】USDC prefundingを商用運用へ移行</h2>
+      <p class="card-summary">Visa Directはstablecoinによるprefundingをpilotからcommercial productionへ移し、Inyo Globalを最初のenablerとした。対象となる企業はcross-border payout用資金をUSDCでほぼ即時に積み、Inyoは既存APIから機能を提供する。利用可否は地域と審査条件による。CAFIS／ADAPTISや国内Visa接続の変更ではないため、該当する海外送金系だけが資金pool、照合、休日・cut-off運用との差を評価したい。</p>
       <div class="card-footer">
-        <span class="card-source">GoCardless / GitHub</span>
-        <a class="card-link" href="https://github.com/gocardless/gocardless-nodejs/releases/tag/v10.14.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-direct-moves-stablecoin-pilots-production.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-16（日本時間）</span>
+        <span class="card-date">非推奨化予定: 2026-10-31</span>
       </div>
-      <h2 class="card-title">【Cash App Pay／Android】button labelの既定表示を変更</h2>
-      <p class="card-summary">Cash App Pay Android SDK 3.2.0はViews／Composeの<code>CashAppPayButton</code>を、iconと「Cash App Pay」を示すlabelへ変更した。従来の「Cash App」labelは明示指定で利用でき、breaking changeとはしていない。CAFIS／ADAPTISとは別の海外wallet SDKである。merchant側はbrand表示の差分、layout幅、locale、accessibility label、既存screenshot testを確認し、UI規約とcheckout導線を再点検したい。</p>
+      <h2 class="card-title">【Spreedly／tokenization】署名なしDirect APIを非推奨化</h2>
+      <p class="card-summary">environment keyだけでpayment methodを追加するnon-secure API tokenizationが10月31日に非推奨となり、2028年12月31日に終了する。継続には各requestへ<code>nonce</code>、<code>timestamp</code>、<code>certificate_token</code>、<code>signature</code>を付けるか、secure iFrame／Checkout SDKを使う。CAFIS／ADAPTISとは別の海外orchestration基盤だが、Direct API利用者は署名生成、時刻ずれ、鍵更新とPCI scopeを棚卸ししたい。</p>
       <div class="card-footer">
-        <span class="card-source">Cash App / GitHub</span>
-        <a class="card-link" href="https://github.com/cashapp/cash-app-pay-android-sdk/releases/tag/v3.2.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Spreedly</span>
+        <a class="card-link" href="https://developer.spreedly.com/docs/direct-api" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-13（日本時間）</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
       </div>
-      <h2 class="card-title">【Braintree／Web SDK】app switchからの決済再開APIを追加</h2>
-      <p class="card-summary">Braintree Web 3.147.0はPayPal Checkout v6のone-time paymentとbilling agreement sessionへ<code>resume()</code>と<code>hasReturned()</code>を追加し、app switch後のredirect復帰を扱えるようにした。Hosted Fieldsでは<code>binVerificationLength</code>のvalidation迂回を修正し、localeがbutton UIへ反映されない問題も直した。CAFIS系とは別のPSP SDKであり、復帰時の二重capture、戻る操作、BIN validationと多言語表示をtestしたい。</p>
-      <div class="card-footer">
-        <span class="card-source">Braintree / GitHub</span>
-        <a class="card-link" href="https://github.com/braintree/braintree-web/releases/tag/3.147.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-13（日本時間）</span>
-      </div>
-      <h2 class="card-title">【Stripe／Android】決済認証intentの遷移先を制限</h2>
-      <p class="card-summary">Stripe Android 23.23.0はpayment authenticationでintent URLをbrowsable activityへ解決できる遷移先に制限した。PaymentIntent／SetupIntentのclient secretが不正な場合は値を含めないerrorを返し、legacy next-action APIのuncaught exceptionもerror responseへ変更した。CAFIS／ADAPTISとは直接関係しないが、Android checkoutはcustom tab・app link・3DS復帰、error logへのsecret混入、旧APIの例外処理を回帰確認したい。</p>
+      <h2 class="card-title">【Stripe／Android】Naira系3方式とMonduをPaymentSheetへ追加</h2>
+      <p class="card-summary">Stripe Android 23.24.0はPaymentSheetへNaira bank transfer、Naira USSD、Naira WalletとMondu PaymentIntentsの対応を追加した。<code>ApiConfigurationPreview</code>のimport先を<code>stripe-core</code>へ移し、address countryの自動入力も修正する。CAFIS／ADAPTISとの直接関係はなく対象市場も異なるが、SDK更新時はimport修正、method eligibility、webhookとreturn flow、既存address testを確認したい。</p>
       <div class="card-footer">
         <span class="card-source">Stripe / GitHub</span>
-        <a class="card-link" href="https://github.com/stripe/stripe-android/releases/tag/v23.23.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/stripe/stripe-android/releases/tag/v23.24.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-12（日本時間）</span>
+      </div>
+      <h2 class="card-title">【Airwallex／iOS】Demo environmentを非推奨化しPreviewへ統合</h2>
+      <p class="card-summary">Airwallex iOS SDK 6.8.0は<code>Demo</code> environmentを非推奨とし、指定された場合は<code>Preview</code>へmappingする。CAFIS／ADAPTISとは別の海外PSP SDKで、公開情報上は国内決済基盤への影響は示されていない。sandboxを<code>Demo</code>で固定するappやCIは、明示的に<code>Preview</code>へ移し、credential、test data、redirect先が想定環境を向くかをupgrade前に確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Airwallex / GitHub</span>
+        <a class="card-link" href="https://github.com/Airwallex/airwallex-payment-ios/releases/tag/6.8.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
