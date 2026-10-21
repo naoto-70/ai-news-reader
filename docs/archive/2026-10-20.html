@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-20</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-20</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-20</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月20日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+      </div>
+      <h2 class="card-title">Claude Code 2.1.304、modの許可判定を人へ委譲可能に</h2>
+      <p class="card-summary">Claude Codeは<code>tool.check</code>でmodが<code>decider: "person"</code>を返し、permission dialogやhost callbackだけに最終許可を委ねられるようにした。read-only判定を示す<code>e.isReadOnly</code>も追加する。mount先などへの<code>rm -r</code>警告、headless実行でsubagentを使ったturn上限回避の防止、worktree削除の修正も含むため、独自modの判定順序と非対話環境の停止条件を回帰確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / GitHub</span>
+        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.304" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+      </div>
+      <h2 class="card-title">llama.cpp b11747、Qwen-VLの画像resizeをTransformersと一致</h2>
+      <p class="card-summary">Qwen2／2.5／3-VLなどの画像処理からletterbox paddingを外し、Pythonのhalf-even roundingに合わせて<code>std::nearbyint</code>を使う。これまで入力画像の縦横比や丸め境界でvision token数がTransformers実装とずれる場合があった。既存GGUFの再変換は不要とされるが、画像・動画promptのtoken数、位置情報、出力差とKV cache見積もりを更新前後で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">llama.cpp / GitHub</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11747" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+      </div>
+      <h2 class="card-title">Vercel AI SDK 7.0.144、低memory streaming APIを分離</h2>
+      <p class="card-summary">低memory modeは<code>streamText({ experimental_lowMemory: true, ...options })</code>から、独立した<code>experimental_streamTextLowMemory(options)</code>へ移った。再利用するoptionsや<code>ReturnType</code>で型が崩れる問題を避ける変更で、既存のexperimental指定はcall siteの移行が必要になる。Perplexity Decisions API対応も加わったため、stream event、型推論、abort・error処理をcompileと実行の両方で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Vercel AI SDK / GitHub</span>
+        <a class="card-link" href="https://github.com/vercel/ai/releases/tag/ai%407.0.144" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+      </div>
+      <h2 class="card-title">Langfuse 4.64、AI Gatewayの受付制御をmemory budgetへ変更</h2>
+      <p class="card-summary">AI Gatewayは4つのrequest数slot poolを廃止し、instance単位のmemory budgetでrequest bodyと固定overheadを予約する方式へ変えた。枯渇時は503を返し、旧上限変数は無視される。新しい<code>LANGFUSE_AI_GATEWAY_MEMORY_BUDGET_BYTES</code>の既定値は1 GiB、request overheadは2 MiBで、metrics名も変わるbreaking changeである。deploy前に環境変数、alert、large body時のbackpressureを見直したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Langfuse / GitHub</span>
+        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.64.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+      </div>
+      <h2 class="card-title">Transformers 5.20.2、multimodal生成とBF16 expert並列の回帰を修正</h2>
+      <p class="card-summary"><code>generate</code>内の<code>prepare_inputs_for_generation</code>で一部入力が元の型を失い、multimodal modelで問題になる回帰を修正した。BF16のexpert parallelismで<code>ep_size &lt; fsdp_size</code>の場合にexpert gradientがゼロになる問題、VLMがtext-onlyと報告するmetadata、<code>eager_mask</code>のhost-to-device copyも直す。学習jobはgradient nonzeroとloss、生成系は画像入力とdevice転送を再検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face / GitHub</span>
+        <a class="card-link" href="https://github.com/huggingface/transformers/releases/tag/v5.20.2" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-19</span>
+      </div>
+      <h2 class="card-title">【Mastercard／別レール】stablecoin送金向け事前risk score API</h2>
+      <p class="card-summary">Mastercardは決済dataとblockchain analyticsを組み合わせ、送金前に取引文脈、資金源、制裁対象へのexposure、scam指標からrisk scoreを返す「Stablecoin Security」を発表した。platform非依存APIとして既存のfraud・compliance・case管理へ接続し、北米から開始、世界向け提供は2027年予定とする。CAFIS／ADAPTISへの採用は確認されていないが、即時性の高い別レールで事前判定を組み込む設計の参考になる。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://www.mastercard.com/us/en/news-and-trends/press/2026/october/Mastercard-brings-risk-intelligence-to-stablecoin-payments.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-15</span>
+      </div>
+      <h2 class="card-title">【Visa Direct／国外】USDC prefundingを商用運用へ移行</h2>
+      <p class="card-summary">Visa Directはstablecoinによるprefundingをpilotからcommercial productionへ移し、Inyo Globalを最初のenablerとした。対象となる企業はcross-border payout用資金をUSDCでほぼ即時に積み、Inyoは既存APIから機能を提供する。利用可否は地域と審査条件による。CAFIS／ADAPTISや国内Visa接続の変更ではないため、該当する海外送金系だけが資金pool、照合、休日・cut-off運用との差を評価したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://corporate.visa.com/en/sites/visa-perspectives/newsroom/visa-direct-moves-stablecoin-pilots-production.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">非推奨化予定: 2026-10-31</span>
+      </div>
+      <h2 class="card-title">【Spreedly／tokenization】署名なしDirect APIを非推奨化</h2>
+      <p class="card-summary">environment keyだけでpayment methodを追加するnon-secure API tokenizationが10月31日に非推奨となり、2028年12月31日に終了する。継続には各requestへ<code>nonce</code>、<code>timestamp</code>、<code>certificate_token</code>、<code>signature</code>を付けるか、secure iFrame／Checkout SDKを使う。CAFIS／ADAPTISとは別の海外orchestration基盤だが、Direct API利用者は署名生成、時刻ずれ、鍵更新とPCI scopeを棚卸ししたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Spreedly</span>
+        <a class="card-link" href="https://developer.spreedly.com/docs/direct-api" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+      </div>
+      <h2 class="card-title">【Stripe／Android】Naira系3方式とMonduをPaymentSheetへ追加</h2>
+      <p class="card-summary">Stripe Android 23.24.0はPaymentSheetへNaira bank transfer、Naira USSD、Naira WalletとMondu PaymentIntentsの対応を追加した。<code>ApiConfigurationPreview</code>のimport先を<code>stripe-core</code>へ移し、address countryの自動入力も修正する。CAFIS／ADAPTISとの直接関係はなく対象市場も異なるが、SDK更新時はimport修正、method eligibility、webhookとreturn flow、既存address testを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-android/releases/tag/v23.24.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-12（日本時間）</span>
+      </div>
+      <h2 class="card-title">【Airwallex／iOS】Demo environmentを非推奨化しPreviewへ統合</h2>
+      <p class="card-summary">Airwallex iOS SDK 6.8.0は<code>Demo</code> environmentを非推奨とし、指定された場合は<code>Preview</code>へmappingする。CAFIS／ADAPTISとは別の海外PSP SDKで、公開情報上は国内決済基盤への影響は示されていない。sandboxを<code>Demo</code>で固定するappやCIは、明示的に<code>Preview</code>へ移し、credential、test data、redirect先が想定環境を向くかをupgrade前に確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Airwallex / GitHub</span>
+        <a class="card-link" href="https://github.com/Airwallex/airwallex-payment-ios/releases/tag/6.8.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
