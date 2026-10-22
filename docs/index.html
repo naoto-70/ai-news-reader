@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-21</title>
+  <title>AI News Daily — 2026-10-22</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-21</span>
+    <span class="site-date">2026-10-22</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-21</a>
+    <a class="archive-link current" href="./index.html">2026-10-22</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-21.html">2026-10-21</a>
     <a class="archive-link" href="./archive/2026-10-20.html">2026-10-20</a>
     <a class="archive-link" href="./archive/2026-10-19.html">2026-10-19</a>
     <a class="archive-link" href="./archive/2026-10-18.html">2026-10-18</a>
@@ -243,16 +244,16 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月21日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月22日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-20</span>
+        <span class="card-date">公開: 2026-10-21</span>
       </div>
-      <h2 class="card-title">OpenAI API、prompt cacheを12時間保持できるoptionを追加</h2>
-      <p class="card-summary">Responses APIでprompt cachingの保持時間に12時間を選べるようになった。数時間にわたり共通のinstruction、tool、contextを再利用する処理が対象で、cache writeは通常のinput token単価の2.5倍となる。長時間workflowへ一律に適用せず、prefixの一致率、cache hit、write増とcached input削減を実測して費用と応答時間を比較したい。</p>
+      <h2 class="card-title">OpenAI API、projectごとに利用可能なservice tierを制限</h2>
+      <p class="card-summary">Platform設定でprojectが使えるservice tierを選択でき、organization設定から全projectへ制限をかけられるようになった。model呼び出し自体ではなく処理優先度と費用に関わる運用制御で、許可外tierの指定はservice tier errorとして扱われる。productionとbatch／検証用projectの許可範囲、organizationとprojectの設定、error時のfallbackと監視を合わせて確認したい。</p>
       <div class="card-footer">
         <span class="card-source">OpenAI</span>
         <a class="card-link" href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">詳細を見る →</a>
@@ -262,78 +263,78 @@
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-21（日本時間）</span>
+        <span class="card-date">公開: 2026-10-21</span>
       </div>
-      <h2 class="card-title">Claude Code 2.1.305、Linux sandboxとgateway互換性を修正</h2>
-      <p class="card-summary"><code>sandbox.allowNestedUserNamespaces</code>を追加し、sandbox内のChromiumやrootless Podmanがuser namespaceを作れるようにした。一方、release noteはsandboxのfile protectionを回避できると明記しており、信頼できるcommandだけに限定すべきoptionである。ToolSearchを拒否するVertex、Bedrock、gatewayでは同toolを外して再試行する修正も入り、対象経路の権限境界とfallbackを確認したい。</p>
+      <h2 class="card-title">NVIDIA、multimodal RAG向けNemotron 3.5 Retriever群を公開</h2>
+      <p class="card-summary">textと画像を扱うEmbed 8B／1B、Rerank 8Bと、documentを構造化するParse 631Mを公開した。1B EmbedにはNVFP4版もあり、Parseはsingle／double／triple passで速度と抽出精度を選べる。NVIDIAはrerank併用でagentの総推論tokenを約13〜14%減らしたと報告するが提供元評価である。自社documentとhardwareで検索精度、rerank追加latency、parse mode別costを測りたい。</p>
       <div class="card-footer">
-        <span class="card-source">Anthropic / GitHub</span>
-        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.305" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">NVIDIA / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-21（日本時間）</span>
+        <span class="card-date">公開: 2026-10-22（日本時間）</span>
       </div>
-      <h2 class="card-title">llama.cpp b11763、OpenCLの範囲外readとCPU fallbackを修正</h2>
-      <p class="card-summary">OpenCL backendで<code>mul_mv_mxfp4_f32_flat</code>の範囲外readを修正し、大きなNでweightをCPUへ置いていたguardを削除した。loaderのN=512 probeがGPU placementを避ける原因だったという。q4_kのsmall-batch GEMMなどkernel追加も含むため、Adreno等の対象端末で出力一致、実際のGPU配置、batch幅ごとのthroughputとmemory使用量を更新前後で確認したい。</p>
+      <h2 class="card-title">llama.cpp b11801、SenseNova U1の画像理解branchに対応</h2>
+      <p class="card-summary">SenseNova U1のdense understanding branchとU1.5-8B-MoTに対応し、NEOChatModelからGGUFへの変換、4軸RoPE、dynamic-resolution画像向けvision encoderとCPU mtmd projectorを実装した。MoTのgeneration tensorは変換対象外で、generation branchは意図的に拒否する。導入時は対応範囲を画像理解に限定し、変換結果、vision token配置、出力一致とCPU projectorのlatencyを確認したい。</p>
       <div class="card-footer">
         <span class="card-source">llama.cpp / GitHub</span>
-        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11763" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases/tag/b11801" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+        <span class="card-date">公開: 2026-10-22（日本時間）</span>
       </div>
-      <h2 class="card-title">Vercel AI SDK 7.0.146、decision callのtoken上限とreasoningを制御</h2>
-      <p class="card-summary">experimentalなdecision callへ<code>maxOutputTokens</code>と<code>reasoning</code>を追加し、language modelを使うdecision providerへ渡せるようにした。reasoningは指定しなければ無効のままで、native providerが未対応optionを受けると警告する。tool pruning時に孤立したreasoning／summary部品を除く修正やoptional toolの型修正も含むため、provider別のoption伝播とevent型を再確認したい。</p>
+      <h2 class="card-title">LangChain 1.4.7、stream中のtool-call-deltaをconsumerで処理</h2>
+      <p class="card-summary">core、langchain本体、standard testsのstream consumerが<code>tool-call-delta</code>を読むようになった。tool名やargumentが複数chunkに分かれるproviderでも、incrementalなtool callを組み立てる基盤側の対応である。certifi、aiohttp、MCP依存の更新も含むため、upgrade時はfragmented argument、複数tool call、途中cancel、event転送を実際のproviderのstreamで回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Vercel AI SDK / GitHub</span>
-        <a class="card-link" href="https://github.com/vercel/ai/releases/tag/ai%407.0.146" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">LangChain / GitHub</span>
+        <a class="card-link" href="https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.7" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+        <span class="card-date">公開: 2026-10-21</span>
       </div>
-      <h2 class="card-title">Langfuse 4.65、AI Gatewayにtraceを取り込まないmode</h2>
-      <p class="card-summary">self-hosted AI Gatewayへingestion modeの<code>None</code>を追加し、ingestion projectやsigning keyなしでも動作するよう修正した。model routingを使いつつtraceを保存しない構成を選べるため、privacyやtelemetry費用の要件に応じて明示的に切り替えられる。upgrade時はmodeと環境変数を確認し、意図どおりtraceが残らないこと、認証・proxy・routingが継続することをstagingで検証したい。</p>
+      <h2 class="card-title">NVIDIA Kumo Forecast、時系列予測に履歴検索と説明機能を統合</h2>
+      <p class="card-summary">約340M parameterのMOMENT-1-large encoderを固定し、学習可能なforecast headで多変量時系列を予測する。DARR modeは別の<code>context_df</code>からk近傍の過去patternを取得し、直接予測と混合する。lag／feature attribution、semantic flow、trajectory stabilityも出力でき、Apache 2.0で公開された。directとDARRを同一holdoutで比較し、長期horizonの誤差と検索cost、説明の安定性を検証したい。</p>
       <div class="card-footer">
-        <span class="card-source">Langfuse / GitHub</span>
-        <a class="card-link" href="https://github.com/langfuse/langfuse/releases/tag/v4.65.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">NVIDIA / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/nvidia/kumo-forecast" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-20</span>
+        <span class="card-date">公開: 2026-10-21</span>
       </div>
-      <h2 class="card-title">【Mastercard／別レール】機械間決済のAgent Payをearly accessへ</h2>
-      <p class="card-summary">Agent Pay for Machinesは、企業がtask、permission、spending limitを定め、agentが署名付きpayment voucherを発行する。providerは検証後にserviceを返し、複数voucherを後でまとめてredeemできる。pilotのon-chain settlementはBaseを使い、buyer／seller API、toolkit、sandboxをearly accessで提供する。CAFIS／ADAPTISとの接続は確認されておらず、agent決済の権限、監査証跡、replay防止、精算設計を考える参考動向である。</p>
+      <h2 class="card-title">【Worldpay／SDK】iOS 5.1.1で非criticalな脆弱性を修正</h2>
+      <p class="card-summary">Checkout iOS SDK 5.1.1は、Worldpayが「non-critical」とするsecurity vulnerabilityを修正したpatch releaseで、CocoaPods dependencyのintegrity確認用checksumも更新された。脆弱性の詳細は公開release noteにない。CAFIS／ADAPTISとの直接関係は確認されていないが、Worldpay接続を組み込むiOS appはversion固定を見直し、新checksumを照合して決済flowを回帰確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Mastercard</span>
-        <a class="card-link" href="https://www.mastercard.com/us/en/news-and-trends/press/2026/october/Mastercard-Agent-Pay-for-Machines-in-action.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Worldpay</span>
+        <a class="card-link" href="https://docs.worldpay.com/access/products/releases" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-20（日本時間）</span>
+        <span class="card-date">公開: 2026-10-22（日本時間）</span>
       </div>
-      <h2 class="card-title">【Stripe／Identity】test modeで実画像をuploadしない仕様へ</h2>
-      <p class="card-summary">Stripe iOS 26.15.0ではIdentityのtest mode verification sessionが、利用者のdocument／selfie画像ではなくplaceholder画像をuploadする。test時の不要な個人情報送信を避ける変更である。CryptoOnramp alphaのKYC API名とresult型の変更も含む。CAFIS／ADAPTISとは無関係だが、iOS testのfixture、画像照合を前提にした自動化、KYC APIのsource compatibilityを更新前に確認したい。</p>
+      <h2 class="card-title">【Stripe／private preview】23.1 alphaでaccount takeover signalを拡張</h2>
+      <p class="card-summary">Node SDK 23.1.0-alpha.4はprivate preview向け生成codeを更新し、credential変更、MFA追加／削除、account takeoverの報告・確認・緩和やcustomer riskのsignal型を追加した。Terminal hardware shop／orderをrequiredにするなどbreakingな型変更、Identityのemail verification type削除も含む。CAFIS／ADAPTISとは別系統で、GA版ではないため採用範囲を限定し、schemaとevent consumerの互換性を検証したい。</p>
       <div class="card-footer">
         <span class="card-source">Stripe / GitHub</span>
-        <a class="card-link" href="https://github.com/stripe/stripe-ios/releases/tag/26.15.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/stripe/stripe-node/releases/tag/v23.1.0-alpha.4" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -342,37 +343,37 @@
         <span class="card-tag">決済</span>
         <span class="card-date">公開: 2026-10-21（日本時間）</span>
       </div>
-      <h2 class="card-title">【Paddle／CLI】0.2.0でAPI仕様同期と権限確認を改善</h2>
-      <p class="card-summary">Paddle CLI 0.2.0は生成commandを最新API specificationへ同期し、<code>whoami</code>にaccountとpermission情報を追加した。security best practiceの適用もrelease内容に含む。CAFIS／ADAPTISとは別の海外billing基盤だが、CLIをCIや運用scriptで使う場合は生成commandの差分を確認し、<code>whoami</code>でservice tokenの最小権限と実行先accountを検証してから更新したい。</p>
+      <h2 class="card-title">【PayPal／Web SDK】client token更新型とscript load判定を改善</h2>
+      <p class="card-summary"><code>@paypal/paypal-js</code> 11.3.0はv6 SDK instanceの<code>updateClientToken()</code>型を追加し、Core SDK scriptの1回あたりtimeoutを30秒から60秒へ延長した。v6 loadの失敗・timeout後に既存のv5 <code>window.paypal</code>を成功と誤判定しない修正も入る。CAFIS／ADAPTISとは別の接続先で、token更新、低速回線、v5／v6混在、timeout監視をtestしたい。</p>
       <div class="card-footer">
-        <span class="card-source">Paddle / GitHub</span>
-        <a class="card-link" href="https://github.com/PaddleHQ/paddle-cli/releases/tag/v0.2.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">PayPal / GitHub</span>
+        <a class="card-link" href="https://github.com/paypal/paypal-js/releases/tag/%40paypal/paypal-js%4011.3.0" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-16（日本時間）</span>
+        <span class="card-date">公開: 2026-10-21（日本時間）</span>
       </div>
-      <h2 class="card-title">【Hyperswitch／orchestration】不正判定、routing、DB migrationを拡張</h2>
-      <p class="card-summary">Hyperswitch 1.128.0はpayout前のfraud risk management、connector呼出前のcard blocklist確認、Decision Engineによるdynamic routingなどを追加した。3DS serverの共通対応version選択やWorldpay XML webhook検証の修正、FRM・blocklist関連のDB migrationも含む。CAFIS／ADAPTISとの直接関係はないopen-source基盤であり、採用者はschema migrationとbackfill、routing fallback、block判定、3DS／webhookをstagingで通したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Hyperswitch / GitHub</span>
-        <a class="card-link" href="https://github.com/juspay/hyperswitch/releases/tag/v1.128.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-14（日本時間）</span>
-      </div>
-      <h2 class="card-title">【Dodo Payments／SDK】service periodとrenewal payment IDを追加</h2>
-      <p class="card-summary">TypeScript SDK 2.55.0はpaymentのservice period、retry attempt、subscription renewalの<code>payment_id</code>をAPI modelへ追加した。継続課金の対象期間、再試行、更新元paymentを照合しやすくなる変更である。CAFIS／ADAPTISとは別の海外PSP SDKで、利用者はserializerと型、webhook payload、既存履歴でfieldが欠ける場合の扱いを確認し、売上・subscription照合へ反映したい。</p>
+      <h2 class="card-title">【Dodo Payments／SDK】charge種別、card詳細、署名付きinvoice tokenを追加</h2>
+      <p class="card-summary">TypeScript SDK 2.56.0はAPI modelへpayment charge type、usage flag、card detailsとsigned invoice link tokenを追加した。前日の既掲載releaseとは別の新versionで、請求linkの署名情報や決済詳細をclient側から型付きで扱う変更である。CAFIS／ADAPTISとは別の海外PSP SDKで、保存・log出力時のcard情報masking、tokenの検証と期限、optional fieldのserializerを確認したい。</p>
       <div class="card-footer">
         <span class="card-source">Dodo Payments / GitHub</span>
-        <a class="card-link" href="https://github.com/dodopayments/dodopayments-typescript/releases/tag/v2.55.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://github.com/dodopayments/dodopayments-typescript/releases/tag/v2.56.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-15</span>
+      </div>
+      <h2 class="card-title">【Mastercard／別レール】BVNKとfiat・stablecoin共通基盤を提供</h2>
+      <p class="card-summary">Global Money Platformは単一APIでfiatとstablecoinのmulti-currency account、相互変換、stablecoin-linked card、Mastercard Moveによるlocal bank payoutを組み込めるmodule群で、BVNKから提供を開始した。CAFIS／ADAPTISへの採用・接続は確認されておらず、別レールの参考動向である。国内基盤では接続判断と切り分け、wallet管理、conversion rate、AML／sanctions、精算責任を分けて評価したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-and-BVNK-Launch-Global-Money-Platform-to-Power-a-Multi-Money-World/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
