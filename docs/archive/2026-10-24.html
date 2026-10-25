@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-24</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-24</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-24</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月24日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-23（日本時間）</span>
+      </div>
+      <h2 class="card-title">MetaのAIエージェント「Muse」、10月23日に日本で提供開始</h2>
+      <p class="card-summary">日本は北米以外で最初の提供地域となり、iOS・Android・Webで利用できる。Museは利用者の依頼から計画を立て、ブラウザー操作やフォーム入力を進める。Gmail、Googleカレンダー、Instagramなどと連携し、利用者ごとに隔離したSecure VMで動作する。メール送信や購入など重要な操作の前には利用者の確認を求める。メルカリ、マネーフォワード ME、チケットぴあとの連携は進行中で、提供済みとは区別したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Meta</span>
+        <a class="card-link" href="https://about.fb.com/ja/news/2026/10/muse-personal-ai-agent-launches-in-japan/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-23（日本時間）</span>
+      </div>
+      <h2 class="card-title">Codex 0.164、プロンプト保存とモデル・権限の即時切替を追加</h2>
+      <p class="card-summary">よく使うプロンプトとスラッシュコマンドを<code>/presets</code>の10枠に保存し、キーボードメニューから呼び出せるようになった。<code>/model</code>と<code>/permissions</code>では引数を指定してモデル、推論強度、速度、権限プロファイルをその場で変更できる。Kitty／Sixel対応端末では画像を全画面の会話履歴に表示できる。企業MCPへのCodexアカウント認証と専用サインインも追加。定型作業の再利用、権限切替、MCP再認証の手順を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI Codex / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.164.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">発表: 2026-10-24（日本時間）/ 公開ベータ</span>
+      </div>
+      <h2 class="card-title">Claude Code、MCPの長時間タスクと途中の質問に対応</h2>
+      <p class="card-summary">MCPサーバーが長い処理をタスクとして受け付けると、Claude Codeは結果を待つ間も作業を続け、完了後に結果を受け取れる。処理途中にサーバーが利用者へ入力を求めるElicitationにも対応した。CLIでは公開ベータで、MCPタスクにはClaude Code 2.1.304以降と対応するサーバー・プロトコル版が必要。リモートサーバーのタスクはセッション終了後も続き、同じセッションを再開して追跡できる。長時間の連携処理を組む開発者は、結果の回収と確認待ちの扱いを設計したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic / Claude Code Docs</span>
+        <a class="card-link" href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">Canva、独自の画像生成モデル「Craft」を公開</h2>
+      <p class="card-summary">Canva Researchが開発した初の画像生成モデル。構図を計画してから画像を描画する2段階の仕組みで、文字や配置を含むデザインの制御を重視する。最大2K解像度の画像を生成でき、CanvaのDream Labと公開APIで提供を開始した。Canva MCP Serverからの利用は今後の予定。デザイン制作と自社ツールへの組み込みで試せるが、品質ランキングと速度の数値は提供元の説明として扱いたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Canva</span>
+        <a class="card-link" href="https://www.canva.com/newsroom/news/canva-craft/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-24（日本時間）</span>
+      </div>
+      <h2 class="card-title">MCP TypeScript SDK 2.4、Skills配布とrefresh scopeを追加</h2>
+      <p class="card-summary">実験的なSkills over MCPでserverがskill folderを公開し、clientが一覧・読込・検証できる。OAuth serverがrefresh時の<code>scope</code>を要求する場合のopt-in hookと、gatewayが<code>_meta</code>付き通知を転送できる<code>ServerEvent.params</code>も追加した。一方、数値parameterの<code>x-mcp-header</code>は拒否され、旧revisionの<code>outputSchema</code>結果は<code>structuredContent.result</code>ではなく<code>structuredContent</code>直下になる。tool登録、legacy接続、OAuth更新をmigration testしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Model Context Protocol / GitHub</span>
+        <a class="card-link" href="https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.4.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-23 / 切替: 11月上旬まで</span>
+      </div>
+      <h2 class="card-title">【PayPay／eKYC】本人確認書類の撮影申請を廃止しIC読取へ統一</h2>
+      <p class="card-summary">マイナンバーカード、運転免許証、運転経歴証明書を使うeKYCは、11月上旬までに書類画像の撮影方式を廃止しIC chip読取方式へ統一する。2027年4月の犯罪収益移転防止法施行規則改正に先行する対応で、PayPay app 4.28.0以上が必要。CAFIS／ADAPTISの接続変更ではないが、国内walletの本人確認運用ではNFC対応端末、暗証番号忘れ時の別flow、対象外在留card、support案内と離脱率を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">PayPay</span>
+        <a class="card-link" href="https://about.paypay.ne.jp/pr/20261023/01/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">【Mastercard／欧州】First-Party Trustを拡張、紛争証拠を取引時にも共有</h2>
+      <p class="card-summary">merchantは購入・配送・認証情報などをauthorization時またはdispute時にissuerへ共有でき、Mastercardのrisk model signalと新しいcompelling evidence ruleで真正な購入とthird-party fraudを識別する。要件を満たす紛争にはmerchant chargeback protectionも示した。東欧・中東・Africaは2026年10月、Europe全域は2027年7月の提供予定。国内CAFIS／ADAPTISへの直接変更ではなく、越境加盟店は証拠field、保存期間、同意、dispute提出経路をacquirerと確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://www.mastercard.com/news/europe/en/newsroom/press-releases/en/2026/mastercard-expands-first-party-trust-program-to-help-european-merchants-from-rising-friendly-fraud/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発効: 2026-10-24</span>
+      </div>
+      <h2 class="card-title">【Visa／豪州】token発行・Visa SecureでSMS OTP単独依存を終了</h2>
+      <p class="card-summary">Australiaのissuerは、token provisioningまたはVisa Secure requestで複数の認証方式を実装し、SMS OTPを唯一のdelivery channelにしないstep-up認証と、biometric対応deviceでのbiometric認証をともにsupportする必要がある。例としてbiometrics、out-of-band、mobile banking appが挙げられる。日本やCAFIS／ADAPTISへの同一rule適用は確認できないが、豪州発行cardを扱う事業者はchallenge、fallback、device binding、認証失敗理由をissuer／acquirerと確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://africa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-22（日本時間）</span>
+      </div>
+      <h2 class="card-title">【Stripe／Android】PaymentSheetにTouch 'n GoとTrueMoneyを追加</h2>
+      <p class="card-summary">Android SDK 23.25.0はTouch 'n Goのpayment／setupとTrueMoneyのpaymentに必要なAPI bindingとPaymentSheet supportを追加した。Address Elementでは未保存の住所変更を破棄する前に確認を出す。CAFIS／ADAPTISとは別系統の国外PSP更新だが、Asia向けwalletを扱うappはbackendのPaymentIntent／SetupIntent、対応国・通貨、walletから戻るflow、住所画面の自動testを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-android/releases/tag/v23.25.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-23（日本時間）</span>
+      </div>
+      <h2 class="card-title">【Stripe／Node】webhook secretの空白検査とasync署名処理を修正</h2>
+      <p class="card-summary">Node SDK 23.0.1はASCII whitespaceだけのwebhook signing secretをHMAC keyとして使わず拒否する。<code>EventNotificationHandler.handle()</code>をasync signature verificationへ変えてWeb Crypto providerでも動作させ、retry前に破棄するfetch responseをabortして未読bodyを閉じる。API v2 Searchと自動paginationも追加した。CAFIS／ADAPTISとは別系統だが、Stripe接続はsecret設定、edge runtime、通知型のfallback、retry時のconnection資源をtestしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-node/releases/tag/v23.0.1" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>

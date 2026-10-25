@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-24</title>
+  <title>AI News Daily — 2026-10-25</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -210,15 +210,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-24</span>
+    <span class="site-date">2026-10-25</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-24</a>
+    <a class="archive-link current" href="./index.html">2026-10-25</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-24.html">2026-10-24</a>
     <a class="archive-link" href="./archive/2026-10-23.html">2026-10-23</a>
     <a class="archive-link" href="./archive/2026-10-22.html">2026-10-22</a>
     <a class="archive-link" href="./archive/2026-10-21.html">2026-10-21</a>
@@ -246,136 +247,136 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月24日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月25日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-24（日本時間）</span>
-      </div>
-      <h2 class="card-title">Claude Code 2.1.310、gateway互換fallbackとhook回避を修正</h2>
-      <p class="card-summary">Bedrock、Vertex、Foundryやtelemetry無効環境でもMonitor toolとplugin monitorを使えるようにし、長いforeground sleepを遮断する。互換gatewayが<code>effort-2025-11-24</code> beta値や会話途中のsystem messageを拒否した場合は、それらを外して再試行する。WindowsでGit Bashがなくhook commandが引用文字列だけのときにPreToolUse／PermissionRequestを通過していた問題も修正した。代替gateway、hookのfail-closed動作、symlink先表示、長大transcriptのcompactionを回帰確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Anthropic / GitHub</span>
-        <a class="card-link" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.310" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-24（日本時間）</span>
-      </div>
-      <h2 class="card-title">MCP TypeScript SDK 2.4、Skills配布とrefresh scopeを追加</h2>
-      <p class="card-summary">実験的なSkills over MCPでserverがskill folderを公開し、clientが一覧・読込・検証できる。OAuth serverがrefresh時の<code>scope</code>を要求する場合のopt-in hookと、gatewayが<code>_meta</code>付き通知を転送できる<code>ServerEvent.params</code>も追加した。一方、数値parameterの<code>x-mcp-header</code>は拒否され、旧revisionの<code>outputSchema</code>結果は<code>structuredContent.result</code>ではなく<code>structuredContent</code>直下になる。tool登録、legacy接続、OAuth更新をmigration testしたい。</p>
-      <div class="card-footer">
-        <span class="card-source">Model Context Protocol / GitHub</span>
-        <a class="card-link" href="https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.4.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-24（日本時間）</span>
-      </div>
-      <h2 class="card-title">Google ADK 2.13、typed routingとMongoDB memoryを追加</h2>
-      <p class="card-summary"><code>TypesafeClassifier</code>と<code>ClassifierNode</code>でcalibrated probabilityによるworkflow分岐を行い、MongoDB共有sessionとembedding不要のkeyword memory、Gemini STT／TTSのbarge-in対応を加えた。提供元はstring-model agentのturnを最大8倍高速化したとしている。telemetryの既定はOpenTelemetry GenAI v2へ移り、<code>call_llm</code> spanを削除する破壊的変更も含む。routing閾値、memory削除、複数runner、旧dashboard queryを確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Google ADK / GitHub</span>
-        <a class="card-link" href="https://github.com/google/adk-python/releases/tag/v2.13.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-23（日本時間）</span>
-      </div>
-      <h2 class="card-title">Codex 0.164、MCP認証・credential maskingとsandboxを強化</h2>
-      <p class="card-summary">enterprise MCPへCodex account grantまたは専用sign-inで接続でき、secret必須OAuth clientにも対応した。対応するremote Bash commandとZsh snapshot sessionではcustom provider由来を含むcredentialをmaskし、macOSでは大文字小文字を変えたmetadata pathと実行file探索に使う置換可能symlinkへのsandbox検査を強化する。compaction失敗時のpartial summary混入と圧縮historyからのresumeも修正した。MCP再認証、remote shell log、symlink攻撃、resumeを確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">OpenAI Codex / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/codex/releases/tag/rust-v0.164.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-23（日本時間）</span>
-      </div>
-      <h2 class="card-title">OpenAI Python 3.37、Decisions instructionをstructured partsへ拡張</h2>
-      <p class="card-summary">Live responseのDecisions questionにある<code>instructions</code>が、文字列だけでなくtext・image・JSON partのlistも取りうるようになった。request inputも追加のmessage roleとtool-history itemを受け付ける。minor releaseだがbreaking changeとして告知されており、<code>.strip()</code>など文字列前提の処理やexhaustive type checkは失敗しうる。既存の文字列入力は有効なため、両形式のparse、保存、UI表示、tool履歴の再送を試したい。</p>
-      <div class="card-footer">
-        <span class="card-source">OpenAI Python / GitHub</span>
-        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.37.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-10-23 / 切替: 11月上旬まで</span>
-      </div>
-      <h2 class="card-title">【PayPay／eKYC】本人確認書類の撮影申請を廃止しIC読取へ統一</h2>
-      <p class="card-summary">マイナンバーカード、運転免許証、運転経歴証明書を使うeKYCは、11月上旬までに書類画像の撮影方式を廃止しIC chip読取方式へ統一する。2027年4月の犯罪収益移転防止法施行規則改正に先行する対応で、PayPay app 4.28.0以上が必要。CAFIS／ADAPTISの接続変更ではないが、国内walletの本人確認運用ではNFC対応端末、暗証番号忘れ時の別flow、対象外在留card、support案内と離脱率を確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">PayPay</span>
-        <a class="card-link" href="https://about.paypay.ne.jp/pr/20261023/01/" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
         <span class="card-date">発表: 2026-10-22</span>
       </div>
-      <h2 class="card-title">【Mastercard／欧州】First-Party Trustを拡張、紛争証拠を取引時にも共有</h2>
-      <p class="card-summary">merchantは購入・配送・認証情報などをauthorization時またはdispute時にissuerへ共有でき、Mastercardのrisk model signalと新しいcompelling evidence ruleで真正な購入とthird-party fraudを識別する。要件を満たす紛争にはmerchant chargeback protectionも示した。東欧・中東・Africaは2026年10月、Europe全域は2027年7月の提供予定。国内CAFIS／ADAPTISへの直接変更ではなく、越境加盟店は証拠field、保存期間、同意、dispute提出経路をacquirerと確認したい。</p>
+      <h2 class="card-title">Agentic AI Foundation、Agent Skillsなど4プロジェクトを受け入れ</h2>
+      <p class="card-summary">Linux Foundation傘下のAAIFに、AnthropicのAgent Skills、OpenAIのOpen Responses、Hugging FaceのOpenEnv、AlibabaのOpenSandboxが加わった。再利用できるagent能力、複数providerに共通のresponse schema、container化したRL環境、Docker／Kubernetes対応sandboxをvendor-neutralな管理下に置く。導入側は各providerの対応範囲を確認しつつ、skill、model interface、評価環境、実行隔離を交換可能な層として試せる。</p>
       <div class="card-footer">
-        <span class="card-source">Mastercard</span>
-        <a class="card-link" href="https://www.mastercard.com/news/europe/en/newsroom/press-releases/en/2026/mastercard-expands-first-party-trust-program-to-help-european-merchants-from-rising-friendly-fraud/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Linux Foundation</span>
+        <a class="card-link" href="https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開ベータ: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">Cohere Model Vault、推論中データを保護するConfidential Computingを公開</h2>
+      <p class="card-summary">Azure上のNVIDIA H100で、CPU／GPU memoryとCPU・GPU間通信をhardware隔離し、prompt、文書、応答を処理中も保護する。clientは送信前にhardware、firmware、software構成のremote attestationを検証し、policy不一致ならrequestを送らない。payloadは証明済み環境までend-to-endで暗号化される。公開ベータは既存のModel Vault APIを使えるが、適用時はattestation policy、鍵管理、対応region、障害時のfail-closedを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cohere</span>
+        <a class="card-link" href="https://cohere.com/blog/introducing-confidential-computing-on-cohere-model-vault" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">一般提供: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">SageMaker AI、GPUを管理せず独自の学習loopを書けるTraining Sessionsを提供</h2>
+      <p class="card-summary">localのPythonからstatefulなGPU sessionへ<code>sample</code>、<code>forward_backward</code>、<code>optim_step</code>、checkpoint操作を呼び、SFT、preference optimization、GRPO／PPOなどのRLを組める。AWSがGPU割当、分散実行、gradient同期、fault recovery、LoRA読込を担い、利用者はdata、reward、curriculumを制御する。GPU操作はtoken課金で、local reward計算中はGPU料金を計上しないとしている。対応model／region、quota、checkpoint数と停止処理を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">AWS</span>
+        <a class="card-link" href="https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">一般提供: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">Claude Platform、Anthropic管理のGoogle Cloud経路で全API機能を提供</h2>
+      <p class="card-summary">Google Cloud IAM、請求、commitment消化を使いながらnative Claude APIと同日提供の機能へ接続できる経路が一般提供になった。Managed Agents、code execution、computer use、Agent Skills、Files、citations、web search、MCP connector、prompt caching、batchを含み、US／Global endpointを提供する。Anthropicがdata processorになるため、Google管理経路のdata residencyやModel Armorが必要なworkloadとは分け、IAM、endpoint、discount、監査境界を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">Cohere Rerank 5、passage抽出と校正済みrelevance scoreを追加</h2>
+      <p class="card-summary"><code>rerank-v5.0-pro</code>と低latency向け<code>fast</code>を一般提供し、Context Focusが文書内の有用な範囲をcharacter spanで返す。<code>relevance_score</code>は有用である確率として校正され、固定top-kではなくthresholdでLLMへ渡す文書を決めやすくした。API、Model Vault、Microsoft Foundry、SageMaker、VPC／on-premで利用できる。benchmarkは提供元評価なので、既存corpusで日本語、threshold、token削減と回答品質を測りたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cohere</span>
+        <a class="card-link" href="https://docs.cohere.com/v2/changelog/rerank-v5" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発効: 2026-10-24</span>
+        <span class="card-date">公表: 2026-10-23</span>
       </div>
-      <h2 class="card-title">【Visa／豪州】token発行・Visa SecureでSMS OTP単独依存を終了</h2>
-      <p class="card-summary">Australiaのissuerは、token provisioningまたはVisa Secure requestで複数の認証方式を実装し、SMS OTPを唯一のdelivery channelにしないstep-up認証と、biometric対応deviceでのbiometric認証をともにsupportする必要がある。例としてbiometrics、out-of-band、mobile banking appが挙げられる。日本やCAFIS／ADAPTISへの同一rule適用は確認できないが、豪州発行cardを扱う事業者はchallenge、fallback、device binding、認証失敗理由をissuer／acquirerと確認したい。</p>
+      <h2 class="card-title">【国内電子マネー】Value Cardで不正アクセス、管理情報の一部が流出</h2>
+      <p class="card-summary">バリューデザインは、発行会社向けhouse電子マネー「Value Card」のserverが第三者の不正アクセスを受け、管理情報の一部が外部流出したと公表した。一部導入企業へ進捗を通知し、外部専門機関と全serviceの脆弱性を再点検する。CAFIS／ADAPTISへの侵害・接続影響は公表されていない。独自Pay運用側はprovider通知、残高・credentialの監視、無効化と再発行、incident時の連絡・照合手順を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">バリューデザイン</span>
+        <a class="card-link" href="https://www.valuedesign.jp/news/info/20261023" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-15</span>
+      </div>
+      <h2 class="card-title">【国内PSP】メルカリ、GMO-PG経由でForterの不正判定を本格導入</h2>
+      <p class="card-summary">Forterは取引要求時に承認、拒否、3-D Secure推奨の三択を返し、GMO-PGの決済systemと組み合わせて低risk取引の認証負荷と目視確認を抑える。先行検証のGMVやchargebackの改善値は各社発表として扱う。CAFIS／ADAPTISへの直接変更は確認されていないが、国内PSP経由の実装例として、加盟店は判定理由、3DS routing、false positive、fallback、chargeback責任とmodel更新時の監視を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GMO-PG / Forter / メルカリ</span>
+        <a class="card-link" href="https://group.gmo/news/article/10241/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-09</span>
+      </div>
+      <h2 class="card-title">【国内不正対策】2026年版report、低額不正と決済外に残るcard情報を警告</h2>
+      <p class="card-summary">かっことリンクの年次reportは、2025年のcard情報流出を21件・24万6,474件と集計し、件数は減っても不正利用額は500億円超で高止まり、1万円以下の低額不正が約3割へ増えたとする。流出元が決済systemではなく会員・point管理に残るcard情報だった事例も取り上げた。CAFIS固有変更ではない国内動向として、加盟店・PSPは決済外も含むcard data discovery、PCI DSS範囲、3DS後の低額監視と返金詐欺対応を点検したい。</p>
+      <div class="card-footer">
+        <span class="card-source">かっこ / リンク</span>
+        <a class="card-link" href="https://cacco.co.jp/frauddetection/media/data/11204/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公表: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">【国内EC／不正ログイン】運営担当者の57.4%が実被害または大量試行を経験</h2>
+      <p class="card-summary">サイバーセキュリティ連盟がWeb・Web serviceの運営担当者500人を調査し、21.0%が不正ログインの実被害、36.4%が大量試行を検知したと回答した。実被害経験者の17.1%は調査・復旧・顧客対応などの事後費用を1,000万円以上とした。CAFIS／ADAPTISへの直接変更ではないが、EC・会員基盤は多要素認証、credential stuffingの検知、rate limit、account復旧、決済前後のrisk signal連携とincident費用を点検したい。</p>
+      <div class="card-footer">
+        <span class="card-source">サイバーセキュリティ連盟 / かっこ</span>
+        <a class="card-link" href="https://cacco.co.jp/news/20261021_press/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">【Visa／法人決済】仮想カード不正対策3機能とagent請求支払いの実取引pilot</h2>
+      <p class="card-summary">Visa Commercial Fraud Solutionsは、支払先supplierの照合、3-D Secureによる仮想card利用者認証、金額・業種・地域・時刻の取引controlを組み合わせる。前二者はpilotで2027年一般提供予定、controlは対象国のeligible issuer向けに提供中。BILL／Billtrustとのpilotでは共有login情報を使わず、token化credentialとTrusted Agent Protocolで承認済み請求をagentが処理する。日本・CAFIS／ADAPTISへの適用は未確認で、法人card側は提供地域、認証主体、approval権限と監査logを確認したい。</p>
       <div class="card-footer">
         <span class="card-source">Visa</span>
-        <a class="card-link" href="https://africa.visa.com/content/dam/VCOM/download/about-visa/visa-rules-public.pdf" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-22（日本時間）</span>
-      </div>
-      <h2 class="card-title">【Stripe／Android】PaymentSheetにTouch 'n GoとTrueMoneyを追加</h2>
-      <p class="card-summary">Android SDK 23.25.0はTouch 'n Goのpayment／setupとTrueMoneyのpaymentに必要なAPI bindingとPaymentSheet supportを追加した。Address Elementでは未保存の住所変更を破棄する前に確認を出す。CAFIS／ADAPTISとは別系統の国外PSP更新だが、Asia向けwalletを扱うappはbackendのPaymentIntent／SetupIntent、対応国・通貨、walletから戻るflow、住所画面の自動testを確認したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Stripe / GitHub</span>
-        <a class="card-link" href="https://github.com/stripe/stripe-android/releases/tag/v23.25.0" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">決済</span>
-        <span class="card-date">公開: 2026-10-23（日本時間）</span>
-      </div>
-      <h2 class="card-title">【Stripe／Node】webhook secretの空白検査とasync署名処理を修正</h2>
-      <p class="card-summary">Node SDK 23.0.1はASCII whitespaceだけのwebhook signing secretをHMAC keyとして使わず拒否する。<code>EventNotificationHandler.handle()</code>をasync signature verificationへ変えてWeb Crypto providerでも動作させ、retry前に破棄するfetch responseをabortして未読bodyを閉じる。API v2 Searchと自動paginationも追加した。CAFIS／ADAPTISとは別系統だが、Stripe接続はsecret設定、edge runtime、通知型のfallback、retry時のconnection資源をtestしたい。</p>
-      <div class="card-footer">
-        <span class="card-source">Stripe / GitHub</span>
-        <a class="card-link" href="https://github.com/stripe/stripe-node/releases/tag/v23.0.1" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://investor.visa.com/news/news-details/2026/Visa-Announces-Enhanced-Capabilities-That-Can-Bring-Trust-and-Control-to-the-Future-of-Business-Payments/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
