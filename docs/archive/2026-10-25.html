@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-25</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-25</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-25</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月25日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">発表: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">Agentic AI Foundation、Agent Skillsなど4プロジェクトを受け入れ</h2>
+      <p class="card-summary">Linux Foundation傘下のAAIFに、AnthropicのAgent Skills、OpenAIのOpen Responses、Hugging FaceのOpenEnv、AlibabaのOpenSandboxが加わった。再利用できるagent能力、複数providerに共通のresponse schema、container化したRL環境、Docker／Kubernetes対応sandboxをvendor-neutralな管理下に置く。導入側は各providerの対応範囲を確認しつつ、skill、model interface、評価環境、実行隔離を交換可能な層として試せる。</p>
+      <div class="card-footer">
+        <span class="card-source">Linux Foundation</span>
+        <a class="card-link" href="https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開ベータ: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">Cohere Model Vault、推論中データを保護するConfidential Computingを公開</h2>
+      <p class="card-summary">Azure上のNVIDIA H100で、CPU／GPU memoryとCPU・GPU間通信をhardware隔離し、prompt、文書、応答を処理中も保護する。clientは送信前にhardware、firmware、software構成のremote attestationを検証し、policy不一致ならrequestを送らない。payloadは証明済み環境までend-to-endで暗号化される。公開ベータは既存のModel Vault APIを使えるが、適用時はattestation policy、鍵管理、対応region、障害時のfail-closedを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cohere</span>
+        <a class="card-link" href="https://cohere.com/blog/introducing-confidential-computing-on-cohere-model-vault" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">一般提供: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">SageMaker AI、GPUを管理せず独自の学習loopを書けるTraining Sessionsを提供</h2>
+      <p class="card-summary">localのPythonからstatefulなGPU sessionへ<code>sample</code>、<code>forward_backward</code>、<code>optim_step</code>、checkpoint操作を呼び、SFT、preference optimization、GRPO／PPOなどのRLを組める。AWSがGPU割当、分散実行、gradient同期、fault recovery、LoRA読込を担い、利用者はdata、reward、curriculumを制御する。GPU操作はtoken課金で、local reward計算中はGPU料金を計上しないとしている。対応model／region、quota、checkpoint数と停止処理を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">AWS</span>
+        <a class="card-link" href="https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">一般提供: 2026-10-22</span>
+      </div>
+      <h2 class="card-title">Claude Platform、Anthropic管理のGoogle Cloud経路で全API機能を提供</h2>
+      <p class="card-summary">Google Cloud IAM、請求、commitment消化を使いながらnative Claude APIと同日提供の機能へ接続できる経路が一般提供になった。Managed Agents、code execution、computer use、Agent Skills、Files、citations、web search、MCP connector、prompt caching、batchを含み、US／Global endpointを提供する。Anthropicがdata processorになるため、Google管理経路のdata residencyやModel Armorが必要なworkloadとは分け、IAM、endpoint、discount、監査境界を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://claude.com/resources/articles/claude-models-on-google-cloud-anthropic-managed" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">Cohere Rerank 5、passage抽出と校正済みrelevance scoreを追加</h2>
+      <p class="card-summary"><code>rerank-v5.0-pro</code>と低latency向け<code>fast</code>を一般提供し、Context Focusが文書内の有用な範囲をcharacter spanで返す。<code>relevance_score</code>は有用である確率として校正され、固定top-kではなくthresholdでLLMへ渡す文書を決めやすくした。API、Model Vault、Microsoft Foundry、SageMaker、VPC／on-premで利用できる。benchmarkは提供元評価なので、既存corpusで日本語、threshold、token削減と回答品質を測りたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Cohere</span>
+        <a class="card-link" href="https://docs.cohere.com/v2/changelog/rerank-v5" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公表: 2026-10-23</span>
+      </div>
+      <h2 class="card-title">【国内電子マネー】Value Cardで不正アクセス、管理情報の一部が流出</h2>
+      <p class="card-summary">バリューデザインは、発行会社向けhouse電子マネー「Value Card」のserverが第三者の不正アクセスを受け、管理情報の一部が外部流出したと公表した。一部導入企業へ進捗を通知し、外部専門機関と全serviceの脆弱性を再点検する。CAFIS／ADAPTISへの侵害・接続影響は公表されていない。独自Pay運用側はprovider通知、残高・credentialの監視、無効化と再発行、incident時の連絡・照合手順を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">バリューデザイン</span>
+        <a class="card-link" href="https://www.valuedesign.jp/news/info/20261023" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-15</span>
+      </div>
+      <h2 class="card-title">【国内PSP】メルカリ、GMO-PG経由でForterの不正判定を本格導入</h2>
+      <p class="card-summary">Forterは取引要求時に承認、拒否、3-D Secure推奨の三択を返し、GMO-PGの決済systemと組み合わせて低risk取引の認証負荷と目視確認を抑える。先行検証のGMVやchargebackの改善値は各社発表として扱う。CAFIS／ADAPTISへの直接変更は確認されていないが、国内PSP経由の実装例として、加盟店は判定理由、3DS routing、false positive、fallback、chargeback責任とmodel更新時の監視を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GMO-PG / Forter / メルカリ</span>
+        <a class="card-link" href="https://group.gmo/news/article/10241/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-09</span>
+      </div>
+      <h2 class="card-title">【国内不正対策】2026年版report、低額不正と決済外に残るcard情報を警告</h2>
+      <p class="card-summary">かっことリンクの年次reportは、2025年のcard情報流出を21件・24万6,474件と集計し、件数は減っても不正利用額は500億円超で高止まり、1万円以下の低額不正が約3割へ増えたとする。流出元が決済systemではなく会員・point管理に残るcard情報だった事例も取り上げた。CAFIS固有変更ではない国内動向として、加盟店・PSPは決済外も含むcard data discovery、PCI DSS範囲、3DS後の低額監視と返金詐欺対応を点検したい。</p>
+      <div class="card-footer">
+        <span class="card-source">かっこ / リンク</span>
+        <a class="card-link" href="https://cacco.co.jp/frauddetection/media/data/11204/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公表: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">【国内EC／不正ログイン】運営担当者の57.4%が実被害または大量試行を経験</h2>
+      <p class="card-summary">サイバーセキュリティ連盟がWeb・Web serviceの運営担当者500人を調査し、21.0%が不正ログインの実被害、36.4%が大量試行を検知したと回答した。実被害経験者の17.1%は調査・復旧・顧客対応などの事後費用を1,000万円以上とした。CAFIS／ADAPTISへの直接変更ではないが、EC・会員基盤は多要素認証、credential stuffingの検知、rate limit、account復旧、決済前後のrisk signal連携とincident費用を点検したい。</p>
+      <div class="card-footer">
+        <span class="card-source">サイバーセキュリティ連盟 / かっこ</span>
+        <a class="card-link" href="https://cacco.co.jp/news/20261021_press/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">【Visa／法人決済】仮想カード不正対策3機能とagent請求支払いの実取引pilot</h2>
+      <p class="card-summary">Visa Commercial Fraud Solutionsは、支払先supplierの照合、3-D Secureによる仮想card利用者認証、金額・業種・地域・時刻の取引controlを組み合わせる。前二者はpilotで2027年一般提供予定、controlは対象国のeligible issuer向けに提供中。BILL／Billtrustとのpilotでは共有login情報を使わず、token化credentialとTrusted Agent Protocolで承認済み請求をagentが処理する。日本・CAFIS／ADAPTISへの適用は未確認で、法人card側は提供地域、認証主体、approval権限と監査logを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa</span>
+        <a class="card-link" href="https://investor.visa.com/news/news-details/2026/Visa-Announces-Enhanced-Capabilities-That-Can-Bring-Trust-and-Control-to-the-Future-of-Business-Payments/default.aspx" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
