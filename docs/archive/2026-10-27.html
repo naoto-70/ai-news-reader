@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-27</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-27</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-27</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月27日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">提供開始: 2026-10-25</span>
+      </div>
+      <h2 class="card-title">Hinoki Offensive One、攻撃視点のcode監査modelを公開提供</h2>
+      <p class="card-summary">HinokiのHO1はDeepSeek V4.1 Flashをoffensive security向けにpost-trainingしたmodelで、AgentQueueからrepository全体またはdiffを読み取り、severity・確信度・file／line・攻撃scenario・修正案を返す。提供元はCyberGym 88.4%を報告するが、独立評価ではなく実repositoryの検出力を保証しない。導入時は対象systemの明示的な許可、read-only範囲、検出根拠の人手検証、false positive、修正後の再scanを運用に組み込みたい。</p>
+      <div class="card-footer">
+        <span class="card-source">AgentQueue / Hinoki</span>
+        <a class="card-link" href="https://www.agentqueue.dev/launches/hinoki/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-24</span>
+      </div>
+      <h2 class="card-title">Nanbeige4.3-33B、512K contextのagent modelをApache 2.0で公開</h2>
+      <p class="card-summary">Nanbeigeは33B parameterのdense reasoning／agent modelとbase modelを公開した。chat templateはthinkingの有効化と過去turnのreasoning保持を個別に制御でき、tool useではXMLまたはJSON形式を選べる。最大contextは524,288 tokenで、Transformers、SGLang、vLLMの実行例を用意する。weightsはApache 2.0だが、提供元benchmarkと実運用は分け、512K入力時のmemory、prefill latency、tool-call parser、remote code依存を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Nanbeige / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-20</span>
+      </div>
+      <h2 class="card-title">GoogleとMeta、TPUをnative PyTorch deviceにするTorchTPUを公開</h2>
+      <p class="card-summary">TorchTPUはGoogle TPUを標準PyTorch tensorの<code>tpu</code> deviceとして扱い、eager実行から<code>torch.compile</code>、<code>torch.distributed</code>へ移せるopen source backend。Transformers v5は<code>device_map="tpu"</code>に対応し、vLLM・SGLang・TorchTitan・Ray・llm-dへ統合した。既存PyTorch/XLAは11月15日にarchive予定のため、対応model、custom operator、Pallas kernel、数値差、compile時間、監視とrollbackを先に検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Google Cloud / Meta</span>
+        <a class="card-link" href="https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開beta: 2026-10-20</span>
+      </div>
+      <h2 class="card-title">AWS、Trainium向けnative PyTorch backend「TorchNeuron」をopen source化</h2>
+      <p class="card-summary">TorchNeuronはPyTorch codeを原則<code>.to('neuron')</code>へ切り替えてTrainium2／3で動かすApache 2.0のbackendで、eager実行、<code>torch.compile</code>、標準APIとNeuron Kernel Interfaceのcustom operatorを扱う。Hugging FaceのTransformers、Diffusers、PEFT、TRLにもnative deviceとして組み込まれた。public betaのため、未対応operator、compile cache、checkpoint移植性、分散学習の障害復旧、GPU比較のcost・throughputを自分のworkloadで測りたい。</p>
+      <div class="card-footer">
+        <span class="card-source">AWS</span>
+        <a class="card-link" href="https://aws.amazon.com/about-aws/whats-new/2026/10/aws-announce-native-pytorch-support-trainium/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-25</span>
+      </div>
+      <h2 class="card-title">Stately Agent alpha.32、forkしたagent runのcache混線を防止</h2>
+      <p class="card-summary"><code>@statelyai/agent</code> 2.0.0-alpha.32は、fork後も親runの<code>executionId</code>を使い続け、同じcall siteのcacheが親の結果を返し得た問題を修正した。forkごとに新しい<code>metadata.executionId</code>と親を示す<code>forkedFrom</code>を記録し、親logをfork threadへ渡す操作も拒否する。durable agentをbranch・再開する実装では、既存snapshotの移行、cache key、event-log storeのconformance、fork直後の再実行結果を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stately / GitHub</span>
+        <a class="card-link" href="https://github.com/statelyai/agent/releases/tag/%40statelyai%2Fagent%402.0.0-alpha.32" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-26 / 開始: 2026-12</span>
+      </div>
+      <h2 class="card-title">【国内加盟店】おまいりPay、賽銭・目的別寄進へcard決済を拡大</h2>
+      <p class="card-summary">寺社向け「おまいりPay」は、従来の拝観料・授与品・御朱印に加え、12月から賽銭と本堂修復・文化財保全などの目的別寄進へ対応する。参拝者はNFC card、Web、QR codeから決済pageを開き、credit cardで支払う。CAFIS／ADAPTISへの直接変更や接続仕様は今回の出典にない。国内加盟店serviceの関連動向として、用途別入金の集計、上限、返金、寺社名を決済事業者へ開示しない運用の範囲を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">バリューデザイン / おまいりPay</span>
+        <a class="card-link" href="https://about.omairipay.jp/news/261026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-23 / 開始: 2026-11-01</span>
+      </div>
+      <h2 class="card-title">【国内POS】ユビレジ、11月の免税refund方式へ購入情報をQR連携</h2>
+      <p class="card-summary">ユビレジは11月1日開始の新免税制度に向け、スマートデタックスと連携した。店舗は税込で会計し、receiptの免税用QR codeをapplicationで読むと購入情報が渡り、旅行者はpassport情報と紐づけて消費税相当額のrefund手続きを進める。CAFIS／ADAPTISへの直接変更は公表されていない。加盟店側は通常売上とrefundの突合、取消・返品、QR再発行、端末・network障害時の手順、11月1日の切替判定を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">ユビレジ</span>
+        <a class="card-link" href="https://corp.ubiregi.jp/press/2026/10/23/12531/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">【口座振替API】GoCardless、webhookが参照APIより最大3分先行</h2>
+      <p class="card-summary">GoCardlessはpeak時にwebhookが他のAPIより最大3分先へ進み、通知直後のresource取得では古いstatusが返り得ると開発者向け変更履歴へ明記した。可能ならwebhookを変更のsource of truthとし、取得結果がeventより古い場合は2、4、8、16秒と間隔を延ばし、約3分までretryする。CAFIS／ADAPTISへの直接関係はないが、非同期決済連携の参考としてevent IDの冪等処理、version比較、retry上限、監視alertを点検したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GoCardless</span>
+        <a class="card-link" href="https://docs.gocardless.com/docs/api-reference/changelog" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-19</span>
+      </div>
+      <h2 class="card-title">【Mastercard／別rail】fiatからstablecoinまでを同一APIでrisk判定</h2>
+      <p class="card-summary">Mastercardはpayment文脈とblockchain分析を組み合わせ、on-chain移動前から詐欺、sanctions、資金源、restricted partyへのexposureを採点するStablecoin Securityを発表した。platform非依存APIとして既存のfraud・compliance・case管理へ組み込み、北米で先行し世界提供は2027年を予定する。CAFIS／ADAPTISへの採用・接続は確認されていない別railの動向であり、利用時はscore説明、誤検知、data所在、case連携、法域別ruleを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard</span>
+        <a class="card-link" href="https://www.mastercard.com/global/en/news-and-trends/press/2026/october/Mastercard-brings-risk-intelligence-to-stablecoin-payments.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-21</span>
+      </div>
+      <h2 class="card-title">【国外資金管理】Stripe Treasury、agentの送金にhuman approvalを設定</h2>
+      <p class="card-summary">Stripe Treasury for agentsはMCP経由で残高、subscription、失敗決済、refundを参照し、口座間振替や請求支払いをagentから準備できる。account・dataごとにread／write権限を選び、資金移動をhuman approval必須にでき、agent別の支出上限も追加予定。米国等のStripe Treasury向け機能でCAFIS／ADAPTISへの直接影響はない。参考動向として、最小権限、承認者分離、金額上限、監査log、replay／重複送金防止を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe</span>
+        <a class="card-link" href="https://stripe.com/jp/newsroom/news/treasury-for-agents" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
