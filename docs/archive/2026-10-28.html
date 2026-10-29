@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-28</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-28</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-28</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月28日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">提供開始: 2026-10-26</span>
+      </div>
+      <h2 class="card-title">OpenAI、視覚推論とcomputer use向けGPT-6.1 Terraを提供</h2>
+      <p class="card-summary">GPT-6.1 Terraは画面・図面の理解とcomputer useを重視したmodelで、APIでは<code>gpt-6.1-terra</code>として利用できる。標準価格は100万token当たり入力1ドル、cached入力0.05ドル、出力5ドル。OpenAIは速度・精度・prompt injection耐性の改善を報告するがprovider評価である。請求書入力やdesktop操作へ使う際は、実dataで認識精度、action失敗時のretry、外部命令の分離、実行前承認を検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://openai.com/index/introducing-gpt-6-1-terra/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-27</span>
+      </div>
+      <h2 class="card-title">Liquid AI、edge向けtri-hybrid model群LFM3を公開</h2>
+      <p class="card-summary">LFM3は1.7Bの共通backboneからtext、vision、audio、omni、decisionの6 modelを展開するopen-weight群。backboneは13のgated convolution、5のsliding-window attention、6のglobal attentionで構成し、22兆tokenのpretraining後にtool callを含む3.5兆tokenでmid-trainingした。256K contextと単一GPUでのfine-tuningを掲げるが、速度・benchmark値はprovider測定のため、対象deviceでmemory、量子化差、tool call、licenseを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Liquid AI / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/LiquidAI/lfm3" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-27</span>
+      </div>
+      <h2 class="card-title">Baidu、超長文書を固定参照で処理するUnlimited-OCR-2を公開</h2>
+      <p class="card-summary">MIT licenseの3B model Unlimited-OCR-2は、Sparse Reference Sliding Window Attentionで超長sequenceのtext・visual attentionを512 tokenなど固定長の作業参照へ圧縮し、文書が長くなってもdecode step当たりのmemoryとlatencyをほぼ一定に保つ。複数pageを一度に渡すTransformers実行と、page windowを使うSGLang servingを公開した。SOTAはprovider主張であり、remote code、専用dependency、GPU memory、page境界の結合、実帳票でのOCR精度を検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Baidu / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/baidu/Unlimited-OCR-2" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">資料更新: 2026-10-27</span>
+      </div>
+      <h2 class="card-title">Qwen-Audio 3.1 Realtime、semantic turn検出とspeaker追従に対応</h2>
+      <p class="card-summary">Alibaba CloudはQwen-Audio 3.1 Realtime Plus／Flashの実装資料を更新した。full-duplex接続でtext・audioをstreamし、acoustic VAD、意味を加味する<code>smart_turn</code>、push-to-talkを選べるほか、対象話者の事前音声を渡してbackground音声を抑える。3.0からWebSocket event protocolは変わらずmodel IDと対応voiceを更新する。履歴は最大50 turn・音声300秒のため、移行時はvoice、turn境界、function call、切断復旧を試したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Alibaba Cloud Model Studio</span>
+        <a class="card-link" href="https://www.alibabacloud.com/help/en/model-studio/qwen-audio-realtime-user-guides" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-26</span>
+      </div>
+      <h2 class="card-title">Hugging Face、共有cache・Job webhook・Sandboxをhf CLIへ追加</h2>
+      <p class="card-summary"><code>huggingface_hub</code>／<code>hf</code> CLIは、複数repositoryで同じXet fileを一度だけ保存する共有cacheとfile単位の削除を追加した。Jobsはretry・rerun・schedule変更・port公開に加え、repository／Storage Bucket更新をwebhookで受けて同じJobを起動できる。実験的Sandboxは隔離machineでagent生成codeを実行する。更新前にcache共有時の削除、webhook重複、secret権限、Sandboxのnetwork・cost・終了処理を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/huggingface/whats-new-in-the-hf-cli-and-huggingface-hub-librar" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-28（JST）</span>
+      </div>
+      <h2 class="card-title">【海外PSP SDK】Checkout.com Node 5.8、fetch clientの全PATCH失敗を修正</h2>
+      <p class="card-summary">Checkout.com Node SDK 5.8.0は、default fetch clientがHTTP methodを大文字化せず全PATCH requestが400になっていた問題を修正した。axios利用時は対象外。runtime dependencyもaxios 1.20.0とfollow-redirects 1.16.1へ更新し、公開advisoryを解消したとしている。CAFIS／ADAPTISとは別PSPで国内接続への直接影響は確認されていない。採用者はPATCH系の更新・取消、dependency lock、Issuing card制御を回帰testしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Checkout.com / GitHub</span>
+        <a class="card-link" href="https://github.com/checkout/checkout-sdk-node/releases/tag/5.8.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-28（JST）</span>
+      </div>
+      <h2 class="card-title">【口座振替SDK】GoCardless Node 11.2、filter値のpercent encodingを修正</h2>
+      <p class="card-summary">GoCardless Nodeは11.1.1でGET parameterを正しくpercent-encodeするよう修正した。従来は値中の<code>&amp;</code>が追加filterや<code>limit</code>として解釈され、<code>+</code>や<code>%XX</code>も変化し得た。直後の11.2.0はpayment responseへcustomerまたはmandateを埋め込む<code>include</code>も追加した。CAFIS／ADAPTISとは別の口座振替APIだが、採用者は11.2への更新、特殊文字を含むfilter、response肥大化、logの個人情報を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GoCardless / GitHub</span>
+        <a class="card-link" href="https://github.com/gocardless/gocardless-nodejs/releases" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-26</span>
+      </div>
+      <h2 class="card-title">【海外PSP SDK】Stripe iOS 26.15.1、CocoaPods supportを終了</h2>
+      <p class="card-summary">Stripe iOS SDK 26.15.1はCocoaPods supportを削除し、Swift Package Managerへの移行を求める。同時に、Apple Payのavailability確認が遅い場合にReact Native applicationがSDK初期化中に停止する問題を修正した。CAFIS／ADAPTISへの直接変更はなく、Stripeを組み込むmobile加盟店向けの変更である。Pod固定の解除、SPM package解決、binary size、Apple Pay非対応・低速端末、React Native bridgeの起動を更新前に確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe / GitHub</span>
+        <a class="card-link" href="https://github.com/stripe/stripe-ios/releases/tag/26.15.1" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-20</span>
+      </div>
+      <h2 class="card-title">【国内PSP API】GMO-PG、tokenized cardへmpanRequestTypeを追加</h2>
+      <p class="card-summary">GMO-PGのPGマルチペイメントOpenAPI v2.2.0は、credit cardの都度支払いrequestへ<code>creditInformation.tokenizedCard.mpanRequestType</code>を追加した。公開変更履歴には値や必須条件の説明がないため、推測せず契約者向け仕様で確認する必要がある。CAFIS／ADAPTISへの直接変更や接続関係は出典に記載されていない。採用加盟店は利用可能version・環境、token種別ごとの設定、未指定時、未知値、logとretryを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GMOペイメントゲートウェイ</span>
+        <a class="card-link" href="https://dev.docs.gmo-pg.com/mulpay/apis/openapi-type/changelog" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-19</span>
+      </div>
+      <h2 class="card-title">【国内PSP】GMO-PG、PGマルチペイメントへBitCashを追加</h2>
+      <p class="card-summary">GMO-PGはPGマルチペイメントサービスで、プリペイド式電子マネーBitCashの取扱開始を発表した。購入者はcardに記載された「ひらがなID」を決済画面へ入力し、個人情報を入力せず支払う。OpenAPI変更履歴では<code>WalletType</code>の<code>BITCASH</code>追加が5月に公開済みで、今回は商用提供の案内に当たる。CAFIS／ADAPTISとの直接関係は公表されていない。加盟店は契約・審査、入金消込、取消・返金、test手段を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">GMOペイメントゲートウェイ</span>
+        <a class="card-link" href="https://www.gmo-pg.com/news/news/info/2026/1019.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
