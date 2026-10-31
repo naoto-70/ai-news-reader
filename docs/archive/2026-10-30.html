@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-10-30</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-10-30</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-10-30</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-29.html">2026-10-29</a>
+    <a class="archive-link" href="./2026-10-28.html">2026-10-28</a>
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月30日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-29</span>
+      </div>
+      <h2 class="card-title">OpenAI、frontier modelのmisalignment監視を4層で運用</h2>
+      <p class="card-summary">OpenAIは、training・evaluation・社内利用・一部の外部deploymentを対象に、agentの不正行動を検出する多層監視を公開した。L0のactivation probeは高recallで選別し、未検知trafficも無作為に5%をL1へ送る。L1は会話・chain of thought・tool use、L2は全contextと隔離環境でのcode実行、L3はnetwork log・telemetry・過去事例を突合する。個別sampleのRL rewardは変えず非同期で監視する。APIで自動停止できるのは対応する会話追跡を使うtool付きResponses APIで、Chat Completionsは対象外のため、外部agentは監視範囲とwebhookを設計時に確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI</span>
+        <a class="card-link" href="https://openai.com/index/how-we-detect-frontier-model-misalignment/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-29</span>
+      </div>
+      <h2 class="card-title">Google Gen AI Python SDK 2.34、Interactions APIの継続処理を追加</h2>
+      <p class="card-summary">Google Gen AI Python SDK 2.34.0は、<code>continuation_token</code>・<code>requires_continuation</code>・<code>continuation_ids</code>と、<code>interactions.create</code>の自動継続を追加した。Gemini Developer APIのvideo理解、video upscale、Live API接続ごとのbase URL・API version・header指定も入る。Python 3.15を追加する一方、3.10のsupportは終了した。request単位のAuthorizationと<code>X-Server-Timeout</code>がclient既定headerへ残る問題も修正しており、upgrade時は長時間interactionの再開、custom endpoint、header分離、runtime versionを回帰testしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Google / GitHub</span>
+        <a class="card-link" href="https://github.com/googleapis/python-genai/releases/tag/v2.34.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-29</span>
+      </div>
+      <h2 class="card-title">IBM Granite Switch 4.1.1、base modelを再学習せず音声・判断adapterを更新</h2>
+      <p class="card-summary">Granite Switch 4.1.1は4.1互換のpatch releaseで、10言語・句読点・大文字化に対応するGranite Speech ASRと、Jev Decision Indexで性能を改善した<code>granitelib-core</code>のDecision adapterを更新した。IBMはbase modelへ手を入れず、新しいASR modelとadapterだけを学習・合成したとしている。modular modelをsoftwareのpatchのように差し替える構成で、Adapter SDKとtutorialは今後提供予定。採用時は4.1 checkpointとの互換性だけでなく、言語別ASR、句読点、decision確率、adapter versionの固定を検証したい。</p>
+      <div class="card-footer">
+        <span class="card-source">IBM Granite / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-29</span>
+      </div>
+      <h2 class="card-title">Apple向けopen model package、音声認識と確率付き判断を共通API化</h2>
+      <p class="card-summary">Swift packageのAnySpeechRecognizerはAppleのSpeechAnalyzerに近いAPIで、Parakeet・Qwen3-ASRをCore MLで端末内実行し、話者分離も扱う。AnyDecisionModelはyes／no、選択式、ratingを生成textではなくmodel確率からtyped resultとして返し、MLX・Core AI・llama.cpp・Jev・Ollama backendを切り替えられる。modelはHugging Face Hubから取得して端末上で動く。Apple platformで音声→分類を組む際は、package間の依存version、model配布、offline時の取得、backendごとの確率calibrationを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/anydecisionmodel" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-29</span>
+      </div>
+      <h2 class="card-title">Mistral Large 4、1T規模open weightをTransformers・vLLM・llama.cppで提供</h2>
+      <p class="card-summary">Mistral Large 4は約1T total・49B active parameter、1M token contextのmultimodal MoE。各tokenで128 expertから4個と共有expertを使い、MLAでKVを圧縮しながらDSAが最大2,048の参照位置を選ぶ。公式FP8・NVFP4とcommunity GGUFが公開され、Transformers・vLLM・llama.cpp、TRL fine-tuningが初日対応した。NVFP4はBlackwell GPUが必要で、GGUF量子化のmemory・速度や8 GPU endpoint値は提供元／community測定を含む。licenseのMaaS制限、reasoningを無効化できない挙動、hardware別の品質・費用を先に評価したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/mistral-large4" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">適用: 2026-10</span>
+      </div>
+      <h2 class="card-title">【Visa rule／国内運用】手動売上確定の期限超過にPIPFを適用</h2>
+      <p class="card-summary">Stripeの日本向け公式案内によると、Visaは10月から、規定内に売上確定または取消されないauthorizationへProcessing Integrity Program Feeを適用する。国内発行・円建ては30日だが、海外発行・円建ては対面5日、非対面10日、MIT 5日など取引種別で短く、Stripeのmerchant向け期限30日より早い場合がある。即時確定は変更なし。CAFIS／ADAPTISへの直接変更は確認されていないbrand ruleで、各acquirer／PSPの適用条件を確認し、履行後のcapture、離脱時の<code>PaymentIntent</code>取消、期限前の自動確定を見直したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe</span>
+        <a class="card-link" href="https://support.stripe.com/questions/visa-processing-integrity-program-fee-%28pipf%29-in-japan?locale=ja-JP" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-29</span>
+      </div>
+      <h2 class="card-title">【国内PSP】SBPS、UCP接続と購買・決済dataを試す検証環境を開発</h2>
+      <p class="card-summary">SBペイメントサービスは、Universal Commerce Protocol（UCP）のinterfaceで疑似AI agent serverと加盟店・EC／cart serverを接続し、商品検索から購入・決済連携までのdata受け渡しを確認する「AIコマースシミュレータ」を開発した。現在のchatはLLMへ接続せずkeyword・scenario方式、決済も資金移動のない疑似処理で、今後加盟店と実用性を検証する段階。CAFIS／ADAPTISとの接続は発表されていない。国内PSP・加盟店は、注文状態、同意証跡、決済手段提示、取消・再試行、UCPと既存checkoutの責任分界をPoCで確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">SBペイメントサービス</span>
+        <a class="card-link" href="https://www.sbpayment.jp/news/press/2026/20261029_001606/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-29 / 実施: 2026-11-12</span>
+      </div>
+      <h2 class="card-title">【口座直結rail】Bank Pay、11月12日未明に通信断の可能性</h2>
+      <p class="card-summary">日本電子決済推進機構は、11月12日1時〜6時のsystem maintenance中に通信断が発生する可能性を案内した。通信断時はBank Pay利用者appの決済・送金・請求書払と一部金融機関の口座登録、提携企業appの決済・口座登録が利用できない。Bank Pay加盟店appと加盟店管理systemは影響なしとしている。CAFIS／ADAPTISとは別railの直接運用情報であり、提携app・金融機関はtimeout時の状態照会、重複防止、再試行案内、maintenance時間後の未確定取引確認を準備したい。</p>
+      <div class="card-footer">
+        <span class="card-source">日本電子決済推進機構</span>
+        <a class="card-link" href="https://jeppo.jp/dl/information/20261029_BP.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-29</span>
+      </div>
+      <h2 class="card-title">【card運用】freee Mastercard、外部mail配信serviceで漏えいの可能性</h2>
+      <p class="card-summary">freeeは、提携card発行会社ライフカードが使うCuenote FCへの第三者不正accessにより、freee Mastercard利用者情報の一部が漏えいした可能性を公表した。原因・範囲・情報項目は調査中で、確認対象者にはライフカードが連絡する。freeeカード Unlimitedとfreee管理systemは対象外で、公表時点で二次被害は確認されていない。CAFIS／ADAPTISやauthorization処理の変更ではないが、issuer・提携先はmail配信SaaSのdata inventory、委託先incident通知、phishing監視と顧客連絡の正規channelを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">freee</span>
+        <a class="card-link" href="https://corp.freee.co.jp/news/20261029freee_announcement.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">追記: 2026-10-29 / 終了予定: 2027-01〜02</span>
+      </div>
+      <h2 class="card-title">【mobile wallet】楽天カードタッチ決済を終了しGoogle Payへ移行</h2>
+      <p class="card-summary">楽天ペイapp内のAndroid向け「楽天カードタッチ決済」は新規設定を9月30日に終了し、2027年1月中旬〜2月中旬にserviceを終える。10月28日からGoogle Payのタッチ決済を提供し、別途提供中のAndroid Google PayはQUICPay加盟店で、iOSのApple Payは引き続き利用できる。具体的な終了日は後日公表予定。CAFIS／ADAPTISへの直接変更は示されていないissuer wallet移行で、tokenの再設定要否、端末・brand表示、既存利用者への移行導線、旧service終了日のsupportを確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">楽天ペイ</span>
+        <a class="card-link" href="https://pay.rakuten.co.jp/news/nfc-android/?scid=wi_pay_notice_detail" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>

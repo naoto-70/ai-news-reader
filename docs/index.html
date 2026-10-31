@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI News Daily — 2026-10-30</title>
+  <title>AI News Daily — 2026-10-31</title>
   <style>
     :root {
       --bg: #f5f7fa;
@@ -212,15 +212,16 @@
 <header>
   <div class="header-inner">
     <span class="site-title">⚡ AI News Daily</span>
-    <span class="site-date">2026-10-30</span>
+    <span class="site-date">2026-10-31</span>
   </div>
 </header>
 
 <nav class="archive-nav">
   <div class="archive-nav-inner">
     <span class="archive-nav-label">Archive:</span>
-    <a class="archive-link current" href="./index.html">2026-10-30</a>
+    <a class="archive-link current" href="./index.html">2026-10-31</a>
     <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./archive/2026-10-30.html">2026-10-30</a>
     <a class="archive-link" href="./archive/2026-10-29.html">2026-10-29</a>
     <a class="archive-link" href="./archive/2026-10-28.html">2026-10-28</a>
     <a class="archive-link" href="./archive/2026-10-27.html">2026-10-27</a>
@@ -254,19 +255,32 @@
 </nav>
 
 <main>
-  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月30日版）</p>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（10月31日版）</p>
   <div class="cards">
     <!-- CARDS:START -->
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-29</span>
+        <span class="card-date">公開: 2026-10-30</span>
       </div>
-      <h2 class="card-title">OpenAI、frontier modelのmisalignment監視を4層で運用</h2>
-      <p class="card-summary">OpenAIは、training・evaluation・社内利用・一部の外部deploymentを対象に、agentの不正行動を検出する多層監視を公開した。L0のactivation probeは高recallで選別し、未検知trafficも無作為に5%をL1へ送る。L1は会話・chain of thought・tool use、L2は全contextと隔離環境でのcode実行、L3はnetwork log・telemetry・過去事例を突合する。個別sampleのRL rewardは変えず非同期で監視する。APIで自動停止できるのは対応する会話追跡を使うtool付きResponses APIで、Chat Completionsは対象外のため、外部agentは監視範囲とwebhookを設計時に確認したい。</p>
+      <h2 class="card-title">Clover 35B-A3B、block diffusionとMoEでagent推論を並列化</h2>
+      <p class="card-summary">Clover-35B-A3B-Previewは35B total・3B activeのMoE diffusion language modelで、thinking modeを備える。Bidirectional Gated DeltaNetは過去contextをrecurrent stateへ圧縮し、現在block内は双方向softmax attentionでdenoiseする。Apache licenseのweightとcodeを公開し、SGLang・llama.cppで推論できる。SWE-bench Verified 73.6やGB300で680 token/sなどは提供元benchmarkで独立評価ではない。導入時はcustom code、block長、量子化後の品質、agent harness込みの実測を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">DiffuSpace / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/Diffuspace/clover-35b-a3b-preview" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">発表: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">OpenAI、AI学習用途を示す共通robots.txt signalへ対応予定</h2>
+      <p class="card-summary">OpenAIは、foundation generative AIのtraining利用可否をwebsite運営者が複数providerへ共通に伝えるrobots.txt signalを尊重すると発表した。IETF AI Preferences working groupで策定中の自主的な仕組みで、provider別crawler ruleの保守負担を減らす狙い。実装は今後数か月で、詳細は後日公表する。既存のOpenAI crawler controlは置き換えず継続するため、site運営者は現行ruleを残し、共通信号の正式syntax・対象bot・反映時期を実装公表後に確認したい。</p>
       <div class="card-footer">
         <span class="card-source">OpenAI</span>
-        <a class="card-link" href="https://openai.com/index/how-we-detect-frontier-model-misalignment/" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://openai.com/index/helping-websites-express-ai-training-preferences/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
@@ -275,115 +289,102 @@
         <span class="card-tag">AI技術</span>
         <span class="card-date">公開: 2026-10-29</span>
       </div>
-      <h2 class="card-title">Google Gen AI Python SDK 2.34、Interactions APIの継続処理を追加</h2>
-      <p class="card-summary">Google Gen AI Python SDK 2.34.0は、<code>continuation_token</code>・<code>requires_continuation</code>・<code>continuation_ids</code>と、<code>interactions.create</code>の自動継続を追加した。Gemini Developer APIのvideo理解、video upscale、Live API接続ごとのbase URL・API version・header指定も入る。Python 3.15を追加する一方、3.10のsupportは終了した。request単位のAuthorizationと<code>X-Server-Timeout</code>がclient既定headerへ残る問題も修正しており、upgrade時は長時間interactionの再開、custom endpoint、header分離、runtime versionを回帰testしたい。</p>
+      <h2 class="card-title">Marin Snowball、pre-trainingからpost-trainingまでの系譜を公開</h2>
+      <p class="card-summary">Marin Snowball v0.1は67B total・2B activeのMoEで、10T tokenのpre-training後にSFT、verifiable rewardのRL、final-token preference optimization、model mergeを重ねた。14 model・15接続のDAGとしてcheckpoint、data、code、実験判断を追跡し、公開eval policyとFLOP調整比較、agent実行のLM-Marinaも公開する。GPT-OSS級という品質評価と9〜15か月差は提供元推定で、FLOP比較も方法論が未成熟と明記。再利用時は公開lineageとtask別退行を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Google / GitHub</span>
-        <a class="card-link" href="https://github.com/googleapis/python-genai/releases/tag/v2.34.0" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Open Athena</span>
+        <a class="card-link" href="https://openathena.ai/blog/post-training-in-the-open/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-29</span>
+        <span class="card-date">公開: 2026-10-30</span>
       </div>
-      <h2 class="card-title">IBM Granite Switch 4.1.1、base modelを再学習せず音声・判断adapterを更新</h2>
-      <p class="card-summary">Granite Switch 4.1.1は4.1互換のpatch releaseで、10言語・句読点・大文字化に対応するGranite Speech ASRと、Jev Decision Indexで性能を改善した<code>granitelib-core</code>のDecision adapterを更新した。IBMはbase modelへ手を入れず、新しいASR modelとadapterだけを学習・合成したとしている。modular modelをsoftwareのpatchのように差し替える構成で、Adapter SDKとtutorialは今後提供予定。採用時は4.1 checkpointとの互換性だけでなく、言語別ASR、句読点、decision確率、adapter versionの固定を検証したい。</p>
+      <h2 class="card-title">NVIDIA、local voice agentをASR・SLM・TTS・3D animationで構成</h2>
+      <p class="card-summary">MonsterHouseはNemotron 3 ASRで音声を文字化し、4GB版Nemotron 3.5 Bolt E4Bが応答、Magpie TTS Zeroshotが音声化、Audio2Face-3DがUnreal Engine 5の口を動かすlocal agent事例。Nemotron Voice Agentが一台のworkstation上でpipelineを統合し、LoRAでpersonalityを付与する。よく使う応答はtext・音声cacheへ逃がし、compute不足時はrouterとcacheだけでも運用できる。production応用では終話判定、先行発話、cache整合、GPU分離、音声権利を設計したい。</p>
       <div class="card-footer">
-        <span class="card-source">IBM Granite / Hugging Face</span>
-        <a class="card-link" href="https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">NVIDIA / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/nvidia/nemotron-halloween" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-29</span>
+        <span class="card-date">発表: 2026-10-29 / 開始: 2026-11-02</span>
       </div>
-      <h2 class="card-title">Apple向けopen model package、音声認識と確率付き判断を共通API化</h2>
-      <p class="card-summary">Swift packageのAnySpeechRecognizerはAppleのSpeechAnalyzerに近いAPIで、Parakeet・Qwen3-ASRをCore MLで端末内実行し、話者分離も扱う。AnyDecisionModelはyes／no、選択式、ratingを生成textではなくmodel確率からtyped resultとして返し、MLX・Core AI・llama.cpp・Jev・Ollama backendを切り替えられる。modelはHugging Face Hubから取得して端末上で動く。Apple platformで音声→分類を組む際は、package間の依存version、model配布、offline時の取得、backendごとの確率calibrationを確認したい。</p>
+      <h2 class="card-title">Project ProtoStar、科学dataset・model・codeをAI-ready形式で共有</h2>
+      <p class="card-summary">Hugging Face、CMUなどは、公的研究のdataset・model・codeをmachine-actionableな形式、metadata、provenance、documentation付きで公開・再利用するProject ProtoStarを始めた。最初のClimate Risk Intelligence Challengeは11月2〜13日、210都市の2018年までの気象から2019〜2026年を予測し、単純平均・線形trendと誤差を比較する。成果はHugging Face datasetとして提出し公開leaderboardで評価するため、科学AI向けdata contractと再現可能なbaseline設計の実例になる。</p>
       <div class="card-footer">
         <span class="card-source">Hugging Face</span>
-        <a class="card-link" href="https://huggingface.co/blog/anydecisionmodel" target="_blank" rel="noopener">詳細を見る →</a>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="card-meta">
-        <span class="card-tag">AI技術</span>
-        <span class="card-date">公開: 2026-10-29</span>
-      </div>
-      <h2 class="card-title">Mistral Large 4、1T規模open weightをTransformers・vLLM・llama.cppで提供</h2>
-      <p class="card-summary">Mistral Large 4は約1T total・49B active parameter、1M token contextのmultimodal MoE。各tokenで128 expertから4個と共有expertを使い、MLAでKVを圧縮しながらDSAが最大2,048の参照位置を選ぶ。公式FP8・NVFP4とcommunity GGUFが公開され、Transformers・vLLM・llama.cpp、TRL fine-tuningが初日対応した。NVFP4はBlackwell GPUが必要で、GGUF量子化のmemory・速度や8 GPU endpoint値は提供元／community測定を含む。licenseのMaaS制限、reasoningを無効化できない挙動、hardware別の品質・費用を先に評価したい。</p>
-      <div class="card-footer">
-        <span class="card-source">Hugging Face</span>
-        <a class="card-link" href="https://huggingface.co/blog/mistral-large4" target="_blank" rel="noopener">詳細を見る →</a>
+        <a class="card-link" href="https://huggingface.co/blog/announcing-project-protostar" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">適用: 2026-10</span>
+        <span class="card-date">発表: 2026-10-29 / 開始目標: 2027年初頭</span>
       </div>
-      <h2 class="card-title">【Visa rule／国内運用】手動売上確定の期限超過にPIPFを適用</h2>
-      <p class="card-summary">Stripeの日本向け公式案内によると、Visaは10月から、規定内に売上確定または取消されないauthorizationへProcessing Integrity Program Feeを適用する。国内発行・円建ては30日だが、海外発行・円建ては対面5日、非対面10日、MIT 5日など取引種別で短く、Stripeのmerchant向け期限30日より早い場合がある。即時確定は変更なし。CAFIS／ADAPTISへの直接変更は確認されていないbrand ruleで、各acquirer／PSPの適用条件を確認し、履行後のcapture、離脱時の<code>PaymentIntent</code>取消、期限前の自動確定を見直したい。</p>
+      <h2 class="card-title">【JCB／海外transit】ハノイ都市鉄道へタッチ決済導入を計画</h2>
+      <p class="card-summary">JCBとハノイメトロは、ハノイ市内の都市鉄道へJCBタッチ決済を導入するMOUを締結し、2027年初頭のservice開始を目指す。対応cardまたはJCBを設定したdeviceを改札機へかざして乗車する計画で、詳細な運賃計算・精算・他brand対応は公表していない。ベトナムの別networkでありCAFIS／ADAPTISへの直接接続や国内採用は確認できない。国内transit運用の参考として、gate認証、未確定運賃、token device、offline・再送時の責任分界を今後の仕様で確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">Stripe</span>
-        <a class="card-link" href="https://support.stripe.com/questions/visa-processing-integrity-program-fee-%28pipf%29-in-japan?locale=ja-JP" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">JCB / PR TIMES</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000001489.000011361.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-10-29</span>
+        <span class="card-date">発表: 2026-10-27</span>
       </div>
-      <h2 class="card-title">【国内PSP】SBPS、UCP接続と購買・決済dataを試す検証環境を開発</h2>
-      <p class="card-summary">SBペイメントサービスは、Universal Commerce Protocol（UCP）のinterfaceで疑似AI agent serverと加盟店・EC／cart serverを接続し、商品検索から購入・決済連携までのdata受け渡しを確認する「AIコマースシミュレータ」を開発した。現在のchatはLLMへ接続せずkeyword・scenario方式、決済も資金移動のない疑似処理で、今後加盟店と実用性を検証する段階。CAFIS／ADAPTISとの接続は発表されていない。国内PSP・加盟店は、注文状態、同意証跡、決済手段提示、取消・再試行、UCPと既存checkoutの責任分界をPoCで確認したい。</p>
+      <h2 class="card-title">【法人card運用】UPSIDER、利用明細・証憑を扱うMCP serverをβ提供</h2>
+      <p class="card-summary">UPSIDERは一部利用企業向けにMCP serverのβ版を開始した。AI agentからcard利用明細の参照・集計・分析、authorization baseのreal-time data取得、請求書・領収書のuploadと対象決済への紐付けを自然言語で実行でき、今後全利用企業への提供を予定する。決済authorization自体やCAFIS／ADAPTIS接続の変更は発表されていない。法人card運用では、agentのread／write権限、証憑の誤紐付け、承認、監査log、prompt injectionを含むdata境界を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">SBペイメントサービス</span>
-        <a class="card-link" href="https://www.sbpayment.jp/news/press/2026/20261029_001606/" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">UPSIDER</span>
+        <a class="card-link" href="https://corp-news.up-sider.com/261027-pr-1/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-10-29 / 実施: 2026-11-12</span>
+        <span class="card-date">公表: 2026-10-22 / 判明: 2026-10-14</span>
       </div>
-      <h2 class="card-title">【口座直結rail】Bank Pay、11月12日未明に通信断の可能性</h2>
-      <p class="card-summary">日本電子決済推進機構は、11月12日1時〜6時のsystem maintenance中に通信断が発生する可能性を案内した。通信断時はBank Pay利用者appの決済・送金・請求書払と一部金融機関の口座登録、提携企業appの決済・口座登録が利用できない。Bank Pay加盟店appと加盟店管理systemは影響なしとしている。CAFIS／ADAPTISとは別railの直接運用情報であり、提携app・金融機関はtimeout時の状態照会、重複防止、再試行案内、maintenance時間後の未確定取引確認を準備したい。</p>
+      <h2 class="card-title">【国内BNPL】NP後払い、請求書再発行systemへの機械的accessを確認</h2>
+      <p class="card-summary">ネットプロテクションズは、NP後払いの請求書再発行systemへ通常想定しない方法で連続requestが行われ、28,884件の氏名・住所などへ第三者がaccessしたと公表した。必要なsecurity対策を実施し、安全確認後に対象systemを再開予定。NP後払い本体は通常提供中で、公表時点に情報の不正利用は確認していない。CAFIS／ADAPTISやcard authorizationの変更ではないが、国内payment providerは再発行・照会APIのrate limit、bot検知、本人確認、返却項目、incident時の機能分離を点検したい。</p>
       <div class="card-footer">
-        <span class="card-source">日本電子決済推進機構</span>
-        <a class="card-link" href="https://jeppo.jp/dl/information/20261029_BP.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">ネットプロテクションズ</span>
+        <a class="card-link" href="https://corp.netprotections.com/news/info/corporate/20261022/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">発表: 2026-10-29</span>
+        <span class="card-date">発表: 2026-10-28</span>
       </div>
-      <h2 class="card-title">【card運用】freee Mastercard、外部mail配信serviceで漏えいの可能性</h2>
-      <p class="card-summary">freeeは、提携card発行会社ライフカードが使うCuenote FCへの第三者不正accessにより、freee Mastercard利用者情報の一部が漏えいした可能性を公表した。原因・範囲・情報項目は調査中で、確認対象者にはライフカードが連絡する。freeeカード Unlimitedとfreee管理systemは対象外で、公表時点で二次被害は確認されていない。CAFIS／ADAPTISやauthorization処理の変更ではないが、issuer・提携先はmail配信SaaSのdata inventory、委託先incident通知、phishing監視と顧客連絡の正規channelを確認したい。</p>
+      <h2 class="card-title">【国内PSP】ゼウス、B2B card決済の稼働加盟店が7,000社を突破</h2>
+      <p class="card-summary">ゼウスはB2B向けcard決済の新規稼働加盟店が7,000社を超えたと発表した。onlineのBizクレカ、対面端末、system接続型Connectを用意し、5月からは受発注・顧客・請求管理systemからAPIで決済URLを自動発行できる。URL決済はEMV 3-D Secureを標準搭載する。CAFIS／ADAPTISとの直接関係や接続変更は公表されていない。B2B導入では、注文確定・請求締めとの同期、支払状態の戻し、取消・返金、未収管理、3DS例外時の運用を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">freee</span>
-        <a class="card-link" href="https://corp.freee.co.jp/news/20261029freee_announcement.html" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">ゼウス</span>
+        <a class="card-link" href="https://www.cardservice.co.jp/release/2026/261028.html" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
 
     <article class="card">
       <div class="card-meta">
         <span class="card-tag">決済</span>
-        <span class="card-date">追記: 2026-10-29 / 終了予定: 2027-01〜02</span>
+        <span class="card-date">発表: 2026-10-28 / 連携: 順次</span>
       </div>
-      <h2 class="card-title">【mobile wallet】楽天カードタッチ決済を終了しGoogle Payへ移行</h2>
-      <p class="card-summary">楽天ペイapp内のAndroid向け「楽天カードタッチ決済」は新規設定を9月30日に終了し、2027年1月中旬〜2月中旬にserviceを終える。10月28日からGoogle Payのタッチ決済を提供し、別途提供中のAndroid Google PayはQUICPay加盟店で、iOSのApple Payは引き続き利用できる。具体的な終了日は後日公表予定。CAFIS／ADAPTISへの直接変更は示されていないissuer wallet移行で、tokenの再設定要否、端末・brand表示、既存利用者への移行導線、旧service終了日のsupportを確認したい。</p>
+      <h2 class="card-title">【加盟店platform】Cloud Pay、PASELIを共通QR・精算管理へ追加</h2>
+      <p class="card-summary">Digital Garage／DGFTは、Cloud PayとCloud Pay NeoにKONAMIの電子money「PASELI」を順次追加する。Cloud Payは一つのQRで複数code決済の契約・精算・管理をまとめ、Neoはcardなども扱う。今回の対象は主にamusement施設で、PASELIを既存設備・店舗運用へ統合する。CAFIS／ADAPTISとの直接接続変更は確認されていない国内PSPの加盟店側拡張。加盟店は対応開始日、契約・精算明細、返金、PASELI point、障害時のbrand切替を確認したい。</p>
       <div class="card-footer">
-        <span class="card-source">楽天ペイ</span>
-        <a class="card-link" href="https://pay.rakuten.co.jp/news/nfc-android/?scid=wi_pay_notice_detail" target="_blank" rel="noopener">詳細を見る →</a>
+        <span class="card-source">Digital Garage / DGFT</span>
+        <a class="card-link" href="https://www.garage.co.jp/pr/release/20261028/" target="_blank" rel="noopener">詳細を見る →</a>
       </div>
     </article>
     <!-- CARDS:END -->
