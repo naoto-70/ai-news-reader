@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-11-01</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-11-01</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-11-01</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-10-31.html">2026-10-31</a>
+    <a class="archive-link" href="./2026-10-30.html">2026-10-30</a>
+    <a class="archive-link" href="./2026-10-29.html">2026-10-29</a>
+    <a class="archive-link" href="./2026-10-28.html">2026-10-28</a>
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（11月1日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">GPT-Rosalind-6、GPT-6 Astraと同一weightを研究者向け制御で提供</h2>
+      <p class="card-summary">GPT-Rosalind-6はbiology・drug discovery・translational medicine向けのreasoning modelで、GPT-6 Astraと同じweightを使い、追加dataやpost-trainingはない。dual-use biologyで拒否を減らす代わりにqualified userだけのtrusted accessとし、用途・governance・security controlを審査する。OpenAIはBio/ChemをHigh、CyberをCritical、Self-ImprovementをHigh未満として扱う。一般APIの別modelとしてではなく、access審査・監視・model boundaryを含むdeployment設計として評価したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI Deployment Safety Hub</span>
+        <a class="card-link" href="https://deploymentsafety.openai.com/gpt-rosalind-6" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">LiteLLM、v1.107.0 supply-chain incident後のidentity設計を刷新</h2>
+      <p class="card-summary">LiteLLMは、maliciousなv1.107.0が正規pipelineからpublishされたincidentを踏まえ、March導入のisolated stage・trusted publishing・署名・immutable tagだけではorganization ownerのtoken奪取を防げなかったと整理した。日常用human ownerを置かず、release専用device／account、owner accountのAPI・OAuth利用禁止、token利用alert、GitHub Appや短命least-privilege credentialへ移す。該当artifactを実行した環境は別掲playbookで再構築・credential rotationが必要で、release provenanceだけでなくidentity経路を点検したい。</p>
+      <div class="card-footer">
+        <span class="card-source">LiteLLM</span>
+        <a class="card-link" href="https://docs.litellm.ai/blog/security-changes-after-oct-21-2026" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">告知: 2026-10-30 / 削除: 2026-11-30</span>
+      </div>
+      <h2 class="card-title">Claude Opus 4.8のfast mode、11月30日に削除</h2>
+      <p class="card-summary">AnthropicはClaude Opus 4.8のfast modeをdeprecatedとし、11月30日に削除する。削除後は<code>claude-opus-4-8</code>へ<code>speed: "fast"</code>を付けたrequestがerrorになるため、fast modeを継続する場合はClaude Opus 5.5へ移行する。通常modeのmodel終了とは別の変更。productionではmodel IDとspeed指定をinventory化し、fallbackがsilentに遅くなる想定ではなくerror pathをtestし、品質・latency・costをOpus 5.5で再計測したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Anthropic</span>
+        <a class="card-link" href="https://platform.claude.com/docs/en/release-notes/overview" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">release: 2026-10-31</span>
+      </div>
+      <h2 class="card-title">OpenAI Ruby SDK 0.115.0、agent context圧縮・review設定を型へ追加</h2>
+      <p class="card-summary">OpenAIのRuby SDK 0.115.0は、agent context compaction、session review／tool設定、experimental time awareness、hosted tool usage、session metadata filterなどのAPI schemaを型へ反映した。image edit markup、organization external key management、SIP DTMF、Responses WebSocket warmupも加わり、overlapping readの拒否やcustom HTTP clientでの明示的WebSocket transport要求も含む。upgrade時は生成typeの差分、experimental field、WebSocket concurrency、account側availabilityをtestしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI SDKs / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-ruby/releases/tag/v0.115.0" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">release: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">Vercel AI SDK、provider credentialをrequest単位のasync callbackで解決</h2>
+      <p class="card-summary">AI SDKのprovider utility更新は、API key／token設定にPromiseと同期・非同期callbackを受け取り、authenticated requestごとにcredentialを解決できるようにした。既存authentication動作と同期serializationは維持する。experimental OpenAI Liveの<code>getServerWebSocketConfig()</code>もasync解決できるため、connection設定の利用前にawaitが必要。multi-tenant gatewayではtenant分離、credential cache lifetime、失敗時の漏えい防止をtestし、関連package versionをそろえたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Vercel AI SDK / GitHub</span>
+        <a class="card-link" href="https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Fzai%403.0.44" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-30 / 開始: 2026-11-10</span>
+      </div>
+      <h2 class="card-title">【国内transit／別network】道南バス全路線へstera transitを拡大</h2>
+      <p class="card-summary">道南バスはタッチ決済乗車を全128路線・263台へ広げ、同日から胆振MaaS実証を始める。stera transitの乗車dataを分析し、三井住友カードのPass Caseではtaxi couponや施設特典付き企画券も販売する。CAFIS／ADAPTISへの直接変更・接続採用は公表されておらず、国内の別acceptance platform動向。11月10日の切替に向け、車載端末配備、card／device識別、取消・再乗車、精算照合、通信断時の扱いを関係仕様で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">QUADRACほか</span>
+        <a class="card-link" href="https://quadrac.co.jp/news/2167/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発表: 2026-10-28 / 開始予定: 2027-04-01</span>
+      </div>
+      <h2 class="card-title">【国内transit／別network】熊本「ふらピッと」、月額上限を複数交通へ合算</h2>
+      <p class="card-summary">熊本のbus・電鉄・市電6事業者は、stera transitへ定期相当serviceを実装する第1弾として「ふらピッと」を始める。登録したcard／deviceで乗降し、運賃額基準と月額上限を組み合わせ、対象事業者をまたいで合算する。Visa・Mastercard・JCBなど7brandを予定し、事前登録は2027年3月下旬。CAFIS／ADAPTISへの直接変更は確認できない。上限対象外路線、超過運賃、媒体変更、証明書審査、自動更新、既存定期との並行期間を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">JCBほか / PR TIMES</span>
+        <a class="card-link" href="https://prtimes.jp/main/html/rd/p/000001493.000011361.html" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">文書確認: 2026-11-01 / 移行期限: 2026-11-30</span>
+      </div>
+      <h2 class="card-title">【developer変更／別network】Stripe MCP、secret key認証を12月から制限</h2>
+      <p class="card-summary">Stripeの現行documentationは、11月30日までにMCP認証をAgent API keyまたはOAuthへ移すよう案内する。12月以降、full-access secret keyとAgent tagのないrestricted keyは受け付けず、該当requestはOAuth discovery challenge付き401となる。refundや送金など一部actionのhuman confirmationはclient側tool approvalとは別。CAFIS／ADAPTISとは別networkのdeveloper変更で、key inventory、least privilege、sandbox移行test、旧key失効、session revokeを期限前に確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe Docs</span>
+        <a class="card-link" href="https://docs.stripe.com/mcp" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">【送金／別network】Stripe Global Payouts、実運用で照合・高額上限を改善</h2>
+      <p class="card-summary">Stripeは自社vendor支払をGlobal Payoutsへ段階移行した結果として、送金前のrecipient data validation、payment固有referenceとinvoice metadata、受取人向けstatement descriptorを追加し、ACH／wireのOutbound Payments API上限を1億USDへ引き上げた。serviceは米英でgeneral availability、受取先は160超の国を対象とする。CAFIS／ADAPTISやcard authorizationの変更ではない別送金rail。高額送金ではapproval、上限、FX、return、reconciliation、recipient確認を金額別にtestしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stripe</span>
+        <a class="card-link" href="https://stripe.com/blog/stripe-on-stripe-what-we-learned-moving-1b-in-vendor-payments-to-global-payouts" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">告知: 2026-10-16 / 適用: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">【wallet／別network】PayPay、商品特定型の商品券ruleを利用規約へ追加</h2>
+      <p class="card-summary">PayPayは残高利用規約の第2編へ「PayPay商品券（商品特定型）の購入および付与」を追加し、10月30日に適用した。card brand networkやCAFIS／ADAPTISの接続変更ではなく、wallet残高と用途限定valueのrule追加。加盟店・campaign運用では、対象商品／店舗の判定、購入と付与の区別、残高typeごとのledger、利用順序、取消・返金、失効時の表示を改定規約と個別条件で確認し、通常残高と混在する画面・CS案内を更新したい。</p>
+      <div class="card-footer">
+        <span class="card-source">PayPay</span>
+        <a class="card-link" href="https://paypay.ne.jp/notice/20261016/t-paypaybalanceterms/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
