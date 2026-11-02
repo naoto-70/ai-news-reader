@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-11-02</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-11-02</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-11-02</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-11-01.html">2026-11-01</a>
+    <a class="archive-link" href="./2026-10-31.html">2026-10-31</a>
+    <a class="archive-link" href="./2026-10-30.html">2026-10-30</a>
+    <a class="archive-link" href="./2026-10-29.html">2026-10-29</a>
+    <a class="archive-link" href="./2026-10-28.html">2026-10-28</a>
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（11月2日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">pre-release: 2026-10-31</span>
+      </div>
+      <h2 class="card-title">Stately Agent alpha.35、変更後のportでもrecordingを再生可能に</h2>
+      <p class="card-summary">Stately Agent 2.0.0-alpha.35は、recording後にagentのmodel／tool呼び出しを追加・削除してもreplayを継続できる照合方式を導入した。model callはmethod・shape、toolはname・inputで未使用の最古recordを選び、<code>translate(recorded, actual)</code>、fallback、比較filter、normalizationも指定できる。decision modelのwrapとerror marker保持も追加された。pre-releaseのため、再現testで誤matchやfallbackを観測し、recording formatと移行手順を固定してから採用したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Stately / GitHub</span>
+        <a class="card-link" href="https://github.com/statelyai/agent/releases/tag/%40statelyai%2Fagent%402.0.0-alpha.35" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">rolling release: 2026-11-01</span>
+      </div>
+      <h2 class="card-title">llama.cpp、LFM3 tensor splitとOpenCL IQ3、Responses互換fixを連続投入</h2>
+      <p class="card-summary">llama.cppの11月1日rolling buildは、LFM3のtensor split、OpenCLでのIQ3初期対応、SYCL Level ZeroのPkgConfig修正を追加した。API側では<code>/v1/responses</code>の<code>extra_params</code>受け入れ、推論prefix共有範囲の修正も入る。Gemma 4の画像resize、InternVLのCLS token順、Hexagon DMA strideも修正された。複数backend・modelにまたがるため、利用中のbuildを固定し、quantization、multimodal前処理、Responses互換clientを個別に回帰testしたい。</p>
+      <div class="card-footer">
+        <span class="card-source">ggml-org / GitHub</span>
+        <a class="card-link" href="https://github.com/ggml-org/llama.cpp/releases" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">release: 2026-11-01</span>
+      </div>
+      <h2 class="card-title">OpenAI Python SDK 3.42.1、Responses WebSocketの接続挙動を修正</h2>
+      <p class="card-summary">OpenAI Python SDK 3.42.1は、Responses WebSocketのconnection behaviorを保持する修正、beta WebSocket authentication profileのvalidation、SDK管理のResponses policy helperを加えた。前日の各SDKへのWebSocket対応に続くcorrective releaseで、新APIの発表とは別。常時接続を使う実装ではupgrade後に再接続、認証profile、connection reuse、error recoveryをtestし、SDK側helperとapplication独自policyの責務を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">OpenAI / GitHub</span>
+        <a class="card-link" href="https://github.com/openai/openai-python/releases/tag/v3.42.1" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">公開: 2026-11-01</span>
+      </div>
+      <h2 class="card-title">ViKernel、agentの停止回路と監査chainをmodel配布物へ組み込む設計を公開</h2>
+      <p class="card-summary">ViKernelは、agentのpolicy circuit、署名付きboot integrity、停止は容易・再開は署名必須とする非対称control、hash-chain auditをmodel packageへ付加する設計を公開した。既存LLM／VLMのweight自体を変更せず接続でき、Gemma 4 4Bでdemo、Qwenでも検証したとする。661 runで未要求の外部transferが0件という数値を含め、評価は著者側の内部結果で独立検証ではない。導入時はbypass経路、key管理、audit保全、host権限との境界を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">FINAL-Bench / Hugging Face</span>
+        <a class="card-link" href="https://huggingface.co/blog/FINAL-Bench/vikernel-why-the-kill-switch-must-live-inside-the" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">AI技術</span>
+        <span class="card-date">pre-release: 2026-11-01</span>
+      </div>
+      <h2 class="card-title">Archestra 1.5 RC、agent runtimeをnamed tierとworkspace容量で標準化</h2>
+      <p class="card-summary">Archestra platform v1.5.0-rc.19は、agent runtimeへ名前付きtierを定義し、run sizeに応じてdefault／scale-up tierを選べるようにした。tierごとにworkspace volume sizeを設定でき、scale-up時の修復optionも追加する。agent fleetでCPU・memory・storageの組み合わせを共通化し、過小構成の再実行や過大構成のcostを制御しやすくなる。RCのため、queueing、scale-up条件、volume persistence、既存runとの互換をstagingで確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Archestra / GitHub</span>
+        <a class="card-link" href="https://github.com/archestra-ai/archestra/releases/tag/platform-v1.5.0-rc.19" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">sunset期間: 2026-05-01〜2026-10-31</span>
+      </div>
+      <h2 class="card-title">【業界共通】PCI 3DS SDK・CPoC・SPoCのsunset期間が終了</h2>
+      <p class="card-summary">PCI SSCが設定したPCI 3DS SDK、CPoC、SPoC各standardのsunset期間が10月31日に終了した。COTS端末向けには後継のPCI MPoCが案内されている。sunsetだけで全実装の失効を一律に断定できず、validationや利用条件はpayment brand・acquirer等のprogram確認が必要。対象solutionのlisting、vendor support、契約上の期限を棚卸しし、3DS SDK更新とCOTS移行のcertification計画を確認したい。CAFIS／ADAPTISの直接変更は公表資料で確認できない。</p>
+      <div class="card-footer">
+        <span class="card-source">PCI Security Standards Council</span>
+        <a class="card-link" href="https://www.pcisecuritystandards.org/standards/pci-3ds-sdk/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-05 / 発効: 2026-10-30</span>
+      </div>
+      <h2 class="card-title">【brand rule／AP含む】Visa、card-on-file token requestorへVCESを有効化</h2>
+      <p class="card-summary">VisaはVisa Credential Enrichment Service（VCES）を、Asia Pacificを含む対象地域のcard-on-file token requestorへ10月30日から有効化した。token provisioning改善を目的とし、既存のDigital Credential Service Fee以外の追加product feeはないと案内する。日本・各接続先での個別適用やCAFIS／ADAPTISへの直接変更は確認できない。token requestor／acquirerは有効化状況、provisioning応答、data利用条件、監視・rollbackを契約先資料で確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa Merchant Business News Digest</span>
+        <a class="card-link" href="https://www.visa.com/en-us/resources/visa-merchant-business-news-digest" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">公開: 2026-05 / 発効: 2026-10-24</span>
+      </div>
+      <h2 class="card-title">【brand rule／global】Visa、0120 confirmation adviceをservice stationへ拡張</h2>
+      <p class="card-summary">VisaはVisaNet Business Enhancementsで、MCC 5542のautomated fuel dispenserに適用していた0120 acquirer confirmation adviceを、10月24日からMCC 5541のservice stationへ拡張した。全地域・全productが対象とされる。CAFIS／ADAPTISでの実装変更は公開資料からは確認できないため、acquirer／processorは接続先bulletinを基準に、MCC判定、message mapping、再送・重複、reconciliationへの影響を確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Visa Merchant Business News Digest</span>
+        <a class="card-link" href="https://www.visa.com/en-us/resources/visa-merchant-business-news-digest" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">案内: 2026-06-01 / 適用: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">【国内brand rule】しんきんカード、全端末のtouch決済対応必須化を案内</h2>
+      <p class="card-summary">しんきんカードは加盟店向けに、国内card業界のrule変更として10月1日から「すべてのcredit card決済端末」でtouch決済対応が必須になると案内した。未対応端末の加盟店には同社への連絡を求めている。CAFIS／ADAPTISの直接仕様変更は示されておらず、契約acquirerごとの対応確認が必要。加盟店・端末事業者は対象端末、brand／AID、kernel認定、contactless上限、取消・返金、通信断・receipt運用を自社仕様で点検したい。</p>
+      <div class="card-footer">
+        <span class="card-source">しんきんカード</span>
+        <a class="card-link" href="https://www.shinkincard.co.jp/news/mmbr/20260601/" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta">
+        <span class="card-tag">決済</span>
+        <span class="card-date">発効: 2026-10-01</span>
+      </div>
+      <h2 class="card-title">【国外参考／Europe】Mastercard、stored credential tokenizationを必須化</h2>
+      <p class="card-summary">Mastercard Rulesは、Europe Regionの対象国でremote electronic transaction serviceを提供するacquirerとmerchant payment gateway等に、stored credentialのtokenization対応を10月1日から求める。Mastercard Secure Card on File APIまたはEMVCo準拠の第三者TSPを使う。日本・CAFIS／ADAPTISへの直接適用ではない国外動向。欧州merchant／acquiringを扱う事業者はstored PAN、token requestor／TSP、lifecycle更新、recurring／MIT、例外国を契約先ruleで確認したい。</p>
+      <div class="card-footer">
+        <span class="card-source">Mastercard Rules</span>
+        <a class="card-link" href="https://www.mastercard.com/content/dam/public/mastercardcom/na/global-site/documents/mastercard-rules.pdf" target="_blank" rel="noopener">詳細を見る →</a>
+      </div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
