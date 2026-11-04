@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-11-03</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-11-03</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-11-03</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-11-02.html">2026-11-02</a>
+    <a class="archive-link" href="./2026-11-01.html">2026-11-01</a>
+    <a class="archive-link" href="./2026-10-31.html">2026-10-31</a>
+    <a class="archive-link" href="./2026-10-30.html">2026-10-30</a>
+    <a class="archive-link" href="./2026-10-29.html">2026-10-29</a>
+    <a class="archive-link" href="./2026-10-28.html">2026-10-28</a>
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術2件 / 決済4件（11月3日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">案内更新: 2026-11-02 / 変更: 2026年12月</span></div>
+      <h2 class="card-title">ChatGPTとCodexの利用枠が12月から共通に</h2>
+      <p class="card-summary">ChatGPTとコーディング支援のCodexを併用する人は、12月から利用枠を共有する。対象はPlus・Pro・Businessで、処理する情報量と選ぶモデルに応じて枠を消費する一方、Instantチャットは対象外。設定の「使用状況」で残量とリセット時刻を確認できる予定だ。枠に達した場合は回復を待つほか、プラン変更や対象機能の追加クレジット購入を選べる。具体的な上限や開始日は今後の案内を確認したい。</p>
+      <div class="card-footer"><span class="card-source">OpenAI Help Center</span><a class="card-link" href="https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-02</span></div>
+      <h2 class="card-title">中国の美団、画像も理解する新AI「LongCat-2.5」を公開</h2>
+      <p class="card-summary">中国の美団は、画像の理解や複数段階のプログラム開発を重視した新しいAIモデルを発表した。同社はWebサイトで試せ、開発者向けのAPIからも利用できると案内している。中国製の計算基盤で学習し、長い作業の途中でツールを使う能力を強化したという。性能の比較は提供元による評価で、独立した実利用の結果とは区別したい。料金、利用地域、入力データの扱いを確認してから試したい。</p>
+      <div class="card-footer"><span class="card-source">美団 / LongCat</span><a class="card-link" href="https://www.meituan.com/news/NN261102280001343" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">本番開始予定: 2026-11-01</span></div>
+      <h2 class="card-title">【国内決済】Apple PayのVisaで金額変更・継続決済に対応へ</h2>
+      <p class="card-summary">SMBCマルチペイメントサービスは、従来非対応だったApple PayのVisa取引で、金額変更と会員IDを使った決済の本番提供を11月1日に予定した。利用には加盟店専用の支払い用番号であるMPANを使う方式と、指定のVisaカード会社契約が必要。CAFIS／ADAPTISの直接変更は確認できない。加盟店は契約条件、導入方式、継続課金や金額変更、失敗時の再認証を接続先の仕様で確認したい。</p>
+      <div class="card-footer"><span class="card-source">SMBCマルチペイメントサービス</span><a class="card-link" href="https://docs.smbc-gp.co.jp/mulpay/docs/payment-method/credit/applepay/visa-mpan" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">案内: 2026-10-21 / 適用: 2026-11-01</span></div>
+      <h2 class="card-title">【国内EC】海外発行カードの与信確保期間を5日に短縮</h2>
+      <p class="card-summary">ネットショップ構築サービスのショップサーブは、11月1日以降の注文について、海外発行カードの与信枠の確保期間を14日から5日へ短縮した。受注日を含む5日以内に売上確定を行わないと与信枠が解除され、本人認証が適用されない状態での決済になると案内する。同社サービスでの運用変更で、全事業者に同じ日数が適用されるとは限らない。加盟店は海外発行の判定、出荷日、確定期限、失効後の再認証を確認したい。CAFIS／ADAPTISへの直接変更は未確認。</p>
+      <div class="card-footer"><span class="card-source">ショップサーブ</span><a class="card-link" href="https://sp.estore.jp/sps/info/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-10-30 / 事業化目標: 2027年度</span></div>
+      <h2 class="card-title">【決済センター動向】CARDNET、店頭決済から加盟店精算まで実証</h2>
+      <p class="card-summary">TISIと日本カードネットワークは、円・米ドルに連動するデジタル資産を使い、社員食堂で決済から売上確認、加盟店への精算、照合、経理まで検証した。レジの販売管理システムには接続せず専用端末を操作する限定的な実験で、一般店舗への提供開始ではない。TISIは2027年度の事業化を目指す。CAFIS／ADAPTISへの接続や採用は確認されておらず、別の決済センターの参考動向として、精算通貨、取引照合、返金と障害時の扱いを今後確認したい。</p>
+      <div class="card-footer"><span class="card-source">TISI / CARDNET</span><a class="card-link" href="https://www.tisi.jp/news/2026/tisi_news/20261030_1.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">案内: 2026-10-21 / 入金予定: 2026-11-16</span></div>
+      <h2 class="card-title">【加盟店精算】JMS、一部のコード決済売上で入金が遅延</h2>
+      <p class="card-summary">JMSは決済センターからの伝送遅延で、一部加盟店の10月15日分のコード決済売上について、入金が10月30日から11月16日になる見込みと案内した。対象はVEGA3000またはSATURN端末を利用し、月2回払い契約の一部加盟店。売上明細への反映も遅れている。CAFIS／ADAPTISとの直接の関係は確認できない。対象事業者は売上と入金予定を照合し、確定後の明細と資金繰りを確認したい。</p>
+      <div class="card-footer"><span class="card-source">JMS</span><a class="card-link" href="https://www.japanmerchantservices.com/info/index.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
