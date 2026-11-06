@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-11-05</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-11-05</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-11-05</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-11-04.html">2026-11-04</a>
+    <a class="archive-link" href="./2026-11-03.html">2026-11-03</a>
+    <a class="archive-link" href="./2026-11-02.html">2026-11-02</a>
+    <a class="archive-link" href="./2026-11-01.html">2026-11-01</a>
+    <a class="archive-link" href="./2026-10-31.html">2026-10-31</a>
+    <a class="archive-link" href="./2026-10-30.html">2026-10-30</a>
+    <a class="archive-link" href="./2026-10-29.html">2026-10-29</a>
+    <a class="archive-link" href="./2026-10-28.html">2026-10-28</a>
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済3件（11月5日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">公開: 2026-11-03</span></div>
+      <h2 class="card-title">Siriに話しかけてアプリを操作、開発者向けに試験開始</h2>
+      <p class="card-summary">Appleは、アプリ開発者が自社のアプリを新しいSiri AIにつなぐための試験提供を始めた。開発者が対応すれば、利用者は配達の確認や予約、注文などを自然な言葉で頼めるようになる。今回利用できるのは開発者向けの試験版で、対応アプリが一般利用者に広がる時期は今後の公開を待つ必要がある。</p>
+      <div class="card-footer"><span class="card-source">Apple Developer</span><a class="card-link" href="https://developer.apple.com/news/?id=gdk2umrf" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-03</span></div>
+      <h2 class="card-title">先生が授業に合わせてAI学習を割り当て可能に</h2>
+      <p class="card-summary">Googleは、教員が授業の教材に沿ったAI学習を生徒に割り当て、進み具合を確認できる機能をGoogle Classroomで世界向けに順次提供する。AIは答えをすぐに示すだけでなく、段階を追って考えるよう支援する。学校での実際の利用には、管理者による設定や提供状況の確認が必要だ。</p>
+      <div class="card-footer"><span class="card-source">Google for Education</span><a class="card-link" href="https://blog.google/products-and-platforms/products/education/guided-learning-uk-japan/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">案内: 2026-11-03</span></div>
+      <h2 class="card-title">ChatGPTに支出や貯蓄を声で相談、米国の家計機能で</h2>
+      <p class="card-summary">OpenAIは、対応する金融口座を連携して支出などを確認するChatGPTの家計機能で、音声による相談を案内した。たとえば、利用中の定期支払いを見直す際に声で質問できる。家計機能は米国向けで、日本での提供は確認されていない。金融口座の操作や送金を行う機能ではなく、回答や金額は元の明細でも確かめたい。</p>
+      <div class="card-footer"><span class="card-source">OpenAI / YouTube</span><a class="card-link" href="https://www.youtube.com/watch?v=63pcV4z0DwI" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-04</span></div>
+      <h2 class="card-title">Codexでコードを確認する機能、開発元の買収を発表</h2>
+      <p class="card-summary">OpenAIは、Codexのファイル閲覧や変更箇所の確認に使われている技術の開発元、Pierreの買収を発表した。買収完了後、同社のコード管理サービスをCodexに組み込む計画だ。現在も一部の技術はCodexで使われているが、新しい統合機能の提供日や具体的な使い方はまだ示されていない。</p>
+      <div class="card-footer"><span class="card-source">OpenAI</span><a class="card-link" href="https://openai.com/index/openai-to-acquire-pierre/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">公開: 2026-11-03</span></div>
+      <h2 class="card-title">社内AIが質問に応じて使うモデルを自動選択</h2>
+      <p class="card-summary">社内情報を探せるGleanのAIは、質問ごとに使うモデルと考える深さを自動で選ぶようになった。管理者は部署ごとに費用と性能の方針を指定でき、利用量が上限に近づいた際に費用を抑える設定も可能。対象はGleanが用意するモデル接続を使う環境で、回答には使用したモデルが表示される。</p>
+      <div class="card-footer"><span class="card-source">Glean</span><a class="card-link" href="https://docs.glean.com/release-notes/releases/2026-11-03-november-release" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">続報: 2026-11-02</span></div>
+      <h2 class="card-title">【国内決済・安全性】Vプリカの委託先で情報漏えい</h2>
+      <p class="card-summary">ライフカードは、Vプリカの委託先GMOペイメントゲートウェイのシステムで、69アカウントの情報が窃取されたと公表した。このうち3件はカード番号、専用セキュリティコード、有効期限と氏名を含む。対象者には個別に案内し、該当3件の不正利用は発表時点で確認されていない。CAFISとの直接の関係は公表されていない。事業者は委託先からの連絡経路や対象者への通知、停止・再開の判断を確認したい。</p>
+      <div class="card-footer"><span class="card-source">ライフカード</span><a class="card-link" href="https://vpc.lifecard.co.jp/vpreca_assets/pdf/important-notice3.pdf" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-10-29 / 英国から順次開始</span></div>
+      <h2 class="card-title">【海外・本人認証】Visaのパスキー決済、Adyenが英国から提供</h2>
+      <p class="card-summary">決済事業者Adyenは、Visaのパスキー認証を英国から順次提供すると発表した。対象の利用者は、オンライン決済時に端末のロック解除方法を使って本人確認できる。2027年には世界への拡大を予定する。CAFISや日本での採用は確認されていない。国内の決済担当者は、対応カードや端末、認証できない場合の代替手段を接続先に確認したい。</p>
+      <div class="card-footer"><span class="card-source">Adyen</span><a class="card-link" href="https://www.adyen.com/press-and-media/adyen-visa-payment-passkey" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-11-02 / 導入予定: 2026年内</span></div>
+      <h2 class="card-title">【国内店舗】JINSが携帯端末での会計を100店舗以上に導入へ</h2>
+      <p class="card-summary">眼鏡店のJINSは、Adyenの決済基盤を年内をめどに国内100店舗以上へ順次導入する。スタッフが携帯する端末で会計し、客がレジまで移動する手間や待ち時間を減らす狙いだ。別の決済事業者による国内店舗の動向で、CAFIS／ADAPTISとの直接関係は公表されていない。店舗運用では端末の通信障害時の対応、取消や売上照合の手順を契約先と確認したい。</p>
+      <div class="card-footer"><span class="card-source">Adyen</span><a class="card-link" href="https://www.adyen.com/ja_JP/press-and-media/adyen-powers-jins-across-150-stores-in-japan" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
