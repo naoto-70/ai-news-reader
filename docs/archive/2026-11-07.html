@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-11-07</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-11-07</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-11-07</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-11-06.html">2026-11-06</a>
+    <a class="archive-link" href="./2026-11-05.html">2026-11-05</a>
+    <a class="archive-link" href="./2026-11-04.html">2026-11-04</a>
+    <a class="archive-link" href="./2026-11-03.html">2026-11-03</a>
+    <a class="archive-link" href="./2026-11-02.html">2026-11-02</a>
+    <a class="archive-link" href="./2026-11-01.html">2026-11-01</a>
+    <a class="archive-link" href="./2026-10-31.html">2026-10-31</a>
+    <a class="archive-link" href="./2026-10-30.html">2026-10-30</a>
+    <a class="archive-link" href="./2026-10-29.html">2026-10-29</a>
+    <a class="archive-link" href="./2026-10-28.html">2026-10-28</a>
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（11月7日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-05</span></div>
+      <h2 class="card-title">Googleの動画生成、最大15秒に延長し料金を引き下げ</h2>
+      <p class="card-summary">Googleは、文章や画像から作れる動画を従来の最大10秒から15秒に延ばした「Gemini Omni 1.2 Flash」を提供開始した。作成後に背景や光の具合を追加の指示で変更できる。開発者向けの720p動画は1秒あたり0.07ドルで、従来版より30％安い。Google Vidsや開発者向けサービスで利用でき、GeminiアプリではAI Ultra加入者へ順次展開される。</p>
+      <div class="card-footer"><span class="card-source">Google</span><a class="card-link" href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">案内: 2026-11-05</span></div>
+      <h2 class="card-title">Perplexity、継続的な仕事を任せるAIを提供開始</h2>
+      <p class="card-summary">Perplexityは、調査や業務の進行管理を継続して任せられるAI「Teammates」を公開した。既存の資料や仕事の履歴を参照し、状況に応じて作業を進め、利用者が途中経過を確認できる。まず有料のMaxプランでウェブ版を提供し、iPhone版は今後予定する。連携するツールの権限や、作業結果の確認方法を決めて利用したい。</p>
+      <div class="card-footer"><span class="card-source">Perplexity</span><a class="card-link" href="https://www.perplexity.ai/hub/blog/teammates-are-agents-for-complex-ongoing-work" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-05 / 米国で順次試験提供</span></div>
+      <h2 class="card-title">Claudeに家計を相談、口座情報の読み取りに対応</h2>
+      <p class="card-summary">Anthropicは、連携した銀行やカードの残高・支出についてClaudeに質問できる機能を米国で順次試験提供する。対象はPro、Max、Ultraプラン。口座は利用者が承認して接続し、Claudeは情報を読み取るが送金や投資はできない。専用画面での会話はモデルの学習に使わないとしている。金額や判断に関わる回答は銀行の明細でも確かめたい。</p>
+      <div class="card-footer"><span class="card-source">Anthropic</span><a class="card-link" href="https://claude.com/resources/articles/introducing-personal-finance-in-claude" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-05</span></div>
+      <h2 class="card-title">システムの弱点を探すOpenAIの新モデル、承認済み組織へ</h2>
+      <p class="card-summary">OpenAIは、セキュリティ担当者がソフトウェアの弱点を調査し、修正を検証するための「GPT-6 Cyber」を発表した。利用は審査を受けた一部の組織に限られ、開発者向けサービスとCodexから提供する。OpenAIによるとFirefoxなどでの調査にも使われた。許可された範囲で調査を行い、結果を担当者が検証する運用が必要だ。</p>
+      <div class="card-footer"><span class="card-source">OpenAI</span><a class="card-link" href="https://openai.com/index/introducing-gpt-6-cyber/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-05</span></div>
+      <h2 class="card-title">企業向けClaude、情報の持ち出し防止やアクセス管理を強化</h2>
+      <p class="card-summary">Anthropicは、企業の管理者がClaudeの安全設定を確認し、社員の利用を管理する機能を拡充した。入力や外部ツールの呼び出しを企業の情報保護ツールで確認する機能は正式提供され、安全設定の一覧や組織の一元管理などは試験提供。機能によって対象や設定が異なるため、導入時はデータの送信先と社内ルールを確認したい。</p>
+      <div class="card-footer"><span class="card-source">Anthropic</span><a class="card-link" href="https://claude.com/resources/articles/claude-enterprise-security-updates" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-11-04 / 提供開始: 2026-09-01</span></div>
+      <h2 class="card-title">【カード会社】Mastercardと連携し、不正利用後の返金対応を支援</h2>
+      <p class="card-summary">双日テックイノベーションは、カード発行会社向けに、不正利用などの申立て後に行うチャージバック業務の支援サービスを提供していると発表した。Mastercardの連携機能を使い、申請や結果確認、案件の割り振り、明細の照合を支援する。CAFIS／ADAPTISとの直接接続は公表されていない。カード会社は対象ブランド、期限管理、例外案件の手動対応を提供元に確認したい。</p>
+      <div class="card-footer"><span class="card-source">双日テックイノベーション</span><a class="card-link" href="https://www.sojitz-ti.com/ja/press/261104.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">公表: 2026-11-05</span></div>
+      <h2 class="card-title">【国内決済・安全性】メール配信委託先の漏えい、GMO系2社に波及</h2>
+      <p class="card-summary">アララのメール配信サービスへの不正アクセスを受け、GMOペイメントサービスは委託先からの配信対象者の情報が最大106,997件漏えいしたと公表した。GMOイプシロンも別の配信サービスで加盟店のメールアドレス24,645件が漏えいしたと発表し、カード情報は対象外としている。両社はそれぞれ自社システム・サービスへの影響はないと説明。CAFISへの直接影響は確認されていない。対象者への連絡と、なりすましへの注意を確認したい。</p>
+      <div class="card-footer"><span class="card-source">GMOペイメントサービス / GMOイプシロン</span><a class="card-link" href="https://www.gmo-ps.com/news/20261105/" target="_blank" rel="noopener">後払いの発表 →</a> <a class="card-link" href="https://www.epsilon.jp/news/20261105.html" target="_blank" rel="noopener">加盟店向け発表 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-11-06</span></div>
+      <h2 class="card-title">【国内加盟店】StarPay、オンライン決済の不正検知を強化へ</h2>
+      <p class="card-summary">ネットスターズとアクルは、StarPay加盟店のオンライン決済に向け、不正対策サービス「ASUKA」を使った協業を発表した。既存の本人認証や不正利用対策に加え、不正検知を多層化する狙い。全加盟店への自動適用や導入時期の詳細は発表から確認できない。CAFIS／ADAPTISの変更ではない関連動向として、加盟店は対象の決済手段、導入条件と誤検知時の対応を確認したい。</p>
+      <div class="card-footer"><span class="card-source">アクル</span><a class="card-link" href="https://akuru-inc.com/news/2026-11-06/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-11-05 / 提供開始: 2026-11-01</span></div>
+      <h2 class="card-title">【国内免税】税関確認後の返金をカードや電子財布へ送金</h2>
+      <p class="card-summary">ネットスターズは、新しい免税制度に対応し、税関の確認結果を受けて旅行者へ消費税相当額を送金するサービスを開始した。Visa、Mastercard、銀聯のカードや一部の電子財布などに対応し、JCBなどは準備中。提供条件は送金手段や接続する事業者によって異なる。CAFISとの直接関係は公表されていない。免税店は確認結果の取得、送金失敗時の再処理と売上・返金の照合を接続先に確認したい。</p>
+      <div class="card-footer"><span class="card-source">ネットスターズ</span><a class="card-link" href="https://www.netstars.co.jp/news/20010/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-10-30 / 提供開始済み</span></div>
+      <h2 class="card-title">【国内EC】NP後払い、注文後のカード払い切替に対応</h2>
+      <p class="card-summary">ネットプロテクションズは、NP後払いで注文した購入者が、請求書や案内メールからクレジットカード払いへ切り替えられる加盟店向け機能を提供開始した。定期購入では、一度切り替えると次回以降も同じカードで自動決済する。利用できるのは機能を導入した加盟店に限る。CAFISとの直接関係は公表されておらず、事業者は切替時の請求・取消・継続課金の扱いを確認したい。</p>
+      <div class="card-footer"><span class="card-source">ネットプロテクションズ</span><a class="card-link" href="https://www.netprotections.com/news/20261030/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
