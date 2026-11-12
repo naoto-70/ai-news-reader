@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI News Daily — 2026-11-11</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --accent: #3b82f6;
+      --accent-light: #dbeafe;
+      --tag-bg: #edf2f7;
+      --shadow: 0 2px 8px rgba(0,0,0,0.07);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --border: #2d3148;
+        --text: #e2e8f0;
+        --text-muted: #8892a4;
+        --accent: #60a5fa;
+        --accent-light: #1e3a5f;
+        --tag-bg: #252836;
+        --shadow: 0 2px 8px rgba(0,0,0,0.4);
+        --shadow-hover: 0 6px 20px rgba(0,0,0,0.6);
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .site-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .archive-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .archive-nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .archive-nav-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .archive-link {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+    .archive-link:hover { opacity: 0.75; }
+    .archive-link.current {
+      font-weight: 700;
+      opacity: 1;
+    }
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+    }
+    .page-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+    .card-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-source {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .card-link {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { opacity: 0.75; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      main { padding: 0 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="site-title">⚡ AI News Daily</span>
+    <span class="site-date">2026-11-11</span>
+  </div>
+</header>
+
+<nav class="archive-nav">
+  <div class="archive-nav-inner">
+    <span class="archive-nav-label">Archive:</span>
+    <a class="archive-link current" href="../index.html">2026-11-11</a>
+    <!-- ARCHIVE-LINKS:START -->
+    <a class="archive-link" href="./2026-11-10.html">2026-11-10</a>
+    <a class="archive-link" href="./2026-11-09.html">2026-11-09</a>
+    <a class="archive-link" href="./2026-11-08.html">2026-11-08</a>
+    <a class="archive-link" href="./2026-11-07.html">2026-11-07</a>
+    <a class="archive-link" href="./2026-11-06.html">2026-11-06</a>
+    <a class="archive-link" href="./2026-11-05.html">2026-11-05</a>
+    <a class="archive-link" href="./2026-11-04.html">2026-11-04</a>
+    <a class="archive-link" href="./2026-11-03.html">2026-11-03</a>
+    <a class="archive-link" href="./2026-11-02.html">2026-11-02</a>
+    <a class="archive-link" href="./2026-11-01.html">2026-11-01</a>
+    <a class="archive-link" href="./2026-10-31.html">2026-10-31</a>
+    <a class="archive-link" href="./2026-10-30.html">2026-10-30</a>
+    <a class="archive-link" href="./2026-10-29.html">2026-10-29</a>
+    <a class="archive-link" href="./2026-10-28.html">2026-10-28</a>
+    <a class="archive-link" href="./2026-10-27.html">2026-10-27</a>
+    <a class="archive-link" href="./2026-10-26.html">2026-10-26</a>
+    <a class="archive-link" href="./2026-10-25.html">2026-10-25</a>
+    <a class="archive-link" href="./2026-10-24.html">2026-10-24</a>
+    <a class="archive-link" href="./2026-10-23.html">2026-10-23</a>
+    <a class="archive-link" href="./2026-10-22.html">2026-10-22</a>
+    <a class="archive-link" href="./2026-10-21.html">2026-10-21</a>
+    <a class="archive-link" href="./2026-10-20.html">2026-10-20</a>
+    <a class="archive-link" href="./2026-10-19.html">2026-10-19</a>
+    <a class="archive-link" href="./2026-10-18.html">2026-10-18</a>
+    <a class="archive-link" href="./2026-10-17.html">2026-10-17</a>
+    <a class="archive-link" href="./2026-10-16.html">2026-10-16</a>
+    <a class="archive-link" href="./2026-10-15.html">2026-10-15</a>
+    <a class="archive-link" href="./2026-10-14.html">2026-10-14</a>
+    <a class="archive-link" href="./2026-10-13.html">2026-10-13</a>
+    <a class="archive-link" href="./2026-10-12.html">2026-10-12</a>
+    <a class="archive-link" href="./2026-10-11.html">2026-10-11</a>
+    <a class="archive-link" href="./2026-10-10.html">2026-10-10</a>
+    <a class="archive-link" href="./2026-10-09.html">2026-10-09</a>
+    <a class="archive-link" href="./2026-10-08.html">2026-10-08</a>
+    <a class="archive-link" href="./2026-10-07.html">2026-10-07</a>
+    <a class="archive-link" href="./2026-10-06.html">2026-10-06</a>
+    <a class="archive-link" href="./2026-10-05.html">2026-10-05</a>
+    <a class="archive-link" href="./2026-10-04.html">2026-10-04</a>
+    <a class="archive-link" href="./2026-10-03.html">2026-10-03</a>
+    <a class="archive-link" href="./2026-10-01.html">2026-10-01</a>
+    <!-- ARCHIVE-LINKS:END -->
+  </div>
+</nav>
+
+<main>
+  <p class="page-heading">AI技術・決済ニュース — AI技術5件 / 決済5件（11月11日版）</p>
+  <div class="cards">
+    <!-- CARDS:START -->
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表・提供: 2026-11-10</span></div>
+      <h2 class="card-title">Googleの高性能AI、開発者や有料利用者に提供拡大</h2>
+      <p class="card-summary">Googleは、複雑なプログラム開発や資料の分析を支援する「Gemini 4 Carbon」を広く提供すると発表した。10月に一部のセキュリティ担当者向けに限定公開したモデルで、今回は有料の開発者・企業向けのほか、最上位プランの利用者にも順次提供する。開発者向けの導入価格は11月30日まで文章の処理量100万トークンあたり入力2ドル、出力10ドル。性能は用途ごとに確認したい。</p>
+      <div class="card-footer"><span class="card-source">Google</span><a class="card-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表・提供: 2026-11-10</span></div>
+      <h2 class="card-title">Claudeと表計算やホワイトボードを共同編集できるように</h2>
+      <p class="card-summary">Anthropicは、AIと一緒に表を作成したり、アイデアをボードに整理したりする機能を発表した。表では複数シートや数式を扱え、ボードの内容を要約できる。外部アプリをClaude内で操作する連携機能も拡充した。会議に参加して議事録を作る機能は今後提供予定で、利用条件はプランごとに確認したい。</p>
+      <div class="card-footer"><span class="card-source">Anthropic</span><a class="card-link" href="https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-10 / 提供終了予定: 2027-02-10</span></div>
+      <h2 class="card-title">OpenAIの画像生成を組み込んだサービス、一部モデルの移行が必要に</h2>
+      <p class="card-summary">OpenAIは画像生成モデル「GPT Image 2」の開発者向け提供を2027年2月10日に終了すると発表した。対象はgpt-image-2と2026年4月21日版で、後継の2.6系への移行を案内している。自社サービスに組み込んでいる場合は、期限前に画質・料金・出力形式を確認したい。今回の告知は開発者向け接続の変更で、ChatGPTの画像機能全体の終了を示すものではない。</p>
+      <div class="card-footer"><span class="card-source">OpenAI</span><a class="card-link" href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表・試験提供: 2026-11-10</span></div>
+      <h2 class="card-title">医療現場で記録や保険情報をまとめるAIを試験提供</h2>
+      <p class="card-summary">Google Cloudは、医療機関や保険事業者向けに、電子カルテや保険情報を参照して記録の整理や事務作業を支援するAIを試験提供すると発表した。カルテには読み取りで連携し、重要な判断には人の監督を前提とする。発表には米国の医療制度や提携先が含まれ、日本での提供条件は明示されていない。</p>
+      <div class="card-footer"><span class="card-source">Google Cloud</span><a class="card-link" href="https://www.googlecloudpresscorner.com/2026-11-10-Google-Cloud-Launches-Gemini-for-Healthcare" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">AI技術</span><span class="card-date">発表: 2026-11-10</span></div>
+      <h2 class="card-title">企業の社内業務向けAIを構築・管理する基盤を発表</h2>
+      <p class="card-summary">IBMとMicrosoftは、金融・保険・小売などの企業が、社内データを使って業務を進めるAIを構築・管理するための基盤を発表した。既存のMicrosoft製品とIBMの支援を組み合わせ、権限や運用状況を管理する。IBMへの導入・運用依頼や自社管理の選択肢があり、対象業務と契約条件は個別確認が必要。</p>
+      <div class="card-footer"><span class="card-source">IBM</span><a class="card-link" href="https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">公表・再開: 2026-11-10</span></div>
+      <h2 class="card-title">【国内銀行接続】GMOあおぞらネット銀行、外部接続を一時停止し再開</h2>
+      <p class="card-summary">同行は銀行と外部サービスをつなぐ接続基盤への不正な通信を検知し、予防措置として銀行API（システム間の接続機能）を11月10日20時42分から停止した。不正な通信が収まったことを確認し、22時30分に再開。個人情報の漏えいや不正な資金流出は発生していないと説明する。CAFISへの直接影響は公表されていない。連携事業者は停止中の取引状況や再処理を確認したい。</p>
+      <div class="card-footer"><span class="card-source">GMOあおぞらネット銀行</span><a class="card-link" href="https://gmo-aozora.com/news/2026/20261110-01.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-11-10 / 提供時期未公表</span></div>
+      <h2 class="card-title">【不正対策】ベスカとアクル、店頭と通販の利用実績を使う認証を検討</h2>
+      <p class="card-summary">決済事業者ベスカと不正対策のアクルは、店頭とネット通販の利用実績を組み合わせ、本人確認や不正検知に活用するサービスの協業検討を開始した。正当な決済での余分な認証を減らす構想だが、提供開始日や適用条件は公表されていない。CAFISへの接続変更を示す発表ではなく、加盟店は対象データと認証方式、個人情報の取り扱いを今後確認したい。</p>
+      <div class="card-footer"><span class="card-source">アクル</span><a class="card-link" href="https://prtimes.jp/main/html/rd/p/000000130.000035938.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-11-10 / 利用開始時期未公表</span></div>
+      <h2 class="card-title">【コード決済】日本の利用者による海外決済に向け精算基盤を準備</h2>
+      <p class="card-summary">ネットスターズは、日本と海外のコード決済をつなぐ「JPQR Global」について、日本の利用者が海外で支払う際の精算にDandelionのサービスを活用する契約を結んだ。海外での支払いは準備段階で、対象国や開始日は未公表。CAFISとは別の決済網の動向として、事業者は対象国、為替・精算条件、入金や照合の方法を今後確認したい。</p>
+      <div class="card-footer"><span class="card-source">ネットスターズ</span><a class="card-link" href="https://prtimes.jp/main/html/rd/p/000000200.000019526.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表・提供: 2026-11-10</span></div>
+      <h2 class="card-title">【国内事業者】請求書からカード決済・入金確認までを連携</h2>
+      <p class="card-summary">ROBOT PAYMENTは、Salesforceの請求書を基に、カード・口座振替・銀行振込・コンビニ払いの決済と入金消込を連携する機能を公開した。対象はRevenue CloudのAdvanced版を使う企業で、請求管理ロボの追加パッケージとして提供する。CAFISへの直接変更は公表されていない。導入時は対象契約、入金の照合や取消・返金の運用を確認したい。</p>
+      <div class="card-footer"><span class="card-source">ROBOT PAYMENT</span><a class="card-link" href="https://prtimes.jp/main/html/rd/p/000000490.000001047.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-meta"><span class="card-tag">決済</span><span class="card-date">発表: 2026-11-09 / 取次開始: 2026-10</span></div>
+      <h2 class="card-title">【加盟店事業】JMS加盟店にレジや予約サービスを紹介</h2>
+      <p class="card-summary">カード加盟店業務を扱うJMSは、ストアーズのレジ、モバイル注文、予約などのサービスを加盟店に順次紹介する。取次は10月から開始。食品の消費税率引き下げへの対応支援も掲げるが、実施には法案の成立が必要と説明している。CAFISの接続変更や加盟店への自動導入は発表されておらず、利用条件やレジの設定変更は個別に確認したい。</p>
+      <div class="card-footer"><span class="card-source">STORES</span><a class="card-link" href="https://prtimes.jp/main/html/rd/p/000000297.000031375.html" target="_blank" rel="noopener">詳細を見る →</a></div>
+    </article>
+    <!-- CARDS:END -->
+  </div>
+</main>
+
+<footer>
+  AI News Daily — 情報は各ソースより収集。掲載URLは実在する記事へのリンクです。
+</footer>
+
+</body>
+</html>
